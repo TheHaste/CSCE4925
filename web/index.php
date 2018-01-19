@@ -1,3 +1,3 @@
 <?php
-echo "Hello World";
+echo "The Giganto Asset Management System is coming soon!!!!";
 ?>
