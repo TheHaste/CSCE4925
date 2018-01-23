@@ -1,5 +1,5 @@
 <?php
-require('\xampp\htdocs\csce4925\assets\test.php'); 
+require('/web/index-html/test.php'); 
 session_start(); //start user session to send data between pages
 
 //if(isset($_POST) & !empty($_POST)) //if login button is selected{ 
