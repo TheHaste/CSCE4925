@@ -1,5 +1,5 @@
 <?php
-require('/web/index-html/test.php'); 
+/* require('/web/index-html/test.php'); 
 session_start(); //start user session to send data between pages
 
 //if(isset($_POST) & !empty($_POST)) //if login button is selected{ 
@@ -7,7 +7,7 @@ session_start(); //start user session to send data between pages
 	//variables entered from user
 	 $username = $_POST['username'];
 	 $password = md5($_POST['password']);
-
+*/
 ?>
 
 
