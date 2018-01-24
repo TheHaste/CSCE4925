@@ -14,7 +14,8 @@ $myRequest = curl_init($url);
 curl_setopt($myRequest, CURLOPT_POST, TRUE);
 
 // credentials
-curl_setopt($myRequest, CURLOPT_USERPWD, "$username:$password:$secret");
+curl_setopt($myRequest, CURLOPT_USERPWD, "$username:$password");
+curl_setopt($myRequest, CURLOPT_KEYPASSWD, "$secret");
 
 // returns the response instead of displaying it
 curl_setopt($myRequest, CURLOPT_RETURNTRANSFER, 1);
