@@ -9,6 +9,8 @@ $data = array(
 );
 $httpData = http_build_query($data);
 
+echo "Data is: ".$httpData;
+
 // create new cURL resource
 $myRequest = curl_init();
 
