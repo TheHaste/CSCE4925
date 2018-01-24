@@ -1,11 +1,11 @@
 <?php
-/*
+
 // using ldap bind
-$ldaprdn  = 'uname';     // ldap rdn or dn
-$ldappass = 'password';  // associated password
+$ldaprdn  = 'inventoryadmin';     // ldap rdn or dn
+$ldappass = '3asUSWefup67deSA';  // associated password
 
 // connect to ldap server
-$ldapconn = ldap_connect("https://198.61.58.38:30443/v1/authenticate")//
+$ldapconn = ldap_connect("https://198.61.58.38:30443/v1/authenticate");//
 //    or die("Could not connect to LDAP server.");
 
 if ($ldapconn) {
@@ -24,6 +24,6 @@ if ($ldapconn) {
 else{
 		echo "Failed to connect";
 }
-*/
+
 ?>
 
