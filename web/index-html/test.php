@@ -15,7 +15,6 @@ $myRequest = curl_init();
 // set url
 curl_setopt($myRequest, CURLOPT_URL, $url);
 
-// do a POST request, using application/x-www-form-urlencoded type with data
 //curl_setopt($myRequest, CURLOPT_POST, 1);
 curl_setopt($myRequest, CURLOPT_POSTFIELDS, $httpData);
 
