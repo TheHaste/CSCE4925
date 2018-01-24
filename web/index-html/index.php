@@ -1,5 +1,5 @@
 <?php
-require('vendor/bin/heroku-php-apache2 web/index-html/test.php'); 
+require('/app/web/index-html/test.php'); 
 /*
 session_start(); //start user session to send data between pages
 
