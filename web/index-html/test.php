@@ -9,14 +9,14 @@ $data = array(
 );
 
 // create new cURL resource
-$myRequest = curl_init();
+$myRequest = curl_init($url);
 
 // do a POST request, using application/x-www-form-urlencoded type with data
 curl_setopt($myRequest, CURLOPT_POST, TRUE);
 curl_setopt($myRequest, CURLOPT_POSTFIELDS, $data);
 
 // set url
-curl_setopt($myRequest, CURLOPT_URL, $url);
+//curl_setopt($myRequest, CURLOPT_URL, $url);
 
 
 // returns the response instead of displaying it
