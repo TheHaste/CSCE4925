@@ -15,7 +15,7 @@ $myRequest = curl_init();
 curl_setopt($myRequest, CURLOPT_POSTFIELDS, $data);
 
 // set url
-curl_setopt($myRequest, CURLOPT_URL, "$url");
+curl_setopt($myRequest, CURLOPT_URL, $url);
 
 
 // returns the response instead of displaying it
