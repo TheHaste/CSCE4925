@@ -14,6 +14,8 @@ echo "Data is: ".$httpData;
 // create new cURL resource
 $myRequest = curl_init();
 
+echo "Request: ".$myRequest;
+
 // set url
 curl_setopt($myRequest, CURLOPT_URL, $url);
 
