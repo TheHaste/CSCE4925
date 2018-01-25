@@ -14,9 +14,9 @@ $myRequest = curl_init();
 
 // set url
 curl_setopt($myRequest, CURLOPT_URL, $url);
-
-curl_setopt($myRequest, CURLOPT_POST, 1);
+curl_setopt($myRequest, CURLOPT_POST, true);
 curl_setopt($myRequest, CURLOPT_POSTFIELDS, $httpData);
+curl_setopt($myRequest, CURLOPT_RETURNTRANSFER, true);
 
 // curl header
 curl_setopt($myRequest, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
