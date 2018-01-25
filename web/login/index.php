@@ -39,9 +39,8 @@ if(isset($_POST) & !empty($_POST)) //if login button is selected{
     <div class="container">
         <div class="row row-login" style="margin-left:-25px;">
             <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
-                <h1 class="text-center">Giganto-system </h1>
+                <h1 class="text-center">Giganto Asset Management</h1>
                 <div class="well">
-                    <h3 class="text-danger" style="margin:20px;margin-right:20px;margin-bottom:20px;margin-left:20px;">Login </h3>
                     <form action = "test.php" method= "post">
                      <!--   <div class="form-group"><label class="control-label">Username </label><input class="form-control" type="text"></div>
                         <div class="form-group"><label class="control-label">Password </label><input class="form-control" type="password"></div>
