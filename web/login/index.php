@@ -23,7 +23,7 @@ if(isset($_POST) & !empty($_POST)) //if login button is selected{
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gigano login page</title>
+    <title>Login</title>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/Login-Center.css">
     <link rel="stylesheet" href="/styles.css">
@@ -43,9 +43,10 @@ if(isset($_POST) & !empty($_POST)) //if login button is selected{
                 <div class="well">
                     <h3 class="text-danger" style="margin:20px;margin-right:20px;margin-bottom:20px;margin-left:20px;">Login </h3>
                     <form action = "test.php" method= "post">
-                        <div class="form-group"><label class="control-label">Username </label><input class="form-control" type="text"></div>
-                        <div class="form-group"><label class="control-label">Password </label><input class="form-control" type="password"></div><button class="btn btn-success btn-block" type="submit" style="margin-bottom:21px;margin-top:19px;">LOGIN </button><a class="btn btn-link center-block"
-                            role="button" href="#">Forget Password?</a></form>
+                     <!--   <div class="form-group"><label class="control-label">Username </label><input class="form-control" type="text"></div>
+                        <div class="form-group"><label class="control-label">Password </label><input class="form-control" type="password"></div>
+					-->	<button class="btn btn-success btn-block" type="submit" style="margin-bottom:21px;margin-top:19px;">AUTHENTICATION TEST</button>
+					<!-- <a class="btn btn-link center-block" role="button" href="#">Forget Password?</a></form> -->
                 </div>
             </div>
         </div>
