@@ -15,8 +15,11 @@ $myRequest = curl_init();
 // set url
 curl_setopt($myRequest, CURLOPT_URL, $url);
 
-//curl_setopt($myRequest, CURLOPT_POST, 1);
+curl_setopt($myRequest, CURLOPT_POST, 1);
 curl_setopt($myRequest, CURLOPT_POSTFIELDS, $httpData);
+
+// curl header
+curl_setopt($myRequest, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
 
 // do request, the response text is available in $response
 $response = curl_exec($myRequest);
