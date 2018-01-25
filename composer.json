@@ -4,11 +4,9 @@
     "monolog/monolog": "^1.22",
     "twig/twig": "^2.0",
     "symfony/twig-bridge": "^3"
+	"php": ">=5.3.3"
   },
   "require-dev": {
     "heroku/heroku-buildpack-php": "*"
   }
-  "require": {
-        "php": ">=5.3.3"
-    }
 }
