@@ -1,7 +1,7 @@
 <?php
 
 // POST variables
-$url = 'https://198.61.58.38:30443/v1/';
+$url = 'https://198.61.58.38:30443/v1/authenticate/';
 $data = array(
 	'username'  => "inventoryuser ",
 	'password' => "qeMay8qef2KEp7Pe",
