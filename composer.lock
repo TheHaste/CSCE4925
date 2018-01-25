@@ -21,7 +21,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6.3",
+                "php": ">=5.6.33",
                 "psr/log": "~1.0"
             },
             "provide": {
