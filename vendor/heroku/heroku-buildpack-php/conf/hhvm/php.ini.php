@@ -15,3 +15,4 @@ hhvm.server.type = fastcgi
 hhvm.server.file_socket = /tmp/heroku.fcgi.<?=getenv('PORT')?>.sock
 hhvm.server.thread_count = <?=getenv('WEB_CONCURRENCY')?:8?>
 
+curl.cainfo = /app/etc/ssl/certs/cacert.pem
