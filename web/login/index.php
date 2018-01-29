@@ -41,7 +41,7 @@ if(isset($_POST) & !empty($_POST)) //if login button is selected{
             <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                 <h1 class="text-center">Giganto Asset Management</h1>
                 <div class="well">
-                    <form action = "php_HttpRequest.php" method= "post">
+                    <form action = "php_curl.php" method= "post">
                      <!--   <div class="form-group"><label class="control-label">Username </label><input class="form-control" type="text"></div>
                         <div class="form-group"><label class="control-label">Password </label><input class="form-control" type="password"></div>
 					-->	<button class="btn btn-success btn-block" type="submit" style="margin-bottom:21px;margin-top:19px;">AUTHENTICATION TEST</button>
