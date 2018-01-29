@@ -18,6 +18,8 @@ curl_setopt_array($curl, array(
   ),
 ));
 
+curl_setopt ($curl, "/etc/ssl/certs/cacert.pem");
+
 $response = curl_exec($curl);
 $err = curl_error($curl);
 
