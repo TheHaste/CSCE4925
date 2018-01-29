@@ -3,7 +3,6 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-curl_setopt ($curl, CURLOPT_CAINFO, dirname(__FILE__)."/cacert.pem");
   CURLOPT_PORT => "30443",
   CURLOPT_URL => "https://198.61.58.38:30443/v1/authenticate",
   CURLOPT_RETURNTRANSFER => true,
@@ -18,6 +17,8 @@ curl_setopt ($curl, CURLOPT_CAINFO, dirname(__FILE__)."/cacert.pem");
     "content-type: application/x-www-form-urlencoded"
   ),
 ));
+
+curl_setopt ($curl, CURLOPT_CAINFO, dirname(__FILE__)."/cacert.pem");
 
 $response = curl_exec($curl);
 $err = curl_error($curl);
