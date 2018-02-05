@@ -1,7 +1,6 @@
 <?php
 
-$dbconn = pg_connect("dbname=heroku pg:psql postgresql-adjacent-97074 --app giganto-inventory-dev
-") or die("Could not connect");
+$dbconn = pg_connect("dbname=ec2-54-235-244-185.compute-1.amazonaws.com") or die("Could not connect");
   $stat = pg_connection_status($dbconn);
   if ($stat === PGSQL_CONNECTION_OK) {
       echo 'Connection status ok';
