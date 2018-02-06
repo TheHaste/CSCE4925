@@ -16,7 +16,7 @@ else{
 	
 	
 }
-ALTER TABLE name_info ADD COLUMN serial_number AFTER name_id;
+
 ?>
 
 
