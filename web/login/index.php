@@ -42,10 +42,9 @@ if(isset($_POST) & !empty($_POST)) //if login button is selected{
                 <h1 class="text-center">Giganto Asset Management</h1>
                 <div class="well">
                     <form action = "php_curl.php" method= "post">
-                     <!--   <div class="form-group"><label class="control-label">Username </label><input class="form-control" type="text"></div>
-                        <div class="form-group"><label class="control-label">Password </label><input class="form-control" type="password"></div>
-					-->	<button class="btn btn-success btn-block" type="submit" style="margin-bottom:21px;margin-top:19px;">AUTHENTICATION TEST</button>
-					<!-- <a class="btn btn-link center-block" role="button" href="#">Forget Password?</a></form> -->
+					<button class="btn btn-success btn-block" type="submit" style="margin-bottom:21px;margin-top:19px;">Login As Standard User</button>
+						<div style="height:25px" </div>
+					<button class="btn btn-success btn-block" type="submit" style="margin-bottom:21px;margin-top:19px;">Login As Administrator</button>
                 </div>
             </div>
         </div>
