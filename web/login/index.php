@@ -5,6 +5,7 @@ session_start(); //start user session to send data between pages
 
 if(isset($_POST['Admin Button'])){ //if admin button is pressed
 	$_SESSION["userType"] = 'admin';
+	echo "admin";
 	header('location: /app/web/home/home.php');
 }
 
@@ -47,7 +48,7 @@ if(isset($_POST['User Button'])){ //if user button is pressed
                      <!--   <div class="form-group"><label class="control-label">Username </label><input class="form-control" type="text"></div>
                         <div class="form-group"><label class="control-label">Password </label><input class="form-control" type="password"></div>
 					-->	<button class="btn btn-success btn-block" type="submit" name="Admin Button" value='admin' style="margin-bottom:21px;margin-top:19px;">Admin Login</button>
-						<div style="height:15px"></div>
+						<div style="height:5px"></div>
 					    <button class="btn btn-success btn-block" type="submit" name="User Button" value='user' style="margin-bottom:21px;margin-top:19px;">User Login</button>
 					<!-- <a class="btn btn-link center-block" role="button" href="#">Forget Password?</a> -->
 					</form>
