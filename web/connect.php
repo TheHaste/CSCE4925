@@ -13,7 +13,10 @@ if ($conn->connect_error) {
 } 
 else{
 		echo "Database connection works!!!!";
+	
+	
 }
+ALTER TABLE name_info ADD COLUMN serial_number AFTER name_id;
 ?>
 
 
