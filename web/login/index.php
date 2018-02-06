@@ -43,11 +43,11 @@ if(isset($_POST['User Button'])){ //if user button is pressed
             <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                 <h1 class="text-center">Giganto Asset Management</h1>
                 <div class="well">
-                    <form action = "php_curl.php" method= "post">
+                    <form method= "post">
                      <!--   <div class="form-group"><label class="control-label">Username </label><input class="form-control" type="text"></div>
                         <div class="form-group"><label class="control-label">Password </label><input class="form-control" type="password"></div>
 					-->	<button class="btn btn-success btn-block" type="submit" name="Admin Button" value='admin' style="margin-bottom:21px;margin-top:19px;">Admin Login</button>
-						<div style="height:30px"></div>
+						<div style="height:15px"></div>
 					    <button class="btn btn-success btn-block" type="submit" name="User Button" value='user' style="margin-bottom:21px;margin-top:19px;">User Login</button>
 					<!-- <a class="btn btn-link center-block" role="button" href="#">Forget Password?</a></form> -->
                 </div>
