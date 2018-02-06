@@ -3,16 +3,14 @@
 
 session_start(); //start user session to send data between pages
 
-//if($_POST['Admin Button'] == 'admin'){ //if admin button is pressed
 if($_POST['admin'] == 'Admin Button'){ //if admin button is pressed
 	$_SESSION["userType"] = 'admin';
-	echo "admin";
-	header('location: /app/web/home/home.php');
+	header('location: /web/home/home.php');
 }
 
-if($_POST['User Button'] == 'user'){ //if user button is pressed
+if($_POST['user'] == 'User Button'){ //if user button is pressed
 	$_SESSION["userType"] = 'user';
-	header('location: /app/web/home/home.php');
+	header('location: /web/home/home.php');
 }
 
 ?>
