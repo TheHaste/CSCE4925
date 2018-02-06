@@ -1,15 +1,17 @@
 <?php
 //require('/app/web/index-html/test.php'); <----> Do NOT Delete
-/*
+
 session_start(); //start user session to send data between pages
 
-if(isset($_POST) & !empty($_POST)) //if login button is selected{ 
-	
-	//variables entered from user
-	 $username = $_POST['username'];
-	 $password = md5($_POST['password']);
-	 
-*/
+if(isset($_POST['Admin Button']){ //if admin button is pressed
+	$_SESSION["userType"] = 'Admin';
+	header('location: /app/web/home/home.php');
+}
+
+if(isset($_POST['User Button']){ //if user button is pressed
+	$_SESSION["userType"] = 'User';
+	header('location: /app/web/home/home.php');
+}
 
 ?>
 
@@ -42,9 +44,12 @@ if(isset($_POST) & !empty($_POST)) //if login button is selected{
                 <h1 class="text-center">Giganto Asset Management</h1>
                 <div class="well">
                     <form action = "php_curl.php" method= "post">
-					<button class="btn btn-success btn-block" type="submit" style="margin-bottom:21px;margin-top:19px;">Login As Standard User</button>
-						<div style="height:25px" </div>
-					<button class="btn btn-success btn-block" type="submit" style="margin-bottom:21px;margin-top:19px;">Login As Administrator</button>
+                     <!--   <div class="form-group"><label class="control-label">Username </label><input class="form-control" type="text"></div>
+                        <div class="form-group"><label class="control-label">Password </label><input class="form-control" type="password"></div>
+					-->	<button class="btn btn-success btn-block" type="submit" name="Admin Button" value='admin' style="margin-bottom:21px;margin-top:19px;">Admin Login</button>
+						<div style="height:30px"></div>
+					    <button class="btn btn-success btn-block" type="submit" name="User Button" value='user' style="margin-bottom:21px;margin-top:19px;">User Login</button>
+					<!-- <a class="btn btn-link center-block" role="button" href="#">Forget Password?</a></form> -->
                 </div>
             </div>
         </div>
