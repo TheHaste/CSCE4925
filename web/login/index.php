@@ -3,7 +3,8 @@
 
 session_start(); //start user session to send data between pages
 
-if($_POST['Admin Button'] == 'admin'){ //if admin button is pressed
+//if($_POST['Admin Button'] == 'admin'){ //if admin button is pressed
+if($_POST['admin'] == 'Admin Button'){ //if admin button is pressed
 	$_SESSION["userType"] = 'admin';
 	echo "admin";
 	header('location: /app/web/home/home.php');
@@ -27,13 +28,9 @@ if($_POST['User Button'] == 'user'){ //if user button is pressed
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/Login-Center.css">
-    <link rel="stylesheet" href="/styles.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
 	 <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-	 <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -45,12 +42,9 @@ if($_POST['User Button'] == 'user'){ //if user button is pressed
                 <h1 class="text-center">Giganto Asset Management</h1>
                 <div class="well">
                     <form method= "POST">
-                     <!--   <div class="form-group"><label class="control-label">Username </label><input class="form-control" type="text"></div>
-                        <div class="form-group"><label class="control-label">Password </label><input class="form-control" type="password"></div>
-					-->	<input class="btn btn-success btn-block" type="submit" value="Admin Button" name='admin' style="margin-bottom:21px;margin-top:19px;"></input>
+						<input class="btn btn-success btn-block" type="submit" value="Admin Button" name='admin' style="margin-bottom:21px;margin-top:19px;"></input>
 						<div style="height:5px"></div>
 					    <input class="btn btn-success btn-block" type="submit" value="User Button" name='user' style="margin-bottom:21px;margin-top:19px;"></input>
-					<!-- <a class="btn btn-link center-block" role="button" href="#">Forget Password?</a> -->
 					</form>
                 </div>
             </div>
