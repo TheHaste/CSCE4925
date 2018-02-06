@@ -44,7 +44,7 @@ if($_POST['User Button'] == 'user'){ //if user button is pressed
             <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
                 <h1 class="text-center">Giganto Asset Management</h1>
                 <div class="well">
-                    <form method= "post">
+                    <form method= "POST">
                      <!--   <div class="form-group"><label class="control-label">Username </label><input class="form-control" type="text"></div>
                         <div class="form-group"><label class="control-label">Password </label><input class="form-control" type="password"></div>
 					-->	<input class="btn btn-success btn-block" type="submit" value="Admin Button" name='admin' style="margin-bottom:21px;margin-top:19px;"></input>
