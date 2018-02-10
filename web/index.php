@@ -23,7 +23,7 @@ if($_POST['user'] == 'User Button'){ //if user button is pressed
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untitled</title>
+    <title>login page</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Login-Center.css">
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -31,8 +31,8 @@ if($_POST['user'] == 'User Button'){ //if user button is pressed
 
 <body>
     <div class="container">
-        <div class="row row-login">
-            <div class="col-10 col-sm-6 col-md-4 offset-1 offset-sm-3 offset-md-4">
+        <div class="row row-login" style="padding-bottom:-2px;padding-left:-5px;padding-top:100px;">
+            <div class="col-10 col-sm-6 col-md-4 offset-1 offset-sm-3 offset-md-4 offset-lg-5">
                 <h1 class="text-center">Meridian Solutions</h1>
                 <div class="card">
                     <div class="card-body">
