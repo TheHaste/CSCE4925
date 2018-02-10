@@ -24,10 +24,10 @@ else if($_SESSION["userType"] == 'user'){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="ALL_BOOTSTRAP FILES/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="ALL_BOOTSTRAP FILES/assets/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">
     <link rel="stylesheet" href="assets/css/user.css">
-    <link rel="stylesheet" href="assets/css/Data-Table.css">
+    <link rel="stylesheet" href="ALL_BOOTSTRAP FILES/assets/assets/css/Data-Table.css">
     <link rel="stylesheet" href="assets/css/Data-Table1.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Navigation-Clean1.css">
