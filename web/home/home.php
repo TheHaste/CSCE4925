@@ -117,16 +117,16 @@ else if($_SESSION["userType"] == 'user'){
                               <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                             </td>
                             <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>
-			   <td>	 </td>
-			   <td>	 </td>
-			   <td>   </td>
-			   <td>   </td>
-			   <td>     </td>
-			   <td>	</td>
-			   <td>	</td>
-			   <td>	</td>
+                           <td></td>
+                           <td></td>
+			   <td></td>
+			   <td></td>
+			   <td></td>
+			   <td></td>
+			   <td></td>
+			   <td></td>
+			   <td></td>
+			   <td></td>
 							
 							
 							
@@ -140,14 +140,14 @@ else if($_SESSION["userType"] == 'user'){
                             <!--<td class="hidden-xs">1</td>-->
                             <td></td>
                             <td></td>
-			    <td> </td>
-			    <td> </td>
-			    <td>   </td>
-			    <td>   </td>
-			    <td>   </td>
-			   <td>	  </td>
-			   <td>	  </td>
-			   <td>	</td>
+			    <td></td>
+			    <td></td>
+			    <td></td>
+			    <td></td>
+			    <td></td>
+			    <td></td>
+			    <td></td>
+			    <td></td>
 							
 							
 							
