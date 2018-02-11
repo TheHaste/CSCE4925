@@ -287,7 +287,8 @@ else if($_SESSION["userType"] == 'user'){
         <div style="height:10px;"></div>
     </div>
     <div></div>
-	<script src="assets/js/jquery.min.js"></script>
+     <script src="jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
