@@ -57,7 +57,7 @@ else if($_SESSION["userType"] == 'user'){
                 <div
                     class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-right" style="margin-top:0px;margin-right:-20px;">
-					   <li role="presentation"><a href="#" style="color:rgb(51,51,51);">Add Item</a></li>
+					   <li role="presentation"><a href="/add_item" style="color:rgb(51,51,51);">Add Item</a></li>
                         <li role="presentation"><a href="#" style="color:rgb(51,51,51);">Search Item</a></li>
 						<li role="presentation"><a href="#" style="color:rgb(51,51,51);">Settings </a></li>
 						<li role="presentation"><a href="#" style="color:rgb(51,51,51);">Reports </a></li>
