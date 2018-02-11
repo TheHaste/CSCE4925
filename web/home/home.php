@@ -291,7 +291,7 @@ else if($_SESSION["userType"] == 'user'){
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
-    <script src="assets/js/bs-animation.js"></script>
+    < src="assets/js/bs-animation.js">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     
 </body>
