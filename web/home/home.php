@@ -100,14 +100,14 @@ else if($_SESSION["userType"] == 'user'){
                         <!--<th class="hidden-xs">ID</th>-->
                         <th>Name</th>
                         <th>Serial #</th>
-						<th>Brand </th>
-						<th>Model </th>
-						<th>Assigned</th>
-						<th>Location</th>
-						<th>Cost</th>
-						<th>Date Deployed</th>
-						<th>Date Surplused</th>
-						<th>Last Updated</th>
+			<th>Brand </th>
+			<th>Model </th>
+			<th>Assigned</th>
+			<th>Location</th>
+			<th>Cost</th>
+			<th>Date Deployed</th>
+			<th>Date Surplused</th>
+			<th>Last Updated</th>
                     </tr> 
                   </thead>
                   <tbody>
@@ -119,14 +119,14 @@ else if($_SESSION["userType"] == 'user'){
                             <!--<td class="hidden-xs">1</td>-->
                             <td></td>
                             <td></td>
-							<td>	 </td>
-							<td>	 </td>
-							<td>   </td>
-							<td>   </td>
-							<td>     </td>
-							<td>	</td>
-							<td>	</td>
-							<td>	</td>
+			   <td>	 </td>
+			   <td>	 </td>
+			   <td>   </td>
+			   <td>   </td>
+			   <td>     </td>
+			   <td>	</td>
+			   <td>	</td>
+			   <td>	</td>
 							
 							
 							
@@ -140,14 +140,14 @@ else if($_SESSION["userType"] == 'user'){
                             <!--<td class="hidden-xs">1</td>-->
                             <td></td>
                             <td></td>
-							<td>	 </td>
-							<td>	 </td>
-							<td>   </td>
-							<td>   </td>
-							<td>     </td>
-							<td>	</td>
-							<td>	</td>
-							<td>	</td>
+			    <td> </td>
+			    <td> </td>
+			    <td>   </td>
+			    <td>   </td>
+			    <td>   </td>
+			   <td>	  </td>
+			   <td>	  </td>
+			   <td>	</td>
 							
 							
 							
@@ -161,14 +161,14 @@ else if($_SESSION["userType"] == 'user'){
                             <!--<td class="hidden-xs">1</td>-->
                             <td></td>
                             <td></td>
-							<td>	 </td>
-							<td>	 </td>
-							<td>   </td>
-							<td>   </td>
-							<td>     </td>
-							<td>	</td>
-							<td>	</td>
-							<td>	</td>
+			    <td></td>
+			    <td></td>
+			    <td></td>
+			    <td></td>
+			    <td></td>
+			    <td></td>
+			    <td></td>
+		            <td></td>			
 							
 							
 							
@@ -182,16 +182,14 @@ else if($_SESSION["userType"] == 'user'){
                             <!--<td class="hidden-xs">1</td>-->
                             <td></td>
                             <td></td>
-							<td>	 </td>
-							<td>	 </td>
-							<td>   </td>
-							<td>   </td>
-							<td>     </td>
-							<td>	</td>
-							<td>	</td>
-							<td>	</td>
-							
-							
+			    <td></td>
+                            <td></td>			
+			    <td></td>
+                            <td></td>
+			    <td></td>
+                            <td></td>				
+			    <td></td>
+                            <td></td>				
 							
                           </tr>
 						  
@@ -203,17 +201,14 @@ else if($_SESSION["userType"] == 'user'){
                             <!--<td class="hidden-xs">1</td>-->
                             <td></td>
                             <td></td>
-							<td>	 </td>
-							<td>	 </td>
-							<td>   </td>
-							<td>   </td>
-							<td>    </td>
-							<td>	</td>
-							<td>	</td>
-							<td>	</td>
-							
-							
-							
+			    <td></td>
+                            <td></td>				
+			    <td></td>
+                            <td></td>				
+			    <td></td>
+                            <td></td>	
+			    <td></td>
+                            <td></td>				   
                           </tr>
 						  
 						   <tr>
@@ -223,18 +218,15 @@ else if($_SESSION["userType"] == 'user'){
                             </td>
                             <!--<td class="hidden-xs">1</td>-->
                             <td></td>
+                            <td></td>			
+			    <td></td>
                             <td></td>
-							<td>	 </td>
-							<td>	 </td>
-							<td>  </td>
-							<td>   </td>
-							<td>     </td>
-							<td>	</td>
-							<td>	</td>
-							<td>	</td>
-							
-							
-							
+			    <td></td>
+                            <td></td>
+			    <td></td>
+                            <td></td>
+			    <td></td>
+                            <td></td>
                           </tr>
 						  
 						   <tr>
@@ -244,18 +236,15 @@ else if($_SESSION["userType"] == 'user'){
                             </td>
                             <!--<td class="hidden-xs">1</td>-->
                             <td></td>
+                            <td></td>							
+			    <td></td>
                             <td></td>
-							<td>	 </td>
-							<td>	 </td>
-							<td>  </td>
-							<td>   </td>
-							<td>     </td>
-							<td>	</td>
-							<td>	</td>
-							<td>	</td>
-							
-							
-							
+			    <td></td>
+                            <td></td>
+			    <td></td>
+                            <td></td>
+			    <td></td>
+                            <td></td>
                           </tr>
 						  
                         </tbody>
@@ -287,7 +276,6 @@ else if($_SESSION["userType"] == 'user'){
         <div style="height:10px;"></div>
     </div>
     <div></div>
-    <script src="jquery-3.3.1.min.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
