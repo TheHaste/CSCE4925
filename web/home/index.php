@@ -82,7 +82,7 @@ else if($_SESSION["userType"] == 'user'){
     <div class="row">
    
     
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-10 col-md-offset-1" style="margin:0; margin-left: auto; margin-left: auto;">
 
             <div class="panel panel-default panel-table">
               <div class="panel-heading">
@@ -100,15 +100,15 @@ else if($_SESSION["userType"] == 'user'){
                         <!--<th class="hidden-xs">ID</th>-->
                         <th>Name</th>
                         <th>Serial #</th>
-			<th>Brand </th>
-			<th>Model </th>
-			<th>Assigned</th>
-			<th>Location</th>
-			<th>Cost</th>
-			<th>Date Deployed</th>
-			<th>Date Surplused</th>
-			<th>Last Updated</th>
-                    </tr> 
+						<th>Brand </th>
+						<th>Model </th>
+						<th>Assigned</th>
+						<th>Location</th>
+						<th>Cost</th>
+						<th>Date Deployed</th>
+						<th>Date Surplused</th>
+						<th>Last Updated</th>
+								</tr> 
                   </thead>
                   <tbody>
                           <tr>
