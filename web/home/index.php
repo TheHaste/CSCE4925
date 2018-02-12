@@ -30,10 +30,10 @@ if($add_item)
 	{
 		header('web/add_item');
 	}
-else
-{
-	echo "not on add item page";
-}
+	else
+	{
+		echo "not on add item page";
+	}
 
 }
 
@@ -45,10 +45,10 @@ if($search_item)
 	{
 		header('web/search_item');
 	}
-else
-{
-	echo "not on search page";
-}
+	else
+	{
+		echo "not on search page";
+	}
 
 }
 
@@ -60,10 +60,10 @@ if($settigs)
 	{
 		header('web/settings');
 	}
-else
-{
-	echo "not on settings page";
-}
+	else
+	{
+		echo "not on settings page";
+	}
 
 }
 
@@ -75,10 +75,10 @@ if($reports)
 	{
 		header('web/reports');
 	}
-else
-{
-	echo "not on reports page";
-}
+	else
+	{
+		echo "not on reports page";
+	}
 
 }
 
@@ -87,11 +87,11 @@ $logout = $_POST['logout button']; //if logout button is pressed by admin
 if($logout)
 {
 	header('web/logout');
-}
-else
-{
-	echo "not on logout page";
-}
+
+	else
+	{
+		echo "not on logout page";
+	}
 
 }
 
@@ -111,10 +111,10 @@ if($add_item)
 	{
 		header('web/add_item');
 	}
-else
-{
-	echo "not on add item page";
-}
+	else
+	{
+		echo "not on add item page";
+	}
 
 }
 
@@ -126,10 +126,10 @@ if($search_item)
 	{
 		header('web/search_item');
 	}
-else
-{
-	echo "not on search page";
-}
+	else
+	{
+		echo "not on search page";
+	}
 
 }
 
@@ -137,14 +137,14 @@ $logout = $_POST['logout button']; //if logout button is pressed by user
  
 if($logout)
 {
-	if($_SESSION["userType"] == 'user')
+		if($_SESSION["userType"] == 'user')
+		{
+			header('web/logout');
+		}
+	else
 	{
-		header('web/logout');
+		echo "not on logout page";
 	}
-else
-{
-	echo "not on logout page";
-}
 
 }
 
