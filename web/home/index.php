@@ -112,6 +112,7 @@ $item = array();
 
 while ($line = pg_fetch_assoc($rs))
 	{
+		echo $line;
 		$item[] = $line;
  	}
 
