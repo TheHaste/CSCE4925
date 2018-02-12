@@ -153,8 +153,7 @@ else
 }
 
 
-$query = "SELECT * FROM name_info";
-$result = pg_query($con,$querty) or die("Cannot execute query: $query\n");
+
 
 
 
@@ -261,9 +260,7 @@ $result = pg_query($con,$querty) or die("Cannot execute query: $query\n");
 								</tr> 
                   </thead>
                   <tbody>
-			<?php while($item = pg_fetch_assoc($result))
-				{
-					echo "<tr>";
+			
                           <tr>
                             <td align="center">
                               <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
@@ -273,10 +270,10 @@ $result = pg_query($con,$querty) or die("Cannot execute query: $query\n");
 
                           
                      
-                            <td><?php echo $item[0] ['name'];?></td>
-                            <td><?php echo $item[0] ['serial_number']?></td>
-		            <td>	<?php echo $item[0] ['brand'];?> </td>
-                            <td>	<?php echo $item[0] ['model'];?> </td>
+                            <td></td>
+                            <td></td>
+		            <td>	 </td>
+                            <td> </td>
 							
 							<td>   </td>
 							<td>   </td>
@@ -286,7 +283,7 @@ $result = pg_query($con,$querty) or die("Cannot execute query: $query\n");
 							<td>	</td>
 							
 				
-				echo "</tr>";}echo "</table>";?>			
+							
 				
                           </tr>
 						  
