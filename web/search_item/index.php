@@ -151,16 +151,16 @@
                             <!--<td class="hidden-xs">1</td>-->
                             </td>
                             <!--<td class="hidden-xs">1</td>-->
-                            <td>Laptop</td>
-                            <td>12345-096</td>
-							<td>Dell</td>
-							<td>New Model</td>
-							<td>Reggie</td>
-							<td>Dallas</td>
-							<td>$125</td>
-							<td>02/10/2018</td>
-							<td>02/12/2018</td>
-							<td>02/19/2018</td>
+                            <td></td>
+                            <td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
 							
                           </tr>
 						  <td align="center">
