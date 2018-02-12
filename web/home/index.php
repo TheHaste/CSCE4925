@@ -104,9 +104,9 @@ if($logout)
 
 $query = "SELECT * FROM name_info;"; 
 
-echo "conn = "; echo $conn;
+$rs = pg_query($conn, "SELECT * FROM name_info") or die("Cannot execute query: $query\n");
 
-$rs = pg_query($conn, "SELECT * FROM name_info"); //or die("Cannot execute query: $query\n");
+echo "rs = "; echo $rs;
 
 $item = array();
 
@@ -114,9 +114,6 @@ while ($line = pg_fetch_assoc($rs))
 	{
 		$item[] = $line;
  	}
-
-echo $item[0];
-echo $item[0]['name_id'];
 
 ?>
 
