@@ -86,11 +86,8 @@ $logout = $_POST['logout button']; //if logout button is pressed by admin
 
 if($logout)
 {
-	if($_SESSION["userType"] == 'admin')
-	{
-		header('web/logout');
-		session_destroy();
-	}
+	header('web/logout');
+}
 else
 {
 	echo "not on logout page";
@@ -143,7 +140,6 @@ if($logout)
 	if($_SESSION["userType"] == 'user')
 	{
 		header('web/logout');
-		session_destroy();
 	}
 else
 {
@@ -152,9 +148,11 @@ else
 
 }
 
-$query = "SELECT * FROM name_info"; 
+$query = "SELECT * FROM name_info;"; 
 
-$rs = pg_query($conn, $query) or die("Cannot execute query: $query\n");
+$rs = pg_query($conn, $query); //or die("Cannot execute query: $query\n");
+
+echo $rs;
 
 $item = array();
 
