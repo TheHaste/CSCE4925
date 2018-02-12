@@ -260,7 +260,7 @@ else
 								</tr> 
                   </thead>
                   <tbody>
-			 <!-- <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">-->
+			
                           <tr>
                             <td align="center">
                               <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
