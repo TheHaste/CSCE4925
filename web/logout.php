@@ -1,5 +1,5 @@
 <?php 
 	$_SESSION = array();
 	session_destroy();
-	header("location: /home");
+	header("location: /index");
 ?>
