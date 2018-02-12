@@ -105,7 +105,9 @@ if($logout)
 
 $query = "SELECT * FROM name_info;"; 
 
-$rs = pg_query($conn, $query) or die("Cannot execute query: $query\n");
+echo "conn = "; echo $conn;
+
+$rs = pg_query($conn, $query); //or die("Cannot execute query: $query\n");
 
 $item = array();
 
