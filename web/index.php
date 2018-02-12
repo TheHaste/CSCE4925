@@ -1,4 +1,6 @@
 <?php
+//Login Index
+
 session_start(); //start user session to send data between pages
 
 if($_POST['admin'] == 'Admin Button'){ //if admin button is pressed

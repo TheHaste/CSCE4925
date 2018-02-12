@@ -1,4 +1,6 @@
 <?php
+//Home Page Index
+
 require('/app/web/connect.php');
 
 session_start(); //start user session to send data between pages
@@ -19,7 +21,7 @@ else if($_SESSION["userType"] == 'user'){
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home_page</title>
+    <title>Home</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900i&amp;subset=cyrillic,latin-ext">
