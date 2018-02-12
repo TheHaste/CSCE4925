@@ -11,11 +11,11 @@ $conn = pg_connect("host=ec2-54-235-244-185.compute-1.amazonaws.com dbname=d8u7t
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-else{
-		echo "Database connection works!!!!";
+//else{
+		//echo "Database connection works!!!!";
 	
 	
-}
+//}
 
 ?>
 
