@@ -53,15 +53,15 @@ else if($_SESSION["userType"] == 'user'){
 	<!--Nav bar settings-->
         <nav class="navbar navbar-default navigation-clean" style="background-color:rgb(72,143,174);min-width:0px;max-width:10001px;margin-right:0px;margin-top:-51px;">
             <div class="container">
-                <div class="navbar-header"><a class="navbar-brand" href="#">Meridian Solutions</a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+                <div class="navbar-header"><a class="navbar-brand" href="/home">Meridian Solutions</a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
                 <div
                     class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-right" style="margin-top:0px;margin-right:-20px;">
 					   <li role="presentation"><a href="/add_item" style="color:rgb(51,51,51);">Add Item</a></li>
-                        <li role="presentation"><a href="#" style="color:rgb(51,51,51);">Search Item</a></li>
-						<li role="presentation"><a href="#" style="color:rgb(51,51,51);">Settings </a></li>
-						<li role="presentation"><a href="#" style="color:rgb(51,51,51);">Reports </a></li>
-                        <li role="presentation"><a href="#" style="color:rgb(51,51,51);">Logout </a></li>
+                        <li role="presentation"><a href="/search_item" style="color:rgb(51,51,51);">Search Item</a></li>
+						<li role="presentation"><a href="/settings" style="color:rgb(51,51,51);">Settings </a></li>
+						<li role="presentation"><a href="/reports" style="color:rgb(51,51,51);">Reports </a></li>
+                        <li role="presentation"><a href="/logout.php" style="color:rgb(51,51,51);">Logout </a></li>
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"> </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li role="presentation"><a href="#">First Item</a></li>
@@ -82,7 +82,7 @@ else if($_SESSION["userType"] == 'user'){
     <div class="row">
    
     
-        <div class="col-md-10 col-md-offset-1" style="margin:0; margin-left: auto; margin-left: auto;">
+        <div class="col-md-10 col-md-offset-1">
 
             <div class="panel panel-default panel-table">
               <div class="panel-heading">
