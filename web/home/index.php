@@ -152,7 +152,7 @@ else
 
 }
 
-$query = "SELECT * FROM name_info"; 
+$query = "SELECT * FROM asset_names"; 
 
 $rs = pg_query($conn, $query) or die("Cannot execute query: $query\n");
 
