@@ -29,11 +29,6 @@ if($add_item)
 	{
 		header('web/add_item');
 	}
-	else
-	{
-		echo "not on add item page";
-	}
-
 }
 
 $search_item = $_POST['search item button']; //if search button is pressed by admin
@@ -44,11 +39,6 @@ if($search_item)
 	{
 		header('web/search_item');
 	}
-	else
-	{
-		echo "not on search page";
-	}
-
 }
 
 $settings = $_POST['settings button']; //if settings button is pressed by admin
@@ -59,11 +49,6 @@ if($settigs)
 	{
 		header('web/settings');
 	}
-	else
-	{
-		echo "not on settings page";
-	}
-
 }
 
 $reports = $_POST['reports button']; //if reports button is pressed by admin
@@ -74,11 +59,6 @@ if($reports)
 	{
 		header('web/reports');
 	}
-	else
-	{
-		echo "not on reports page";
-	}
-
 }
 
 $logout = $_POST['logout button']; //if logout button is pressed by admin
@@ -87,11 +67,6 @@ if($logout)
 {
 	header('web/logout');
 }
-	else
-	{
-		echo "not on logout page";
-	}
-
 
 if($_SESSION["userType"] == 'user') //if user button is pressed
 { 
@@ -108,11 +83,6 @@ if($add_item)
 	{
 		header('web/add_item');
 	}
-	else
-	{
-		echo "not on add item page";
-	}
-
 }
 
 $search_item = $_POST['search item button']; //if search item button is pressed by user
@@ -123,11 +93,6 @@ if($search_item)
 	{
 		header('web/search_item');
 	}
-	else
-	{
-		echo "not on search page";
-	}
-
 }
 
 $logout = $_POST['logout button']; //if logout button is pressed by user
@@ -138,11 +103,6 @@ if($logout)
 		{
 			header('web/logout');
 		}
-	else
-	{
-		echo "not on logout page";
-	}
-
 }
 
 $query = "SELECT * FROM name_info;"; 
