@@ -267,7 +267,8 @@ $rs = pg_query($con,$querty) or die("Cannot execute query: $query\n");
                               <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                               <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                             </td>
-		            
+		           <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
+
                             <?php while ( $item = pg_fetch_assoc($rs))
                             <!--<td class="hidden-xs">1</td>-->
                             <td><?php echo $item[0] ['name'];?></td>
@@ -282,10 +283,11 @@ $rs = pg_query($con,$querty) or die("Cannot execute query: $query\n");
 							<td>	</td>
 							<td>	</td>
 							
-							
+			<input type="submit" name="search" value="Find">
+
 							<?php endwhile ?>		
 							
-							
+				
                           </tr>
 						  
 						  <tr>
