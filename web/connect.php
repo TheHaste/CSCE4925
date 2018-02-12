@@ -17,6 +17,22 @@ if ($conn->connect_error) {
 	
 //}
 
+$query = "SELECT * FROM name_info;"; 
+
+echo "conn = "; echo $conn;
+
+$rs = pg_query($conn, $query); or die("Cannot execute query: $query\n");
+
+$item = array();
+
+while ($line = pg_fetch_assoc($rs))
+	{
+		$item[] = $line;
+ 	}
+
+echo $item[0];
+echo $item[0]['name_id'];
+
 ?>
 
 
