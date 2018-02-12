@@ -152,7 +152,16 @@ else
 
 }
 
+$query = "SELECT * FROM name_info"; 
 
+$rs = pg_query($conn, $query) or die("Cannot execute query: $query\n");
+
+$item = array();
+
+while ($line = pg_fetch_assoc($rs))
+	{
+		$item[] = $line;
+ 	}
 
 
 
@@ -249,16 +258,18 @@ else
                         <!--<th class="hidden-xs">ID</th>-->
                         <th>Name</th>
                         <th>Serial #</th>
-						<th>Brand </th>
-						<th>Model </th>
-						<th>Assigned</th>
-						<th>Location</th>
-						<th>Cost</th>
-						<th>Date Deployed</th>
-						<th>Date Surplused</th>
-						<th>Last Updated</th>
-								</tr> 
-                  </thead>
+			<th>Brand </th>
+			<th>Model </th>
+			<th>Assigned</th>
+			<th>Location</th>
+			<th>Cost</th>
+			<th>Date Deployed</th>
+			<th>Date Surplused</th>
+			<th>Last Updated</th>
+			    
+		         </tr> 
+			</thead>
+			
                   <tbody>
 			
                           <tr>
@@ -270,17 +281,16 @@ else
 
                           
                      
-                            <td></td>
-                            <td></td>
-		            <td>	 </td>
-                            <td> </td>
-							
-							<td>   </td>
-							<td>   </td>
-							<td>     </td>
-							<td>	</td>
-							<td>	</td>
-							<td>	</td>
+                            <td><?php echo $item[0]['name_id'];?></td>
+                            <td><?php echo $item[0]['serial_number'];?></td>
+		            <td><?php echo $item[0]['brand'];?></td>
+                            <td><?php echo $item[0]['model'];?></td>
+			    <td><?php echo $item[0]['assigned'];?></td>
+			    <td><?php echo $item[0]['location'];?></td>
+			    <td><?php echo $item[0]['cost'];?></td>
+			    <td><?php echo $item[0]['date_deployed'];?></td>
+			    <td><?php echo $item[0]['date_surplused'];?></td>
+			    <td><?php echo $item[0]['last_updated'];?></td>
 							
 				
 							
