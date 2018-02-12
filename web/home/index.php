@@ -154,7 +154,8 @@ else
 
 
 
-
+$query = "SELECT *FROM name_info";
+$rs = pg_query($con,$querty) or die("Cannot execute query: $query\n");
 
 
 
@@ -260,23 +261,29 @@ else
 								</tr> 
                   </thead>
                   <tbody>
+			 <!-- <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">-->
                           <tr>
                             <td align="center">
                               <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                               <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                             </td>
+		            
+                            <?php while ( $item = pg_fetch_assoc($rs))
                             <!--<td class="hidden-xs">1</td>-->
-                          <td></td>
-                          <td></td>
-			  <td>	 </td>
-			  <td> </td>
-			   <td></td>
-			   <td></td>
-			   <td></td>
-			   <td></td>
-			   <td></td>
-			   <td></td>
+                            <td><?php echo $item[0] ['name'];?></td>
+                            <td><?php echo $item[0] ['serial_number']?></td>
+		            <td><?php echo $item[0] ['brand'];?>	 </td>
+                            <td><?php echo $item[0] ['model'];?>	 </td>
 							
+							<td>   </td>
+							<td>   </td>
+							<td>     </td>
+							<td>	</td>
+							<td>	</td>
+							<td>	</td>
+							
+							
+							<?php endwhile ?>		
 							
 							
                           </tr>
