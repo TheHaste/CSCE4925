@@ -12,6 +12,153 @@ else if($_SESSION["userType"] == 'user'){
 	//echo "Hello I am a standard user!!";
 }
 
+session_start(); //start user session to send data between pages
+
+
+if($_SESSION["userType"] == 'admin') //if admin button is pressed
+{ 
+	$edit = true;
+	$delete = true;
+	$save = true;
+}
+
+$add_item = $_POST['add item button']; //if add item button is pressed by admin
+
+if($add_item)
+{
+	if($_SESSION["userType"] == 'admin')
+	{
+		header('web/add_item');
+	}
+else
+{
+	echo "not on add item page";
+}
+
+}
+
+$search_item = $_POST['search item button']; //if search button is pressed by admin
+
+if($search_item)
+{
+	if($_SESSION["userType"] == 'admin')
+	{
+		header('web/search_item');
+	}
+else
+{
+	echo "not on search page";
+}
+
+}
+
+$settings = $_POST['settings button']; //if settings button is pressed by admin
+
+if($settigs)
+{
+	if($_SESSION["userType"] == 'admin')
+	{
+		header('web/settings');
+	}
+else
+{
+	echo "not on settings page";
+}
+
+}
+
+$reports = $_POST['reports button']; //if reports button is pressed by admin
+
+if($reports)
+{
+	if($_SESSION["userTyppe"] == 'admin')
+	{
+		header('web/reports');
+	}
+else
+{
+	echo "not on reports page";
+}
+
+}
+
+$logout = $_POST['logout button']; //if logout button is pressed by admin
+
+if($logout)
+{
+	if($_SESSION["userType"] == 'admin')
+	{
+		header('web/logout');
+		session_destroy();
+	}
+else
+{
+	echo "not on logout page";
+}
+
+}
+
+
+if($_SESSION["userType"] == 'user') //if user button is pressed
+{ 
+	$edit = false;
+	$delete = false;
+	$save = false;
+}
+
+$add_item = $_POST['add item button']; //if add item button is pressed by user
+
+if($add_item)
+{
+	if($_SESSION["userType"] == 'user')
+	{
+		header('web/add_item');
+	}
+else
+{
+	echo "not on add item page";
+}
+
+}
+
+$search_item = $_POST['search item button']; //if search item button is pressed by user
+
+if($search_item)
+{
+	if($_SESSION["userType"] == 'user')
+	{
+		header('web/search_item');
+	}
+else
+{
+	echo "not on search page";
+}
+
+}
+
+$logout = $_POST['logout button']; //if logout button is pressed by user
+ 
+if($logout)
+{
+	if($_SESSION["userType"] == 'user')
+	{
+		header('web/logout');
+		session_destroy();
+	}
+else
+{
+	echo "not on logout page";
+}
+
+}
+
+
+
+
+
+
+
+
 ?>
 
 
