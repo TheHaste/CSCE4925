@@ -59,13 +59,6 @@ if($reports)
 	}
 }
 
-$logout = $_POST['logout button']; //if logout button is pressed by admin
-
-if($logout)
-{
-	header('web/logout');
-}
-
 if($_SESSION["userType"] == 'user') //if user button is pressed
 { 
 	$edit = false;
@@ -97,10 +90,8 @@ $logout = $_POST['logout button']; //if logout button is pressed by user
  
 if($logout)
 {
-		if($_SESSION["userType"] == 'user')
-		{
-			header('web/logout');
-		}
+		pg_close($conn);
+		header('web/logout');
 }
 
 $query = "SELECT * FROM name_info;"; 
