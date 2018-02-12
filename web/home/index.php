@@ -12,8 +12,6 @@ else if($_SESSION["userType"] == 'user'){
 	//echo "Hello I am a standard user!!";
 }
 
-
-
 if($_SESSION["userType"] == 'admin') //if admin button is pressed
 { 
 	$edit = true;
@@ -118,7 +116,7 @@ while ($line = pg_fetch_assoc($rs))
 		$item[] = $line;
  	}
 
-
+echo $item[0];
 
 ?>
 
