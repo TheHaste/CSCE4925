@@ -80,19 +80,17 @@ if($reports)
 	}
 
 }
-/*
+
 $logout = $_POST['logout button']; //if logout button is pressed by admin
 
 if($logout)
 {
 	header('web/logout');
-
+}
 	else
 	{
 		echo "not on logout page";
 	}
-
-}
 
 
 if($_SESSION["userType"] == 'user') //if user button is pressed
@@ -160,9 +158,6 @@ while ($line = pg_fetch_assoc($rs))
 		$item[] = $line;
  	}
 
-
-
-*/
 
 
 ?>
