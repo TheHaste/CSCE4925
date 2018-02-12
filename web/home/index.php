@@ -12,7 +12,6 @@ else if($_SESSION["userType"] == 'user'){
 	//echo "Hello I am a standard user!!";
 }
 
-session_start(); //start user session to send data between pages
 
 
 if($_SESSION["userType"] == 'admin') //if admin button is pressed
@@ -81,7 +80,7 @@ if($reports)
 	}
 
 }
-
+/*
 $logout = $_POST['logout button']; //if logout button is pressed by admin
 
 if($logout)
@@ -163,7 +162,7 @@ while ($line = pg_fetch_assoc($rs))
 
 
 
-
+*/
 
 
 ?>
