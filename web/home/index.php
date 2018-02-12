@@ -153,7 +153,8 @@ else
 }
 
 
-
+$query = "SELECT * FROM name_info";
+$result = pg_query($con,$querty) or die("Cannot execute query: $query\n");
 
 
 
@@ -260,7 +261,9 @@ else
 								</tr> 
                   </thead>
                   <tbody>
-			
+			<?php while($item = pg_fetch_assoc($result))
+				{
+					echo "<tr>";
                           <tr>
                             <td align="center">
                               <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
@@ -270,10 +273,10 @@ else
 
                           
                      
-                            <td></td>
-                            <td></td>
-		            <td>	 </td>
-                            <td>	 </td>
+                            <td><?php echo $item[0] ['name'];?></td>
+                            <td><?php echo $item[0] ['serial_number']?></td>
+		            <td>	<?php echo $item[0] ['brand'];?> </td>
+                            <td>	<?php echo $item[0] ['model'];?> </td>
 							
 							<td>   </td>
 							<td>   </td>
@@ -283,7 +286,7 @@ else
 							<td>	</td>
 							
 				
-							
+				echo "</tr>";}echo "</table>";?>			
 				
                           </tr>
 						  
