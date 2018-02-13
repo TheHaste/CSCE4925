@@ -132,7 +132,7 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
 
                           
                      
-                            <td><?php echo $item[0]['name_id'];?></td>
+                            <td><?php echo $item[0]['id'];?></td>
                             <td><?php echo $item[0]['serial_number'];?></td>
 		            <td><?php echo $item[0]['brand'];?></td>
                             <td><?php echo $item[0]['model'];?></td>
