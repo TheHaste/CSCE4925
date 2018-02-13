@@ -154,16 +154,16 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
                               <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                             </td>
                             <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
+                            <td><?php echo $item[1]['name_id'];?></td>
+                            <td><?php echo $item[1]['serial_number'];?></td>
+			    <td><?php echo $item[1]['brand'];?></td>
+			    <td><?php echo $item[1]['model'];?></td>
+			    <td><?php echo $item[1]['assigned'];?></td>
+			    <td><?php echo $item[1]['location'];?></td>
+			    <td><?php echo $item[1]['cost'];?></td>
+			    <td><?php echo $item[1]['date_deployed'];?></td>
+			    <td><?php echo $item[1]['date_surplused'];?></td>
+			    <td><?php echo $item[1]['last_updated'];?></td>
 							
 							
 							
@@ -175,16 +175,16 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
                               <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                             </td>
                             <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-		            <td></td>			
+                            <td><?php echo $item[2]['name_id'];?></td>
+                            <td><?php echo $item[2]['serial_number'];?></td>
+			    <td><?php echo $item[2]['brand'];?></td>
+			    <td><?php echo $item[2]['model'];?></td>
+			    <td><?php echo $item[2]['assigned'];?></td>
+			    <td><?php echo $item[2]['location'];?></td>
+			    <td><?php echo $item[2]['cost'];?></td>
+			    <td><?php echo $item[2]['date_deployed'];?></td>
+			    <td><?php echo $item[2]['date_surplused'];?></td>
+		            <td><?php echo $item[2]['last_updated'];?></td>			
 							
 							
 							
@@ -196,16 +196,16 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
                               <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                             </td>
                             <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>
-			    <td></td>
-                            <td></td>			
-			    <td></td>
-                            <td></td>
-			    <td></td>
-                            <td></td>				
-			    <td></td>
-                            <td></td>				
+                            <td><?php echo $item[3]['name_id'];?></td>
+                            <td><?php echo $item[3]['serial_number'];?></td>
+			    <td><?php echo $item[3]['brand'];?></td>
+                            <td><?php echo $item[3]['model'];?></td>			
+			    <td><?php echo $item[3]['assigned'];?></td>
+                            <td><?php echo $item[3]['location'];?></td>
+			    <td><?php echo $item[3]['cost'];?></td>
+                            <td><?php echo $item[3]['date_deployed'];?></td>				
+			    <td><?php echo $item[3]['date_surplused'];?></td>
+                            <td><?php echo $item[3]['last_updated'];?></td>				
 							
                           </tr>
 						  
@@ -215,16 +215,16 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
                               <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                             </td>
                             <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>
-			    <td></td>
-                            <td></td>				
-			    <td></td>
-                            <td></td>				
-			    <td></td>
-                            <td></td>	
-			    <td></td>
-                            <td></td>				   
+                            <td><?php echo $item[4]['name_id'];?></td>
+                            <td><?php echo $item[4]['serial_number'];?></td>
+			    <td><?php echo $item[4]['brand'];?></td>
+                            <td><?php echo $item[4]['model'];?></td>				
+			    <td><?php echo $item[4]['assigned'];?></td>
+                            <td><?php echo $item[4]['location'];?></td>				
+			    <td><?php echo $item[4]['cost'];?></td>
+                            <td><?php echo $item[4]['date_deployed'];?></td>	
+			    <td><?php echo $item[4]['date_surplused'];?></td>
+                            <td><?php echo $item[4]['last_updated'];?></td>				   
                           </tr>
 						  
 						   <tr>
@@ -233,16 +233,16 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
                               <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                             </td>
                             <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>			
-			    <td></td>
-                            <td></td>
-			    <td></td>
-                            <td></td>
-			    <td></td>
-                            <td></td>
-			    <td></td>
-                            <td></td>
+                            <td><?php echo $item[5]['name_id'];?></td>
+                            <td><?php echo $item[5]['serial_number'];?></td>			
+			    <td><?php echo $item[5]['brand'];?></td>
+                            <td><?php echo $item[5]['model'];?></td>
+			    <td><?php echo $item[5]['assigned'];?></td>
+                            <td><?php echo $item[5]['location'];?></td>
+			    <td><?php echo $item[5]['cost'];?></td>
+                            <td><?php echo $item[5]['date_deployed'];?></td>
+			    <td><?php echo $item[5]['date_surplused'];?></td>
+                            <td><?php echo $item[5]['last_updated'];?></td>
                           </tr>
 						  
 						   <tr>
@@ -251,16 +251,16 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
                               <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
                             </td>
                             <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>							
-			    <td></td>
-                            <td></td>
-			    <td></td>
-                            <td></td>
-			    <td></td>
-                            <td></td>
-			    <td></td>
-                            <td></td>
+                            <td><?php echo $item[6]['name_id'];?></td>
+                            <td><?php echo $item[6]['serial_number'];?></td>							
+			    <td><?php echo $item[6]['brand'];?></td>
+                            <td><?php echo $item[6]['model'];?></td>
+			    <td><?php echo $item[6]['assigned'];?></td>
+                            <td><?php echo $item[6]['location'];?></td>
+			    <td><?php echo $item[6]['cost'];?></td>
+                            <td><?php echo $item[6]['date_deployed'];?></td>
+			    <td><?php echo $item[6]['date_surplused'];?></td>
+                            <td><?php echo $item[6]['last_updated'];?></td>
                           </tr>
 						  
                         </tbody>
