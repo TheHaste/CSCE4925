@@ -1,15 +1,7 @@
 <?php
 //Home Page Index
 
-//require('/app/web/connect.php');
-
-// Create connection
-$conn = pg_connect("host=ec2-54-235-244-185.compute-1.amazonaws.com dbname=d8u7tvrq18kkt user=wseudmwqkwlvhe password=68662358186783d87ddb7c2f1676eff1c5eb41678bb8cc8b9b16ea1e420abc2b");
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+require('/app/web/connect.php');
 
 session_start(); //start user session to send data between pages
 
@@ -102,19 +94,16 @@ if($logout)
 		header('web/logout');
 }
 
-$query = "SELECT * FROM name_info;"; 
+$query = "SELECT * FROM assets;"; 
 
-$rs = pg_query($conn, "SELECT * FROM name_info");
-
-echo "rs = "; echo $rs;
+$rs = pg_query($conn, $query);
 
 $item = array();
 
 while ($line = pg_fetch_assoc($rs))
-	{
-		echo $line;
-		$item[] = $line;
- 	}
+{
+	$item[] = $line;
+}
 
 ?>
 
