@@ -6,101 +6,23 @@ require('/app/web/connect.php');
 session_start(); //start user session to send data between pages
 
 if($_SESSION["userType"] == 'admin'){ //if admin button is pressed
-	//echo "Hello I'm an admin!!!";
-}
-else if($_SESSION["userType"] == 'user'){
-	//echo "Hello I am a standard user!!";
-}
-
-if($_SESSION["userType"] == 'admin') //if admin button is pressed
-{ 
 	$edit = true;
 	$delete = true;
 	$save = true;
 }
-
-$add_item = $_POST['add item button']; //if add item button is pressed by admin
-
-if($add_item)
-{
-	if($_SESSION["userType"] == 'admin')
-	{
-		header('web/add_item');
-	}
-}
-
-$search_item = $_POST['search item button']; //if search button is pressed by admin
-
-if($search_item)
-{
-	if($_SESSION["userType"] == 'admin')
-	{
-		header('web/search_item');
-	}
-}
-
-$settings = $_POST['settings button']; //if settings button is pressed by admin
-
-if($settigs)
-{
-	if($_SESSION["userType"] == 'admin')
-	{
-		header('web/settings');
-	}
-}
-
-$reports = $_POST['reports button']; //if reports button is pressed by admin
-
-if($reports)
-{
-	if($_SESSION["userTyppe"] == 'admin')
-	{
-		header('web/reports');
-	}
-}
-
-if($_SESSION["userType"] == 'user') //if user button is pressed
-{ 
+else if($_SESSION["userType"] == 'user'){
 	$edit = false;
 	$delete = false;
 	$save = false;
 }
 
-$add_item = $_POST['add item button']; //if add item button is pressed by user
+//fill table
+$query = "SELECT * FROM assets;";
+$item = array(); //array for assets
 
-if($add_item)
-{
-	if($_SESSION["userType"] == 'user')
-	{
-		header('web/add_item');
-	}
-}
+$rs = pg_query($conn, $query); //run query
 
-$search_item = $_POST['search item button']; //if search item button is pressed by user
-
-if($search_item)
-{
-	if($_SESSION["userType"] == 'user')
-	{
-		header('web/search_item');
-	}
-}
-
-$logout = $_POST['logout button']; //if logout button is pressed by user
- 
-if($logout)
-{
-		pg_close($conn);
-		header('web/logout');
-}
-
-$query = "SELECT * FROM assets;"; 
-
-$rs = pg_query($conn, $query);
-
-$item = array();
-
-while ($line = pg_fetch_assoc($rs))
+while ($line = pg_fetch_assoc($rs)) //fetch and fill array
 {
 	$item[] = $line;
 }
@@ -148,28 +70,20 @@ while ($line = pg_fetch_assoc($rs))
 	<!--Nav bar settings-->
         <nav class="navbar navbar-default navigation-clean" style="background-color:rgb(72,143,174);min-width:0px;max-width:10001px;margin-right:0px;margin-top:-51px;">
             <div class="container">
-                <div class="navbar-header"><a class="navbar-brand" href="/home">Meridian Solutions</a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+              <div class="navbar-header"><a class="navbar-brand" href="/home">Meridian Solutions</a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+			  </div>
                 <div
                     class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-right" style="margin-top:0px;margin-right:-20px;">
-					   <li role="presentation"><a href="/add_item" style="color:rgb(51,51,51);">Add Item</a></li>
+					   <?php if($_SESSION["userType"] == 'admin') { ?><li role="presentation"><a href="/add_item" style="color:rgb(51,51,51);">Add Item</a></li><?php } ?> <!-- if an admin, show add item button -->
                         <li role="presentation"><a href="/search_item" style="color:rgb(51,51,51);">Search Item</a></li>
-						<li role="presentation"><a href="/settings" style="color:rgb(51,51,51);">Settings </a></li>
+						<?php if($_SESSION["userType"] == 'admin') { ?><li role="presentation"><a href="/settings" style="color:rgb(51,51,51);">Settings </a></li><?php } ?> <!-- if an admin, show settings button -->
 						<li role="presentation"><a href="/reports" style="color:rgb(51,51,51);">Reports </a></li>
-                        <li role="presentation"><a href="/logout.php" style="color:rgb(51,51,51);">Logout </a></li>
-                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"> </a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li role="presentation"><a href="#">First Item</a></li>
-                                <li role="presentation"><a href="#">Second Item</a></li>
-                                <li role="presentation"><a href="#">Third Item</a></li>
-								<li role="presentation"><a href="#">Fourth Item</a></li>
-								
-                            </ul>
-                        </li>
+                        <li role="presentation"><a href="/logout.php" style="color:rgb(51,51,51);">Logout </a></li>							
                     </ul>
-            </div>
-    </div>
-    </nav>
+				</div>
+			</div>
+		</nav>
     </div>
     <div class="col-md-10 col-md-offset-1" style="width:900px;margin-bottom:0px;margin-top:58px;padding-right:21px;padding-left:-0px;padding-top:-33px;"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
 
