@@ -1,15 +1,5 @@
 <?php
 //search page
-
-
-
-
-
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 
@@ -79,7 +69,7 @@
         </form>
     </div>
     <div class="col-md-12 col-md-offset-0" style="width:250px;padding-bottom:486px;padding-right:-1px;margin-top:-160px;">
-        <div class="search-container"></div>
+        <!--<div class="search-container"></div>-->
         <h1 style="font-size:13px;color:rgb(255,1,1);padding-bottom:36px;margin-top:62px;"><form class="form-inline">
   <div class="form-group">
     
@@ -329,4 +319,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
 </body>
 
+</html>
 </html>
