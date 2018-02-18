@@ -52,7 +52,13 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
     <link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/thumbnails1.css">
-    
+	
+	<!-- Data Tables -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.16/af-2.2.2/b-1.5.1/b-colvis-1.5.1/b-html5-1.5.1/cr-1.4.1/kt-2.3.2/r-2.2.1/sc-1.4.4/sl-1.2.5/datatables.min.css"/>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.16/af-2.2.2/b-1.5.1/b-colvis-1.5.1/b-html5-1.5.1/cr-1.4.1/kt-2.3.2/r-2.2.1/sc-1.4.4/sl-1.2.5/datatables.min.js"></script>
+	
 </head>
 
 <!--Nav bar settings-->
@@ -101,194 +107,52 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
                   </div>
                 </div>
               </div>
+			  
               <div class="panel-body">
-                <table class="table table-striped table-bordered table-list">
+                <table id="table_id" class="table table-striped table-bordered table-list">
                   <thead>
                     <tr>
                         <th><em class="fa fa-cog"></em></th>
-                        <!--<th class="hidden-xs">ID</th>-->
                         <th>Name</th>
-                        <th>Serial #</th>
-			<th>Brand </th>
-			<th>Model </th>
-			<th>Assigned</th>
-			<th>Location</th>
-			<th>Cost</th>
-			<th>Date Deployed</th>
-			<th>Date Surplused</th>
-			<th>Last Updated</th>
-			    
-		         </tr> 
-			</thead>
+                        <th>Serial Number</th>
+						<th>Brand </th>
+						<th>Model </th>
+						<th>Assigned</th>
+						<th>Location</th>
+						<th>Cost</th>
+						<th>Date Deployed</th>
+						<th>Date Surplused</th>
+						<th>Last Updated</th>
+					</tr> 
+				  </thead>
 			
-                  <tbody>
-			
-                          <tr>
-                            <td align="center">
-                              <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                              <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                            </td>
-		         
-
-                          
-                     
-                            <td><?php echo $item[0]['name_id'];?></td>
-                            <td><?php echo $item[0]['serial_number'];?></td>
-		            <td><?php echo $item[0]['brand'];?></td>
-                            <td><?php echo $item[0]['model'];?></td>
-			    <td><?php echo $item[0]['assigned'];?></td>
-			    <td><?php echo $item[0]['location'];?></td>
-			    <td><?php echo $item[0]['cost'];?></td>
-			    <td><?php echo $item[0]['date_deployed'];?></td>
-			    <td><?php echo $item[0]['date_surplused'];?></td>
-			    <td><?php echo $item[0]['last_updated'];?></td>
-							
-				
-							
-				
-                          </tr>
-						  
-						  <tr>
-                            <td align="center">
-                              <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                              <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                            </td>
-                            <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-							
-							
-							
-                          </tr>
-						  
-						   <tr>
-                            <td align="center">
-                              <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                              <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                            </td>
-                            <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-			    <td></td>
-		            <td></td>			
-							
-							
-							
-                          </tr>
-						  
-						   <tr>
-                            <td align="center">
-                              <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                              <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                            </td>
-                            <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>
-			    <td></td>
-                            <td></td>			
-			    <td></td>
-                            <td></td>
-			    <td></td>
-                            <td></td>				
-			    <td></td>
-                            <td></td>				
-							
-                          </tr>
-						  
-						   <tr>
-                            <td align="center">
-                              <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                              <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                            </td>
-                            <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>
-			    <td></td>
-                            <td></td>				
-			    <td></td>
-                            <td></td>				
-			    <td></td>
-                            <td></td>	
-			    <td></td>
-                            <td></td>				   
-                          </tr>
-						  
-						   <tr>
-                            <td align="center">
-                              <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                              <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                            </td>
-                            <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>			
-			    <td></td>
-                            <td></td>
-			    <td></td>
-                            <td></td>
-			    <td></td>
-                            <td></td>
-			    <td></td>
-                            <td></td>
-                          </tr>
-						  
-						   <tr>
-                            <td align="center">
-                              <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                              <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                            </td>
-                            <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>							
-			    <td></td>
-                            <td></td>
-			    <td></td>
-                            <td></td>
-			    <td></td>
-                            <td></td>
-			    <td></td>
-                            <td></td>
-                          </tr>
-						  
-                        </tbody>
+                   <tbody>
+					<tr>
+                        <td><?php echo $item[0]['name_id'];?></td>
+                        <td><?php echo $item[0]['serial_number'];?></td>
+						<td><?php echo $item[0]['brand'];?></td>
+                        <td><?php echo $item[0]['model'];?></td>
+						<td><?php echo $item[0]['assigned'];?></td>
+						<td><?php echo $item[0]['location'];?></td>
+						<td><?php echo $item[0]['cost'];?></td>
+						<td><?php echo $item[0]['date_deployed'];?></td>
+						<td><?php echo $item[0]['date_surplused'];?></td>
+						<td><?php echo $item[0]['last_updated'];?></td>	
+					</tr>  
+                   </tbody>
+				  
                 </table>
-            
               </div>
-              <div class="panel-footer">
-                <div class="row">
-                  <div class="col col-xs-4">Page 1 of 5
-                  </div>
-                  <div class="col col-xs-8">
-                    <ul class="pagination hidden-xs pull-right">
-                      <li><a href="#">1</a></li>
-                      <li><a href="#">2</a></li>
-                      <li><a href="#">3</a></li>
-                      <li><a href="#">4</a></li>
-                      <li><a href="#">5</a></li>
-                    </ul>
-                    <ul class="pagination visible-xs pull-right">
-                        <li><a href="#">«</a></li>
-                        <li><a href="#">»</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+			  
             </div>
+		</div>
+		
+		$(document).ready( function () {
+    $('#table_id').DataTable();
+} );
 
-</div></div></div>
+	</div>
+</div>
         <div style="height:10px;"></div>
     </div>
     <div></div>
