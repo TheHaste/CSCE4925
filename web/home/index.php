@@ -104,7 +104,7 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
               </div>
 			  
               <div class="panel-body">
-                <table id="table_id" class="table table-striped table-bordered table-list">
+                <table id="assets" class="table table-striped table-bordered table-list">
                   <thead>
                     <tr>
                         <th>Name</th>
@@ -151,7 +151,16 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
     <script src="assets/js/bs-animation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-	<script $('#table_id').dataTable(); </script>
+	<script $('#assets').DataTable(); 
+			columns: [
+            { title: "Name" },
+            { title: "Position" },
+            { title: "Office" },
+            { title: "Extn." },
+            { title: "Start date" },
+            { title: "Salary" }
+        ]
+		</script>
 	
 	
     
