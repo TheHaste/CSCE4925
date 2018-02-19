@@ -29,8 +29,6 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
 
 ?>
 
-
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -125,7 +123,7 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
 						<th>Last Updated</th>
 					</tr> 
 				  </thead>
-			
+
                    <tbody>
 					<tr>
                         <td><?php echo $item[0]['name_id'];?></td>
@@ -142,14 +140,11 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
                    </tbody>
 				  
                 </table>
-              </div>
 			  
-            </div>
-		</div>
+			  </div>
+			</div>
 		
-		$(document).ready( function () {
-    $('#table_id').DataTable();
-} );
+		$('#table_id').DataTable();
 
 	</div>
 </div>
