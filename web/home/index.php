@@ -29,7 +29,6 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
 
 ?>
 
-<!DOCTYPE html>
 <html>
 
 <head>
