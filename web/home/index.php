@@ -125,16 +125,16 @@ else if($_SESSION["userType"] == 'user'){
 							//$item[] = $line;
 							echo '
 							<tr>
-							<td>.$item['name_id']td>
-							<td>.$item['serial_number']</td>
-							<td>.$item['brand']</td>
-							<td>.$item['model']</td>
-							<td>.$item['assigned']</td>
-							<td>.$item['location']</td>
-							<td>.$item['cost']</td>
-							<td>.$item['date_deployed']</td>
-							<td>.$item['date_surplused']</td>
-							<td>.$item['last_updated']</td>
+							<td>'.$item['name_id']'td>
+							<td>'.$item['serial_number'].'</td>
+							<td>'.$item['brand'].'</td>
+							<td>'.$item['model'].'</td>
+							<td>'.$item['assigned'].'</td>
+							<td>'.$item['location'].'</td>
+							<td>'.$item['cost'].'</td>
+							<td>'.$item['date_deployed'].'</td>
+							<td>'.$item['date_surplused'].'</td>
+							<td>'.$item['last_updated'].'</td>
 							</tr> 
 							'; 
 						}
