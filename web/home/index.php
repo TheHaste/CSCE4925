@@ -142,7 +142,7 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
 			  
 			  </div>
 			</div>
-		  <script $(document).ready( function () {
+		  <script 
 				$('#table_id').DataTable();
 } );	  </script>
 	</div>
