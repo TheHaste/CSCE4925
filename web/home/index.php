@@ -52,6 +52,9 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/thumbnails1.css">
 	
+	<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+	<script type="text/javascript" src="DataTables/datatables.min.js"></script>
+	
 </head>
 
 <!--Nav bar settings-->
