@@ -151,7 +151,7 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
     <script src="assets/js/bs-animation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-	<script $('#table_id').DataTable(); </script>
+	<script $('#table_id').dataTable(); </script>
 	
 	
     
