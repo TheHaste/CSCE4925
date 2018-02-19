@@ -6,8 +6,6 @@ $conn = pg_connect("host=ec2-54-227-243-210.compute-1.amazonaws.com dbname=d3f2m
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-
-
 ?>
 
 
