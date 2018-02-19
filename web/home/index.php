@@ -52,11 +52,6 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/thumbnails1.css">
 	
-	<!-- Data Tables -->
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.16/af-2.2.2/b-1.5.1/b-colvis-1.5.1/b-html5-1.5.1/cr-1.4.1/kt-2.3.2/r-2.2.1/sc-1.4.4/sl-1.2.5/datatables.min.css"/>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
-	
 </head>
 
 <!--Nav bar settings-->
@@ -142,9 +137,7 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
 			  
 			  </div>
 			</div>
-		  <script 
-				$('#table_id').DataTable();
-		   </script>
+		  
 	</div>
 </div>
         <div style="height:10px;"></div>
@@ -156,7 +149,8 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
     <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
     <script src="assets/js/bs-animation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
-	<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.16/af-2.2.2/b-1.5.1/b-colvis-1.5.1/b-html5-1.5.1/cr-1.4.1/kt-2.3.2/r-2.2.1/sc-1.4.4/sl-1.2.5/datatables.min.js"></script>
+	<script $('#table_id').DataTable(); </script>
+	
 	
     
 </body>
