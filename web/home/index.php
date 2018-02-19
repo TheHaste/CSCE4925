@@ -112,7 +112,7 @@ else if($_SESSION["userType"] == 'user'){
 				  </thead>
 
                    <tbody>
-					<tr>
+					
 					<?php
 						//fill table
 						$query = "SELECT * FROM assets;";
@@ -124,6 +124,7 @@ else if($_SESSION["userType"] == 'user'){
 						{
 							$item[] = $line;
 							/*echo '
+							<tr>
 							 <td>.$item['name_id']td>
 							<td>.$item['serial_number']</td>
 							<td>.$item['brand']</td>
@@ -134,10 +135,11 @@ else if($_SESSION["userType"] == 'user'){
 							<td>.$item['date_deployed']</td>
 							<td>.$item['date_surplused']</td>
 							<td>.$item['last_updated']</td>
+							</tr> 
 							'; */
 						}
 					?>
-					</tr>  
+					 
                    </tbody>
 				  
                 </table>
