@@ -120,12 +120,12 @@ else if($_SESSION["userType"] == 'user'){
 
 						$rs = pg_query($conn, $query); //run query
 
-						while ($line = pg_fetch_assoc($rs)) //fetch and fill array
+						while ($item = pg_fetch_assoc($rs)) //fetch and fill array
 						{
-							$item[] = $line;
-							/*echo '
+							//$item[] = $line;
+							echo '
 							<tr>
-							 <td>.$item['name_id']td>
+							<td>.$item['name_id']td>
 							<td>.$item['serial_number']</td>
 							<td>.$item['brand']</td>
 							<td>.$item['model']</td>
@@ -136,7 +136,7 @@ else if($_SESSION["userType"] == 'user'){
 							<td>.$item['date_surplused']</td>
 							<td>.$item['last_updated']</td>
 							</tr> 
-							'; */
+							'; 
 						}
 					?>
 					 
@@ -162,7 +162,10 @@ else if($_SESSION["userType"] == 'user'){
     <script src="assets/js/bs-animation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
 	
-	<script $('#assets').DataTable(); </script>
+	<script type="text/javascript"> $(document).ready(function() {
+			$(".table").DataTable();
+		});
+		</script>
 	
 	
     
