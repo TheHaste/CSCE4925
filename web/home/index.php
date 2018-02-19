@@ -95,7 +95,7 @@ else if($_SESSION["userType"] == 'user'){
               </div>
 			  
               <div class="panel-body">
-                <table id="assets" class="table table-striped table-bordered table-list">
+                <table id="assets" class="table table-striped table-bordered table-hovered">
                   <thead>
                     <tr>
                         <th>Name</th>
@@ -123,8 +123,8 @@ else if($_SESSION["userType"] == 'user'){
 						while ($line = pg_fetch_assoc($rs)) //fetch and fill array
 						{
 							$item[] = $line;
-							echo '
-							<td>.$item['name_id']td>
+							/*echo '
+							 <td>.$item['name_id']td>
 							<td>.$item['serial_number']</td>
 							<td>.$item['brand']</td>
 							<td>.$item['model']</td>
@@ -134,7 +134,7 @@ else if($_SESSION["userType"] == 'user'){
 							<td>.$item['date_deployed']</td>
 							<td>.$item['date_surplused']</td>
 							<td>.$item['last_updated']</td>
-							';
+							'; */
 						}
 					?>
 					</tr>  
