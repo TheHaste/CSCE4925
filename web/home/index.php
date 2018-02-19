@@ -16,16 +16,7 @@ else if($_SESSION["userType"] == 'user'){
 	$save = false;
 }
 
-//fill table
-$query = "SELECT * FROM assets;";
-$item = array(); //array for assets
 
-$rs = pg_query($conn, $query); //run query
-
-while ($line = pg_fetch_assoc($rs)) //fetch and fill array
-{
-	$item[] = $line;
-}
 
 ?>
 
@@ -122,16 +113,30 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
 
                    <tbody>
 					<tr>
-                        <td><?php echo $item[0]['name_id'];?></td>
-                        <td><?php echo $item[0]['serial_number'];?></td>
-						<td><?php echo $item[0]['brand'];?></td>
-                        <td><?php echo $item[0]['model'];?></td>
-						<td><?php echo $item[0]['assigned'];?></td>
-						<td><?php echo $item[0]['location'];?></td>
-						<td><?php echo $item[0]['cost'];?></td>
-						<td><?php echo $item[0]['date_deployed'];?></td>
-						<td><?php echo $item[0]['date_surplused'];?></td>
-						<td><?php echo $item[0]['last_updated'];?></td>	
+					<?php
+						//fill table
+						$query = "SELECT * FROM assets;";
+						$item = array(); //array for assets
+
+						$rs = pg_query($conn, $query); //run query
+
+						while ($line = pg_fetch_assoc($rs)) //fetch and fill array
+						{
+							$item[] = $line;
+							echo '
+							<td>.$item['name_id']td>
+							<td>.$item['serial_number']</td>
+							<td>.$item['brand']</td>
+							<td>.$item['model']</td>
+							<td>.$item['assigned']</td>
+							<td>.$item['location']</td>
+							<td>.$item['cost']</td>
+							<td>.$item['date_deployed']</td>
+							<td>.$item['date_surplused']</td>
+							<td>.$item['last_updated']</td>
+							';
+						}
+					?>
 					</tr>  
                    </tbody>
 				  
@@ -148,11 +153,13 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"</script>
-	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"</script>
+	<script type="text/javascript" src="/DataTable/js/jquery.dataTables.min.js"</script>
+	<script type="text/javascript" src="/DataTable/js/dataTables.bootstrap.min.js"</script>
 <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css"> 
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
     <script src="assets/js/bs-animation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+	
 	<script $('#assets').DataTable(); </script>
 	
 	
