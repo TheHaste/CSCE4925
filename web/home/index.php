@@ -49,15 +49,6 @@ else if($_SESSION["userType"] == 'user'){
 
 <!--Nav bar settings-->
 <body style="padding-left:-1px;">
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header"><a class="navbar-brand" href="#"> </a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
-            <div
-                class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav navbar-right"></ul>
-        </div>
-        </div>
-    </nav>
     <div>
 	<!--Nav bar settings-->
         <nav class="navbar navbar-default navigation-clean" style="background-color:rgb(72,143,174);min-width:0px;max-width:10001px;margin-right:0px;margin-top:-51px;">
@@ -95,7 +86,7 @@ else if($_SESSION["userType"] == 'user'){
               </div>
 			  
               <div class="panel-body">
-                <table id="assets" class="table table-striped table-bordered table-hovered">
+                <table id="assets" class="display nowrap" cellspacing="0" width="100%">
                   <thead>
                     <tr>
                         <th>Name</th>
