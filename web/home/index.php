@@ -26,7 +26,6 @@ else if($_SESSION["userType"] == 'user'){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&amp;subset=cyrillic,latin-ext">
     <link rel="stylesheet" href="assets/css/Article-Dual-Column.css">
     <link rel="stylesheet" href="assets/css/Features-Boxed.css">
@@ -78,7 +77,7 @@ else if($_SESSION["userType"] == 'user'){
 
 
 <div class="container">
-    <div class="row">
+<!--  <div class="row" width="1000px"> -->
    
     
         <div class="col-md-10 col-md-offset-1">
@@ -93,7 +92,7 @@ else if($_SESSION["userType"] == 'user'){
               </div>
 			  
               <div class="panel-body">
-                <table id="assets" class="display nowrap" cellspacing="0" width="100%">
+                <table id="assets" class="display" width="100%">
                   <thead>
                     <tr>
                         <th>Name</th>
@@ -146,7 +145,7 @@ else if($_SESSION["userType"] == 'user'){
 			</div>
 		  
 		</div>
-	</div>
+<!--	</div> -->
         <div style="height:10px;"></div>
 
 </div>
