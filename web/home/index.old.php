@@ -26,13 +26,23 @@ else if($_SESSION["userType"] == 'user'){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
-	<link script="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"/>
-	<script
-  src="http://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900i&amp;subset=cyrillic,latin-ext">
+    <link rel="stylesheet" href="assets/css/Article-Dual-Column.css">
+    <link rel="stylesheet" href="assets/css/Data-Table.css">
+    <link rel="stylesheet" href="assets/css/Data-Table2.css">
+    <link rel="stylesheet" href="assets/css/Features-Boxed.css">
+    <link rel="stylesheet" href="assets/css/Google-Style-Text-Input.css">
+    <link rel="stylesheet" href="assets/css/MUSA_panel-table.css">
+    <link rel="stylesheet" href="assets/css/MUSA_panel-table1.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/thumbnails1.css">
+	
+	<link rel="stylesheet" type="text/css" href="/DataTables/datatables.min.css"/>
+	<script type="text/javascript" src="/DataTables/datatables.min.js"></script>
+	<script type="text/javascript" src="/Datatables/datatables.js"></script>
 	
 </head>
 
@@ -133,12 +143,30 @@ else if($_SESSION["userType"] == 'user'){
                 </table>
 			  
 			  </div>
-			</div>	  
-		</div>
+			</div>
+		  
 	</div>
-        <div style="height:10px;"></div>
 </div>
-
+        <div style="height:10px;"></div>
+    </div>
+    <div></div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"</script>
+	<script type="text/javascript" src="/DataTable/js/jquery.dataTables.min.js"</script>
+	<script type="text/javascript" src="/DataTable/js/dataTables.bootstrap.min.js"</script>
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css"> 
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+    <script src="assets/js/bs-animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
+	<link script="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"/>
+	<script
+	 src="http://code.jquery.com/jquery-3.3.1.js"
+	 integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	 crossorigin="anonymous"></script>
+	
 	<script type="text/javascript"> $(document).ready(function() {
 			$('#assets').DataTable();
 		});
@@ -149,3 +177,5 @@ else if($_SESSION["userType"] == 'user'){
 </body>
 
 </html>
+
+
