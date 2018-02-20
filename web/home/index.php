@@ -41,7 +41,6 @@ else if($_SESSION["userType"] == 'user'){
 	
 	<link rel="stylesheet" type="text/css" href="/DataTables/datatables.min.css"/>
 	<script type="text/javascript" src="/DataTables/datatables.min.js"></script>
-	<script type="text/javascript" src="/Datatables/datatables.js"></script>
 	
 </head>
 
@@ -138,8 +137,29 @@ else if($_SESSION["userType"] == 'user'){
 		</div>
 	</div>
         <div style="height:10px;"></div>
+<<<<<<< HEAD
 </div>
     	
+=======
+    </div>
+    <div></div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"</script>
+	<script type="text/javascript" src="/DataTable/js/jquery.dataTables.min.js"</script>
+	<script type="text/javascript" src="/DataTable/js/dataTables.bootstrap.min.js"</script>
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css"> 
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+    <script src="assets/js/bs-animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+	
+	<script type="text/javascript"> $(document).ready(function() {
+			$("#assets").DataTable();
+		});
+		</script>
+	
+	
+>>>>>>> parent of 09904db... Home Index
     
 </body>
 
