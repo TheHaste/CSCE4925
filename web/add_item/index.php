@@ -18,6 +18,9 @@
 		$brand = $_POST['Brand'];
 		$status = $_POST['Status'];
 	 	$cost = $_POST['Cost'];
+		
+		$query = "INSERT INTO assets ($item, $serial, $location, $model, $brand, $status, $cost);";
+		$rs = pg_query($conn, $query); //run query
 	}
 ?>	
 
