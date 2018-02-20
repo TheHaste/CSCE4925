@@ -42,6 +42,7 @@ else if($_SESSION["userType"] == 'user'){
 	
 	<link rel="stylesheet" type="text/css" href="/DataTables/datatables.min.css"/>
 	<script type="text/javascript" src="/DataTables/datatables.min.js"></script>
+	<script type="text/javascript" src="/Datatables/datatables.js"></script>
 	
 </head>
 
@@ -158,6 +159,9 @@ else if($_SESSION["userType"] == 'user'){
 <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
     <script src="assets/js/bs-animation.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
+	<link script="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"/>
 	
 	<script type="text/javascript"> $(document).ready(function() {
 			$("#assets").DataTable();
