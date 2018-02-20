@@ -32,15 +32,22 @@ else if($_SESSION["userType"] == 'user'){
     <link rel="stylesheet" href="assets/css/Article-Dual-Column.css">
     <link rel="stylesheet" href="assets/css/Features-Boxed.css">
     <link rel="stylesheet" href="assets/css/Google-Style-Text-Input.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
     <link rel="stylesheet" href="assets/css/MUSA_panel-table.css">
     <link rel="stylesheet" href="assets/css/MUSA_panel-table1.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/thumbnails1.css">
 	
+<<<<<<< HEAD
 	
 	<link rel="stylesheet" type="text/css" href="/DataTables/datatables.min.css"/>
 	<script type="text/javascript" src="/DataTables/datatables.min.js"></script>
+=======
+	<link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css"/>
+	<script type="text/javascript" src="DataTables/datatables.min.js"></script>
+>>>>>>> parent of 788e3b4... Home Index
 	
 </head>
 
@@ -110,6 +117,7 @@ else if($_SESSION["userType"] == 'user'){
 
 						while ($item = pg_fetch_assoc($rs)) //fetch and fill array
 						{
+							//$item[] = $line;
 							echo '
 							<tr>
 							<td>'.$item['name_id'].'</td>
@@ -144,7 +152,7 @@ else if($_SESSION["userType"] == 'user'){
     </div>
     <div></div>
     <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"</script>
 	<script type="text/javascript" src="/DataTable/js/jquery.dataTables.min.js"</script>
 	<script type="text/javascript" src="/DataTable/js/dataTables.bootstrap.min.js"</script>
@@ -154,7 +162,7 @@ else if($_SESSION["userType"] == 'user'){
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
 	
 	<script type="text/javascript"> $(document).ready(function() {
-			$("#assets").DataTable();
+			$(".table").DataTable();
 		});
 		</script>
 	
