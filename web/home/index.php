@@ -162,6 +162,10 @@ else if($_SESSION["userType"] == 'user'){
 	
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
 	<link script="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"/>
+	<script
+	 src="http://code.jquery.com/jquery-3.3.1.js"
+	 integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	 crossorigin="anonymous"></script>
 	
 	<script type="text/javascript"> $(document).ready(function() {
 			$("#assets").DataTable();
