@@ -26,8 +26,8 @@ else if($_SESSION["userType"] == 'user'){
 	
 	<!-- DataTable Extensions -->
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"></link>
-	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<!--	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"></link> -->
+<!--	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
