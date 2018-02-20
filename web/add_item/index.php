@@ -19,7 +19,7 @@
 		$status = $_POST['Status'];
 	 	$cost = $_POST['Cost'];
 		
-		$query = "INSERT INTO assets ($item, $serial, $location, $model, $brand, $status, $cost);";
+		$query = "INSERT INTO assets VALUES ('$item', '$serial', '$location', '$model', '$brand', '$status', '$cost');";
 		$rs = pg_query($conn, $query); //run query
 	}
 ?>	
@@ -175,7 +175,7 @@
                       <div class="form-group">
                         
 						<!--Creates Save button-->
-                        <button a href = "/Home" class="btn btn-default" type="button" style="margin-left:550px;margin-top:30px;">Save</button>                  
+                        <button class="btn btn-default" type="submit" style="margin-left:550px;margin-top:30px;">Save</button>                  
 					 </script>
     <!-- /Starrr -->
         </div>
