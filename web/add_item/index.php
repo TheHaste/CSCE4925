@@ -1,22 +1,32 @@
-<?php
-
-?>
+<!DOCTYPE html>
 
 <?php
 //Add Item Index
 
-//php code goes here
+	require('/app/web/connect.php');
 
+	session_start(); 
 
-?>
+//
+	if(isset($_POST['Save']))
+	{
+		//retrieve form data by using the element's name attributes value as key
+		$item = $_POST['Item Name'];
+		$serial = $_POST['Serial #'];
+		$location = $_POST['Location'];
+		$model = $_POST['Model'];
+		$brand = $_POST['Brand'];
+		$status = $_POST['Status'];
+	 	$cost = $_POST['Cost'];
+	}
+?>	
 
-<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Item</title>
+    <title>add_item</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&amp;subset=cyrillic,latin-ext">
@@ -40,19 +50,23 @@
         </div>
         </div>
     </nav>
+<!--Started editing-->	
+
+
+<!--Endeded editing-->
     <div>
 		<!--Nav bar settings-->
         <nav class="navbar navbar-default navigation-clean" style="background-color:rgb(72,143,174);min-width:0px;max-width:10001px;margin-right:0px;margin-top:-51px;">
             <div class="container">
-                <div class="navbar-header"><a class="navbar-brand" href="/home">Meridian Solutions</a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+                <div class="navbar-header"><a class="navbar-brand" href="#">Meridian Solutions</a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
                 <div
                     class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-right" style="margin-top:0px;margin-right:-20px;">
-					   <li role="presentation"><a href="/add_item" style="color:rgb(51,51,51);">Add Item</a></li>
-                        <li role="presentation"><a href="/search_item" style="color:rgb(51,51,51);">Search Item</a></li>
-						<li role="presentation"><a href="/settings" style="color:rgb(51,51,51);">Settings </a></li>
-						<li role="presentation"><a href="/reports" style="color:rgb(51,51,51);">Reports </a></li>
-                        <li role="presentation"><a href="/logout.php" style="color:rgb(51,51,51);">Logout </a></li>
+					   <li role="presentation"><a href="#" style="color:rgb(51,51,51);">Add Item</a></li>
+                        <li role="presentation"><a href="#" style="color:rgb(51,51,51);">Search Item</a></li>
+						<li role="presentation"><a href="#" style="color:rgb(51,51,51);">Settings </a></li>
+						<li role="presentation"><a href="#" style="color:rgb(51,51,51);">Reports </a></li>
+                        <li role="presentation"><a href="#" style="color:rgb(51,51,51);">Logout </a></li>
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"> </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li role="presentation"><a href="#">First Item</a></li>
@@ -158,7 +172,7 @@
                       <div class="form-group">
                         
 						<!--Creates Save button-->
-                        <button class="btn btn-default" type="button" style="margin-left:550px;margin-top:30px;">Save</button>                  
+                        <button a href = "/Home" class="btn btn-default" type="button" style="margin-left:550px;margin-top:30px;">Save</button>                  
 					 </script>
     <!-- /Starrr -->
         </div>
