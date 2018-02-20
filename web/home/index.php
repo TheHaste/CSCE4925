@@ -30,8 +30,6 @@ else if($_SESSION["userType"] == 'user'){
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900i&amp;subset=cyrillic,latin-ext">
     <link rel="stylesheet" href="assets/css/Article-Dual-Column.css">
-    <link rel="stylesheet" href="assets/css/Data-Table.css">
-    <link rel="stylesheet" href="assets/css/Data-Table2.css">
     <link rel="stylesheet" href="assets/css/Features-Boxed.css">
     <link rel="stylesheet" href="assets/css/Google-Style-Text-Input.css">
     <link rel="stylesheet" href="assets/css/MUSA_panel-table.css">
@@ -51,7 +49,7 @@ else if($_SESSION["userType"] == 'user'){
 <body style="padding-left:-1px;">
     <div>
 	<!--Nav bar settings-->
-        <nav class="navbar navbar-default navigation-clean" style="background-color:rgb(72,143,174);min-width:0px;max-width:10001px;margin-right:0px;margin-top:-51px;">
+        <nav class="navbar navbar-default navigation-clean" style="background-color:rgb(72,143,174);min-width:0px;max-width:100%;margin-right:0px;margin-top:-51px;">
             <div class="container">
               <div class="navbar-header"><a class="navbar-brand" href="/home">Meridian Solutions</a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
 			  </div>
@@ -68,7 +66,7 @@ else if($_SESSION["userType"] == 'user'){
 			</div>
 		</nav>
     </div>
-    <div class="col-md-10 col-md-offset-1" style="width:900px;margin-bottom:0px;margin-top:58px;padding-right:21px;padding-left:-0px;padding-top:-33px;"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+
 
 <div class="container">
     <div class="row">
@@ -86,7 +84,7 @@ else if($_SESSION["userType"] == 'user'){
               </div>
 			  
               <div class="panel-body">
-                <table id="assets" class="display nowrap" cellspacing="0" width="100%">
+                <table id="assets" class="display" cellspacing="0" width="1000px">
                   <thead>
                     <tr>
                         <th>Name</th>
