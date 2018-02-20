@@ -26,12 +26,9 @@ else if($_SESSION["userType"] == 'user'){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
-	<link script="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"/>
-	<script
-  src="http://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
+	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	
 </head>
@@ -139,9 +136,9 @@ else if($_SESSION["userType"] == 'user'){
         <div style="height:10px;"></div>
 </div>
 
-	<script type="text/javascript"> $(document).ready(function() {
-			$('#assets').DataTable();
-		});
+	<script type="text/javascript"> $(document).ready(function(){
+    $('#assets').DataTable();
+});
 		</script>
 	
 	
