@@ -8,15 +8,16 @@
 	session_start(); 
 
 //
-	if(isset($_POST)==true && empty($_POST)==false)
+	if(isset($_POST['submit']))
 	{
-		$item = $_POST['item'];
-		$serial = $_POST['serial'];
-		$location = $_POST['location'];
-		$model = $_POST['model'];
-		$brand = $_POST['brand'];
-		$status = $_POST['status'];
-	 	$cost = $_POST['cost'];
+		//retrieve form data by using the element's name attributes value as key
+		$item = $_POST['Item Name'];
+		$serial = $_POST['Serial #'];
+		$location = $_POST['Location'];
+		$model = $_POST['Model'];
+		$brand = $_POST['Brand'];
+		$status = $_POST['Status'];
+	 	$cost = $_POST['Cost'];
 	}
 ?>	
 
