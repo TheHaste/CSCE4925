@@ -44,7 +44,7 @@ var editor;
 
 // Edit record
 <script type="text/javascript">
-    $('#example').on('click', 'a.editor_edit', function (e) {
+    $('#example').DataTable on('click', 'a.editor_edit', function (e) {
         e.preventDefault();
  
         editor.edit( $(this).closest('tr'), {
@@ -54,7 +54,7 @@ var editor;
     } );
  
     // Delete a record
-    $('#example').on('click', 'a.editor_remove', function (e) {
+    $('#example').DataTable on('click', 'a.editor_remove', function (e) {
         e.preventDefault();
  
         editor.remove( $(this).closest('tr'), {
