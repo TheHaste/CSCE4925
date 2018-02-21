@@ -30,8 +30,8 @@ session_start(); //start user session to send data between pages
 
 <!--Edit table links-->
 <script src="https://code.jquery.com/jquery-1.12.4.js"</script>
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js</script>
-<script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js</script>
+
+<script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"</script>
 <link rel="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"></link>
 <link rel = "https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css"></link>									     
 											 
