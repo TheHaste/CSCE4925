@@ -81,7 +81,7 @@ else if($_SESSION["userType"] == 'user'){
               <div class="panel-heading">
                 <div class="row">
                   <div class="col col-xs-6">
-                    <h3 class="panel-title">Inventory</h3>
+                    <h3 class="panel-title">Meridian Inventory</h3>
                   </div>
                 </div>
               </div>
