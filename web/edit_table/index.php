@@ -40,8 +40,7 @@ session_start(); //start user session to send data between pages
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$('#example').DataTable();		
-				      } );	</script>
-
+				      } );	
 
 	var editor;
 $(document).ready(function() {
@@ -80,7 +79,7 @@ $(document).ready(function() {
         } );
     } );
 		});
-
+</script>
 </head>
 
 
