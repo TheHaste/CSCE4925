@@ -99,6 +99,7 @@ session_start(); //start user session to send data between pages
 						<th>Date Deployed</th>
 						<th>Date Surplused</th>
 						<th>Last Updated</th>
+			    			<Edit/Delete</th>
 					</tr> 
 				  </thead>
 
@@ -127,6 +128,47 @@ session_start(); //start user session to send data between pages
 							</tr> 
 							'; 
 						}
+			   class Editor extends Ext {
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	 * Statics
+	 */
+	/** Request type - read */
+	const ACTION_READ = 'read';
+	/** Request type - create */
+	const ACTION_CREATE = 'create';
+	/** Request type - edit */
+	const ACTION_EDIT = 'edit';
+	/** Request type - delete */
+	const ACTION_DELETE = 'remove';
+	/** Request type - upload */
+	const ACTION_UPLOAD = 'upload';
+	/**
+	 * Determine the request type from an HTTP request.
+	 * 
+	 * @param array $http Typically $_POST, but can be any array used to carry
+	 *   an Editor payload
+	 * @return string `Editor::ACTION_READ`, `Editor::ACTION_CREATE`,
+	 *   `Editor::ACTION_EDIT` or `Editor::ACTION_DELETE` indicating the request
+	 *   type.
+	 */
+	static public function action ( $http )
+	{
+		if ( ! isset( $http['action'] ) ) {
+			return self::ACTION_READ;
+		}
+		switch ( $http['action'] ) {
+			case 'create':
+				return self::ACTION_CREATE;
+			case 'edit':
+				return self::ACTION_EDIT;
+			case 'remove':
+				return self::ACTION_DELETE;
+			case 'upload':
+				return self::ACTION_UPLOAD;
+			default:
+				throw new \Exception("Unknown Editor action: ".$http['action']);
+		}
+	}
 					?>
 					 
                    </tbody>
