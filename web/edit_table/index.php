@@ -34,7 +34,44 @@ session_start(); //start user session to send data between pages
 		$('#example').DataTable();		
 	} );</script>	
 
-
+<script type="text/javascript">
+	var editor;
+$(document).ready(function() {
+    editor = new $.fn.dataTable.Editor( {
+"ajax": "../edit_table",
+"table": "#example",
+	    
+ // New record
+    $('a.editor_create').on('click', function (e) {
+        e.preventDefault();
+ 
+        editor.create( {
+            title: 'Create new record',
+            buttons: 'Add'
+        } );
+    } );
+ 
+    // Edit record
+    $('#example').on('click', 'a.editor_edit', function (e) {
+        e.preventDefault();
+ 
+        editor.edit( $(this).closest('tr'), {
+            title: 'Edit record',
+            buttons: 'Update'
+        } );
+    } );
+ 
+    // Delete a record
+    $('#example').on('click', 'a.editor_remove', function (e) {
+        e.preventDefault();
+ 
+        editor.remove( $(this).closest('tr'), {
+            title: 'Delete record',
+            message: 'Are you sure you wish to remove this record?',
+            buttons: 'Delete'
+        } );
+    } );
+	});</script>
 
 </head>
 
