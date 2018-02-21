@@ -99,7 +99,6 @@ session_start(); //start user session to send data between pages
 						<th>Date Deployed</th>
 						<th>Date Surplused</th>
 						<th>Last Updated</th>
-			   			<th>Edit/Delete</th>
 					</tr> 
 				  </thead>
 
@@ -141,4 +140,3 @@ session_start(); //start user session to send data between pages
 
 </html>
     
-
