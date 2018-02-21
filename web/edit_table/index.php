@@ -106,6 +106,7 @@ session_start(); //start user session to send data between pages
 						<th>Date Deployed</th>
 						<th>Date Surplused</th>
 						<th>Last Updated</th>
+			   			<th>Edit/Delete</th>
 					</tr> 
 				  </thead>
 
@@ -131,7 +132,6 @@ session_start(); //start user session to send data between pages
 							<td>'.$item['date_deployed'].'</td>
 							<td>'.$item['date_surplused'].'</td>
 							<td>'.$item['last_updated'].'</td>
-							<td>'$item['Edit/Delete'].'</td>
 							</tr> 
 							'; 
 						}
