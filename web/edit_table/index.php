@@ -28,13 +28,60 @@ session_start(); //start user session to send data between pages
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
 
+       <!-- Edit table buttons-->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"></script>
+<script src="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css"></script>
+
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$('#example').DataTable();	
 	} );</script>
 
+ // Edit record
+    $('#example').on('click', 'a.editor_edit', function (e) {
+        e.preventDefault();
+ 
+        editor.edit( $(this).closest('tr'), {
+            title: 'Edit record',
+            buttons: 'Update'
+        } );
+    } );
+ 
+    // Delete a record
+    $('#example').on('click', 'a.editor_remove', function (e) {
+        e.preventDefault();
+ 
+        editor.remove( $(this).closest('tr'), {
+            title: 'Delete record',
+            message: 'Are you sure you wish to remove this record?',
+            buttons: 'Delete'
+        } );
+    } );
 
+$('#example').DataTable( {
+        ajax: "/edit_table",
+        columns: [
+            { data: null, render: function ( data, type, row ) {
+                // Combine the first and last names into a single table field
+                return data.first_name+' '+data.last_name;
+            } },
+            { data: "position" },
+            { data: "office" },
+            { data: "extn" },
+            { data: "start_date" },
+            { data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) },
+            {
+                data: null,
+                className: "center",
+                defaultContent: '<a href="" class="editor_edit">Edit</a> / <a href="" class="editor_remove">Delete</a>'
+            }
+        ]
+    } );
+} );
 </head>
 
 
