@@ -6,7 +6,7 @@
 <html>
 
 <head>
-    <title>Home</title>
+    <title>edit_table</title>
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
 	
