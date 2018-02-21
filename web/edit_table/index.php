@@ -33,6 +33,21 @@ session_start(); //start user session to send data between pages
 	$(document).ready(function() {
 		$('#example').DataTable();	
 	} );</script>
+class Editor extends Ext {
+	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	 * Statics
+	 */
+	/** Request type - read */
+	const ACTION_READ = 'read';
+	/** Request type - create */
+	const ACTION_CREATE = 'create';
+	/** Request type - edit */
+	const ACTION_EDIT = 'edit';
+	/** Request type - delete */
+	const ACTION_DELETE = 'remove';
+	/** Request type - upload */
+	const ACTION_UPLOAD = 'upload';
+
 
 </head>
 
