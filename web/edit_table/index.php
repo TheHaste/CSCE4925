@@ -71,7 +71,7 @@ $(document).ready(function() {
             buttons: 'Delete'
         } );
     } );
-	});</script>
+	});
 
 </head>
 
@@ -174,7 +174,7 @@ $(document).ready(function() {
 			</div>
 </div>
 </body>
-	
+</script>	
 	
 
 </html>
