@@ -43,6 +43,7 @@ var editor;
 	} );</script>
 
 // Edit record
+<script type="text/javascript">
     $('#example').on('click', 'a.editor_edit', function (e) {
         e.preventDefault();
  
@@ -81,7 +82,7 @@ var editor;
             }
         ]
     } );
-} );
+	} );</script>
  
 </head>
 
