@@ -32,9 +32,9 @@ session_start(); //start user session to send data between pages
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$('#example').DataTable();		
-	} );</script>	
+	} );	
 
-<script type="text/javascript">
+
 	var editor;
 $(document).ready(function() {
     editor = new $.fn.dataTable.Editor( {
@@ -71,7 +71,7 @@ $(document).ready(function() {
             buttons: 'Delete'
         } );
     } );
-	});
+		});</script>
 
 </head>
 
@@ -174,7 +174,7 @@ $(document).ready(function() {
 			</div>
 </div>
 </body>
-</script>	
+	
 	
 
 </html>
