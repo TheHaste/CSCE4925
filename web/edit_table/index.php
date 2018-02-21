@@ -2,7 +2,7 @@
 require('/app/web/connect.php');
 session_start(); //start user session to send data between pages
 
-var editor;
+
 //search page
 ?>
 
@@ -27,14 +27,6 @@ var editor;
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap.min.js"></script>	
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
-
-       <!-- Edit table buttons-->
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"></script>
-<script src="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css"></script>
-
 
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
@@ -107,7 +99,6 @@ var editor;
 						<th>Date Deployed</th>
 						<th>Date Surplused</th>
 						<th>Last Updated</th>
-			   			<th>Edit/Delete</th>
 					</tr> 
 				  </thead>
 
@@ -149,4 +140,3 @@ var editor;
 
 </html>
     
-
