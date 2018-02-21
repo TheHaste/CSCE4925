@@ -81,7 +81,7 @@ session_start(); //start user session to send data between pages
               <div class="panel-heading">
                 <div class="row">
                   <div class="col col-xs-6">
-                    <h3 class="panel-title">Inventory</h3>
+                    <h3 class="panel-title">Meridian Inventory</h3>
                   </div>
                 </div>
               </div>
