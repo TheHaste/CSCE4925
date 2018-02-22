@@ -91,15 +91,15 @@ session_start(); //start user session to send data between pages
                     <tr>
                         <th>Name</th>
                         <th>Serial Number</th>
-						<th>Brand </th>
-						<th>Model </th>
-						<th>Assigned</th>
-						<th>Location</th>
-						<th>Cost</th>
-						<th>Date Deployed</th>
-						<th>Date Surplused</th>
-						<th>Last Updated</th>
-			    			<!--<th>Edit/Delete</th>-->
+			<th>Brand </th>
+			<th>Model </th>
+			<th>Assigned</th>
+			<th>Location</th>
+			<th>Cost</th>
+			<th>Date Deployed</th>
+			<th>Date Surplused</th>
+			<th>Last Updated</th>
+			<th>Edit/Delete</th>
 					</tr> 
 				  </thead>
 
