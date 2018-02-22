@@ -32,7 +32,9 @@
 		{
 			echo "Error: " . $sql . "<br>" . $conn->error; 	
 		}
-*/		$rs = pg_connect($conn, $sql); //run query
+*/		echo $item;
+		echo $serial;
+		$rs = pg_connect($conn, $sql); //run query
 		pg_close($conn);
 
 	}
