@@ -27,11 +27,11 @@
 		
 		echo "I made it2!";
 		
-		if ($conn->query($sql) == TRUE)
+/*		if ($conn->query($sql) == TRUE)
 		{
 			echo "New record created successfully";	
 		}
-/*		else
+		else
 		{
 			echo "Error: " . $sql . "<br>" . $conn->error; 	
 		}
