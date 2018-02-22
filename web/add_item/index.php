@@ -20,9 +20,12 @@
 		$brand = $_POST['Brand'];
 		$status = $_POST['Status'];
 	 	$cost = $_POST['Cost'];
+		echo "I made it!";
 		
 		$sql = "INSERT INTO 'assets' (id, serial_number, location, model, brand, status, cost) 
 		VALUES ('$item', '$serial', '$location', '$model', '$brand', '$status', '$cost')";
+		
+		echo "I made it2!";
 		
 /*		if ($conn->query($sql) == TRUE)
 		{
@@ -32,7 +35,7 @@
 		{
 			echo "Error: " . $sql . "<br>" . $conn->error; 	
 		}
-*/		echo "I made it!";
+*/		echo "I made it3!";
 		echo $serial;
 		$rs = pg_connect($conn, $sql); //run query
 		pg_close($conn);
