@@ -1,29 +1,49 @@
 <?php
+require('/app/web/connect.php');
+session_start(); //start user session to send data between pages
+
+		 
+			   
+
 //search page
 ?>
-<!DOCTYPE html>
+
 
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>search_item page</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900i&amp;subset=cyrillic,latin-ext">
-    <link rel="stylesheet" href="assets/css/Article-Dual-Column.css">
-    <link rel="stylesheet" href="assets/css/Features-Boxed.css">
-    <link rel="stylesheet" href="assets/css/Google-Style-Text-Input.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
-    <link rel="stylesheet" href="assets/css/MUSA_panel-table.css">
-    <link rel="stylesheet" href="assets/css/MUSA_panel-table1.css">
-    <link rel="stylesheet" href="assets/css/Pretty-Search-Form.css">
-    <link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
-    <link rel="stylesheet" href="assets/css/Search-Field-With-Icon.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/thumbnails1.css">
+    <title>edit_table</title>
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
+	
+	<!-- DataTable Extensions -->
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"></link> 
+	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- DataTable Buttons Extensions -->
+	<link rel="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css"></link>
+	<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap.min.js"></script>	
+	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
+	
+	<!--<script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
+	<link rel= "stylesheet" href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css"></link>-->
+	
+
+	<!-- DataTable Javascript Implementation -->
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('#example').DataTable();	
+	} );</script>
+
+
+
 </head>
+
 
 <!--Nav bar settings-->
 <body style="padding-left:-1px;">
@@ -45,7 +65,7 @@
                     class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-right" style="margin-top:0px;margin-right:-20px;">
 					   <li role="presentation"><a href="/add_item" style="color:rgb(51,51,51);">Add Item</a></li>
-                        <li role="presentation"><a href="/search_item" style="color:rgb(51,51,51);">Search Item</a></li>
+                        <li role="presentation"><a href="/edit_table" style="color:rgb(51,51,51);">Edit Table</a></li>
 						<li role="presentation"><a href="/settings" style="color:rgb(51,51,51);">Settings </a></li>
 						<li role="presentation"><a href="/reports" style="color:rgb(51,51,51);">Reports </a></li>
                         <li role="presentation"><a href="/logout.php" style="color:rgb(51,51,51);">Logout </a></li>
@@ -63,261 +83,68 @@
     </div>
     </nav>
     </div>
-    <div class="col-md-12" style="margin-right:-1px;padding-top:-32px;">
-        <form class="search-form" style="margin-right:119px;margin-left:239px;">
-            <div class="search-container"><input class="form-control search-input" type="text" name="search-bar" placeholder="Search..."><button class="btn btn-default search-btn" type="button"> <i class="glyphicon glyphicon-search"></i></button></div>
-        </form>
-    </div>
-    <div class="col-md-12 col-md-offset-0" style="width:250px;padding-bottom:486px;padding-right:-1px;margin-top:-160px;">
-        <!--<div class="search-container"></div>-->
-        <h1 style="font-size:13px;color:rgb(255,1,1);padding-bottom:36px;margin-top:62px;"><form class="form-inline">
-  <div class="form-group">
-    
-     <select  class="form-control" >
-          
-				 <option selected hidden>Criteria</option>
-				 <option value="Item Name">Item Name</option>
-				 <option value="Serial #">Serial #</option>
-				 <option value="Brand">Brand</option>
-				 <option value="Model">Model</option>
-				 <option value="Assigned">Assigned</option>
-				 <option value="Location">Location</option>
-				 <option value="Cost">Cost</option>
-				 <option value="Date Deployed">Date Deployed</option>
-				 <option value="Date Surplused">Date Surplused</option>
-				 </select>
-     <!-- </select>-->
-  </div>
-</form></h1>
-        <h1></h1><button class="btn btn-default" type="button" style="padding-left:10px;padding-bottom:6px;padding-right:11px;padding-top:6px;margin-left:20px;margin-bottom:-670px;margin-right:-63px;">Go</button></div>
-   <div class="search-container"><input type="text" name="search-bar" placeholder="Search..." class="search-input" style="width:653px;"><button class="btn btn-default search-btn" type="button"> <i class="glyphicon glyphicon-search"></i></button></div>
-    <div class="col-md-10" style="width:700px;margin-bottom:0px;margin-top:-121px;padding-right:8px;padding-left:0px;padding-top:70px;padding-bottom:17px;margin-left:-129px;">
-        <div class="search-container"></div><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
-
-<div class="container">
-    <div class="row">
-    
-    
-    
-        <div class="col-md-10 col-md-offset-1">
-
-            <div class="panel panel-default panel-table">
+	<div class="container">
+	<div class="panel panel-default panel-table">
               <div class="panel-heading">
                 <div class="row">
                   <div class="col col-xs-6">
                     <h3 class="panel-title">Meridian Inventory</h3>
                   </div>
-                 
                 </div>
               </div>
-              <div class="panel-body">
-                <table class="table table-striped table-bordered table-list">
-                  <thead>
-                     <div class="panel-body">
-                <table style = "padding-right:50px;"class="table table-striped table-bordered table-list">
-                  <thead>
+			  <div class="panel-body">
+			<table id="example" class="display" cellspacing="0" width="100%">
+				<thead>
                     <tr>
-                        <th><em class="fa fa-cog"></em></th>
-                        <!--<th class="hidden-xs">ID</th>-->
-                        <th>Name</th>
-                        <th>Serial #</th>
-						<th>Brand </th>
-						<th>Model </th>
-						<th>Assigned</th>
-						<th>Location</th>
-						<th>Cost</th>
-						<th>Date Deployed</th>
-						<th>Date Surplused</th>
-						<th>Last Updated</th>
-                    </tr> 
-                 
-                  </thead>
-                  <tbody>
-                          <tr>
-                            <td align="center">
-                              <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                              <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                            </td>
-                            <!--<td class="hidden-xs">1</td>-->
-                            </td>
-                            <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							
-                          </tr>
-						  <td align="center">
-                              <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                              <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                            </td>
-							      
-                            <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>
-							<td>	 </td>
-							<td>	 </td>
-							
-							<td>   </td>
-							<td>   </td>
-							<td>     </td>
-							<td>	</td>
-							<td>	</td>
-							<td>	</td>
-							
-						
+             <th>Name</th>
+            <th>Serial Number</th>
+			<th>Brand </th>
+			<th>Model </th>
+			<th>Assigned</th>
+			<th>Location</th>
+			<th>Cost</th>
+			<th>Date Deployed</th>
+			<th>Date Surplused</th>
+			<th>Last Updated</th>
+			<th>Edit/Delete</th>
+			</tr> 
+				  </thead>
 
-                         
-						  
-						   <tr>
-                            <td align="center">
-                              <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                              <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                            </td>
-                            <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>
-							<td>	 </td>
-							<td>	 </td>
-							<td>   </td>
-							<td>   </td>
-							<td>     </td>
-							<td>	</td>
-							<td>	</td>
-							<td>	</td>
-							
-							
-							
-                          </tr>
-						  
-						   <tr>
-                            <td align="center">
-                              <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                              <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                            </td>
-                            <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>
-							<td>	 </td>
-							<td>	 </td>
-							<td>   </td>
-							<td>   </td>
-							<td>     </td>
-							<td>	</td>
-							<td>	</td>
-							<td>	</td>
-							
-							
-							
-                          </tr>
-						  
-						   <tr>
-                            <td align="center">
-                              <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                              <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                            </td>
-                            <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>
-							<td>	 </td>
-							<td>	 </td>
-							<td>   </td>
-							<td>   </td>
-							<td>    </td>
-							<td>	</td>
-							<td>	</td>
-							<td>	</td>
-							
-							
-							
-                          </tr>
-						  
-						   <tr>
-                            <td align="center">
-                              <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                              <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                            </td>
-                            <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>
-							<td>	 </td>
-							<td>	 </td>
-							<td>  </td>
-							<td>   </td>
-							<td>     </td>
-							<td>	</td>
-							<td>	</td>
-							<td>	</td>
-							
-							
-							
-                          </tr>
-						  
-						   <tr>
-                            <td align="center">
-                              <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                              <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
-                            </td>
-                            <!--<td class="hidden-xs">1</td>-->
-                            <td></td>
-                            <td></td>
-							<td>	 </td>
-							<td>	 </td>
-							<td>  </td>
-							<td>   </td>
-							<td>     </td>
-							<td>	</td>
-							<td>	</td>
-							<td>	</td>
-							
-							
-							
-                          </tr>
-						 
-						 
-							</tbody>
-                </table>
-                         <!-- </tr>-->
-                        </tbody>
-                </table>
-            
-              </div>
-              <div class="panel-footer">
-                <div class="row">
-                  <div class="col col-xs-4">Page 1 of 5
-                  </div>
-                  <div class="col col-xs-8">
-                    <ul class="pagination hidden-xs pull-right">
-                      <li><a href="#">1</a></li>
-                      <li><a href="#">2</a></li>
-                      <li><a href="#">3</a></li>
-                      <li><a href="#">4</a></li>
-                      <li><a href="#">5</a></li>
-                    </ul>
-                    <ul class="pagination visible-xs pull-right">
-                        <li><a href="#">«</a></li>
-                        <li><a href="#">»</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-</div></div></div>
-        <div style="height:10px;"></div>
-    </div>
-    <div></div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bs-animation.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
+                   <tbody>
+					
+					<?php
+						//fill table
+						$query = "SELECT * FROM assets;";
+						$item = array(); //array for assets
+						$rs = pg_query($conn, $query); //run query
+						while ($item = pg_fetch_assoc($rs)) //fetch and fill array
+						{
+							//$item[] = $line;
+							echo '
+							<tr>
+							<td> id="example" onclick="content()"'.$item['name_id'].'</td>
+							<td>'.$item['serial_number'].'</td>
+							<td>'.$item['brand'].'</td>
+							<td>'.$item['model'].'</td>
+							<td>'.$item['assigned'].'</td>
+							<td>'.$item['location'].'</td>
+							<td>'.$item['cost'].'</td>
+							<td>'.$item['date_deployed'].'</td>
+							<td>'.$item['date_surplused'].'</td>
+							<td>'.$item['last_updated'].'</td>
+							<td>'.$item['Edit/Delete'].'</td>
+							</tr> 
+							'; 
+						}
+					?>
+			
+                   </tbody>
+			</table>
+			</div>
+			</div>
+</div>
 </body>
+	
+	
 
-</html>
 </html>
