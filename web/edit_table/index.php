@@ -3,6 +3,43 @@ require('/app/web/connect.php');
 session_start(); //start user session to send data between pages
 
 
+ <//Activate an inline edit on click of a table cell
+//<script type="text/javascript">
+    $('#example').on( 'click', 'tbody td:not(:first-child)', function (e) {
+        editor.inline( this );
+    } ); </script>
+ 
+    $('#example').DataTable( {
+        dom: "Bfrtip",
+        ajax: "..edit_table",
+        order: [[ 1, 'asc' ]],
+        columns: [
+            {
+                data: null,
+                defaultContent: '',
+                className: 'select-checkbox',
+                orderable: false
+            },
+            { data: "Name" },
+            { data: "Serial Number" },
+            { data: "position" },
+            { data: "office" },
+            { data: "start_date" },
+            { data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+        ],
+        select: {
+            style:    'os',
+            selector: 'td:first-child'
+        },
+        buttons: [
+            { extend: "create", editor: editor },
+            { extend: "edit",   editor: editor },
+            { extend: "remove", editor: editor }
+        ]
+    } );
+} );
+
+
 //search page
 ?>
 
@@ -35,7 +72,6 @@ session_start(); //start user session to send data between pages
 	$(document).ready(function() {
 		$('#example').DataTable();	
 	} );</script>
-
 
 
 
