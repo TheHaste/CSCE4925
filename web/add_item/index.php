@@ -21,6 +21,7 @@
 		
 		$query = "INSERT INTO 'assets' (id, serial_number, location, model, brand, status, cost) VALUES ('$item', '$serial', '$location', '$model', '$brand', '$status', '$cost')";
 		$rs = pg_query($conn, $query); //run query
+		pg_close($conn);
 //	}
 ?>	
 
