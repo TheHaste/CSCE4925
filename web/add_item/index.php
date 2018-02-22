@@ -8,8 +8,8 @@
 	session_start(); 
 
 //
-	//if(isset($_POST['Save']))
-	//{
+	if(isset($_POST['Save']))
+	{
 		//retrieve form data by using the element's name attributes value as key
 		$item = $_POST['Item Name'];
 		$serial = $_POST['Serial #'];
@@ -19,9 +19,9 @@
 		$status = $_POST['Status'];
 	 	$cost = $_POST['Cost'];
 		
-		$query = "INSERT INTO 'assets' VALUES ('$item', '$serial', '$location', '$model', '$brand', '$status', '$cost');";
+		$query = "INSERT INTO 'assets' (id, serial_number, location, model, brand, status, cost) VALUES ('$item', '$serial', '$location', '$model', '$brand', '$status', '$cost');";
 		$rs = pg_query($conn, $query); //run query
-	//}
+	}
 ?>	
 
 <html>
