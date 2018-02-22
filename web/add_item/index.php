@@ -22,7 +22,7 @@
 		$sql = "INSERT INTO 'assets' (id, serial_number, location, model, brand, status, cost) 
 		VALUES ('$item', '$serial', '$location', '$model', '$brand', '$status', '$cost')";
 		
-		if ($conn->query($sql) == TRUE)
+/*		if ($conn->query($sql) == TRUE)
 		{
 			echo "New record created successfully";	
 		}
@@ -32,7 +32,7 @@
 		}
 		$rs = pg_query($conn, $query); //run query
 		pg_close($conn);
-
+*/
 //	}
 ?>	
 
