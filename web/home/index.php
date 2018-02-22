@@ -40,9 +40,16 @@ else if($_SESSION["userType"] == 'user'){
 
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
-	$(document).ready(function() {
-		$('#example').DataTable();	
-	} );</script>
+//	$(document).ready(function() {
+//		$('#example').DataTable();	
+//	} );
+	
+	$('#assets').DataTable( {
+    dom: 'Bfrtip',
+    buttons: [
+        'excel',
+    ]
+} );</script>
 
 </head>
 
@@ -86,7 +93,7 @@ else if($_SESSION["userType"] == 'user'){
                 </div>
               </div>
 			  <div class="panel-body">
-			<table id="example" class="display" cellspacing="0" width="100%">
+			<table id="assets" class="display" cellspacing="0" width="100%">
 				<thead>
                     <tr>
                         <th>Name</th>
@@ -135,7 +142,8 @@ else if($_SESSION["userType"] == 'user'){
 			</table>
 			</div>
 			</div>
-</div>
+  </div>
+
 </body>
 	
 	
