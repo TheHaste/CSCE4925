@@ -139,7 +139,8 @@
 						<!--Create Item Name entry--> 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12"  style="color:rgb(51,51,51);" for="Item Name"> Item Name <span class="required">*</span>
-                        </label>
+/*THIS*/                       	<?php $_GET['Item Name']?>
+			</label>
 						
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="Item Name" required="required" class="form-control col-md-7 col-xs-12">
