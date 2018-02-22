@@ -122,7 +122,7 @@ session_start(); //start user session to send data between pages
 							//$item[] = $line;
 							echo '
 							<tr>
-							<td> onclick="content()"'.$item['name_id'].'</td>
+							<td> id="example" onclick="content()"'.$item['name_id'].'</td>
 							<td>'.$item['serial_number'].'</td>
 							<td>'.$item['brand'].'</td>
 							<td>'.$item['model'].'</td>
