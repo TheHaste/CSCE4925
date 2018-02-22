@@ -3,7 +3,7 @@
 <?php
 //Add Item Index
 
-	require('/app/web/connect.php');
+	require_once('/app/web/connect.php');
 
 //	session_start(); 
 	$count = 1;
@@ -39,6 +39,7 @@
 		echo $serial;
 		$rs = pg_connect($conn, $sql); //run query
 		pg_close($conn);
+		echo "I made it4!!";
 
 	}
 	else
