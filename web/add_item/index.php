@@ -9,7 +9,8 @@
 
 //
 //	if(isset($_POST['Save']))
-//	{
+	if(isset($_POST) & !empty($_POST)
+	{
 		//retrieve form data by using the element's name attributes value as key
 		$item = $_POST['Item Name'];
 		$serial = $_POST['Serial #'];
@@ -33,7 +34,7 @@
 		$rs = pg_query($conn, $query); //run query
 		pg_close($conn);
 */
-//	}
+	}
 ?>	
 
 <html>
