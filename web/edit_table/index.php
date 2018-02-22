@@ -39,6 +39,7 @@ var editor;
 	} );</script>
 
  // New record
+<script type="text/javascript">
     $('a.editor_create').on('click', function (e) {
         e.preventDefault();
  
@@ -46,7 +47,7 @@ var editor;
             title: 'Create new record',
             buttons: 'Add'
         } );
-    } );
+    } );</script>
 
 
 </head>
