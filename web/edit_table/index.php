@@ -28,16 +28,16 @@ var editor;
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap.min.js"></script>	
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
-
-<script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
+	
+	<script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
 	<link rel= "stylesheet" href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css"></link>
+	
 
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$('#example').DataTable();	
 	} );</script>
-
 
 
 </head>
@@ -91,12 +91,11 @@ var editor;
                 </div>
               </div>
 			  <div class="panel-body">
-				  <a class="editor_create">Create new record</a>
 			<table id="example" class="display" cellspacing="0" width="100%">
 				<thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Serial Number</th>
+             <th>Name</th>
+            <th>Serial Number</th>
 			<th>Brand </th>
 			<th>Model </th>
 			<th>Assigned</th>
@@ -106,7 +105,7 @@ var editor;
 			<th>Date Surplused</th>
 			<th>Last Updated</th>
 			<th>Edit/Delete</th>
-					</tr> 
+			</tr> 
 				  </thead>
 
                    <tbody>
@@ -147,4 +146,3 @@ var editor;
 	
 
 </html>
-
