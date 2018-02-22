@@ -31,9 +31,9 @@
 		{
 			echo "Error: " . $sql . "<br>" . $conn->error; 	
 		}
-		$rs = pg_query($conn, $query); //run query
+*/		$rs = pg_connect($conn, $sql); //run query
 		pg_close($conn);
-*/
+
 	}
 ?>	
 
