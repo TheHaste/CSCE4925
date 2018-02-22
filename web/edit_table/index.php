@@ -3,7 +3,6 @@ require('/app/web/connect.php');
 session_start(); //start user session to send data between pages
 
 
-
 //search page
 ?>
 
@@ -29,14 +28,11 @@ session_start(); //start user session to send data between pages
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
 
-
-
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$('#example').DataTable();	
 	} );</script>
-
 
 
 </head>
@@ -103,7 +99,6 @@ session_start(); //start user session to send data between pages
 						<th>Date Deployed</th>
 						<th>Date Surplused</th>
 						<th>Last Updated</th>
-			    			<th>Edit/Delete</th>
 					</tr> 
 				  </thead>
 
@@ -132,7 +127,6 @@ session_start(); //start user session to send data between pages
 							</tr> 
 							'; 
 						}
-		
 					?>
 					 
                    </tbody>
@@ -145,4 +139,3 @@ session_start(); //start user session to send data between pages
 	
 
 </html>
-    
