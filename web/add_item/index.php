@@ -36,7 +36,7 @@
 			echo "Error: " . $sql . "<br>" . $conn->error; 	
 		}
 */		echo "I made it3!";
-		echo '$item';
+		echo $item;
 		$rs = pg_connect($conn, $sql); //run query
 		pg_close($conn);
 		echo "I made it4!!";
