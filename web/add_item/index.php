@@ -5,7 +5,7 @@
 
 	require('/app/web/connect.php');
 
-	session_start(); 
+//	session_start(); 
 
 //
 //	if(isset($_POST['Save']))
@@ -19,7 +19,17 @@
 		$status = $_POST['Status'];
 	 	$cost = $_POST['Cost'];
 		
-		$query = "INSERT INTO 'assets' (id, serial_number, location, model, brand, status, cost) VALUES ('$item', '$serial', '$location', '$model', '$brand', '$status', '$cost')";
+		$sql = "INSERT INTO 'assets' (id, serial_number, location, model, brand, status, cost) 
+		VALUES ('$item', '$serial', '$location', '$model', '$brand', '$status', '$cost')";
+		
+		if ($conn->query($sql) == TRUE)
+		{
+			echo "New record created successfully";	
+		}
+		else
+		{
+			echo "Error: " . $sql . "<br>" . $conn->error; 	
+		}
 		$rs = pg_query($conn, $query); //run query
 		pg_close($conn);
 
