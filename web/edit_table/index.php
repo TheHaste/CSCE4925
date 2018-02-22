@@ -2,6 +2,39 @@
 require('/app/web/connect.php');
 session_start(); //start user session to send data between pages
 
+var editor;
+
+// New record
+    $('a.editor_create').on('click', function (e) {
+        e.preventDefault();
+ 
+        editor.create( {
+            title: 'Create new record',
+            buttons: 'Add'
+        } );
+    } );
+ 
+    // Edit record
+    $('#example').on('click', 'a.editor_edit', function (e) {
+        e.preventDefault();
+ 
+        editor.edit( $(this).closest('tr'), {
+            title: 'Edit record',
+            buttons: 'Update'
+        } );
+    } );
+ 
+    // Delete a record
+    $('#example').on('click', 'a.editor_remove', function (e) {
+        e.preventDefault();
+ 
+        editor.remove( $(this).closest('tr'), {
+            title: 'Delete record',
+            message: 'Are you sure you wish to remove this record?',
+            buttons: 'Delete'
+        } );
+    } );
+
 
 //search page
 ?>
@@ -27,6 +60,9 @@ session_start(); //start user session to send data between pages
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap.min.js"></script>	
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
+
+<script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
+	<link rel= "stylesheet" href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css"></link>
 
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
