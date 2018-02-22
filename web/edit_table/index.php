@@ -141,6 +141,7 @@ var editor;
                 </div>
               </div>
 			  <div class="panel-body">
+				  <a class="editor_create">Create new record</a>
 			<table id="example" class="display" cellspacing="0" width="100%">
 				<thead>
                     <tr>
