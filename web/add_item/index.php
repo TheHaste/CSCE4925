@@ -35,6 +35,10 @@
 		pg_close($conn);
 
 	}
+	else
+	{
+		echo "DID NOT WORKK!!";	
+	}
 ?>	
 
 <html>
