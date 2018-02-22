@@ -22,6 +22,7 @@
 		$query = "INSERT INTO 'assets' (id, serial_number, location, model, brand, status, cost) VALUES ('$item', '$serial', '$location', '$model', '$brand', '$status', '$cost')";
 		$rs = pg_query($conn, $query); //run query
 		pg_close($conn);
+
 //	}
 ?>	
 
@@ -121,6 +122,7 @@
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="Item Name" required="required" class="form-control col-md-7 col-xs-12">
 				<?php $item = $_POST['Item Name']; ?>
+				<?php echo $item ?>
                         </div>
                       </div>
 						<!--Create Serial # entry-->
