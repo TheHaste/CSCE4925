@@ -36,10 +36,10 @@ var editor;
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$('#example').DataTable();	
-	} );</script>
+	} );
 
  // New record
-<script type="text/javascript">
+
     $('a.editor_create').on('click', function (e) {
         e.preventDefault();
  
