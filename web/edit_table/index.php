@@ -2,7 +2,7 @@
 require('/app/web/connect.php');
 session_start(); //start user session to send data between pages
 
-
+var editor;
 
 //search page
 ?>
@@ -37,6 +37,16 @@ session_start(); //start user session to send data between pages
 	$(document).ready(function() {
 		$('#example').DataTable();	
 	} );</script>
+
+ // New record
+    $('a.editor_create').on('click', function (e) {
+        e.preventDefault();
+ 
+        editor.create( {
+            title: 'Create new record',
+            buttons: 'Add'
+        } );
+    } );
 
 
 </head>
