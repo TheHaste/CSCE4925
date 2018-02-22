@@ -6,10 +6,11 @@
 	require('/app/web/connect.php');
 
 //	session_start(); 
+	$count = 1;
 
-//
 //	if(isset($_POST['Save']))
-	if(isset($_POST))
+//	if(isset($_POST))
+	if($count == 1)
 	{
 		//retrieve form data by using the element's name attributes value as key
 		$item = $_POST['Item Name'];
