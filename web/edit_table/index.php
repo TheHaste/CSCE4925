@@ -36,18 +36,9 @@ var editor;
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$('#example').DataTable();	
-	} );
+	} );</script>
 
- // New record
 
-    $('a.editor_create').on('click', function (e) {
-        e.preventDefault();
- 
-        editor.create( {
-            title: 'Create new record',
-            buttons: 'Add'
-        } );
-    } );</script>
 
 
 </head>
