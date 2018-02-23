@@ -32,7 +32,7 @@ session_start(); //start user session to send data between pages
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
 <script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
 <link rel="stylesheet" href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css"></script>
-<script src="https://cdn.datatables.net/select/1.2.5/css/select.dataTables.min.css"></script>
+<!--<script src="https://cdn.datatables.net/select/1.2.5/css/select.dataTables.min.css"></script>-->
 						   
 	<script type="text/javascript">					   
 	$(document).ready(function() {
