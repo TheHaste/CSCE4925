@@ -91,7 +91,7 @@ session_start(); //start user session to send data between pages
                 </div>
               </div>
 			  <div class="panel-body">
-			<table id="assets" class="display" cellspacing="0" width="100%">
+			<table id="example" class="display" cellspacing="0" width="100%">
 				<thead>
                     <tr>
              <th>Name</th>
