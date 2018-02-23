@@ -11,7 +11,7 @@ session_start(); //start user session to send data between pages
 <html>
 
 <head>
-    <title>Edit Table</title>
+    <title>Meridian Inventory</title>
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
 	
@@ -41,9 +41,8 @@ session_start(); //start user session to send data between pages
 			
 			buttons: [
 				'Edit','Delete'
-					
-				
-			]	
+			]
+			
 	} );
 	
 </script>
@@ -54,7 +53,7 @@ session_start(); //start user session to send data between pages
 <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header"><a class="navbar-brand" href="#"> </a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
-            <div>
+            <div
                 class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav navbar-right"></ul>
         </div>
