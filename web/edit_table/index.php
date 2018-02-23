@@ -72,10 +72,11 @@ $(document).ready(function() {
         dom: "Bfrtip",
         ajax: "../php/staff.php",
         columns: [
-            { data: null, render: function ( data, type, row ) {
+           // { data: null, render: function ( data, type, row ) {
                 // Combine the first and last names into a single table field
-                return data.first_name+' '+data.last_name;
-            } },
+             //   return data.first_name+' '+data.last_name;
+            //} 
+		},
             { data: "name_id" },
             { data: "serial_number" },
             { data: "brand" },
