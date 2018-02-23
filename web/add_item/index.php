@@ -1,54 +1,33 @@
 <!DOCTYPE html>
-
+<html>
 <?php
-//Add Item Index
-
+	
 	require_once('/app/web/connect.php');
-
-//	session_start(); 
+	
 	$count = 1;
-
-//	if(isset($_POST['Save']))
-//	if(isset($_POST))
+	
 	if($count == 1)
 	{
-		//retrieve form data by using the element's name attributes value as key
-		$item = $_POST['Item Name'];
-		$serial = $_POST['Serial #'];
-		$location = $_POST['Location'];
-		$model = $_POST['Model'];
-		$brand = $_POST['Brand'];
-		$status = $_POST['Status'];
-	 	$cost = $_POST['Cost'];
-		echo "I made it!";
+			$item = $_POST['Item Name'];
+			$serial = $_POST['Serial #'];
+			$location = $_POST['Location'];
+			$model = $_POST['Model'];
+			$brand = $_POST['Brand'];
+			$status = $_POST['Status'];
+			$cost = $_POST['Cost'];
+			
+			$sql = "INSERT INTO 'assets' (name_id, serial_number, location, model, brand, status, cost)
+			VALUES ('$item', '$serial', '$location', '$model', '$brand', '$status', '$cost')";
+			
+			$rs = pg_connect($conn, $sql);
+			pg_close($conn);
 		
-		$sql = "INSERT INTO 'assets' (id, serial_number, location, model, brand, status, cost) 
-		VALUES ('$item', '$serial', '$location', '$model', '$brand', '$status', '$cost')";
-		
-		echo "I made it2!";
-		
-/*		if ($conn->query($sql) == TRUE)
-		{
-			echo "New record created successfully";	
-		}
-		else
-		{
-			echo "Error: " . $sql . "<br>" . $conn->error; 	
-		}
-*/		echo "I made it3!";
-		echo $item;
-		$rs = pg_connect($conn, $sql); //run query
-		pg_close($conn);
-		echo "I made it4!!";
-
 	}
 	else
 	{
-		echo "DID NOT WORKK!!";	
+			echo "Error adding data to database";
 	}
-?>	
-
-<html>
+?>
 
 <head>
     <meta charset="utf-8">
@@ -77,23 +56,19 @@
         </div>
         </div>
     </nav>
-<!--Started editing-->	
-
-
-<!--Endeded editing-->
     <div>
 		<!--Nav bar settings-->
         <nav class="navbar navbar-default navigation-clean" style="background-color:rgb(72,143,174);min-width:0px;max-width:10001px;margin-right:0px;margin-top:-51px;">
             <div class="container">
-                <div class="navbar-header"><a class="navbar-brand" href="/home">Meridian Solutions</a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+                <div class="navbar-header"><a class="navbar-brand" href="#">Meridian Solutions</a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
                 <div
                     class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-right" style="margin-top:0px;margin-right:-20px;">
-					   <li role="presentation"><a href="/add_item" style="color:rgb(51,51,51);">Add Item</a></li>
-                        <li role="presentation"><a href="/edit_table" style="color:rgb(51,51,51);">Edit Table</a></li>
-						<li role="presentation"><a href="/settings" style="color:rgb(51,51,51);">Settings </a></li>
-						<li role="presentation"><a href="/reports" style="color:rgb(51,51,51);">Reports </a></li>
-                        <li role="presentation"><a href="/logout.php" style="color:rgb(51,51,51);">Logout </a></li>
+					   <li role="presentation"><a href="#" style="color:rgb(51,51,51);">Add Item</a></li>
+                        <li role="presentation"><a href="#" style="color:rgb(51,51,51);">Search Item</a></li>
+						<li role="presentation"><a href="#" style="color:rgb(51,51,51);">Settings </a></li>
+						<li role="presentation"><a href="#" style="color:rgb(51,51,51);">Reports </a></li>
+                        <li role="presentation"><a href="#" style="color:rgb(51,51,51);">Logout </a></li>
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"> </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li role="presentation"><a href="#">First Item</a></li>
@@ -138,16 +113,16 @@
                     <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left">
 						<!--Create Item Name entry--> 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12"  style="color:rgb(51,51,51);" for="Item Name"> Item Name <span class="required">*</span>
-/*THIS*/                       	<?php $_GET['Item Name']?>
-			</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12"  style="color:rgb(51,51,51);" name="Item Name"> Item Name <span class="required">*</span>
+                        </label>
 						
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="Item Name" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
                       </div>
 						<!--Create Serial # entry-->
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="color:rgb(51,51,51);" for="Serial #">Serial # <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="color:rgb(51,51,51);" name="Serial #">Serial # <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="Serial #" name="Serial #" required="required" class="form-control col-md-7 col-xs-12">
@@ -155,23 +130,22 @@
                       </div>
 						<!--Creates Location entry-->
                       <div class="form-group">
-                        <label for="Location" class="control-label col-md-3 col-sm-3 col-xs-12"style="color:rgb(51,51,51);" for="Location">Location <span class="required">*</span>
+                        <label for="Location" class="control-label col-md-3 col-sm-3 col-xs-12"style="color:rgb(51,51,51);" name="Location">Location <span class="required">*</span>
 						</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input id="Location" class="form-control col-md-7 col-xs-12" type="text" name="Location">
                         </div>
                       </div>
-					   <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left">
 					  <!--Creates Model entry-->
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="color:rgb(51,51,51);" for="Model"> Model
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="color:rgb(51,51,51);" name="Model"> Model
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="Model" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 					  <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="color:rgb(51,51,51);" for="Brand"> Brand
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="color:rgb(51,51,51);" name="Brand"> Brand
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="Brand" required="required" class="form-control col-md-7 col-xs-12">
@@ -179,7 +153,7 @@
                       </div>
 					  <!--Creates Status entry-->
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="color:rgb(51,51,51);" for="Status">Assigned <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="color:rgb(51,51,51);" name="Status">Assigned <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="Status" name="Status" required="required" class="form-control col-md-7 col-xs-12">
@@ -187,10 +161,9 @@
                       </div>
                       
                         	
-						<form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left">
 						<!--Creates Cost entry-->
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="color:rgb(51,51,51);" for="Cost"> Cost
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="color:rgb(51,51,51);" name="Cost"> Cost
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="Cost" required="required" class="form-control col-md-7 col-xs-12">
@@ -199,8 +172,8 @@
                       <div class="form-group">
                         
 						<!--Creates Save button-->
-                        <button class="btn btn-default" type="submit" style="margin-left:550px;margin-top:30px;">Save</button>                  
-					 </script>
+                        <button class="btn btn-default" type="button" style="margin-left:550px;margin-top:30px;">Save</button>                  
+					 </form>
     <!-- /Starrr -->
         </div>
     </div>
