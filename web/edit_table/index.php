@@ -1,6 +1,6 @@
 <?php
 require('/app/web/connect.php');
-include("../../php/DataTables.php" );
+//include("../../php/DataTables.php" );
 session_start(); //start user session to send data between pages
 
 //var editor;		 
@@ -37,14 +37,36 @@ session_start(); //start user session to send data between pages
 
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
-	$('#assets').DataTable();
+	//$('#assets').DataTable();
 		var editor;
 	$(document).ready(function() {
 		editor = new $.fn.dataTable.Editor( {
 			ajax: "../php/staff.php",
 			table: "#assets",
 		//$('#example').DataTable();	
-	} );</script>
+			 $('#assets').DataTable( {
+        dom: "Bfrtip",
+        ajax: "../php/staff.php",
+        columns: [
+            { data: null, render: function ( data, type, row ) {
+                // Combine the first and last names into a single table field
+                return data.first_name+' '+data.last_name;
+            } },
+            { data: "name_id" },
+            { data: "serial_number" },
+            { data: "extn" },
+            { data: "start_date" },
+            { data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+        ],
+        select: true,
+        buttons: [
+            { extend: "create", editor: editor },
+            { extend: "edit",   editor: editor },
+            { extend: "remove", editor: editor }
+        ]
+    } );
+		} ); </script>
+	
 
 
 </head>
