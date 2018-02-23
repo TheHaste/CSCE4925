@@ -7,8 +7,6 @@ var editor;
 
 //search page
 ?>
-
-
 <html>
 
 <head>
@@ -32,180 +30,66 @@ var editor;
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script> 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-	
 
-	<!-- DataTable Javascript Implementation -->
-	<script type="text/javascript">
-	$(document).ready(function() {
-		editor = new $.fn.dataTable.Editor( 
-			{
-				ajax:"/app/web/edit_table",
-				table: "#assests",
-				 fields: [ {
-                				label: "Name:",
-               					 name: "name_id"
-           				 }, {
-               					 label: "Serial Number:",
-              					  name: "serial_number"
-           				 }, {
-             					 label: "Brand:",
-                			         name: "brand"
-           				 }, {
-                				label: "Model:",
-                				name: "model"
-            				}, {
-              			  		label: "Assigned:",
-                				name: "assigned"
-           			        }, {
-                				label: "Location:",
-                				name: "location"
-            				}, {
-                				label: "Cost:",
-                				name: "cost"
-					}, {
-                				label: "Data Deployed:",
-                				name: "date_deployed"
-					}, {
-                				label: "Date Surplused:",
-                				name: "date_surplused"
-					}, {
-                				label: "Last Updated:",
-                				name: "last_updated"
-            				}
-      				  ]
-			} );
-		
-		var table = $('#assests').DataTable( {
+$(document).ready(function() {
+    editor = new $.fn.dataTable.Editor( {
+        ajax: "../php/staff.php",
+        table: "#example",
+        fields: [ {
+                label: "First name:",
+                name: "first_name"
+            }, {
+                label: "Last name:",
+                name: "last_name"
+            }, {
+                label: "Position:",
+                name: "position"
+            }, {
+                label: "Office:",
+                name: "office"
+            }, {
+                label: "Extension:",
+                name: "extn"
+            }, {
+                label: "Start date:",
+                name: "start_date"
+            }, {
+                label: "Salary:",
+                name: "salary"
+            }
+        ]
+    } );
+ 
+    var table = $('#example').DataTable( {
         dom: "Bfrtip",
-        ajax: "/app/web/edit_table",
+        ajax: "../php/staff.php",
         columns: [
             { data: null, render: function ( data, type, row ) {
                 // Combine the first and last names into a single table field
-                return data.name_id+' '+data.serial_number;
+                return data.first_name+' '+data.last_name;
             } },
-            { data: "brand" },
-            { data: "model" },
-            { data: "assigned" },
-            { data: "location" },
-            { data: "cost"},
-            { data: "date_deployed" },
-            { data: "date_surplused" },
-            { data: "last_updated", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+            { data: "position" },
+            { data: "office" },
+            { data: "extn" },
+            { data: "start_date" },
+            { data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
         ],
         select: true,
         buttons: [
-            //{ extend: "create", editor: editor },
+            { extend: "create", editor: editor },
             { extend: "edit",   editor: editor },
-            { extend: "remove", editor: editor },
+            {
+                extend: "selectedSingle",
+                text: "Salary +250",
+                action: function ( e, dt, node, config ) {
+                    // Immediately add `250` to the value of the salary and submit
+                    editor
+                        .edit( table.row( { selected: true } ).index(), false )
+                        .set( 'salary', (editor.get( 'salary' )*1) + 250 )
+                        .submit();
+                }
+            },
+            { extend: "remove", editor: editor }
         ]
     } );
-	} );</script>
-		//$('#assets').DataTable();	
-	<!--} );</script>-->
-	
-</head>
-
-
-<!--Nav bar settings-->
-<body style="padding-left:-1px;">
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header"><a class="navbar-brand" href="#"> </a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
-            <div
-                class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav navbar-right"></ul>
-        </div>
-        </div>
-    </nav>
-    <div>
-	<!--Nav bar settings-->
-        <nav class="navbar navbar-default navigation-clean" style="background-color:rgb(72,143,174);min-width:0px;max-width:10001px;margin-right:0px;margin-top:-51px;">
-            <div class="container">
-                <div class="navbar-header"><a class="navbar-brand" href="/home">Meridian Solutions</a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
-                <div
-                    class="collapse navbar-collapse" id="navcol-1">
-                    <ul class="nav navbar-nav navbar-right" style="margin-top:0px;margin-right:-20px;">
-					   <li role="presentation"><a href="/add_item" style="color:rgb(51,51,51);">Add Item</a></li>
-                        <li role="presentation"><a href="/edit_table" style="color:rgb(51,51,51);">Edit Table</a></li>
-						<li role="presentation"><a href="/settings" style="color:rgb(51,51,51);">Settings </a></li>
-						<li role="presentation"><a href="/reports" style="color:rgb(51,51,51);">Reports </a></li>
-                        <li role="presentation"><a href="/logout.php" style="color:rgb(51,51,51);">Logout </a></li>
-                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"> </a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li role="presentation"><a href="#">First Item</a></li>
-                                <li role="presentation"><a href="#">Second Item</a></li>
-                                <li role="presentation"><a href="#">Third Item</a></li>
-								<li role="presentation"><a href="#">Fourth Item</a></li>
-								
-                            </ul>
-                        </li>
-                    </ul>
-            </div>
-    </div>
-    </nav>
-    </div>
-	<div class="container">
-	<div class="panel panel-default panel-table">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col col-xs-6">
-                    <h3 class="panel-title">Meridian Inventory</h3>
-                  </div>
-                </div>
-              </div>
-			  <div class="panel-body">
-			<table id="example" class="display" cellspacing="0" width="100%">
-				<thead>
-                    <tr>
-             <th>Name</th>
-            <th>Serial Number</th>
-			<th>Brand </th>
-			<th>Model </th>
-			<th>Assigned</th>
-			<th>Location</th>
-			<th>Cost</th>
-			<th>Date Deployed</th>
-			<th>Date Surplused</th>
-			<th>Last Updated</th>
-			<th>Edit/Delete</th>
-			</tr> 
-				  </thead>
-
-                   <tbody>
-					
-					<?php
-						//fill table
-						$query = "SELECT * FROM assets;";
-						$item = array(); //array for assets
-						$rs = pg_query($conn, $query); //run query
-						while ($item = pg_fetch_assoc($rs)) //fetch and fill array
-						{
-							//$item[] = $line;
-							echo '
-							<tr>
-							<td>'.$item['name_id'].'</td>
-							<td>'.$item['serial_number'].'</td>
-							<td>'.$item['brand'].'</td>
-							<td>'.$item['model'].'</td>
-							<td>'.$item['assigned'].'</td>
-							<td>'.$item['location'].'</td>
-							<td>'.$item['cost'].'</td>
-							<td>'.$item['date_deployed'].'</td>
-							<td>'.$item['date_surplused'].'</td>
-							<td>'.$item['last_updated'].'</td>
-							<td>'.$item['Edit/Delete'].'</td>
-							</tr> 
-							'; 
-						}
-					?>
-					 
-                   </tbody>
-			</table>
-			</div>
-			</div>
-</div>
-</body>
-	
-	
-
-</html>
+} );
