@@ -49,7 +49,15 @@ else if($_SESSION["userType"] == 'user'){
 		 {
 			dom: 'Bfrtip',
 			buttons: [
-				'copy', 'pdf', 'excel'
+				'pdf', {extend: 'excel',
+							text: 'Export to Excel',
+							filename: 'Meridian Inventory.xlsx',
+							exportOptions: {
+								modifier: {
+									page: 'current'
+								}
+							}
+						}
 			]
 		});	
 	} );
