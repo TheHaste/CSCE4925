@@ -37,40 +37,39 @@ session_start(); //start user session to send data between pages
 
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
-	//$('#assets').DataTable();
-		var editor;
 	$(document).ready(function() {
-		editor = new $.fn.dataTable.Editor( {
-			//ajax: "../php/staff.php",
-		//});
-			//table: "#assets",
-		//$('#example').DataTable();	
-			 $('#assets').DataTable( {
-        dom: "Bfrtip",
-       // ajax: "../php/staff.php",
-        columns: [
-            { data: null, render: function ( data, type, row ) {
-                // Combine the first and last names into a single table field
-                return data.first_name+' '+data.last_name;
-            } },
-            { data: "name_id" },
-            { data: "serial_number" },
-            { data: "extn" },
-            { data: "start_date" },
-            { data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
-        ],
-        select: true,
-        buttons: [
-            { extend: "create", editor: editor },
-            { extend: "edit",   editor: editor },
-            { extend: "remove", editor: editor }
-        ]
-    } );
-
-		} ); 
-
-</script>	
-
+		$('#assets').DataTable(
+		 {
+			dom: 'Bfrtip',
+			lengthMenu: [
+				[ 10, 25, 50, -1 ],
+				[ '10 rows', '25 rows', '50 rows', 'Show all' ]
+			],
+			buttons: [
+				'pageLength',
+				{extend: 'pdf',
+					text: 'Export to PDF',
+					filename: 'Meridian Inventory',
+					exportOptions: {
+						modifier: {
+							page: 'current'
+						}
+					}
+				},
+				{extend: 'excel',
+					text: 'Export to Excel',
+					filename: 'Meridian Inventory',
+					exportOptions: {
+						modifier: {
+							page: 'current'
+						}
+					}
+				}
+			]
+		});	
+	} );
+	
+</script>
 
 </head>
 
