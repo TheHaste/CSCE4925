@@ -48,15 +48,7 @@ else if($_SESSION["userType"] == 'user'){
 		 {
 			dom: 'Bfrtip',
 			buttons: [
-				{extend: 'pdf'
-					text: 'Export to PDF',
-					filename: 'Meridian Inventory',
-						exportOptions: {
-							modifier: {
-								page: 'current'
-							}
-						}
-				},
+				'pdf',
 				{extend: 'excel',
 					text: 'Export to Excel',
 					filename: 'Meridian Inventory',
