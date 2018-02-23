@@ -53,7 +53,7 @@ else if($_SESSION["userType"] == 'user'){
 					filename: 'Meridian Inventory',
 						exportOptions: {
 							modifier: {
-								page: 'current',
+								page: 'current'
 							}
 						}
 				},
@@ -62,7 +62,7 @@ else if($_SESSION["userType"] == 'user'){
 					filename: 'Meridian Inventory',
 					exportOptions: {
 						modifier: {
-							page: 'current',
+							page: 'current'
 						}
 					}
 				}
