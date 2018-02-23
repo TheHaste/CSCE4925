@@ -96,12 +96,12 @@ var editor;
         buttons: [
             //{ extend: "create", editor: editor },
             { extend: "edit",   editor: editor },
-            { extend: "remove", editor: editor }
+            { extend: "remove", editor: editor },
         ]
     } );
-} );
-		//$('#assets').DataTable();	
 	} );</script>
+		//$('#assets').DataTable();	
+	<!--} );</script>-->
 	
 </head>
 
