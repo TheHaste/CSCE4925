@@ -7,7 +7,7 @@
 	$count = 1;
 	
 	
-	if($count == 1)
+	if(isset($_POST) & !empty($_POST)
 	{
 			$item = $_POST['Item Name'];
 			$serial = $_POST['Serial #'];
@@ -22,11 +22,13 @@
 			
 			$rs = pg_connect($conn, $sql);
 			pg_close($conn);
+			
+			echo $item;
 		
 	}
 	else
 	{
-			echo "Error adding data to database";
+			$failmsg = "Error adding data to database";
 	}
 ?>
 
