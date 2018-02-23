@@ -36,9 +36,9 @@ else if($_SESSION["userType"] == 'user'){
 	
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap.min.js"></script>	
-<!--	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script> -->
-	<script scr="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
-	<script scr="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script> 
 
 	<!-- DataTable Javascript Implementation -->
@@ -48,7 +48,7 @@ else if($_SESSION["userType"] == 'user'){
 		 {
 			dom: 'Bfrtip',
 			buttons: [
-				'copy'
+				'copy', 'pdf'
 			]
 		});	
 	} );
