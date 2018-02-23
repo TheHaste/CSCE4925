@@ -34,7 +34,7 @@ session_start(); //start user session to send data between pages
 <link rel="stylesheet" href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css"></script>
 <script src="https://cdn.datatables.net/select/1.2.5/css/select.dataTables.min.css"></script>
 						   
-						   
+	<script type="text/javascript">					   
 	$(document).ready(function() {
 		$('#assets').DataTable( {
     buttons: [
