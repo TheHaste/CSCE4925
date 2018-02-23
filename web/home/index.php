@@ -41,7 +41,7 @@ else if($_SESSION["userType"] == 'user'){
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
 	$(document).ready(function() {
-		$('#example').DataTable();	
+		$('#assets').DataTable();	
 	} );
 	
 //	$('#assets').DataTable( {
