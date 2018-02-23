@@ -20,7 +20,7 @@ else if($_SESSION["userType"] == 'user'){
 <html>
 
 <head>
-    <title>Home</title>
+    <title>Meridian Inventory</title>
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
 	
@@ -54,7 +54,6 @@ else if($_SESSION["userType"] == 'user'){
 						exportOptions: {
 							modifier: {
 								page: 'current',
-								title: 'Meridian Inventory'
 							}
 						}
 				}, 
@@ -64,7 +63,6 @@ else if($_SESSION["userType"] == 'user'){
 							exportOptions: {
 								modifier: {
 									page: 'current',
-									title: 'Meridian Inventory'
 								}
 							}
 						}
