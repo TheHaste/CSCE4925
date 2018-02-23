@@ -10,7 +10,7 @@ session_start(); //start user session to send data between pages
 <html>
 
 <head>
-    <title>edit_table</title>
+    <title>Meridian Inventory</title>
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
 	
@@ -31,19 +31,42 @@ session_start(); //start user session to send data between pages
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script> 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
 
-
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
 	$(document).ready(function() {
-		$('#example').DataTable(
+		$('#assets').DataTable(
 		 {
-			 buttons: [
-        { extend: 'create', editor: myEditor },
-        { extend: 'edit',   editor: myEditor },
-        { extend: 'remove', editor: myEditor }
-    ]
-} ); 
-	});</script>
+			dom: 'Bfrtip',
+			lengthMenu: [
+				[ 10, 25, 50, -1 ],
+				[ '10 rows', '25 rows', '50 rows', 'Show all' ]
+			],
+			buttons: [
+				'pageLength',
+				{extend: 'pdf',
+					text: 'Export to PDF',
+					filename: 'Meridian Inventory',
+					exportOptions: {
+						modifier: {
+							page: 'current'
+						}
+					}
+				},
+				{extend: 'excel',
+					text: 'Export to Excel',
+					filename: 'Meridian Inventory',
+					exportOptions: {
+						modifier: {
+							page: 'current'
+						}
+					}
+				}
+			]
+		});	
+	} );
+	
+</script>
+
 	
 </head>
 
