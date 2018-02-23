@@ -33,72 +33,11 @@ session_start(); //start user session to send data between pages
 	
 
 	<!-- DataTable Javascript Implementation -->
+	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
-	var editor; // use a global for the submit and return data rendering in the examples
- 
-$(document).ready(function() {
-    editor = new $.fn.dataTable.Editor( {
-        ajax: "../php/staff.php",
-        table: "#example",
-        fields: [ {
-                label: "Name:",
-                name: "name_id"
-            }, {
-                label: Last Name:",
-                name: "last_name"
-            }, {
-                label: "Position:",
-                name: "position"
-            }, {
-                label: "Office:",
-                name: "office"
-            }, {
-                label: "Extension:",
-                name: "extn"
-            }, {
-                label: "Start date:",
-                name: "start_date"
-            }, {
-                label: "Salary:",
-                name: "salary"
-            }
-        ]
-    } );
- 
-    var table = $('#example').DataTable( {
-        dom: "Bfrtip",
-        ajax: "../php/staff.php",
-        columns: [
-            { data: null, render: function ( data, type, row ) {
-                // Combine the first and last names into a single table field
-                return data.first_name+' '+data.last_name;
-            } },
-            { data: "position" },
-            { data: "office" },
-            { data: "extn" },
-            { data: "start_date" },
-            { data: "salary", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
-        ],
-        select: true,
-        buttons: [
-            { extend: "create", editor: editor },
-            { extend: "edit",   editor: editor },
-            {
-                extend: "selectedSingle",
-                text: "Salary +250",
-                action: function ( e, dt, node, config ) {
-                    // Immediately add `250` to the value of the salary and submit
-                    editor
-                        .edit( table.row( { selected: true } ).index(), false )
-                        .set( 'salary', (editor.get( 'salary' )*1) + 250 )
-                        .submit();
-                }
-            },
-            { extend: "remove", editor: editor }
-        ]
-    } );
-} );
-</script>
+	$(document).ready(function() {
+		$('#example').DataTable();	
+	} );</script>
 
 	
 </head>
