@@ -33,18 +33,12 @@ session_start(); //start user session to send data between pages
 	
 
 	<!-- DataTable Javascript Implementation -->
+	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
-		var editor;
 	$(document).ready(function() {
-		$('#assets').DataTable( {
-    buttons: [
-        { extend: 'create', editor: myEditor },
-        { extend: 'edit',   editor: myEditor },
-        { extend: 'remove', editor: myEditor }
-    ]
-		}
-} );
-	</script>
+		$('#example').DataTable();	
+	} );</script>
+
 	
 </head>
 
