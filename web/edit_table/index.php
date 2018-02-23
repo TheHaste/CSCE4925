@@ -11,19 +11,19 @@ session_start(); //start user session to send data between pages
 <html>
 
 <head>
-    <title>Meridian Inventory</title>
+    <title>Edit Table</title>
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
 	
 	<!-- DataTable Extensions -->
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"></link> 
+	<!--<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"></link>-->
 	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+        
 	<!-- DataTable Buttons Extensions -->
-	<link rel="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css"></link>
+	<!--<link rel="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css"></link>-->
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap.min.js"></script>	
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
@@ -32,19 +32,80 @@ session_start(); //start user session to send data between pages
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script> 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
 
+<link rel="stylesheet" href"https://cdn.datatables.net/select/1.2.5/css/select.dataTables.min.css"></link>
+<link rel="stylesheet" href"https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css"></link>
+<link rel="stylesheet" href"https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"></link>
+ <link rel= "stylesheet" href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css"></script>
+
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
-	$(document).ready(function() {
-		$('#assets').DataTable(
-		 {
-			dom: 'Bfrtip',
-			
-			buttons: [
-				'Edit','Delete'
-			]
-		 });	
-	} );
-	
+		var editor; // use a global for the submit and return data rendering in the examples
+ 
+$(document).ready(function() {
+    editor = new $.fn.dataTable.Editor( {
+        ajax: "../php/staff.php",
+        table: "#assets",
+        fields: [ {
+                label: "Name:",
+                name: "name_id"
+            }, {
+                label: "Serial Number:",
+                name: "serial_number"
+            }, {
+                label: "Brand:",
+                name: "brand"
+            }, {
+                label: "Model:",
+                name: "model"
+            }, {
+                label: "Assigned:",
+                name: "assigned"
+            }, {
+                label: "Location:",
+                name: "location",
+            }, {
+                label: "Cost:",
+                name: "cost"
+	    }, {
+                label: "Date Deployed:",
+                name: "date_deployed"
+	    }, {
+                label: "Date Surplused:",
+                name: "date_surplused"
+            }, {
+                label: "Last Updated:",
+                name: "last_updated"
+            }
+        ]
+    } );
+ 
+    $('#assests').DataTable( {
+        dom: "Bfrtip",
+        ajax: "../php/staff.php",
+        columns: [
+            { data: null, render: function ( data, type, row ) {
+                // Combine the first and last names into a single table field
+                return data.first_name+' '+data.last_name;
+            } },
+            { data: "name_id" },
+            { data: "serial_number" },
+            { data: "brand" },
+            { data: "model" },
+            { data: "assigned"},
+	    { data: "location"},
+	    { data: "cost"},
+	    { data: "date_deployed"},
+	    { data:"date_surplused"},
+	    { data:"last_updated"},
+        ],
+        select: true,
+        buttons: [
+            { extend: "create", editor: editor },
+            { extend: "edit",   editor: editor },
+            { extend: "remove", editor: editor }
+        ]
+    } );
+} );
 </script>
 
 </head>
