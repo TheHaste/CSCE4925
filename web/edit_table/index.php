@@ -10,7 +10,7 @@ session_start(); //start user session to send data between pages
 <html>
 
 <head>
-    <title>Meridian Inventory</title>
+    <title>Edit Table</title>
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
 	
@@ -32,8 +32,11 @@ session_start(); //start user session to send data between pages
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
 
 	<!-- DataTable Javascript Implementation -->
-	<script type="text/javascript">
+	<!--<script type="text/javascript">-->
 	$(document).ready(function() {
+		editor = new $.fn.dataTable.Editor( {
+			ajax: "../php/staff.php",
+			table: "
 		$('#example').DataTable();	
 	} );</script>
 
