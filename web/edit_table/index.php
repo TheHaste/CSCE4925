@@ -34,36 +34,16 @@ session_start(); //start user session to send data between pages
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
 	$(document).ready(function() {
-		$('#assets').DataTable(
-		 {
-			dom: 'Bfrtip',
-			lengthMenu: [
-				[ 10, 25, 50, -1 ],
-				[ '10 rows', '25 rows', '50 rows', 'Show all' ]
-			],
-			buttons: [
-				'pageLength',
-				{extend: 'pdf',
-					text: 'Export to PDF',
-					filename: 'Meridian Inventory',
-					exportOptions: {
-						modifier: {
-							page: 'current'
-						}
-					}
-				},
-				{extend: 'excel',
-					text: 'Export to Excel',
-					filename: 'Meridian Inventory',
-					exportOptions: {
-						modifier: {
-							page: 'current'
-						}
-					}
-				}
-			]
-		});	
-	} );
+		$('#assets').DataTable( {
+    buttons: [
+        { extend: 'create', editor: myEditor },
+        { extend: 'edit',   editor: myEditor },
+        { extend: 'remove', editor: myEditor }
+    ]
+		}
+} );
+	</script>
+			
 	
 </script>
 
