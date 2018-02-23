@@ -2,7 +2,7 @@
 require('/app/web/connect.php');
 session_start(); //start user session to send data between pages
 
-//var editor;		 
+var editor;		 
 			   
 
 //search page
@@ -28,16 +28,79 @@ session_start(); //start user session to send data between pages
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap.min.js"></script>	
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
-	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
-	
-	<script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
-	<link rel= "stylesheet" href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css"></link>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
 	
 
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
 	$(document).ready(function() {
-		$('#example').DataTable();	
+		editor = new $.fn.dataTable.Editor( 
+			{
+				ajax:"/app/web/edit_table",
+				table: "#assests",
+				 fields: [ {
+                				label: "Name:",
+               					 name: "name_id"
+           				 }, {
+               					 label: "Serial Number:",
+              					  name: "serial_number"
+           				 }, {
+             					 label: "Brand:",
+                			         name: "brand"
+           				 }, {
+                				label: "Model:",
+                				name: "model"
+            				}, {
+              			  		label: "Assigned:",
+                				name: "assigned"
+           			        }, {
+                				label: "Location:",
+                				name: "location"
+            				}, {
+                				label: "Cost:",
+                				name: "cost"
+					}, {
+                				label: "Data Deployed:",
+                				name: "date_deployed"
+					}, {
+                				label: "Date Surplused:",
+                				name: "date_surplused"
+					}, {
+                				label: "Last Updated:",
+                				name: "last_updated"
+            				}
+      				  ]
+			} );
+		
+		var table = $('#assests').DataTable( {
+        dom: "Bfrtip",
+        ajax: "/app/web/edit_table",
+        columns: [
+            { data: null, render: function ( data, type, row ) {
+                // Combine the first and last names into a single table field
+                return data.name_id+' '+data.serial_number;
+            } },
+            { data: "brand" },
+            { data: "model" },
+            { data: "assigned" },
+            { data: "location" },
+            { data: "cost"},
+            { data: "date_deployed" },
+            { data: "date_surplused" },
+            { data: "last_updated", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) }
+        ],
+        select: true,
+        buttons: [
+            //{ extend: "create", editor: editor },
+            { extend: "edit",   editor: editor },
+            { extend: "remove", editor: editor }
+        ]
+    } );
+} );
+		//$('#assets').DataTable();	
 	} );</script>
 	
 </head>
