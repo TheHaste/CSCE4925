@@ -64,7 +64,7 @@ session_start(); //start user session to send data between pages
             { extend: "edit",   editor: editor },
             { extend: "remove", editor: editor }
         ]
-    } );
+    } );</script>
 		} ); 
 
 	
