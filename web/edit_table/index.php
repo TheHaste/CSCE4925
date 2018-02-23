@@ -33,7 +33,7 @@ session_start(); //start user session to send data between pages
 	
 
 	<!-- DataTable Javascript Implementation -->
-	
+	<script type="text/javascript">
 	var editor; // use a global for the submit and return data rendering in the examples
  
 $(document).ready(function() {
@@ -97,7 +97,7 @@ $(document).ready(function() {
             { extend: "remove", editor: editor }
         ]
     } );
-} );
+} );</script>
 
 	
 </head>
