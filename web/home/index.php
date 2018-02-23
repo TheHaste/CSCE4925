@@ -47,7 +47,12 @@ else if($_SESSION["userType"] == 'user'){
 		$('#assets').DataTable(
 		 {
 			dom: 'Bfrtip',
+			lengthMenu: [
+				[ 10, 25, 50, -1 ],
+				[ '10 rows', '25 rows', '50 rows', 'Show all' ]
+			],
 			buttons: [
+				'pageLength',
 				{extend: 'pdf',
 					text: 'Export to PDF',
 					filename: 'Meridian Inventory',
