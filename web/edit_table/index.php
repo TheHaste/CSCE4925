@@ -34,9 +34,17 @@ session_start(); //start user session to send data between pages
 
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
+		var editor;
 	$(document).ready(function() {
-		$('#example').DataTable();	
-	} );</script>
+		$('#assets').DataTable( {
+    buttons: [
+        { extend: 'create', editor: myEditor },
+        { extend: 'edit',   editor: myEditor },
+        { extend: 'remove', editor: myEditor }
+    ]
+		}
+} );
+	</script>
 	
 </head>
 
@@ -89,7 +97,7 @@ session_start(); //start user session to send data between pages
                 </div>
               </div>
 			  <div class="panel-body">
-			<table id="example" class="display" cellspacing="0" width="100%">
+			<table id="assets" class="display" cellspacing="0" width="100%">
 				<thead>
                     <tr>
              <th>Name</th>
