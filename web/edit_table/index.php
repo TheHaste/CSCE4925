@@ -31,7 +31,7 @@ session_start(); //start user session to send data between pages
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script> 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-
+<link rel="stylesheet" href="https://cdn.datatables.net/select/1.2.5/css/select.dataTables.min.css"></link>
 <script src="https://cdn.datatables.net/select/1.2.5/js/dataTables.select.min.js"></script>
 <script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
 
