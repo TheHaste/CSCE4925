@@ -2,7 +2,7 @@
 require('/app/web/connect.php');
 session_start(); //start user session to send data between pages
 
-var editor;		 
+//var editor;		 
 			   
 
 //search page
@@ -36,6 +36,7 @@ var editor;
 						   
 	<script type="text/javascript">					   
 	$(document).ready(function() {
+		var editor;
 		$('#assets').DataTable( {
     buttons: [
         { extend: 'create', editor: myEditor },
