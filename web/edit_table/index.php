@@ -30,7 +30,7 @@ var editor;
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
 	
-	<<script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
+	<script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
 	<link rel= "stylesheet" href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css"></link>
 	
 
