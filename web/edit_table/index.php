@@ -42,7 +42,7 @@ session_start(); //start user session to send data between pages
 			buttons: [
 				'Edit','Delete'
 			]
-		 }	
+		 });	
 	} );
 	
 </script>
