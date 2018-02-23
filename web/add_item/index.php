@@ -2,9 +2,10 @@
 <html>
 <?php
 	
-	require_once('/app/web/connect.php');
+	require('/app/web/connect.php');
 	
 	$count = 1;
+	
 	
 	if($count == 1)
 	{
@@ -144,6 +145,7 @@
                           <input type="text" id="Model" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
+					  <!--Creates Brand entry-->
 					  <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" style="color:rgb(51,51,51);" name="Brand"> Brand
                         </label>
@@ -172,7 +174,8 @@
                       <div class="form-group">
                         
 						<!--Creates Save button-->
-                        <button class="btn btn-default" type="submit" style="margin-left:550px;margin-top:30px;">Save</button>                  
+                        <button class="btn btn-default" type="submit" id="Save" style="margin-left:550px;margin-top:30px;">Save</button>
+					  </div>
 					 </form>
     <!-- /Starrr -->
         </div>
