@@ -45,7 +45,7 @@ else if($_SESSION["userType"] == 'user'){
 		 {
 			dom: 'Bfrtip',
 			buttons: [
-				'copy',
+				'excel',
 			]
 		});	
 	} );
