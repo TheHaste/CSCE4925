@@ -1,5 +1,6 @@
 <?php
 require('/app/web/connect.php');
+include("../../php/DataTables.php" );
 session_start(); //start user session to send data between pages
 
 //var editor;		 
@@ -84,7 +85,7 @@ session_start(); //start user session to send data between pages
                 </div>
               </div>
 			  <div class="panel-body">
-			<table id="example" class="display" cellspacing="0" width="100%">
+			<table id="assets" class="display" cellspacing="0" width="100%">
 				<thead>
                     <tr>
                         <th>Name</th>
