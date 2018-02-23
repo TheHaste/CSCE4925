@@ -37,8 +37,109 @@ session_start(); //start user session to send data between pages
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
 	$(document).ready(function() {
-		$('#example').DataTable();	
-	} );</script>
+		editor = new $.fn.dataTable.Editor( {
+			"ajax": "../edit_table",
+			"table": "#assets",
+			"fields": [ 
+					{
+					"label": "Name:",
+					"name": "name_id"
+					},
+				  	 {
+					   "label": "Serial Number",
+					   "name": "serial_number"
+					},
+					{
+					   "label": "Brand",
+					   "name": "brand"
+					},
+				 	  {
+					   "label":"Model",
+					   "name": "model"
+				 	  },
+				   	{
+					   "label":"Assigned",
+					   "name":"assigned"
+					   },
+				   {
+					   "label":"Location",
+					   "name":"location"
+				   },
+				{
+					"label":"Cost",
+					"name":"cost"
+				},
+				{
+					"label":"Date Deployed",
+					"name":"date_deployed"
+				},
+				{
+					"label":"Date Surplused",
+					"name": "date_surplused"
+				},
+				{
+					"label":"Last Updated",
+					"name": "last_updated"
+				},
+		}
+	]
+);
+				
+					   
+		$('#assets').DataTable(;	
+				       {
+		//Edit a record		      
+		$('#assets').on('click', 'a.editor_edit', function (e)
+			{		      
+				e.prentDefault();
+			editor.edit($(this).closest('tr'),
+			{
+			title 'edit record',
+			buttons: 'Update'
+		});
+				      
+		//Delete a record		      
+		$('#assests').on('click', 'a.editor_remove', function (e)
+				 {
+				      e.preventDefault();
+			
+			editor.remove( $(this).closest('tr'),
+				      {
+				title: 'Delete record',
+				message: 'Are you sure you wish to remove this record?',
+				button: 'Delete' 
+			} );
+		} );
+				      
+ $('#assets').DataTable( {
+        ajax: "../edit_table",
+        columns: [
+            //{ data: null, render: function ( data, type, row ) {
+                // Combine the first and last names into a single table field
+              //  return data.first_name+' '+data.last_name;
+            //} },
+            { data: "Name" },
+            { data: "Serial Number" },
+            { data: "Brand" },
+            { data: "Model" },
+            { data: "Assigned", render: $.fn.dataTable.render.number( ',', '.', 0, '$' ) },
+            {
+                data: null,
+                className: "center",
+                defaultContent: '<a href="" class="editor_edit">Edit</a> / <a href="" class="editor_remove">Delete</a>'
+            }
+        ]
+    } );
+} );				      
+				      
+				      
+				      
+				      
+				      
+				      
+				      
+				      
+				      );</script>
 
 
 
