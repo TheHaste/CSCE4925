@@ -7,7 +7,7 @@
 	$count = 1;
 	
 	
-	if(isset($_POST == 'Save')
+	if(isset($_POST == 'Save'))
 	{
 			$item = $_POST['Item Name'];
 			$serial = $_POST['Serial #'];
