@@ -42,7 +42,8 @@ session_start(); //start user session to send data between pages
 	$(document).ready(function() {
 		editor = new $.fn.dataTable.Editor( {
 			ajax: "../php/staff.php",
-			table: "#assets",
+		});
+			//table: "#assets",
 		//$('#example').DataTable();	
 			 $('#assets').DataTable( {
         dom: "Bfrtip",
@@ -65,7 +66,7 @@ session_start(); //start user session to send data between pages
             { extend: "remove", editor: editor }
         ]
     } );</script>
-		} ); 
+		//} ); 
 
 	
 
