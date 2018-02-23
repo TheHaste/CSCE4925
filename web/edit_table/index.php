@@ -15,27 +15,16 @@ session_start(); //start user session to send data between pages
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
 	
-	<!-- DataTable Extensions -->
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<!--<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"></link>-->
-	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
-	<!-- DataTable Buttons Extensions -->
-	<!--<link rel="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css"></link>-->
+		     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
-	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap.min.js"></script>	
-	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
-	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script> 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-
-<link rel="stylesheet" href"https://cdn.datatables.net/select/1.2.5/css/select.dataTables.min.css"></link>
-<link rel="stylesheet" href"https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css"></link>
-<link rel="stylesheet" href"https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"></link>
- <link rel= "stylesheet" href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css"></script>
+	<script src="https://cdn.datatables.net/select/1.2.5/js/dataTables.select.min.js"></script>
+	<script src="https://editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
+	
+	<link rel= "stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"></link>
+	<link rel= "stylesheet" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css"></link>
+<link rel= "stylesheet" href="https://cdn.datatables.net/select/1.2.5/css/select.dataTables.min.css"></link>
+<link rel="stylesheet" href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css"></link>
 
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
