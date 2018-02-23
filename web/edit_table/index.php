@@ -37,11 +37,11 @@ session_start(); //start user session to send data between pages
 
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
-		//var editor;
+		var editor;
 	$(document).ready(function() {
 		$('#assets').DataTable(
 		 {
-
+			dom:'Bfrtip',
 			buttons: [
 				{ extend: 'create', editor: myEditor },
 		{ extend: 'edit',   editor: myEditor },
