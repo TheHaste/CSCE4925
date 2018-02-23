@@ -37,11 +37,9 @@ session_start(); //start user session to send data between pages
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
 	$(document).ready(function() {
-		$('#assets').DataTable(); </script>
-		
-
-
-
+		$('#example').DataTable();	
+	} );</script>
+	
 </head>
 
 
@@ -137,11 +135,9 @@ session_start(); //start user session to send data between pages
 							'; 
 						}
 					?>
-			
+					 
                    </tbody>
 			</table>
-				  
-				  
 			</div>
 			</div>
 </div>
