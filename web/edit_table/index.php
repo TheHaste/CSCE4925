@@ -41,13 +41,13 @@ session_start(); //start user session to send data between pages
 		var editor;
 	$(document).ready(function() {
 		editor = new $.fn.dataTable.Editor( {
-			ajax: "../php/staff.php",
-		});
+			//ajax: "../php/staff.php",
+		//});
 			//table: "#assets",
 		//$('#example').DataTable();	
 			 $('#assets').DataTable( {
         dom: "Bfrtip",
-        ajax: "../php/staff.php",
+       // ajax: "../php/staff.php",
         columns: [
             { data: null, render: function ( data, type, row ) {
                 // Combine the first and last names into a single table field
@@ -66,10 +66,10 @@ session_start(); //start user session to send data between pages
             { extend: "remove", editor: editor }
         ]
     } );
-</script>
-		//} ); 
 
-	
+		} ); 
+
+</script>	
 
 
 </head>
