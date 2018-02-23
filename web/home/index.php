@@ -46,7 +46,7 @@ else if($_SESSION["userType"] == 'user'){
 		 {
 			dom: 'Bfrtip',
 			buttons: [
-				'excelHtml5', 'pdfHtml5'
+				'excel', 'pdf'
 			]
 		});	
 	} );
