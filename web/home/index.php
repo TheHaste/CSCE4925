@@ -56,16 +56,16 @@ else if($_SESSION["userType"] == 'user'){
 								page: 'current',
 							}
 						}
-				}, 
+				},
 				{extend: 'excel',
-							text: 'Export to Excel',
-							filename: 'Meridian Inventory',
-							exportOptions: {
-								modifier: {
-									page: 'current',
-								}
-							}
+					text: 'Export to Excel',
+					filename: 'Meridian Inventory',
+					exportOptions: {
+						modifier: {
+							page: 'current',
 						}
+					}
+				}
 			]
 		});	
 	} );
