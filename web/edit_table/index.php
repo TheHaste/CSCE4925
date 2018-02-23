@@ -97,7 +97,8 @@ $(document).ready(function() {
             { extend: "remove", editor: editor }
         ]
     } );
-} );</script>
+} );
+</script>
 
 	
 </head>
