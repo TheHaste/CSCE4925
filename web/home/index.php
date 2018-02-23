@@ -33,7 +33,6 @@ else if($_SESSION["userType"] == 'user'){
 
 	<!-- DataTable Buttons Extensions -->
 	<link rel="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css"></link>
-	
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap.min.js"></script>	
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
@@ -52,20 +51,20 @@ else if($_SESSION["userType"] == 'user'){
 				{extend: 'pdf'
 					text: 'Export to PDF',
 					filename: 'Meridian Inventory',
-					title: 'Meridian Inventory',
 						exportOptions: {
 							modifier: {
-								page: 'current'
+								page: 'current',
+								title: 'Meridian Inventory'
 							}
 						}
 				}, 
 				{extend: 'excel',
 							text: 'Export to Excel',
 							filename: 'Meridian Inventory',
-							title: 'Meridian Inventory',
 							exportOptions: {
 								modifier: {
-									page: 'current'
+									page: 'current',
+									title: 'Meridian Inventory'
 								}
 							}
 						}
