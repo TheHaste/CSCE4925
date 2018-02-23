@@ -41,15 +41,16 @@ else if($_SESSION["userType"] == 'user'){
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
 	$(document).ready(function() {
-		$('#assets').DataTable();	
+		$('#assets').DataTable(
+		 {
+			dom: 'Bfrtip',
+			buttons: [
+				'copy',
+			]
+		});	
 	} );
 	
-//	$('#assets').DataTable( {
- //   dom: 'Bfrtip',
- //   buttons: [
- //       'excelHtml5',
- //   ]
-//} );
+
 </script>
 
 </head>
