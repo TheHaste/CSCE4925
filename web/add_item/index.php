@@ -60,7 +60,7 @@
 		<!--Nav bar settings-->
         <nav class="navbar navbar-default navigation-clean" style="background-color:rgb(72,143,174);min-width:0px;max-width:10001px;margin-right:0px;margin-top:-51px;">
             <div class="container">
-                <div class="navbar-header"><a class="navbar-brand" href="#">Meridian Solutions</a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+                <div class="navbar-header"><a class="navbar-brand" href="#">Meridian Business Centers</a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
                 <div
                     class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-right" style="margin-top:0px;margin-right:-20px;">
@@ -172,7 +172,7 @@
                       <div class="form-group">
                         
 						<!--Creates Save button-->
-                        <button class="btn btn-default" type="button" style="margin-left:550px;margin-top:30px;">Save</button>                  
+                        <button class="btn btn-default" type="submit" style="margin-left:550px;margin-top:30px;">Save</button>                  
 					 </form>
     <!-- /Starrr -->
         </div>
