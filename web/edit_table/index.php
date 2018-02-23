@@ -32,12 +32,13 @@ session_start(); //start user session to send data between pages
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
 
 	<!-- DataTable Javascript Implementation -->
-	<!--<script type="text/javascript">-->
+	<script type="text/javascript">
+	$('#assets').DataTable();	
 	$(document).ready(function() {
 		editor = new $.fn.dataTable.Editor( {
 			ajax: "../php/staff.php",
-			table: "
-		$('#example').DataTable();	
+			table: "#assets",
+		//$('#example').DataTable();	
 	} );</script>
 
 
