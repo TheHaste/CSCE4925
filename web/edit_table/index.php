@@ -2,7 +2,7 @@
 require('/app/web/connect.php');
 session_start(); //start user session to send data between pages
 
-var editor;		 
+//var editor;		 
 			   
 
 //search page
