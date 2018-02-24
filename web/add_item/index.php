@@ -7,7 +7,7 @@
 	session_start();
 	
 	
-/*	if(isset($_POST['Save']))
+	if(isset($_POST['Save']))
 	{
 			$item = $_POST['Item Name'];
 			$serial = $_POST['Serial #'];
@@ -22,7 +22,7 @@
 //			$rs = pg_query($query);
 //			pg_close($conn);	
 	}
-	else
+/*	else
 	{
 			$failmsg = "Error adding data to database";
 	}
