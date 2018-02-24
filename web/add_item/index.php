@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-	
+/*	
 	require('/app/web/connect.php');
 	
 	session_start();
@@ -27,6 +27,7 @@
 	{
 			echo "Error adding data to database";
 	}
+*/
 ?>
 
 <html>
