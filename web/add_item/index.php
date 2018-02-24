@@ -7,7 +7,7 @@
 	session_start();
 	
 	
-	if(isset($_POST))
+	if(isset($_POST['Save']))
 	{
 			$item = $_POST['Item Name'];
 			$serial = $_POST['Serial #'];
@@ -20,6 +20,7 @@
 			$query = "INSERT INTO assets VALUES ('$_POST[name_id]', '$_POST[serial_number]', '$_POST[location]', '$_POST[model]', '$_POST[brand]', '$_POST[status]', '$_POST[cost]')";
 			
 			$result = pg_query($query);
+			echo "Added" $_POST[name_id] "to database";
 //			pg_close($conn);	
 	}
 	else
