@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
+
 <?php
 	
 	require('/app/web/connect.php');
 	
-	$count = 1;
+	session_start();
 	
 	
-	if(isset($_POST))
+	if(isset($_POST['Save']))
 	{
 			$item = $_POST['Item Name'];
 			$serial = $_POST['Serial #'];
@@ -17,10 +17,9 @@
 			$status = $_POST['Status'];
 			$cost = $_POST['Cost'];
 			
-			$sql = "INSERT INTO 'assets' (name_id, serial_number, location, model, brand, status, cost)
-			VALUES ('$item', '$serial', '$location', '$model', '$brand', '$status', '$cost')";
+			$query = "INSERT INTO assets VALUES ('$_POST['Item Name']', '$_POST['Serial #']', '$_POST['Location']', '$_POST['Model']', '$_POST['Brand']', '$_POST['Status']', '$_POST['Cost']');
 			
-			$rs = pg_connect($conn, $sql);
+			$rs = pg_query($query);
 			pg_close($conn);
 			
 			echo $item;
@@ -32,6 +31,7 @@
 	}
 ?>
 
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -117,8 +117,7 @@
 						<!--Create Item Name entry--> 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12"  style="color:rgb(51,51,51);" name="Item Name"> Item Name <span class="required">*</span>
-                        </label>
-/**/					echo $item;						
+                        </label> 					
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="Item Name" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
