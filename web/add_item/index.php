@@ -24,7 +24,7 @@
 	}
 	else
 	{
-			$failmsg = "Error adding data to database";
+			echo "Error adding data to database";
 	}
 ?>
 
