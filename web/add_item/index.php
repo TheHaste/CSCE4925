@@ -7,7 +7,7 @@
 	session_start();
 	
 	
-	if(isset($_POST['Save']))
+	if(isset($_POST))
 	{
 			$item = $_POST['Item Name'];
 			$serial = $_POST['Serial #'];
