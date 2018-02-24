@@ -17,7 +17,7 @@
 			$status = $_POST['Status'];
 			$cost = $_POST['Cost'];
 			
-			$query = "INSERT INTO assets VALUES ('$_POST['Item Name']', '$_POST['Serial #']', '$_POST['Location']', '$_POST['Model']', '$_POST['Brand']', '$_POST['Status']', '$_POST['Cost']')";
+			$query = "INSERT INTO assets VALUES ('$_POST[name_id]', '$_POST[serial_number]', '$_POST[location]', '$_POST[model]', '$_POST[brand]', '$_POST[status]', '$_POST[cost]')";
 			
 			$rs = pg_query($query);
 			pg_close($conn);	
