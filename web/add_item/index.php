@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-/*
+
 <?php
 	
 	require('/app/web/connect.php');
@@ -7,7 +7,7 @@
 	session_start();
 	
 	
-	if(isset($_POST['Save']))
+/*	if(isset($_POST['Save']))
 	{
 			$item = $_POST['Item Name'];
 			$serial = $_POST['Serial #'];
@@ -26,8 +26,8 @@
 	{
 			$failmsg = "Error adding data to database";
 	}
-?>
-*/
+*/?>
+
 <html>
 <head>
     <meta charset="utf-8">
