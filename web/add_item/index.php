@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 
+<?php
+	
+	require('/app/web/connect.php');
+	
+	session_start();
+	
+	
+	if(isset($_POST))
+	{
+			$item = $_POST['Item Name'];
+			$serial = $_POST['Serial #'];
+			$location = $_POST['Location'];
+			$model = $_POST['Model'];
+			$brand = $_POST['Brand'];
+			$status = $_POST['Status'];
+			$cost = $_POST['Cost'];
+			
+			$query = "INSERT INTO assets VALUES ('$_POST['Item Name']', '$_POST['Serial #']', '$_POST['Location']', '$_POST['Model']', '$_POST['Brand']', '$_POST['Status']', '$_POST['Cost']')";
+			
+			$result = pg_query($query);
+			echo $item;
 
+	}
+	else
+	{
+			echo "Error adding data to database";
+	}
+?>
 
 <html>
 <head>
@@ -161,31 +188,3 @@
 
 </html>
 
-<?php
-	
-	require('/app/web/connect.php');
-	
-	session_start();
-	
-	
-	if(isset($_POST))
-	{
-			$item = $_POST['Item Name'];
-			$serial = $_POST['Serial #'];
-			$location = $_POST['Location'];
-			$model = $_POST['Model'];
-			$brand = $_POST['Brand'];
-			$status = $_POST['Status'];
-			$cost = $_POST['Cost'];
-			
-			$query = "INSERT INTO assets VALUES ('$_POST['Item Name']', '$_POST['Serial #']', '$_POST['Location']', '$_POST['Model']', '$_POST['Brand']', '$_POST['Status']', '$_POST['Cost']')";
-			
-			$result = pg_query($query);
-			echo $item;
-
-	}
-	else
-	{
-			echo "Error adding data to database";
-	}
-?>
