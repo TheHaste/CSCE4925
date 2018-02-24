@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+/*
 <?php
 	
 	require('/app/web/connect.php');
@@ -27,7 +27,7 @@
 			$failmsg = "Error adding data to database";
 	}
 ?>
-
+*/
 <html>
 <head>
     <meta charset="utf-8">
