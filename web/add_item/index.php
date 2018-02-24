@@ -22,11 +22,11 @@
 			$result = pg_query($query);
 //			pg_close($conn);	
 	}
-/*	else
+	else
 	{
 			echo "Error adding data to database";
 	}
-*/
+
 ?>
 
 <html>
