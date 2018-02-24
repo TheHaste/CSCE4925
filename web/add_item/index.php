@@ -22,7 +22,7 @@
 			$rs = pg_query($query);
 			pg_close($conn);
 			
-			echo '$item';
+			echo '$_POST['Item Name']';
 		
 	}
 	else
