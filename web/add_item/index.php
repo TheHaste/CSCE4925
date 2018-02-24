@@ -17,17 +17,15 @@
 			$status = $_POST['Status'];
 			$cost = $_POST['Cost'];
 			
-			$query = "INSERT INTO assets (name_id, )VALUES ('$_POST['Item Name']', '$_POST['Serial #']', '$_POST['Location']', '$_POST['Model']', '$_POST['Brand']', '$_POST['Status']', '$_POST['Cost']');
+			$query = "INSERT INTO assets VALUES ('$_POST['Item Name']', '$_POST['Serial #']', '$_POST['Location']', '$_POST['Model']', '$_POST['Brand']', '$_POST['Status']', '$_POST['Cost']')";
 			
 			$result = pg_query($query);
-		//	pg_close($conn);
-			
 			echo $item;
-		
+//			pg_close($conn);	
 	}
 	else
 	{
-			$failmsg = "Error adding data to database";
+			echo "Error adding data to database";
 	}
 ?>
 
