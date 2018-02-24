@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+
 <?php
 	
 	require('/app/web/connect.php');
@@ -17,7 +17,7 @@
 			$status = $_POST['Status'];
 			$cost = $_POST['Cost'];
 			
-			$query = "INSERT INTO assets VALUES ('$_POST['Item Name']', '$_POST['Serial #']', '$_POST['Location']', '$_POST['Model']', '$_POST['Brand']', '$_POST['Status']', '$_POST['Cost']');";
+			//$query = "INSERT INTO assets VALUES ('$_POST['name_id']', '$_POST['Serial #']', '$_POST['Location']', '$_POST['Model']', '$_POST['Brand']', '$_POST['Status']', '$_POST['Cost']');";
 			
 			$rs = pg_query($query);
 			pg_close($conn);
@@ -29,7 +29,7 @@
 	}
 ?>
 
-
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
