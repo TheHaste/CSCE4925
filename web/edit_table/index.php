@@ -24,10 +24,12 @@ session_start(); //start user session to send data between pages
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<!-- DataTable Editor Extensions -->
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.16/b-1.5.1/sl-1.2.5/datatables.min.css"/>
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.16/b-1.5.1/sl-1.2.5/datatables.min.css"/> -->
+	<link rel="stylesheet" type="text/css" href="Editor-PHP-1.7.2/css/datatables.min.css"/>
 	<link rel="stylesheet" type="text/css" href="Editor-PHP-1.7.2/css/editor.dataTables.css">
 	<script type="text/javascript" src="Editor-PHP-1.7.2/js/dataTables.editor.js"></script>
-	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.16/b-1.5.1/sl-1.2.5/datatables.min.js"></script>
+	<script type="text/javascript" src="Editor-PHP-1.7.2/js/datatables.min.js"></script>
+	<!-- <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.16/b-1.5.1/sl-1.2.5/datatables.min.js"></script> -->
 	
 	<!-- DataTable Buttons Extensions -->
 	<link rel="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css"></link>
