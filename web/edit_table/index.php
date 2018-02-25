@@ -46,7 +46,7 @@ session_start(); //start user session to send data between pages
  
 $(document).ready(function() {
     editor = new $.fn.dataTable.Editor( {
-        ajax: "Editor-PHP-1.7.2/php/assets.php",
+        //ajax: 'Editor-PHP-1.7.2/php/assets.php',
         table: "#assets",
         fields: [ {
                 label: "Name:",
@@ -69,10 +69,10 @@ $(document).ready(function() {
             }, {
                 label: "Cost:",
                 name: "cost"
-	    }, {
+			}, {
                 label: "Date Deployed:",
                 name: "date_deployed"
-	    }, {
+			}, {
                 label: "Date Surplused:",
                 name: "date_surplused"
             }, {
@@ -82,15 +82,9 @@ $(document).ready(function() {
         ]
     } );
  
-    $('#assests').DataTable( {
+    $('#assets').DataTable( {
         dom: "Bfrtip",
-        ajax: "../php/staff.php",
         columns: [
-            //{ data: null, render: function ( data, type, row ) {
-                // Combine the first and last names into a single table field
-             //   return data.first_name+' '+data.last_name;
-            //} 
-		//},
             { data: "name_id" },
             { data: "serial_number" },
             { data: "brand" },
@@ -100,7 +94,7 @@ $(document).ready(function() {
 			{ data: "cost"},
 			{ data: "date_deployed"},
 			{ data:"date_surplused"},
-			{ data:"last_updated"},
+			{ data:"last_updated"}
         ],
         select: true,
         buttons: [
