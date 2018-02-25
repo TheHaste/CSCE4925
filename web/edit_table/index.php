@@ -61,7 +61,7 @@ $(document).ready(function() {
                 label: "Model:",
                 name: "model"
             }, {
-                label: "Assigned:",
+                label: "Assigned User:",
                 name: "assigned"
             }, {
                 label: "Location:",
