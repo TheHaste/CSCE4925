@@ -47,6 +47,7 @@ $(document).ready(function() {
     editor = new $.fn.dataTable.Editor( {
         ajax: 'Editor-PHP-1.7.2/php/assets.php',
         table: '#assets',
+		idSrc: 'id',
         fields: [ {
                 label: "Name:",
                 name: "name_id"
