@@ -45,10 +45,9 @@ session_start(); //start user session to send data between pages
 		var editor; // use a global for the submit and return data rendering in the examples
  
 $(document).ready(function() {
-    //editor = new $.fn.dataTable.Editor( {
-	new $.fn.dataTable.Editor( {
-        ajax: 'Editor-PHP-1.7.2/php/assets.php',
-        table: "#assets",
+    editor = new $.fn.dataTable.Editor( {
+        ajax: '/Editor-PHP-1.7.2/php/assets.php',
+        table: '#assets',
         fields: [ {
                 label: "Name:",
                 name: "name_id"
