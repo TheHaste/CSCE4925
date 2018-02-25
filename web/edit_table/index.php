@@ -27,7 +27,7 @@ session_start(); //start user session to send data between pages
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.16/b-1.5.1/sl-1.2.5/datatables.min.css"/> 
 	<link rel="stylesheet" type="text/css" href="Editor-PHP-1.7.2/css/editor.dataTables.css">
 	<script type="text/javascript" src="Editor-PHP-1.7.2/js/dataTables.editor.js"></script>
-	<script type="text/javascript" src="Editor-PHP-1.7.2/js/datatables.min.js"></script>
+	<!-- <script type="text/javascript" src="Editor-PHP-1.7.2/js/datatables.min.js"></script> -->
 	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.16/b-1.5.1/sl-1.2.5/datatables.min.js"></script>
 	
 	<!-- DataTable Buttons Extensions -->
