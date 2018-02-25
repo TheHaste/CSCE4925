@@ -176,7 +176,7 @@ $(document).ready(function() {
 							//$item[] = $line;
 							echo '
 							<tr>
-							<tc>'.$item['id'].'</td>
+							<td>'.$item['id'].'</td>
 							<td>'.$item['name_id'].'</td>
 							<td>'.$item['serial_number'].'</td>
 							<td>'.$item['brand'].'</td>
