@@ -5,12 +5,12 @@ require('/app/web/connect.php');
 
 session_start(); //start user session to send data between pages
 
-if($_SESSION["userType"] == 'admin'){ //if admin button is pressed
+if($_SESSION["userType"] == 'admin'){ //user is admin
 	$edit = true;
 	$delete = true;
 	$save = true;
 }
-else if($_SESSION["userType"] == 'user'){
+else if($_SESSION["userType"] == 'user'){ //user is 
 	$edit = false;
 	$delete = false;
 	$save = false;
