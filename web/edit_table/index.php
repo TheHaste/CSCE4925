@@ -96,7 +96,7 @@ $(document).ready(function() {
 			{ data:"date_surplused"},
 			{ data:"last_updated"}
         ],
-        select: true,
+        //select: true,
         buttons: [
             { extend: "create", editor: editor },
             { extend: "edit",   editor: editor },
