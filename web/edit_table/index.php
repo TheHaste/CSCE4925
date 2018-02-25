@@ -85,7 +85,6 @@ $(document).ready(function() {
     $('#assets').DataTable( {
         dom: "Bfrtip",
         columns: [
-			{ data: "id" },
             { data: "name_id" },
             { data: "serial_number" },
             { data: "brand" },
@@ -160,7 +159,7 @@ $(document).ready(function() {
 						<th>Location</th>
 						<th>Cost</th>
 						<th>Date Deployed</th>
-						<th>Date Surplused</th>
+						<th>Date Surplussed</th>
 						<th>Last Updated</th>
 					</tr> 
 				  </thead>
@@ -177,6 +176,7 @@ $(document).ready(function() {
 							//$item[] = $line;
 							echo '
 							<tr>
+							<tc>'.$item['id'].'</td>
 							<td>'.$item['name_id'].'</td>
 							<td>'.$item['serial_number'].'</td>
 							<td>'.$item['brand'].'</td>
