@@ -50,7 +50,7 @@ $(document).ready(function() {
 		//idSrc: 'id',
         fields: [ {
                 label: "Name:",
-                name: "name_id"
+                name: "id"
             }, {
                 label: "Serial Number:",
                 name: "serial_number"
@@ -85,7 +85,8 @@ $(document).ready(function() {
     $('#assets').DataTable( {
         dom: "Bfrtip",
         columns: [
-            { data: "name_id" },
+			{ data: "id" },
+            //{ data: "name_id" },
             { data: "serial_number" },
             { data: "brand" },
             { data: "model" },
@@ -167,7 +168,7 @@ $(document).ready(function() {
                    <tbody>
 					
 					<?php
-						//fill table
+					/*	//fill table
 						$query = "SELECT * FROM assets;";
 						$item = array(); //array for assets
 						$rs = pg_query($conn, $query); //run query
@@ -190,6 +191,7 @@ $(document).ready(function() {
 							</tr> 
 							'; 
 						}
+					*/
 					?>
 					 
                    </tbody>
