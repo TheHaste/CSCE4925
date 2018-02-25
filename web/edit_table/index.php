@@ -48,7 +48,7 @@ $(document).ready(function() {
     editor = new $.fn.dataTable.Editor( {
         //ajax: 'Editor-PHP-1.7.2/php/assets.php',
         table: "#assets",
-        fields: [ {
+        /*fields: [ {
                 label: "Name:",
                 name: "name_id"
             }, {
@@ -79,7 +79,7 @@ $(document).ready(function() {
                 label: "Last Updated:",
                 name: "last_updated"
             }
-        ]
+        ]*/
     } );
  
     $('#assets').DataTable( {
