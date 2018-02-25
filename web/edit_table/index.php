@@ -47,7 +47,7 @@ $(document).ready(function() {
     editor = new $.fn.dataTable.Editor( {
         ajax: 'Editor-PHP-1.7.2/php/assets.php',
         table: '#assets',
-		idSrc: 'id',
+		//idSrc: 'id',
         fields: [ {
                 label: "Name:",
                 name: "name_id"
@@ -85,6 +85,7 @@ $(document).ready(function() {
     $('#assets').DataTable( {
         dom: "Bfrtip",
         columns: [
+			{ data: "id" },
             { data: "name_id" },
             { data: "serial_number" },
             { data: "brand" },
