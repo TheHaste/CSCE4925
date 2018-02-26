@@ -167,7 +167,7 @@ $(document).ready(function() {
                    <tbody>
 					
 					<?php
-					/*	//fill table
+						//fill table
 						$query = "SELECT * FROM assets;";
 						$item = array(); //array for assets
 						$rs = pg_query($conn, $query); //run query
@@ -190,7 +190,7 @@ $(document).ready(function() {
 							</tr> 
 							'; 
 						}
-					*/
+					
 					?>
 					 
                    </tbody>
