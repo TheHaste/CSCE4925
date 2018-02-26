@@ -1,7 +1,7 @@
 <?php
 require('/app/web/connect.php');
 
-include("Editor-PHP-1.7.2/php/DataTables.php" );
+include("Editor-PHP-1.7.2/php/DataTables/DataTables.php" );
 
 session_start(); //start user session to send data between pages
 
@@ -47,10 +47,9 @@ $(document).ready(function() {
     editor = new $.fn.dataTable.Editor( {
         ajax: 'Editor-PHP-1.7.2/php/assets.php',
         table: '#assets',
-		//idSrc: 'id',
         fields: [ {
                 label: "Name:",
-                name: "id"
+                name: "name_id"
             }, {
                 label: "Serial Number:",
                 name: "serial_number"
@@ -85,8 +84,7 @@ $(document).ready(function() {
     $('#assets').DataTable( {
         dom: "Bfrtip",
         columns: [
-			{ data: "id" },
-            //{ data: "name_id" },
+            { data: "name_id" },
             { data: "serial_number" },
             { data: "brand" },
             { data: "model" },
@@ -152,6 +150,7 @@ $(document).ready(function() {
 			<table id="assets" class="display" cellspacing="0" width="100%">
 				<thead>
                     <tr>
+						<th>Index</th>
                         <th>Name</th>
                         <th>Serial Number</th>
 						<th>Brand </th>
