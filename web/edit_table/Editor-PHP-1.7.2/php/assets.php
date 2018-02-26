@@ -5,7 +5,7 @@
  */
 
 // DataTables PHP library
-include( "../../php/DataTables.php" );
+include( "DataTables/DataTables.php" );
 
 // Alias Editor classes so they are easy to use
 use
