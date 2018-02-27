@@ -1,6 +1,6 @@
 <?php
-//Home Page Index
-require('C:\xampp\htdocs\Connecttodb_Users1.php');
+//login page time stamp
+//require('C:\xampp\htdocs\Connecttodb_Users1.php');
 
 session_start(); //start user session to send data between pages
 
@@ -24,9 +24,10 @@ if(isset($_POST['admin']))
 
  //$query = "INSERT INTO ('admin')";
  //$results =pg_query($conn,$query);
-  echo "Time the button was clicked:" .$dateTime. "<br>";
+  //echo "Time the button was clicked:" .$dateTime. "<br>";
 
 }
+  echo "Time the button was clicked:" .$dateTime. "<br>";
 
 //echo "Time the button was clicked:" .$dateTime. "<br>";
 ///$query = "UPDATE name_info login_time = NOW()";
