@@ -5,12 +5,11 @@
 session_start(); //start user session to send data between pages
 
 
-/*if($_SESSION["userType"] == 'admin'){ //user is admin
-	$edit = true;
-	$delete = true;
-	$save = true;
-}
-*/
+/*if($_POST['admin'] == 'Admin Button'){ //if admin button is pressed
+	$_SESSION["userType"] = 'admin';
+	header('Location: /home');
+}*/
+
 if(isset($_POST['admin']))
 {
 
