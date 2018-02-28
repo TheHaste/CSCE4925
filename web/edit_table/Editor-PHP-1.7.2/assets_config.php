@@ -5,7 +5,7 @@
  */
 
 // DataTables PHP library
-include('../../php/DataTables.php' );
+include( dirname(__FILE__).'/DataTables.php' );
 
 // Alias Editor classes so they are easy to use
 use
@@ -30,9 +30,9 @@ $editor = Editor::inst( $db, 'assets' )
 		Field::inst( 'assigned' ),
 		Field::inst( 'location' ),
 		Field::inst( 'cost' ),
-		//Field::inst( 'date_deployed' ),
-		//Field::inst( 'date_surplused' ),
-		//Field::inst( 'last_updated' ),
+		Field::inst( 'date_deployed' ),
+		Field::inst( 'date_surplused' ),
+		Field::inst( 'last_updated' ),
 	)
 	->process( $_POST )
 	->json();
