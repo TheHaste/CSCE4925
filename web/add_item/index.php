@@ -19,7 +19,7 @@
 			
 			$query = "INSERT INTO assets VALUES ('$item', '$serial', '$location', '$model', '$brand', '$status', '$cost')";
 			
-			$result = pg_query($query);
+			//$result = pg_query($query);
 		
 	}
 	else
