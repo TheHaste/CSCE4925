@@ -21,7 +21,7 @@ if(isset($_POST['submit']))
 	$currentDateTime->setTimezone(new \DateTimeZone('America/New_York'));
  $login_time = $currentDateTime->format('l-j-M-Y H:i:s A');
 
-$query = "INSERT INTO name_info(login_time) VALUES('$login_time')";
+$query = "INSERT INTO logging (login_time) VALUES('$login_time')";
 	$results = pg_query($conn,$query);
   
  
