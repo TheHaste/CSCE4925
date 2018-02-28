@@ -19,7 +19,7 @@ use
 	DataTables\Editor\ValidateOptions;
 
 // Build our Editor instance and process the data coming from _POST
-Editor::inst( $db, 'datatables_demo' )
+Editor::inst( $db, 'assets' )
 	->fields(
 		Field::inst( 'name_id' ),
 		Field::inst( 'serial_number' )
