@@ -1,6 +1,5 @@
 <?php
 require('/app/web/connect.php');
-require('/Editor-PHP-1.7.2/php/assets_config.php');
 
 session_start(); //start user session to send data between pages		 
 			   
