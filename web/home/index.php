@@ -1,5 +1,5 @@
 <?php
-//Home Page Index
+//Edit Table Index
 
 require('/app/web/connect.php');
 
