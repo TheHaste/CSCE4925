@@ -17,6 +17,8 @@ use
 	DataTables\Editor\Upload,
 	DataTables\Editor\Validate,
 	DataTables\Editor\ValidateOptions;
+	
+	echo "WHATS UP";
 
 // Build our Editor instance and process the data coming from _POST
 $editor = Editor::inst( $db, 'assets' )
