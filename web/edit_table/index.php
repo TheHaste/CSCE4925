@@ -45,7 +45,7 @@ session_start(); //start user session to send data between pages
  
 $(document).ready(function() {
     var editor = new $.fn.dataTable.Editor( {
-        ajax: 'web/edit_table/Editor-PHP-1.7.2/php/assets.php',
+        ajax: 'assets.php',
         table: '#assets',
         fields: [ {
                 label: "Name:",
