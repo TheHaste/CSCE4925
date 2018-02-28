@@ -31,7 +31,7 @@ Editor::inst( $db, 'assets' )
 		Field::inst( 'cost' ),
 		Field::inst( 'date_deployed' ),
 		Field::inst( 'date_surplused' ),
-		Field::inst( 'last_updated' ),
+		Field::inst( 'last_updated' )
 	)
 	->process( $_POST )
 	->json();
