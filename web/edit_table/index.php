@@ -68,7 +68,7 @@ $(document).ready(function() {
                 label: "Cost:",
                 name: "cost"
 			}, {
-           /*     label: "Date Deployed:",
+                label: "Date Deployed:",
                 name: "date_deployed"
 			}, {
                 label: "Date Surplused:",
@@ -77,7 +77,7 @@ $(document).ready(function() {
                 label: "Last Updated:",
                 name: "last_updated"
             },
-			*/
+			
         ]
     } );
  
@@ -91,10 +91,10 @@ $(document).ready(function() {
             { data: "model" },
             { data: "assigned"},
 			{ data: "location"},
-			{ data: "cost"}//,
-			//{ data: "date_deployed"},
-			//{ data:"date_surplused"},
-			//{ data:"last_updated"}
+			{ data: "cost"},
+			{ data: "date_deployed"},
+			{ data:"date_surplused"},
+			{ data:"last_updated"}
         ],
         select: true,
         buttons: [
