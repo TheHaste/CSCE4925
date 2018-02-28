@@ -46,7 +46,7 @@ session_start(); //start user session to send data between pages
 $(document).ready(function() {
     editor = new $.fn.dataTable.Editor( {
         ajax: 'Editor-PHP-1.7.2/php/assets.php',
-        table: '#assets',
+        table: 'assets',
         fields: [ {
                 label: "Name:",
                 name: "name_id"
@@ -97,7 +97,6 @@ $(document).ready(function() {
         ],
         select: true,
         buttons: [
-            { extend: "create", editor: editor },
             { extend: "edit",   editor: editor },
             { extend: "remove", editor: editor }
         ]
@@ -189,7 +188,8 @@ $(document).ready(function() {
 							<td>'.$item['last_updated'].'</td>
 							</tr> 
 							'; 
-						}*/
+						}
+					*/
 					
 					?>
 					 
