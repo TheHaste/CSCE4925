@@ -83,7 +83,7 @@ $(document).ready(function() {
  
     $('#assets').DataTable( {
         dom: "Bfrtip",
-		ajax: {"url":'/web/edit_table/Editor-PHP-1.7.2/php/assets_config.php',
+		ajax: {"url":'/edit_table/Editor-PHP-1.7.2/php/assets_config.php',
 				"type": "POST"},
         columns: [
             { data: "name_id" },
