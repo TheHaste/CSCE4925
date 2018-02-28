@@ -9,15 +9,15 @@
 	
 	if(isset($_POST))
 	{
-			$item = $_POST['Item_Name'];
-			$serial = $_POST['Serial_#'];
+			$item = $_POST['ItemName'];
+			$serial = $_POST['Serial'];
 			$location = $_POST['Location'];
 			$model = $_POST['Model'];
 			$brand = $_POST['Brand'];
 			$status = $_POST['Status'];
 			$cost = $_POST['Cost'];
 			
-			$query = "INSERT INTO assets VALUES ('$_POST['Item_Name']', '$_POST['Serial_#']', '$_POST['Location']', '$_POST['Model']', '$_POST['Brand']', '$_POST['Status']', '$_POST['Cost']')";
+			$query = "INSERT INTO assets VALUES ('$_POST['ItemName']', '$_POST['Serial']', '$_POST['Location']', '$_POST['Model']', '$_POST['Brand']', '$_POST['Status']', '$_POST['Cost']')";
 			
 			$result = pg_query($query);
 		
@@ -113,18 +113,18 @@
                     <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left">
 						<!--Create Item Name entry--> 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12"  style="color:rgb(51,51,51);" name="Item_Name"> Item Name <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12"  style="color:rgb(51,51,51);" name="ItemName"> Item Name <span class="required">*</span>
                         </label> 					
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="Item_Name" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="ItemName" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 						<!--Create Serial # entry-->
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="color:rgb(51,51,51);" name="Serial_#">Serial # <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" style="color:rgb(51,51,51);" name="Serial">Serial # <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="Serial_#" name="Serial_#" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="Serial" name="Serial" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 						<!--Creates Location entry-->
