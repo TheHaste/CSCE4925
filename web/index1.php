@@ -1,37 +1,35 @@
 <?php
-//login page time stamp
+//Home Page Index
 //require('C:\xampp\htdocs\Connecttodb_Users1.php');
 
 session_start(); //start user session to send data between pages
 
 
-/*if($_POST['admin'] == 'Admin Button'){ //if admin button is pressed
-	$_SESSION["userType"] = 'admin';
-	header('Location: /home');
-}*/
-
-if(isset($_POST['admin']))
+/*if($_SESSION["userType"] == 'admin'){ //user is admin
+	$edit = true;
+	$delete = true;
+	$save = true;
+}
+*/
+if(isset($_POST['submit']))
 {
+	$login_time = $_POST['login_time'];
+	
 
-
-	//$login_time = ['admin'];
+	//$dateTime = 
 	$currentDateTime = new\DateTime();
 	$currentDateTime->setTimezone(new \DateTimeZone('America/New_York'));
- $dateTime = $currentDateTime->format('l-j-M-Y H:i:s A');
-// $query = "INSERT INTO name_info VALUES ('$_POST[admin]',current_timestamp)";
- //$results = pg_query($conn,$query);
+ $login_time = $currentDateTime->format('l-j-M-Y H:i:s A');
 
- //$query = "INSERT INTO ('admin')";
- //$results =pg_query($conn,$query);
-  //echo "Time the button was clicked:" .$dateTime. "<br>";
+$query = "INSERT INTO name_info(login_time) VALUES('$login_time')";
+	$results = pg_query($conn,$query);
+  
+ 
 
 }
-  echo "Time the button was clicked:" .$dateTime. "<br>";
 
 //echo "Time the button was clicked:" .$dateTime. "<br>";
-///$query = "UPDATE name_info login_time = NOW()";
-						//$item = array(); //array for assets
-						//$rs = pg_query($conn, $query); //run query
+
 /*else if($_SESSION["userType"] == 'user'){ //user is 
 	$edit = false;
 	$delete = false;
