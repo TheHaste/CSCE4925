@@ -18,10 +18,9 @@ use
 	DataTables\Editor\Validate,
 	DataTables\Editor\ValidateOptions;
 	
-	echo "WHATS UP";
 
 // Build our Editor instance and process the data coming from _POST
-$editor = Editor::inst( $db, 'assets' )
+Editor::inst( $db, 'assets' )
 	->fields(
 		Field::inst( 'name_id' ),
 		Field::inst( 'serial_number' ),
