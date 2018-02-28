@@ -1,11 +1,9 @@
 <?php
 require('/app/web/connect.php');
 
-include("Editor-PHP-1.7.2/php/DataTables/DataTables.php" );
+include('/Editor-PHP-1.7.2/php/DataTables.php' );
 
-session_start(); //start user session to send data between pages
-
-//var editor;		 
+session_start(); //start user session to send data between pages		 
 			   
 
 //search page
@@ -45,7 +43,7 @@ session_start(); //start user session to send data between pages
  
 $(document).ready(function() {
     var editor = new $.fn.dataTable.Editor( {
-        ajax: 'assets.php',
+        ajax: '/Editor-PHP-1.7.2/php/assets_config.php',
         table: '#assets',
         fields: [ {
                 label: "Name:",
