@@ -91,7 +91,7 @@ $(document).ready(function() {
             { data: "model" },
             { data: "assigned"},
 			{ data: "location"},
-			{ data: "cost"},
+			{ data: "cost"}//,
 			//{ data: "date_deployed"},
 			//{ data:"date_surplused"},
 			//{ data:"last_updated"}
