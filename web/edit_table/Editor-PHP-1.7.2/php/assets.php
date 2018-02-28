@@ -22,15 +22,15 @@ use
 $editor = Editor::inst( $db, 'assets' )
 	->fields(
 		Field::inst( 'name_id' ),
-		Field::inst( 'serial_number' )
-		Field::inst( 'brand' )
-		Field::inst( 'model' )
-		Field::inst( 'assigned' )
-		Field::inst( 'location' )
-		Field::inst( 'cost' )
-		Field::inst( 'date_deployed' )
-		Field::inst( 'date_surplused' )
-		Field::inst( 'last_updated' )
+		Field::inst( 'serial_number' ),
+		Field::inst( 'brand' ),
+		Field::inst( 'model' ),
+		Field::inst( 'assigned' ),
+		Field::inst( 'location' ),
+		Field::inst( 'cost' ),
+		Field::inst( 'date_deployed' ),
+		Field::inst( 'date_surplused' ),
+		Field::inst( 'last_updated' ),
 	)
 	->process( $_POST )
 	->json();
