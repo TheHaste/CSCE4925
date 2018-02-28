@@ -1,7 +1,7 @@
 <?php
 require('/app/web/connect.php');
 
-include('/Editor-PHP-1.7.2/php/DataTables.php' );
+require('/Editor-PHP-1.7.2/php/DataTables.php' );
 
 session_start(); //start user session to send data between pages		 
 			   
@@ -148,7 +148,6 @@ $(document).ready(function() {
 			<table id="assets" class="display" cellspacing="0" width="100%">
 				<thead>
                     <tr>
-						<th>Index</th>
                         <th>Name</th>
                         <th>Serial Number</th>
 						<th>Brand </th>
