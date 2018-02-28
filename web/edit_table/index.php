@@ -1,7 +1,7 @@
 <?php
 require('/app/web/connect.php');
 
-require ('/app/web/edit_table/Editor-PHP-1.7.2/php/DataTables.php' );
+//include ('/Editor-PHP-1.7.2/php/DataTables.php' );
 
 session_start(); //start user session to send data between pages		 
 			   
