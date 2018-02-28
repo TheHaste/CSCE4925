@@ -21,6 +21,7 @@ use
 // Build our Editor instance and process the data coming from _POST
 Editor::inst( $db, 'assets' )
 	->fields(
+		//Field::inst( 'id' ),
 		Field::inst( 'name_id' ),
 		Field::inst( 'serial_number' )
 			->validator( Validate::notEmpty( ValidateOptions::inst()
