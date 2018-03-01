@@ -5,7 +5,7 @@ require('/app/web/connect.php');
 
 session_start(); //start user session to send data between pages		
 
-date_default_timezone_set('America/Chicago');
+date_default_timezone_set('America/Chicago'); //set timezone to CST
 			   
 
 //search page
@@ -179,33 +179,7 @@ $(document).ready(function() {
 
                    <tbody>
 					
-					<?php
-					/*	//fill table
-						$query = "SELECT * FROM assets;";
-						$item = array(); //array for assets
-						$rs = pg_query($conn, $query); //run query
-						while ($item = pg_fetch_assoc($rs)) //fetch and fill array
-						{
-							//$item[] = $line;
-							echo '
-							<tr>
-							<td>'.$item['id'].'</td>
-							<td>'.$item['name_id'].'</td>
-							<td>'.$item['serial_number'].'</td>
-							<td>'.$item['brand'].'</td>
-							<td>'.$item['model'].'</td>
-							<td>'.$item['assigned'].'</td>
-							<td>'.$item['location'].'</td>
-							<td>'.$item['cost'].'</td>
-							<td>'.$item['date_deployed'].'</td>
-							<td>'.$item['date_surplused'].'</td>
-							<td>'.$item['last_updated'].'</td>
-							</tr> 
-							'; 
-						}
-					*/
-					
-					?>
+					<!-- Editor will handle filling the table body -->
 					 
                    </tbody>
 			</table>
