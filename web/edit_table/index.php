@@ -82,13 +82,13 @@ $(document).ready(function() {
         ]
     } );
 	
-	editor.on( 'preSubmit', function ( e, o, action ) { //before edit, update timestamp for last edited
+	/*editor.on( 'preSubmit', function ( e, o, action ) { //before edit, update timestamp for last edited
         if ( action === 'edit' ) { //edit is selected
             //o.data.last_updated = "<?php echo date("Y/m/d");?>";
 			o.data.last_updated = new Date(); //"1/1/2018";
         }
 		
-    } );
+    } );*/
  
     $('#assets').DataTable( {
         dom: "Bfrtip",
