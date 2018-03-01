@@ -84,7 +84,7 @@ $(document).ready(function() {
 	
 	editor.on( 'initSubmit', function ( ){ //before edit, update timestamp for last edited
 			editor
-				.set('last_updated', "<?php $today = date("Y-m-d"); date_modify($today, '-1 day'); echo date_format($today, "Y-m-d");?>")
+				.set('last_updated', "<?php $today = date("Y-m-d"); $today->modify('-1 day'); echo $today->format("Y-m-d");?>")
     } );
  
 	$('#assets').DataTable( {
