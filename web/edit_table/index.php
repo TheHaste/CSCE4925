@@ -86,8 +86,8 @@ $(document).ready(function() {
         if ( action === 'edit' ) { //edit is selected
             //o.data.last_updated = "<?php echo date("Y-m-d");?>";
 			editor
-				.set('name_id', "TESTING123");
-				.set('last_updated', "<?php echo date("Y-m-d");?>");
+				.set('name_id', "TESTING123")
+				.set('last_updated', "<?php echo date("Y-m-d");?>")
 				.submit();
         }
 		
