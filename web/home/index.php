@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 //Home Index
 
@@ -19,6 +20,9 @@ else if($_SESSION["userType"] == 'user'){ //user is
 
 ?>
 <html>
+=======
+<!DOCTYPE html>
+>>>>>>> 57576d86436fe2955b5a583536f50ff0b3284e10
 =======
 <!DOCTYPE html>
 >>>>>>> 57576d86436fe2955b5a583536f50ff0b3284e10
