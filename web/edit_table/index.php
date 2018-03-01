@@ -81,12 +81,7 @@ $(document).ready(function() {
 	
 	editor.on( 'initSubmit', function (){ //before edit, update timestamp for last edited
 		editor
-			.set('last_updated', "
-			<?php 
-				$today = date("Y-m-d");
-				$date->modify('-1 day');
-				echo $date;
-			?>")
+			.set('last_updated', "<?php $today = date("Y-m-d"); $date->modify('-1 day'); echo $date; ?>");
 		
     } );
  
