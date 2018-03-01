@@ -2,30 +2,30 @@
 
 <?php
 	
-	require('/app/web/connect.php');
+//	require('/app/web/connect.php');
 	
-	session_start();
+//	session_start();
 	
 	
-	if(isset($_POST))
+//	if(isset($_POST))
 	{
-			$item = $_POST['ItemName'];
-			$serial = $_POST['Serial'];
-			$location = $_POST['Location'];
-			$model = $_POST['Model'];
-			$brand = $_POST['Brand'];
-			$status = $_POST['Status'];
-			$cost = $_POST['Cost'];
+//			$item = $_POST['ItemName'];
+//			$serial = $_POST['Serial'];
+//			$location = $_POST['Location'];
+//			$model = $_POST['Model'];
+//			$brand = $_POST['Brand'];
+//			$status = $_POST['Status'];
+//			$cost = $_POST['Cost'];
 			/*('name_id', 'serial_number', 'location', 'model', 'brand', 'status', 'cost')*/
 			//$query = "INSERT INTO assets VALUES ('$_POST['ItemName']', '$_POST['Serial']', '$_POST['Location']', '$_POST['Model']', '$_POST['Brand']', '$_POST['Status']', '$_POST['Cost']')";
 			
 			//$result = pg_query($query);
 		
-	}
-	else
-	{
+//	}
+//	else
+//	{
 			//$failmsg = "Error adding data to database";
-	}
+//	}
 ?>
 
 <html>
