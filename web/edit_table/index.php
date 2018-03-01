@@ -84,6 +84,8 @@ $(document).ready(function() {
         ]
     } );
 	
+	editor.hide( [ 'last_updated' ] );
+	
 	editor.on( 'initSubmit', function ( ){ //before edit, update timestamp for last edited
 			editor
 				.set('last_updated', "<?php echo date("Y-m-d");?>")
