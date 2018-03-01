@@ -81,6 +81,13 @@ $(document).ready(function() {
 			
         ]
     } );
+	
+	editor.on( 'preSubmit', function ( e, o, action ) {
+        if ( action === 'edit' ) { //remove is selected
+            o.data.last_updated = "<?php echo date("Y/m/d")?>";
+        }
+		
+    } );
  
     $('#assets').DataTable( {
         dom: "Bfrtip",
@@ -161,7 +168,7 @@ $(document).ready(function() {
 						<th>Cost</th>
 						<th>Date Deployed</th>
 						<th>Date Surplussed</th>
-						<th>Last Updated</th>
+						<!-- <th>Last Updated</th> -->
 					</tr> 
 				  </thead>
 
