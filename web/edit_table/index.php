@@ -84,7 +84,7 @@ editor.on( 'initSubmit', function ( ){//e, o, action ) { //before edit, update t
             //o.data.last_updated = "<?php echo date("Y-m-d");?>";
 			editor
 				//.set('last_updated', "<?php $today = date("Y-m-d"); $date_modify($today, '-1 day'); echo $date; ?>")
-				.set('last_updated', "<?php echo date("Y-m-d"); ?>")
+				.set('name_id', "<?php echo date("Y-m-d"); ?>")
        // }
 		
     } );
@@ -102,7 +102,8 @@ editor.on( 'initSubmit', function ( ){//e, o, action ) { //before edit, update t
 			{ data: "location"},
 			{ data: "cost"},
 			{ data: "date_deployed"},
-			{ data:"date_surplused"}
+			{ data:"date_surplused"},
+			//{ data: "last_updated" },
         ],
         select: true,
         buttons: [
