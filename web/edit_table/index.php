@@ -102,8 +102,8 @@ $(document).ready(function() {
 			{ data: "location"},
 			{ data: "cost"},
 			{ data: "date_deployed"},
-			{ data:"date_surplused"},
-			{ data:"last_updated"}
+			{ data:"date_surplused"}//,
+			//{ data:"last_updated"}
         ],
         select: true,
         buttons: [
