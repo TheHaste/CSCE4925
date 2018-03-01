@@ -3,7 +3,9 @@
 
 require('/app/web/connect.php');
 
-session_start(); //start user session to send data between pages		 
+session_start(); //start user session to send data between pages		
+
+date_default_timezone_set('America/Chicago');
 			   
 
 //search page
