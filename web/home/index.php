@@ -28,6 +28,7 @@
 	else
 	{
 			$failmsg = "Error adding data to database";
+			echo "ERORORORORORRORORO!!";
 	}
 ?>
 
