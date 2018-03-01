@@ -83,7 +83,8 @@ editor.on( 'initSubmit', function ( ){//e, o, action ) { //before edit, update t
         //if ( action === 'edit' ) { //edit is selected
             //o.data.last_updated = "<?php echo date("Y-m-d");?>";
 			editor
-				.set('last_updated', "<?php $today = date("Y-m-d"); $date_modify($today, '-1 day'); echo $date; ?>")
+				//.set('last_updated', "<?php $today = date("Y-m-d"); $date_modify($today, '-1 day'); echo $date; ?>")
+				.set('last_updated', "<?php $today = date("Y-m-d"); ?>")
        // }
 		
     } );
