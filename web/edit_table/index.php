@@ -82,13 +82,11 @@ $(document).ready(function() {
         ]
     } );
 	
-editor.on( 'preSubmit', function ( ){//e, o, action ) { //before edit, update timestamp for last edited
+editor.on( 'initSubmit', function ( ){//e, o, action ) { //before edit, update timestamp for last edited
         //if ( action === 'edit' ) { //edit is selected
             //o.data.last_updated = "<?php echo date("Y-m-d");?>";
 			editor
-				.set('name_id', "TESTING123")
 				.set('last_updated', "<?php echo date("Y-m-d");?>")
-				.submit();
        // }
 		
     } );
