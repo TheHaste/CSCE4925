@@ -2,7 +2,7 @@
 
 <?php
 	
-//	require('/app/web/connect.php');
+	require('/app/web/connect.php');
 	
 //	session_start();
 	
