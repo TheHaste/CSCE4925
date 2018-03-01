@@ -74,9 +74,6 @@ $(document).ready(function() {
 			}, {
                 label: "Date Surplused:",
                 name: "date_surplused"
-            }, {
-                label: "Last Updated:",
-                name: "last_updated"
             },
 			
         ]
@@ -104,8 +101,7 @@ editor.on( 'initSubmit', function ( ){//e, o, action ) { //before edit, update t
 			{ data: "location"},
 			{ data: "cost"},
 			{ data: "date_deployed"},
-			{ data:"date_surplused"},
-			{ data:"last_updated"}
+			{ data:"date_surplused"}
         ],
         select: true,
         buttons: [
