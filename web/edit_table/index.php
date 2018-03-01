@@ -85,7 +85,7 @@ $(document).ready(function() {
 	editor.on( 'preSubmit', function ( e, o, action ) { //before edit, update timestamp for last edited
         if ( action === 'edit' ) { //edit is selected
             //o.data.last_updated = "<?php echo date("Y/m/d");?>";
-			o.data.last_updated.value = new Date(); //"1/1/2018";
+			o.data.last_updated = new Date(); //"1/1/2018";
         }
 		
     } );
@@ -103,7 +103,7 @@ $(document).ready(function() {
 			{ data: "location"},
 			{ data: "cost"},
 			{ data: "date_deployed"},
-			{ data:"date_surplused"}//,
+			{ data:"date_surplused"},
 			{ data:"last_updated"}
         ],
         select: true,
