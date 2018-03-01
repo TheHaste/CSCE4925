@@ -85,7 +85,7 @@ $(document).ready(function() {
 	editor.on( 'preSubmit', function ( e, o, action ) { //before edit, update timestamp for last edited
         if ( action === 'edit' ) { //edit is selected
             //o.data.last_updated = "<?php echo date("Y-m-d");?>";
-			o.data.last_updated = new Date('2018-2-1');
+			o.data.last_updated = '2018-2-1';
         }
 		
     } );
