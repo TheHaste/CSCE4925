@@ -74,20 +74,19 @@ $(document).ready(function() {
 			}, {
                 label: "Date Surplused:",
                 name: "date_surplused"
-            }, {
-                label: "Last Updated:",
-                name: "last_updated"
-            },
+            }
 			
         ]
     } );
 	
-editor.on( 'initSubmit', function ( ){//e, o, action ) { //before edit, update timestamp for last edited
-        //if ( action === 'edit' ) { //edit is selected
-            //o.data.last_updated = "<?php echo date("Y-m-d");?>";
-			editor
-				.set('last_updated', "<?php echo date("Y-m-d");?>")
-       // }
+	editor.on( 'initSubmit', function (){ //before edit, update timestamp for last edited
+		editor
+			.set('last_updated', "
+			<?php 
+				$today = date("Y-m-d");
+				$date->modify('-1 day');
+				echo $date;
+			?>")
 		
     } );
  
@@ -104,8 +103,7 @@ editor.on( 'initSubmit', function ( ){//e, o, action ) { //before edit, update t
 			{ data: "location"},
 			{ data: "cost"},
 			{ data: "date_deployed"},
-			{ data:"date_surplused"},
-			{ data:"last_updated"}
+			{ data:"date_surplused"}
         ],
         select: true,
         buttons: [
@@ -170,7 +168,6 @@ editor.on( 'initSubmit', function ( ){//e, o, action ) { //before edit, update t
 						<th>Cost</th>
 						<th>Date Deployed</th>
 						<th>Date Surplussed</th>
-						<th>Last Updated</th>
 					</tr> 
 				  </thead>
 
