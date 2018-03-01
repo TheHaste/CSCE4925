@@ -175,7 +175,7 @@ $(document).ready(function() {
 						<th>Cost</th>
 						<th>Date Deployed</th>
 						<th>Date Surplussed</th>
-						<!-- <th>Last Updated</th> -->
+						<th>Last Updated</th>
 					</tr> 
 				  </thead>
 
