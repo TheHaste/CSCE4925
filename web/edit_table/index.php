@@ -74,16 +74,16 @@ $(document).ready(function() {
 			}, {
                 label: "Date Surplused:",
                 name: "date_surplused"
-            }, {
-                label: "Last Updated:",
-                name: "last_updated"
-            },
+            }//, {
+           //     label: "Last Updated:",
+           //     name: "last_updated"
+           // },
 			
         ]
     } );
 	
-	editor.on( 'preSubmit', function ( e, o, action ) {
-        if ( action === 'edit' ) { //remove is selected
+	editor.on( 'preSubmit', function ( e, o, action ) { //before edit, update timestamp for last edited
+        if ( action === 'edit' ) { //edit is selected
             o.data.last_updated = "<?php echo date("Y/m/d")?>";
         }
 		
