@@ -8,7 +8,7 @@
 	
 	
 //	if(isset($_POST))
-	{
+//	{
 //			$item = $_POST['ItemName'];
 //			$serial = $_POST['Serial'];
 //			$location = $_POST['Location'];
