@@ -74,15 +74,15 @@ $(document).ready(function() {
 			}, {
                 label: "Date Surplused:",
                 name: "date_surplused"
-            }, /*{
+            }, {
                 label: "Last Updated:",
                 name: "last_updated"
-            }, */
+            }, 
 			
         ]
     } );
 	
-editor.on( 'initSubmit', function ( ){//e, o, action ) { //before edit, update timestamp for last edited
+	editor.on( 'initSubmit', function ( ){//e, o, action ) { //before edit, update timestamp for last edited
         //if ( action === 'edit' ) { //edit is selected
             //o.data.last_updated = "<?php echo date("Y-m-d");?>";
 			editor
@@ -91,7 +91,7 @@ editor.on( 'initSubmit', function ( ){//e, o, action ) { //before edit, update t
 		
     } );
  
-    $('#assets').DataTable( {
+	$('#assets').DataTable( {
         dom: "Bfrtip",
 		ajax: {"url":'/edit_table/Editor-PHP-1.7.2/php/assets_config.php',
 				"type": "POST"},
@@ -105,14 +105,19 @@ editor.on( 'initSubmit', function ( ){//e, o, action ) { //before edit, update t
 			{ data: "cost"},
 			{ data: "date_deployed"},
 			{ data:"date_surplused"},
-			//{ data:"last_updated"}
+			{ data:"last_updated"}
         ],
         select: true,
         buttons: [
             { extend: "edit",   editor: editor },
             { extend: "remove", editor: editor }
-        ]
+        ],
+		columnDefs: [
+		{ "visible": false, "targets": 9 }
+		]
     } );
+
+	
 } );
 </script>
 
