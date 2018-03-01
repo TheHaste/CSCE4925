@@ -74,10 +74,10 @@ $(document).ready(function() {
 			}, {
                 label: "Date Surplused:",
                 name: "date_surplused"
-            }, {
+            }, /*{
                 label: "Last Updated:",
                 name: "last_updated"
-            },
+            }, */
 			
         ]
     } );
@@ -86,7 +86,7 @@ editor.on( 'initSubmit', function ( ){//e, o, action ) { //before edit, update t
         //if ( action === 'edit' ) { //edit is selected
             //o.data.last_updated = "<?php echo date("Y-m-d");?>";
 			editor
-				.set('last_updated', "<?php $date = date("Y-m-d"); $date_modify($date, '-1 day'); echo $date;?>")
+				.set('last_updated', "<?php echo date("Y-m-d");?>")
        // }
 		
     } );
@@ -105,7 +105,7 @@ editor.on( 'initSubmit', function ( ){//e, o, action ) { //before edit, update t
 			{ data: "cost"},
 			{ data: "date_deployed"},
 			{ data:"date_surplused"},
-			{ data:"last_updated"}
+			//{ data:"last_updated"}
         ],
         select: true,
         buttons: [
@@ -170,7 +170,7 @@ editor.on( 'initSubmit', function ( ){//e, o, action ) { //before edit, update t
 						<th>Cost</th>
 						<th>Date Deployed</th>
 						<th>Date Surplussed</th>
-						<th>Last Updated</th>
+						<!-- <th>Last Updated</th> -->
 					</tr> 
 				  </thead>
 
