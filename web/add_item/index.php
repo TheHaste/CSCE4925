@@ -9,8 +9,8 @@
 	
 	if(isset($_POST))
 	{
-/*			$item = $_POST['Item_Name'];
-			$serial = $_POST['Serial_#'];
+			$item = $_POST['Item_Name'];
+/*			$serial = $_POST['Serial_#'];
 			$location = $_POST['Location'];
 			$model = $_POST['Model'];
 			$brand = $_POST['Brand'];
