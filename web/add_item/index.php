@@ -11,10 +11,10 @@
 	{
 			$item = $_POST['Item_Name'];
 			$serial = $_POST['Serial_#'];
-/*			$location = $_POST['Location'];
+			$location = $_POST['Location'];
 			$model = $_POST['Model'];
 			$brand = $_POST['Brand'];
-			$status = $_POST['Status'];
+/*			$status = $_POST['Status'];
 			$cost = $_POST['Cost'];
 */			
 			/*(name_id, serial_number, location, model, brand, status, cost)*/
