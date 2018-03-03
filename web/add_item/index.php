@@ -20,7 +20,7 @@
 			$query = "INSERT INTO assets (name_id) VALUES ('$_POST[Item_Name]');";
 
 			
-			//$result = pg_query($query);
+			$result = pg_query($query);
 			
 		
 	}
@@ -112,7 +112,7 @@
                  <!--required notice in top left-->
 				<p class="help-block"style="color:rgb(247,1,1);">' * '= required</p>
                     <!--Creates forms to fill out-->
-                    <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left">
+                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 						<!--Create Item Name entry--> 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12"  style="color:rgb(51,51,51);" name="Item_Name"> Item Name <span class="required">*</span>
@@ -134,7 +134,7 @@
                         <label for="Location" class="control-label col-md-3 col-sm-3 col-xs-12"style="color:rgb(51,51,51);" name="Location">Location <span class="required">*</span>
 						</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="Location" class="form-control col-md-7 col-xs-12" type="text" name="Location">
+                          <input type="text" id="Location" class="form-control col-md-7 col-xs-12" type="text" name="Location">
                         </div>
                       </div>
 					  <!--Creates Model entry-->
