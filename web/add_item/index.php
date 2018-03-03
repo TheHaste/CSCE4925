@@ -17,12 +17,11 @@
 			
 			/*(name_id, serial_number, location, model, brand, status, cost)*/
 			//$query = "INSERT INTO assets VALUES ('$_POST['Item_Name']', '$_POST['Serial_#']', '$_POST['Location']', '$_POST['Model']', '$_POST['Brand']', '$_POST['Status']', '$_POST['Cost']');";
-			$query = "INSERT INTO assets (name_id) VALUES ('$_POST[Item_Name]');";
+			$query = "INSERT INTO assets(name_id) VALUES ('$_POST['Item_Name']');";
 
 			
 			$result = pg_query($query);
-			
-		
+
 	}
 	else
 	{
@@ -115,7 +114,7 @@
                     <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 						<!--Create Item Name entry--> 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12"  style="color:rgb(51,51,51);" name="Item_Name"> Item Name <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12"  style="color:rgb(51,51,51);" name="Item_Name"> Item Name <span class="required"><?php echo $Item_Name; ?>*</span>
                         </label> 					
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="Item_Name" required="required" class="form-control col-md-7 col-xs-12">
