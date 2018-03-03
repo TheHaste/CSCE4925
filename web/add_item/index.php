@@ -20,7 +20,7 @@
 			$query = "INSERT INTO assets VALUES ('$_POST['Item_Name']');";
 
 			
-			$result = pg_query($conn, $query);
+			$result = pg_query($query);
 			
 		
 	}
