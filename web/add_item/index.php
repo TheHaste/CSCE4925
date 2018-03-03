@@ -9,14 +9,14 @@
 	
 	if(isset($_POST))
 	{
-			$item = $_POST['Item_Name'];
+/*			$item = $_POST['Item_Name'];
 			$serial = $_POST['Serial_#'];
 			$location = $_POST['Location'];
 			$model = $_POST['Model'];
 			$brand = $_POST['Brand'];
 			$status = $_POST['Status'];
 			$cost = $_POST['Cost'];
-			
+*/			
 			/*(name_id, serial_number, location, model, brand, status, cost)*/
 /*			$query = "INSERT INTO assets VALUES ('$_POST['Item_Name']', '$_POST['Serial_#']', '$_POST['Location']', '$_POST['Model']', '$_POST['Brand']', '$_POST['Status']', '$_POST['Cost']')";
 			
