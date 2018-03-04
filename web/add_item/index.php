@@ -5,7 +5,7 @@
 	session_start();
 	
 	
-	if(isset($_POST))
+	if(isset($_POST('Save'))
 	{
 			$item = $_POST['Item_Name'];
 			$serial = $_POST['Serial_#'];
@@ -17,13 +17,15 @@
 			
 			/*(name_id, serial_number, location, model, brand, status, cost)*/
 			//$query = "INSERT INTO assets VALUES ('$_POST['Item_Name']', '$_POST['Serial_#']', '$_POST['Location']', '$_POST['Model']', '$_POST['Brand']', '$_POST['Status']', '$_POST['Cost']');";
-			$query = "INSERT INTO 'assets'('name_id') VALUES ('$item');";
+			$query = "INSERT INTO assets (name_id) VALUES ('$item')";
+
 			
-			$result = pg_query($conn, $query);
+			$result = pg_query($query);
+
 	}
 	else
 	{
-			//$failmsg = "Error adding data to database";
+			echo "Error adding data to database";
 	}
 ?>
 
@@ -54,7 +56,7 @@
                 <ul class="nav navbar-nav navbar-right"></ul>
         </div>
         </div>
-    </nav>
+    </nav>2
     <div>
 		<!--Nav bar settings-->
         <nav class="navbar navbar-default navigation-clean" style="background-color:rgb(72,143,174);min-width:0px;max-width:10001px;margin-right:0px;margin-top:-51px;">
@@ -109,13 +111,14 @@
                  <!--required notice in top left-->
 				<p class="help-block"style="color:rgb(247,1,1);">' * '= required</p>
                     <!--Creates forms to fill out-->
-                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    //<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+					<form action="demo-form2" method="post">
 						<!--Create Item Name entry--> 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12"  style="color:rgb(51,51,51);" name="Item_Name"> Item Name <span class="required">*</span>
                         </label> 					
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="Item_Name" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="Item_Name" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 						<!--Create Serial # entry-->
@@ -123,7 +126,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" style="color:rgb(51,51,51);" name="Serial_#">Serial # <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="Serial_#" name="Serial_#" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="Serial_#" name="Serial_#" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 						<!--Creates Location entry-->
@@ -131,7 +134,7 @@
                         <label for="Location" class="control-label col-md-3 col-sm-3 col-xs-12"style="color:rgb(51,51,51);" name="Location">Location <span class="required">*</span>
 						</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="Location" class="form-control col-md-7 col-xs-12" type="text" name="Location">
+                          <input type="text" name="Location" class="form-control col-md-7 col-xs-12" type="text" name="Location">
                         </div>
                       </div>
 					  <!--Creates Model entry-->
@@ -139,7 +142,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" style="color:rgb(51,51,51);" name="Model"> Model
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="Model" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="Model" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 					  <!--Creates Brand entry-->
@@ -147,7 +150,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" style="color:rgb(51,51,51);" name="Brand"> Brand
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="Brand" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="Brand" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
 					  <!--Creates Status entry-->
@@ -155,7 +158,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" style="color:rgb(51,51,51);" name="Status">Assigned <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="Status" name="Status" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="Status" name="Status" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       
@@ -165,13 +168,13 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" style="color:rgb(51,51,51);" name="Cost"> Cost
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="Cost" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="number" name="Cost" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="form-group">
                         
 						<!--Creates Save button-->
-                        <button class="btn btn-default" type="submit" id="Save" style="margin-left:550px;margin-top:30px;">Save</button>
+                        <button class="btn btn-default" type="submit" name="Save" style="margin-left:550px;margin-top:30px;">Save</button>
 					  </div>
 					 </form>
     <!-- /Starrr -->
