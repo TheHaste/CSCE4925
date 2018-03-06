@@ -1,7 +1,7 @@
 <?php
 	session_start(); //start user session to send data between pages
 	
-	if(isset($_POST)){
+	if(isset($_POST) & !empty($_POST)){
 		echo "LOGIN PRESSED";
 		
 	/*	$curl = curl_init();
@@ -75,7 +75,7 @@
                         <form method= 'POST'>
                             <label>Username</label> <input class="form-control" type="text" name="username">
                             <label>Password </label> <input class="form-control" type="password" name="password">
-							<div style="height:10px"></div>
+							<div style="height:20px"></div>
 							<button class="btn btn-success btn-block" type="submit" name="login_button">LOGIN</button>
 						</form>
                     </div>
