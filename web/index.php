@@ -2,6 +2,8 @@
 	session_start(); //start user session to send data between pages
 	
 	if($_POST['login button'] == 'LOGIN'){
+		echo "LOGIN PRESSED";
+		
 		$curl = curl_init();
 
 		curl_setopt_array($curl, array(
