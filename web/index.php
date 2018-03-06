@@ -33,7 +33,7 @@
 			echo "cURL Error #:" . $err;
 		} 
 		else {	
-			$contents = json_decode($response, true);
+			$contents = json_decode($response);
 			
 			$contents['firstName'] = $firstName;
 			$contents['lastName'] = $lastName;
