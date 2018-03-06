@@ -58,6 +58,7 @@
 		} 
 		else {	
 			$contents = json_decode($response, true);
+			echo $contents;
 			
 			//check if user is in group
 			foreach($contents['memberOf'] as $group){
@@ -114,7 +115,6 @@
 			<div class="row row-login">
 				<div class="col-10 col-sm-6 col-md-4 offset-1 offset-sm-3 offset-md-4">
 				<div style="text-center;"><img src="/assets/img/meridian_logo_large.png"> </div>
-					<h1 class="text-center">Inventory</h1>
 					<div style="height:30px"></div>
 					<div class="card">
 						<div class="card-body">
@@ -125,12 +125,11 @@
 								<div style="height:20px"></div>
 								<button class="btn btn-success btn-block" type="submit" name="login_button">LOGIN</button>
 								</form>
-						</div> <!-- card body -->
-					</div> <!-- card -->
-				</div> <!-- main div -->
-			</div> <!-- column -->
-		</div> <!-- row -->
-	</div>
+						</div>
+					</div> 
+				</div> 
+			</div> 
+	</div> 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
