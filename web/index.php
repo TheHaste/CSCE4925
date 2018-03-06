@@ -64,13 +64,14 @@
     <div class="container">
         <div class="row row-login">
             <div class="col-10 col-sm-6 col-md-4 offset-1 offset-sm-3 offset-md-4">
-                <h1 class="text-center">Meridian Business Solutions Inventory</h1>
+                <h1 class="text-center">Meridian Business Solutions</h1>
+				<h1 class="text-center">Inventory</h1>
                 <div class="card">
                     <div class="card-body">
-                        <form>
+                        <form method= "POST">
                             <div class="form-group"><label>Username</label><input class="form-control" type="text"></div>
                             <div class="form-group"><label>Password </label><input class="form-control" type="password"></div>
-							<input class="btn btn-success btn-block" type="submit" name="login button" value="LOGIN" >LOGIN</input>
+							<input class="btn btn-success btn-block" type="submit" name="login button" value="LOGIN"></input>
 						</form>
                     </div>
                 </div>
