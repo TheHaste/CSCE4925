@@ -4,7 +4,7 @@
 	if($_POST['login button'] == 'LOGIN'){
 		echo "LOGIN PRESSED";
 		
-		$curl = curl_init();
+	/*	$curl = curl_init();
 
 		curl_setopt_array($curl, array(
 		  CURLOPT_PORT => "30443",
@@ -45,7 +45,7 @@
 	//	echo $firstName;
 		echo $response;
 	}
-		
+*/		
 	}
 	
 	
@@ -70,8 +70,10 @@
                 <div class="card">
                     <div class="card-body">
                         <form method= "POST">
-                            <div class="form-group"><label>Username</label><input class="form-control" type="text"></div>
-                            <div class="form-group"><label>Password </label><input class="form-control" type="password"></div>
+                            <div class="form-group"><label>Username</label>
+								<input class="form-control" type="text"></div>
+                            <div class="form-group"><label>Password </label>
+								<input class="form-control" type="password"></div>
 							<input class="btn btn-success btn-block" type="submit" name="login button" value="LOGIN"></input>
 						</form>
                     </div>
