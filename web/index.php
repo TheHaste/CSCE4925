@@ -9,7 +9,7 @@
 		password: qeMay8qef2KEp7Pe
 	**************************************/
 	
-require('C:\xampp\htdocs\Connecttodb_Users1.php');	
+	
 	session_start(); //start user session to send data between pages
 	
 	if(isset($_POST) & !empty($_POST)){
@@ -74,36 +74,21 @@ require('C:\xampp\htdocs\Connecttodb_Users1.php');
 				//set $_SESSION variables
 				if($memberOf == "inventory_admin_group"){
 					$_SESSION["userType"] = 'admin';
-					$username = $_POST['username'];
-					$password = $_POST['password'];
-					$login_timeadmin = $_POST['username'];
-					$currentDateTime = new\DateTime();
-					$currentDateTime->setTimezone(new \DateTimeZone('America/Chicago'));
-					$login_timeadmin = $currentDateTime->format('l-j-M-Y H:i:s A');
-					$query = "INSERT INTO logging(user_type,time_stamp) VALUES('$username','$login_timeadmin')";
-					$results = pg_query($conn, $query);
 				}
 				
 				if($memberOf == "inventory_user_group"){
 					$_SESSION["userType"] = 'user';
-					$username = $_POST['username'];
-					$password = $_POST['password'];
-					$login_timeuser = $_POST['username'];
-					$currentDateTime = new\DateTime();
-					$currentDateTime->setTimezone(new \DateTimeZone('America/Chicago'));
-					$login_timeuser = $currentDateTime->format('l-j-M-Y H:i:s A');
-					$query = "INSERT INTO logging(user_type,time_stamp) VALUES('$username','$login_timeuser')";
-					$results = pg_query($conn, $query);
 				}
 				
 				$_SESSION["username"] = $username;
 			
-				//header('Location: /home/'); //redirect to home page
+				header('Location: /home/'); //redirect to home page
 			}
 		}
 		
 	}
-
+	
+	
 ?>
 <html>
 
