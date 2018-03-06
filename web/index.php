@@ -111,7 +111,7 @@
 	<div style="height:10px"></div>
 	<?php if(isset($err)){ ?><div style="text-center;height:50px;" class="alert alert-danger" role="alert"> <?php echo $err; ?> </div><?php } ?>
 		<div class="row">
-			<div class="col-10 col-sm-6 col-md-4">
+			<div class="col-10 col-sm-6 col-md-4 offset-sm-3 ">
 				<div style="text-center;"><img src="/assets/img/meridian_logo_large.png"> </div>
 			</div>
 		</div>
