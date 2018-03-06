@@ -3,7 +3,7 @@
 	/************************************
 				ADMIN
 		username: inventoryadmin
-		password: 3asUSWefup67deSA+
+		password: 3asUSWefup67deSA
 		
 				USER
 		username: inventoryuser 
@@ -41,6 +41,13 @@
 		));
 	
 		$response = curl_exec($curl); //response from curl
+		
+		//check if response was received
+		if(!$response || strlen(trim($response)) == 0){
+			$error = true;
+			$err = "Login Failed: Invalid username or password"; //empty or no response was received 
+		}
+		
 		$err = curl_error($curl); //if error occurs
 
 		curl_close($curl); //close curl
@@ -50,26 +57,35 @@
 		} 
 		else {	
 			$contents = json_decode($response, true);
-
-			//get group from successful response
-			$memberOf = $contents['memberOf'][0];
 			
-			echo "MEMBER OF: {$memberOf}<br>";
-			
-			//set $_SESSION variables
-			if($memberOf == "inventory_admin_group"){
-				$_SESSION["userType"] = 'admin';
+			//check if user is in group
+			foreach($contents['memberOf'] as $group){
+				if($group == "inventory_admin_group"{ 
+					$memberOf = $group;
+					break;
+				}
+				else if($group == "inventory_user_group"){
+					$memberOf = $group;
+					break;
+				}
 			}
 			
-			if($memberOf == "inventory_user_group"){
-				$_SESSION["userType"] = 'user';
+					
+			//check for errors before signing in
+			if($error != true || strlen(trim($err)) == 0)){	
+				//set $_SESSION variables
+				if($memberOf == "inventory_admin_group"){
+					$_SESSION["userType"] = 'admin';
+				}
+				
+				if($memberOf == "inventory_user_group"){
+					$_SESSION["userType"] = 'user';
+				}
+				
+				$_SESSION["username"] = $username;
+			
+				header('Location: /home/'); //redirect to home page
 			}
-			
-			$_SESSION["username"] = $username;
-			
-			echo "User account type is: {$_SESSION['userType']}";
-			
-			//header('Location: /home/'); //redirect to home page
 		}
 		
 	}
@@ -94,13 +110,17 @@
     <div class="container">
         <div class="row row-login">
             <div class="col-10 col-sm-6 col-md-4 offset-1 offset-sm-3 offset-md-4">
-                <h1 class="text-center">Meridian Business Solutions</h1>
+			<?php if(isset($err)){ ?><div class="alert alert-danger" role="alert"> <?php echo $err; ?> </div><?php } ?>
+                <p style="text-align:center;"><img src="/assets/img/meridian_logo_large.png"></p>
+				<div style="height:30px"></div>
 				<h1 class="text-center">Inventory</h1>
+				<div style="height:30px"></div>
                 <div class="card">
                     <div class="card-body">
                         <form method= 'POST'>
                             <label>Username</label> <input class="form-control" type="text" name="username" value="<?php if(isset($username) & !empty($username)){echo $username;} ?>">
-                            <label>Password </label> <input class="form-control" type="password" name="password" value="<?php if(isset($password) & !empty($password)){echo $password;} ?>">
+                            <div style="height:10px"></div>
+							<label>Password </label> <input class="form-control" type="password" name="password" value="<?php if(isset($password) & !empty($password)){echo $password;} ?>">
 							<div style="height:20px"></div>
 							<button class="btn btn-success btn-block" type="submit" name="login_button">LOGIN</button>
 						</form>
