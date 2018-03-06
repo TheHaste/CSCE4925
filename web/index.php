@@ -41,6 +41,7 @@
 		));
 	
 		$response = curl_exec($curl); //response from curl
+		echo $response;
 		
 		//check if response was received
 		if($response === null || $response == FALSE || $response == ''){
