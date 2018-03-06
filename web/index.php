@@ -56,11 +56,11 @@
 			$memberOf = $contents['memberOf'][0];
 	
 			//set $_SESSION variables
-			if($memberOf = "inventory_admin_group"){
+			if($memberOf == "inventory_admin_group"){
 				$_SESSION["userType"] = 'admin';
 			}
 			
-			if($memberOf = "inventory_user_group"){
+			if($memberOf == "inventory_user_group"){
 				$_SESSION["userType"] = 'user';
 			}
 			
