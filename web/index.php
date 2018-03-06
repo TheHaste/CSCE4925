@@ -76,7 +76,7 @@
                             <label>Username</label> <input class="form-control" type="text" name="username">
                             <label>Password </label> <input class="form-control" type="password" name="password">
 							<div style="height:10px"></div>
-							<input class="btn btn-success btn-block" type="submit" name="login_button" value="LOGIN"></input>
+							<input class="btn btn-success btn-block" type="submit" name="login_button">LOGIN</input>
 						</form>
                     </div>
                 </div>
