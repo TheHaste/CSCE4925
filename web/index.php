@@ -108,8 +108,8 @@
 
 <body>
     <div class="container">
+	<?php if(isset($err)){ ?><div style="text-center;height:50px;" class="alert alert-danger" role="alert"> <?php echo $err; ?> </div><?php } ?>
         <div class="row row-login">
-			<?php if(isset($err)){ ?><div style="text-center;height:50px;" class="alert alert-danger" role="alert"> <?php echo $err; ?> </div><?php } ?>
 			<div style="height:30px"></div>
             <div class="col-10 col-sm-6 col-md-4 offset-1 offset-sm-3 offset-md-4">
 				<div style="text-center;"><img src="/assets/img/meridian_logo_large.png">
