@@ -1,5 +1,4 @@
 <?php
-
 	/************************************
 				ADMIN
 		username: inventoryadmin
@@ -10,7 +9,7 @@
 		password: qeMay8qef2KEp7Pe
 	**************************************/
 	
-	
+require('C:\xampp\htdocs\Connecttodb_Users1.php');	
 	session_start(); //start user session to send data between pages
 	
 	if(isset($_POST) & !empty($_POST)){
@@ -20,7 +19,6 @@
 		
 		//curl request
 		$curl = curl_init();
-
 		curl_setopt_array($curl, array(
 		  CURLOPT_PORT => "30443",
 		  CURLOPT_URL => "https://198.61.58.38:30443/v1/authenticate",
@@ -50,9 +48,7 @@
 		}
 		
 		$err = curl_error($curl); //if error occurs
-
 		curl_close($curl); //close curl
-
 		if ($err) {
 			echo "cURL Error #:" . $err;
 		} 
@@ -90,17 +86,24 @@
 				
 				if($memberOf == "inventory_user_group"){
 					$_SESSION["userType"] = 'user';
+					$username = $_POST['username'];
+					$password = $_POST['password'];
+					$login_timeuser = $_POST['username'];
+					$currentDateTime = new\DateTime();
+					$currentDateTime->setTimezone(new \DateTimeZone('America/Chicago'));
+					$login_timeuser = $currentDateTime->format('l-j-M-Y H:i:s A');
+					$query = "INSERT INTO logging(user_type,time_stamp) VALUES('$username','$login_timeuser')";
+					$results = pg_query($conn, $query);
 				}
 				
 				$_SESSION["username"] = $username;
 			
-				header('Location: /home/'); //redirect to home page
+				//header('Location: /home/'); //redirect to home page
 			}
 		}
 		
 	}
-	
-	
+
 ?>
 <html>
 
