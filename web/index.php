@@ -42,7 +42,11 @@
 			$username = $contents['username'];
 			$memberOf = $contents['memberOf'];
 	
-			echo $firstName;
+			echo $firstName; echo "		";
+			echo $lastName; echo "		";
+			echo $displayName; echo "		";
+			echo $username; echo "		";
+			echo $memberOf; echo "		";
 		}
 		
 	}
