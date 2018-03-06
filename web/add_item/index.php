@@ -1,5 +1,3 @@
-/*<!DOCTYPE html>*/
-
 <?php
 	
 	require('/app/web/connect.php');
