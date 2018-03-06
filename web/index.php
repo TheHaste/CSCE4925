@@ -34,18 +34,18 @@
 		} 
 		else {	
 			$contents = json_decode($response, true);
-			
+			echo $contents; echo "<br>";
 			$firstName = $contents['firstName'];
 			$lastName = $contents['lastName'];
 			$displayName = $contents['displayName'];
 			$username = $contents['username'];
 			$memberOf = $contents['memberOf'];
 	
-			echo $firstName; echo "		";
-			echo $lastName; echo "		";
-			echo $displayName; echo "		";
-			echo $username; echo "		";
-			echo $memberOf; echo "		";
+			echo $firstName; echo "<br>";
+			echo $lastName; echo "<br>";
+			echo $displayName; echo "<br>";
+			echo $username; echo "<br>";
+			echo $memberOf; echo "<br>";
 		}
 		
 	}
