@@ -34,7 +34,7 @@
 		} 
 		else {	
 			$contents = json_decode($response, true);
-			echo $contents; echo "<br>";
+			echo $response; echo "<br>";
 			$firstName = $contents['firstName'];
 			$lastName = $contents['lastName'];
 			$displayName = $contents['displayName'];
