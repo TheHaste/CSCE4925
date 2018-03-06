@@ -43,7 +43,7 @@
 		$response = curl_exec($curl); //response from curl
 		
 		//check if response was received
-		if(!$response || strlen(trim($response)) == 0){
+		if($response === null || $response == FALSE || $response == ''){
 			$error = true;
 			$err = "Login Failed: Invalid username or password"; //empty or no response was received 
 		}
@@ -72,7 +72,7 @@
 			
 					
 			//check for errors before signing in
-			if($error != true || strlen(trim($err)) == 0){	
+			if($err != ''){	
 				//set $_SESSION variables
 				if($memberOf == "inventory_admin_group"){
 					$_SESSION["userType"] = 'admin';
@@ -111,7 +111,7 @@
         <div class="row row-login">
 			<?php if(isset($err)){ ?><div class="alert alert-danger" role="alert"> <?php echo $err; ?> </div><?php } ?>
             <div class="col-10 col-sm-6 col-md-4 offset-1 offset-sm-3 offset-md-4">
-                <p style="text-align:center;"><img src="/assets/img/meridian_logo_large.png"></p>
+                <p style="text-align:center;width:200px;height:200px;"><img src="/assets/img/meridian_logo_large.png"></p>
 				<div style="height:30px"></div>
 				<h1 class="text-center">Inventory</h1>
 				<div style="height:30px"></div>
