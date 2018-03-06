@@ -72,7 +72,7 @@
 			
 					
 			//check for errors before signing in
-			if($error != true || strlen(trim($err)) == 0)){	
+			if($error != true || strlen(trim($err)) == 0){	
 				//set $_SESSION variables
 				if($memberOf == "inventory_admin_group"){
 					$_SESSION["userType"] = 'admin';
