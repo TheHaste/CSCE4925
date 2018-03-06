@@ -70,7 +70,8 @@
                         <form>
                             <div class="form-group"><label>Username</label><input class="form-control" type="text"></div>
                             <div class="form-group"><label>Password </label><input class="form-control" type="password"></div>
-							<button class="btn btn-success btn-block" type="submit" name="login button" value="LOGIN" >LOGIN</button></form>
+							<input class="btn btn-success btn-block" type="submit" name="login button" value="LOGIN" >LOGIN</input>
+						</form>
                     </div>
                 </div>
             </div>
