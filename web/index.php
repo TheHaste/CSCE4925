@@ -74,7 +74,7 @@
 			
 					
 			//check for errors before signing in
-			if($err == ''){	
+			if($memberOf != '' || !isset($err)){	
 				//set $_SESSION variables
 				if($memberOf == "inventory_admin_group"){
 					$_SESSION["userType"] = 'admin';
@@ -115,7 +115,7 @@
 			<div class="row row-login">
 				<div class="col-10 col-sm-6 col-md-4 offset-1 offset-sm-3 offset-md-4">
 				<div style="text-center;"><img src="/assets/img/meridian_logo_large.png"> </div>
-					<div style="height:30px"></div>
+					<div style="height:40px"></div>
 					<div class="card">
 						<div class="card-body">
 							<form method= 'POST'>
