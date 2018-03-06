@@ -1,10 +1,10 @@
 <?php
 	session_start(); //start user session to send data between pages
 	
-	if(isset($_POST['login button'])){
+	if(isset($_POST)){
 		echo "LOGIN PRESSED";
 		
-		$curl = curl_init();
+	/*	$curl = curl_init();
 
 		curl_setopt_array($curl, array(
 		  CURLOPT_PORT => "30443",
@@ -45,7 +45,7 @@
 		//	echo $firstName;
 			echo $response;
 		}
-		
+	*/	
 	}
 	
 	
@@ -72,11 +72,11 @@
 				<h1 class="text-center">Inventory</h1>
                 <div class="card">
                     <div class="card-body">
-                        <form method= "POST">
-                            <label>Username</label> <input class="form-control" type="text">
-                            <label>Password </label> <input class="form-control" type="password">
-							<div style="height:5px"></div>
-							<input class="btn btn-success btn-block" type="submit" name="login button" value="LOGIN"></input>
+                        <form method= 'POST'>
+                            <label>Username</label> <input class="form-control" type="text" name="username">
+                            <label>Password </label> <input class="form-control" type="password" name="password">
+							<div style="height:10px"></div>
+							<input class="btn btn-success btn-block" type="submit" name="login_button" value="LOGIN"></input>
 						</form>
                     </div>
                 </div>
