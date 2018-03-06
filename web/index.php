@@ -23,6 +23,15 @@
 	  ),
 	));
 	
+	$response = curl_exec($curl);
+	$err = curl_error($curl);
+
+	curl_close($curl);
+
+	if ($err) {
+	  echo "cURL Error #:" . $err;
+	} 
+	else {	
 	var_dump(json_decode($curl_exec($curl), true));
 	
 	$array['firstName'] = $firstName;
@@ -32,17 +41,7 @@
 	$array['memberOf'] = $memberOf;
 	
 	echo $firstName;
-	
-	$response = curl_exec($curl);
-	$err = curl_error($curl);
-
-	curl_close($curl);
-
-	if ($err) {
-	  echo "cURL Error #:" . $err;
-	} 
-	else {
-	  echo $response;
+	echo $response;
 	}
 		
 	}
