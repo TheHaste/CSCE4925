@@ -60,7 +60,7 @@
 			
 			//check if user is in group
 			foreach($contents['memberOf'] as $group){
-				if($group == "inventory_admin_group"{ 
+				if($group == "inventory_admin_group"){ 
 					$memberOf = $group;
 					break;
 				}
@@ -109,8 +109,8 @@
 <body>
     <div class="container">
         <div class="row row-login">
-            <div class="col-10 col-sm-6 col-md-4 offset-1 offset-sm-3 offset-md-4">
 			<?php if(isset($err)){ ?><div class="alert alert-danger" role="alert"> <?php echo $err; ?> </div><?php } ?>
+            <div class="col-10 col-sm-6 col-md-4 offset-1 offset-sm-3 offset-md-4">
                 <p style="text-align:center;"><img src="/assets/img/meridian_logo_large.png"></p>
 				<div style="height:30px"></div>
 				<h1 class="text-center">Inventory</h1>
