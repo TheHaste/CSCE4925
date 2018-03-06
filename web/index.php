@@ -110,8 +110,9 @@
     <div class="container">
         <div class="row row-login">
 			<?php if(isset($err)){ ?><div class="alert alert-danger" role="alert"> <?php echo $err; ?> </div><?php } ?>
+			<div style="height:30px"></div>
             <div class="col-10 col-sm-6 col-md-4 offset-1 offset-sm-3 offset-md-4">
-                <p style="text-align:center;width:200px;height:200px;"><img src="/assets/img/meridian_logo_large.png"></p>
+                <div style="text-align:center;width:100px;height:100;"><img src="/assets/img/meridian_logo_large.png"></div>
 				<div style="height:30px"></div>
 				<h1 class="text-center">Inventory</h1>
 				<div style="height:30px"></div>
