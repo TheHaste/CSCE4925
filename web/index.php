@@ -34,13 +34,14 @@
 		} 
 		else {	
 			$contents = json_decode($response);
+			echo json_decode($response);
 			
-			$contents['firstName'] = $firstName;
-			$contents['lastName'] = $lastName;
+			$contents->firstName = $firstName;
+		/*	$contents['lastName'] = $lastName;
 			$contents['displayName'] = $displayName;
 			$contents['username'] = $username;
 			$contents['memberOf'] = $memberOf;
-			
+		*/	
 			echo $firstName;
 		}
 		
