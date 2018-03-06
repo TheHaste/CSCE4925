@@ -33,15 +33,14 @@
 			echo "cURL Error #:" . $err;
 		} 
 		else {	
-			$contents = json_decode($response);
-			echo json_decode($response);
+			$contents = json_decode($response, true);
 			
-			$contents->firstName = $firstName;
-		/*	$contents['lastName'] = $lastName;
-			$contents['displayName'] = $displayName;
-			$contents['username'] = $username;
-			$contents['memberOf'] = $memberOf;
-		*/	
+			$firstName = $contents['firstName'];
+			$lastName = $contents['lastName'];
+			$displayName = $contents['displayName'];
+			$username = $contents['username'];
+			$memberOf = $contents['memberOf'];
+	
 			echo $firstName;
 		}
 		
