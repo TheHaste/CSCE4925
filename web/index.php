@@ -27,9 +27,9 @@
 	
 	$array['firstName'] = $firstName;
 	$array['lastName'] = $lastName;
-	$array['displayName'] = $displayName
-	$array['username'] = $username
-	$array['memberOf'] = $memberOf
+	$array['displayName'] = $displayName;
+	$array['username'] = $username;
+	$array['memberOf'] = $memberOf;
 	
 	echo $firstName;
 	
