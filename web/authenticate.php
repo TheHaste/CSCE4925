@@ -3,7 +3,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  //CURLOPT_SSL_VERIFYPEER => 0,
+  CURLOPT_SSL_VERIFYHOST => FALSE,
   CURLOPT_PORT => "30443",
   CURLOPT_URL => "https://198.61.58.38:30443/v1/authenticate",
   CURLOPT_RETURNTRANSFER => true,
@@ -18,8 +18,6 @@ curl_setopt_array($curl, array(
     "content-type: application/x-www-form-urlencoded"
   ),
 ));
-
-curl_setopt($process, CURLOPT_SSL_VERIFYHOST, FALSE);
 
 $response = curl_exec($curl);
 $err = curl_error($curl);
