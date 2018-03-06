@@ -5,6 +5,8 @@ require('/app/web/connect.php');
 
 session_start(); //start user session to send data between pages
 
+echo "User account type is: {$_SESSION["userType"]}";
+
 if($_SESSION["userType"] == 'admin'){ //user is admin
 	echo "USER IS AN ADMIN USER";	
 }
