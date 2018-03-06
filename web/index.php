@@ -108,28 +108,31 @@
 
 <body>
     <div class="container">
+	<div style="height:20px"></div>
 	<?php if(isset($err)){ ?><div style="text-center;height:50px;" class="alert alert-danger" role="alert"> <?php echo $err; ?> </div><?php } ?>
-        <div class="row row-login">
-			<div style="height:30px"></div>
-            <div class="col-10 col-sm-6 col-md-4 offset-1 offset-sm-3 offset-md-4">
-				<div style="text-center;"><img src="/assets/img/meridian_logo_large.png">
-				<div style="height:30px"></div>
-				<h1 class="text-center">Inventory</h1>
-				<div style="height:30px"></div>
-                <div class="card">
-                    <div class="card-body">
-                        <form method= 'POST'>
-                            <label>Username</label> <input class="form-control" type="text" name="username" value="<?php if(isset($username) & !empty($username)){echo $username;} ?>">
-                            <div style="height:10px"></div>
-							<label>Password </label> <input class="form-control" type="password" name="password" value="<?php if(isset($password) & !empty($password)){echo $password;} ?>">
-							<div style="height:20px"></div>
-							<button class="btn btn-success btn-block" type="submit" name="login_button">LOGIN</button>
-						</form>
-                    </div> <!-- card body -->
-                </div> <!-- card -->
-            </div> <!-- main div -->
-        </div> <!-- column -->
-    </div> <!-- row -->
+		<div class="row">
+			<div style="text-center;"><img src="/assets/img/meridian_logo_large.png"> </div>
+		</div>
+			<div class="row row-login">
+				<div class="col-10 col-sm-6 col-md-4 offset-1 offset-sm-3 offset-md-4">
+					<div style="height:30px"></div>
+					<h1 class="text-center">Inventory</h1>
+					<div style="height:30px"></div>
+					<div class="card">
+						<div class="card-body">
+							<form method= 'POST'>
+								<label>Username</label> <input class="form-control" type="text" name="username" value="<?php if(isset($username) & !empty($username)){echo $username;} ?>">
+								<div style="height:10px"></div>
+								<label>Password </label> <input class="form-control" type="password" name="password" value="<?php if(isset($password) & !empty($password)){echo $password;} ?>">
+								<div style="height:20px"></div>
+								<button class="btn btn-success btn-block" type="submit" name="login_button">LOGIN</button>
+								</form>
+						</div> <!-- card body -->
+					</div> <!-- card -->
+				</div> <!-- main div -->
+			</div> <!-- column -->
+		</div> <!-- row -->
+	</div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
