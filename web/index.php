@@ -39,7 +39,7 @@
 			$lastName = $contents['lastName'];
 			$displayName = $contents['displayName'];
 			$username = $contents['username'];
-			$memberOf = $contents['memberOf'];
+			$memberOf = $contents['memberOf'][0];
 	
 			echo $firstName; echo "<br>";
 			echo $lastName; echo "<br>";
