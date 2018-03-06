@@ -23,7 +23,7 @@
 	  ),
 	));
 	
-	var_dump(json_decode($curl_exec($curl), true);
+	var_dump(json_decode($curl_exec($curl), true));
 	
 	$array['firstName'] = $firstName;
 	$array['lastName'] = $lastName;
