@@ -109,10 +109,10 @@
 <body>
     <div class="container">
         <div class="row row-login">
-			<?php if(isset($err)){ ?><div class="alert alert-danger" role="alert"> <?php echo $err; ?> </div><?php } ?>
+			<?php if(isset($err)){ ?><div style="text-center;height:50px;" class="alert alert-danger" role="alert"> <?php echo $err; ?> </div><?php } ?>
 			<div style="height:30px"></div>
             <div class="col-10 col-sm-6 col-md-4 offset-1 offset-sm-3 offset-md-4">
-				<img src="/assets/img/meridian_logo_large.png">
+				<div style="text-center;"><img src="/assets/img/meridian_logo_large.png">
 				<div style="height:30px"></div>
 				<h1 class="text-center">Inventory</h1>
 				<div style="height:30px"></div>
@@ -125,11 +125,11 @@
 							<div style="height:20px"></div>
 							<button class="btn btn-success btn-block" type="submit" name="login_button">LOGIN</button>
 						</form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                    </div> <!-- card body -->
+                </div> <!-- card -->
+            </div> <!-- main div -->
+        </div> <!-- column -->
+    </div> <!-- row -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
