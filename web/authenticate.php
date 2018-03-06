@@ -3,7 +3,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  //CURLOPT_SSL_VERIFYPEER => false,
+  CURLOPT_SSL_VERIFYPEER => false,
   CURLOPT_PORT => "30443",
   CURLOPT_URL => "https://198.61.58.38:30443/v1/authenticate",
   CURLOPT_RETURNTRANSFER => true,
