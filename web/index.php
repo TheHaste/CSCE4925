@@ -33,7 +33,7 @@
 			echo "cURL Error #:" . $err;
 		} 
 		else {	
-		//	var_dump(json_decode($curl_exec($curl), true));
+			var_dump(json_decode($response, true));
 			
 			$array['firstName'] = $firstName;
 			$array['lastName'] = $lastName;
@@ -42,7 +42,6 @@
 			$array['memberOf'] = $memberOf;
 			
 			echo $firstName;
-			echo $response;
 		}
 		
 	}
