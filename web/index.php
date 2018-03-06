@@ -73,10 +73,8 @@
                 <div class="card">
                     <div class="card-body">
                         <form method= "POST">
-                            <div class="form-group"><label>Username</label>
-								<input class="form-control" type="text"></div>
-                            <div class="form-group"><label>Password </label>
-								<input class="form-control" type="password"></div>
+                            <label>Username</label> <input class="form-control" type="text">
+                            <label>Password </label> <input class="form-control" type="password">
 							<input class="btn btn-success btn-block" type="submit" name="login button" value="LOGIN"></input>
 						</form>
                     </div>
