@@ -53,7 +53,9 @@
 
 			//get group from successful response
 			$memberOf = $contents['memberOf'][0];
-	
+			
+			echo "MEMBER OF: {$memberOf}<br>";
+			
 			//set $_SESSION variables
 			if($memberOf == "inventory_admin_group"){
 				$_SESSION["userType"] = 'admin';
@@ -65,7 +67,9 @@
 			
 			$_SESSION["username"] = $username;
 			
-			header('Location: /home/'); //redirect to home page
+			echo "User account type is: {$_SESSION['userType']}";
+			
+			//header('Location: /home/'); //redirect to home page
 		}
 		
 	}
