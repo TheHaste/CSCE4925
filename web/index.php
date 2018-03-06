@@ -4,7 +4,7 @@
 	if($_POST['login button'] == 'LOGIN'){
 		echo "LOGIN PRESSED";
 		
-	/*	$curl = curl_init();
+		$curl = curl_init();
 
 		curl_setopt_array($curl, array(
 		  CURLOPT_PORT => "30443",
@@ -30,22 +30,22 @@
 
 		curl_close($curl);
 
-	if ($err) {
-		echo "cURL Error #:" . $err;
-	} 
-	else {	
-	//	var_dump(json_decode($curl_exec($curl), true));
+		if ($err) {
+			echo "cURL Error #:" . $err;
+		} 
+		else {	
+		//	var_dump(json_decode($curl_exec($curl), true));
+			
+		//	$array['firstName'] = $firstName;
+		//	$array['lastName'] = $lastName;
+		//	$array['displayName'] = $displayName;
+		//	$array['username'] = $username;
+		//	$array['memberOf'] = $memberOf;
+			
+		//	echo $firstName;
+			echo $response;
+		}
 		
-	//	$array['firstName'] = $firstName;
-	//	$array['lastName'] = $lastName;
-	//	$array['displayName'] = $displayName;
-	//	$array['username'] = $username;
-	//	$array['memberOf'] = $memberOf;
-		
-	//	echo $firstName;
-		echo $response;
-	}
-*/		
 	}
 	
 	
@@ -59,6 +59,9 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Login-Center.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+	<script src="assets/js/jquery.min"></script>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
