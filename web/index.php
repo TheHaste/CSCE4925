@@ -78,7 +78,7 @@
 					$currentDateTime = new\DateTime();
 					$currentDateTime->setTimezone(new \DateTimeZone('America/Chicago'));
 					$login_timeadmin = $currentDateTime->format('l-j-M-Y H:i:s A');
-					$query = "INSERT INTO logging(user,time) VALUES('$username','$login_timeadmin')";
+					$query = "INSERT INTO logging(user) VALUES('$username','$login_timeadmin')";
 					$results = pg_query($conn, $query);
 					
 				}
@@ -90,7 +90,7 @@
 					$currentDateTime = new\DateTime();
 					$currentDateTime->setTimezone(new \DateTimeZone('America/Chicago'));
 					$login_timeuser = $currentDateTime->format('l-j-M-Y H:i:s A');
-					$query = "INSERT INTO logging(user,time) VALUES('$username','$login_timeuser')";
+					$query = "INSERT INTO logging(user) VALUES('$username','$login_timeuser')";
 					$results = pg_query($conn, $query);
 				}
 				
