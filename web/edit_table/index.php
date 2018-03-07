@@ -87,7 +87,7 @@ $(document).ready(function() {
         ]
     } );
 	
-	editor.hide( [ 'last_updated', 'date_surplused' ] );
+	editor.hide( [ 'last_updated' ] );
 	
 	editor.on( 'initSubmit', function ( ){ //before edit, update timestamp for last edited
 			editor
@@ -129,7 +129,7 @@ $(document).ready(function() {
             { extend: "remove", editor: editor }
         ],
 		columnDefs: [
-			{ "visible": false, "targets": [8,9] }
+			{ "visible": false, "targets": [9] }
 		]
     } );
 
