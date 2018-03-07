@@ -74,9 +74,8 @@
 				//set $_SESSION variables
 				if($memberOf == "inventory_admin_group"){
 					$_SESSION["userType"] = 'admin';
-					$username = $_POST['username'];
-					$password = $_POST['password'];
-					$login_timeadmin = $_POST['username'];
+
+					$login_timeadmin = $username;
 					$currentDateTime = new\DateTime();
 					$currentDateTime->setTimezone(new \DateTimeZone('America/Chicago'));
 					$login_timeadmin = $currentDateTime->format('l-j-M-Y H:i:s A');
@@ -87,9 +86,8 @@
 				
 				if($memberOf == "inventory_user_group"){
 					$_SESSION["userType"] = 'user';
-					$username = $_POST['username'];
-					$password = $_POST['password'];
-					$login_timeuser = $_POST['username'];
+
+					$login_timeuser = $username;
 					$currentDateTime = new\DateTime();
 					$currentDateTime->setTimezone(new \DateTimeZone('America/Chicago'));
 					$login_timeuser = $currentDateTime->format('l-j-M-Y H:i:s A');
