@@ -8,8 +8,8 @@
 		username: inventoryuser 
 		password: qeMay8qef2KEp7Pe
 	**************************************/
-	
-	
+	date_default_timezone_set('America/Chicago'); //set timezone to CST
+	require('/app/web/connect.php');
 	session_start(); //start user session to send data between pages
 	
 	if(isset($_POST) & !empty($_POST)){
@@ -70,30 +70,22 @@
 			//check for errors before signing in
 			if($memberOf != '' || !isset($err)){	
 				//set $_SESSION variables
-				if($memberOf == "inventory_admin_group"){
-					$_SESSION["userType"] = 'admin';
-
-					$login_timeadmin = $username;
-					$currentDateTime = new\DateTime();
-					$currentDateTime->setTimezone(new \DateTimeZone('America/Chicago'));
-					$login_timeadmin = $currentDateTime->format('l-j-M-Y H:i:s A');
-					$query = "INSERT INTO logging(user,log_time) VALUES('$username','$login_timeadmin')";
-					$results = pg_query($conn, $query);
-					
+				if($memberOf == "inventory_admin_group"){ //admin user
+					$_SESSION["userType"] = 'admin';	
 				}
 				
-				if($memberOf == "inventory_user_group"){
+				if($memberOf == "inventory_user_group"){ //standard user
 					$_SESSION["userType"] = 'user';
-
-					$login_timeuser = $username;
-					$currentDateTime = new\DateTime();
-					$currentDateTime->setTimezone(new \DateTimeZone('America/Chicago'));
-					$login_timeuser = $currentDateTime->format('l-j-M-Y H:i:s A');
-					$query = "INSERT INTO logging(user,log_time) VALUES('$username','$login_timeuser')";
-					$results = pg_query($conn, $query);
 				}
 				
 				$_SESSION["username"] = $username;
+				
+				//create log
+				$action = "Login"
+				$log_time = date('M-d-Y H:i:s A');
+					
+				$query = "INSERT INTO logging(user,action,log_time) VALUES('$username',$action,$log_time)";
+				$results = pg_query($conn, $query);
 			
 				header('Location: /home/'); //redirect to home page
 			}
