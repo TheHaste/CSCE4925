@@ -84,23 +84,23 @@ $(document).ready(function() {
         ]
     } );
 	
-	editor.hide( [ 'last_updated' ] );
+	editor.hide( [ 'last_updated', 'date_surplused' ] );
 	
 	editor.on( 'initSubmit', function ( ){ //before edit, update timestamp for last edited
 			editor
 				.set('last_updated', "<?php echo date("Y-m-d");?>")
     } );
 	
-	editor.on('create', function(){
-		<?php $username = $_SESSION["username"]; $action = "Created an asset"; $log_time = date('M-d-Y H:i:s A'); $query = "INSERT INTO logging VALUES ('{$username}', '{$action}', '{$log_time}');"; $results = pg_query($conn, $query);?>
+	editor.on('create', function ( ){
+
 	});
 	
-	editor.on('edit', function(){
-		<?php $username = $_SESSION["username"]; $action = "Edited an asset"; $log_time = date('M-d-Y H:i:s A'); $query = "INSERT INTO logging VALUES ('{$username}', '{$action}', '{$log_time}');"; $results = pg_query($conn, $query);?>
+	editor.on('edit', function ( ){
+
 	});
 	
-	editor.on('remove', function(){
-		<?php $username = $_SESSION["username"]; $action = "Removed an asset"; $log_time = date('M-d-Y H:i:s A'); $query = "INSERT INTO logging VALUES ('{$username}', '{$action}', '{$log_time}');"; $results = pg_query($conn, $query);?>
+	editor.on('remove', function ( ){
+
 	});
  
 	$('#assets').DataTable( {
