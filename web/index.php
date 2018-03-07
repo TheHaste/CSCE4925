@@ -41,22 +41,20 @@
 		
 		$err = curl_error($curl); //if error occurs
 		curl_close($curl); //close curl
-		
-		else {	
-			$contents = json_decode($response, true);
 			
-			//check if user is in group
-			foreach($contents['memberOf'] as $group){
-				if($group == "inventory_admin_group"){ 
-					$memberOf = $group;
-					break;
-				}
-				else if($group == "inventory_user_group"){
-					$memberOf = $group;
-					break;
-				}
+		$contents = json_decode($response, true);
+			
+		//check if user is in group
+		foreach($contents['memberOf'] as $group){
+			if($group == "inventory_admin_group"){ 
+				$memberOf = $group;
+				break;
 			}
-			
+			else if($group == "inventory_user_group"){
+				$memberOf = $group;
+				break;
+			}
+		}	
 			//check if response was received
 			if($response == ": unauthorized"){
 				$error = true;
@@ -90,7 +88,6 @@
 				
 				header('Location: /home/'); //redirect to home page
 			}
-		}
 		
 	}
 	
