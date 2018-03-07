@@ -72,13 +72,16 @@ $(document).ready(function() {
                 name: "cost"
 			}, {
                 label: "Date Deployed:",
-                name: "date_deployed"
+                name: "date_deployed",
+				type: "datetime"
 			}, {
                 label: "Date Surplused:",
-                name: "date_surplused"
+                name: "date_surplused",
+				type: "datetime"
             }, {
                 label: "Last Updated:",
-                name: "last_updated"
+                name: "last_updated",
+				type: "datetime"
             }, 
 			
         ]
