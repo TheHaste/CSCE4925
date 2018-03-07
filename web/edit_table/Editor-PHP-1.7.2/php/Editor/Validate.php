@@ -891,6 +891,8 @@ class Validate {
 	 *  @return string|true true if the value is valid, a string with an error
 	 *    message otherwise.
 	 */
+	
+/*
 	public static function dateFormat( $format, $cfg=null ) {
 		$opts = ValidateOptions::select( $cfg );
 		
@@ -910,7 +912,23 @@ class Validate {
 				$opts->message();
 		};
 	}
+*/
 
+public static function dateFormat( $val, $data, $opts ) {
+$format = is_array($opts) ? $opts['format'] : $opts;
+
+if ( $val === '' ) {
+return true;
+}
+
+$date = date_create_from_format($format, $val);
+if ( ! $date ) {
+return isset( $opt['message'] ) ?
+$opts['message'] :
+"Date is not in the expected format";
+}
+return true;
+}
 
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	 * Database validation methods
