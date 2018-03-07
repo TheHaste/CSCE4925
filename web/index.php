@@ -40,12 +40,6 @@
 	
 		$response = curl_exec($curl); //response from curl
 		
-		//check if response was received
-		if($response == ": unauthorized"){
-			$error = true;
-			$err = "Login Failed: Invalid username or password"; //empty or no response was received 
-		}
-		
 		$err = curl_error($curl); //if error occurs
 		curl_close($curl); //close curl
 		if ($err) {
@@ -67,6 +61,11 @@
 				}
 			}
 			
+			//check if response was received
+			if($response == ": unauthorized"){
+				$error = true;
+				$err = "Login Failed: Invalid username or password"; //empty or no response was received 
+			}		
 					
 			//check for errors before signing in
 			if($memberOf != '' || !isset($err)){	
