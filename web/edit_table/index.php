@@ -90,6 +90,18 @@ $(document).ready(function() {
 			editor
 				.set('last_updated', "<?php echo date("Y-m-d");?>")
     } );
+	
+	editor.on('create', function(){
+		<?php $username = $_SESSION["username"]; $action = "Created an asset"; $log_time = date('M-d-Y H:i:s A'); $query = "INSERT INTO logging VALUES ('{$username}', '{$action}', '{$log_time}');"; $results = pg_query($conn, $query);?>
+	});
+	
+	editor.on('edit', function(){
+		<?php $username = $_SESSION["username"]; $action = "Edited an asset"; $log_time = date('M-d-Y H:i:s A'); $query = "INSERT INTO logging VALUES ('{$username}', '{$action}', '{$log_time}');"; $results = pg_query($conn, $query);?>
+	});
+	
+	editor.on('remove', function(){
+		<?php $username = $_SESSION["username"]; $action = "Removed an asset"; $log_time = date('M-d-Y H:i:s A'); $query = "INSERT INTO logging VALUES ('{$username}', '{$action}', '{$log_time}');"; $results = pg_query($conn, $query);?>
+	});
  
 	$('#assets').DataTable( {
         dom: "Bfrtip",
