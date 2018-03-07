@@ -87,7 +87,8 @@
 				$results = pg_query($conn, $query);
 				
 				pg_close($conn);
-				//header('Location: /home/'); //redirect to home page
+				
+				header('Location: /home/'); //redirect to home page
 			}
 		}
 		
