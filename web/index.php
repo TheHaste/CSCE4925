@@ -39,11 +39,9 @@
 		));
 	
 		$response = curl_exec($curl); //response from curl
-		//echo "Response is:{$response}";
 		
 		//check if response was received
 		if($response == ": unauthorized"){
-			echo "Unauthorized";
 			$error = true;
 			$err = "Login Failed: Invalid username or password"; //empty or no response was received 
 		}
@@ -123,7 +121,7 @@
 <body>
     <div class="container">
 	<div style="height:10px"></div>
-	<?php if(isset($err)){ ?><div style="text-center;height:50px;" class="alert alert-danger" role="alert"> <?php echo $err; ?> </div><?php } ?>
+	<?php if(isset($err)){ ?><div style="text-center;height:50px;" class="alert alert-danger" role="alert"> <?php echo "Error: {$err}"; ?> </div><?php } ?>
 			<div class="row row-login">
 				<div class="col-10 col-sm-6 col-md-4 offset-1 offset-sm-3 offset-md-4">
 				<div style="text-center;"><img src="/assets/img/meridian_logo_medium.png"> </div>
