@@ -39,10 +39,11 @@
 		));
 	
 		$response = curl_exec($curl); //response from curl
-		echo "Response is:{$response}";
+		//echo "Response is:{$response}";
 		
 		//check if response was received
-		if($response == ' : unauthorized'){
+		if($response == ": unauthorized"){
+			echo "Unauthorized";
 			$error = true;
 			$err = "Login Failed: Invalid username or password"; //empty or no response was received 
 		}
