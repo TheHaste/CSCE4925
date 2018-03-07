@@ -84,7 +84,7 @@
 				$action = "Login";
 				$log_time = date('M-d-Y H:i:s A');
 					
-				$query = "INSERT INTO logging (user, action, log_time) VALUES ('{$username}', '{$action}', '{$log_time}');";
+				$query = "INSERT INTO logging VALUES ('{$username}', '{$action}', '{$log_time}');";
 				
 				echo $query; echo "<br>";
 				
