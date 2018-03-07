@@ -126,7 +126,7 @@ $(document).ready(function() {
             { extend: "remove", editor: editor }
         ],
 		columnDefs: [
-		{ "visible": false, "targets": 9 }
+		{ "visible": false, "targets": 8,9 }
 		]
     } );
 
