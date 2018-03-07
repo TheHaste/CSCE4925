@@ -39,7 +39,7 @@
 		));
 	
 		$response = curl_exec($curl); //response from curl
-		//echo $response;
+		echo "Response is:{$response}";
 		
 		//check if response was received
 		if($response == ' : unauthorized'){
