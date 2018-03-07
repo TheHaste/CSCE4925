@@ -41,9 +41,7 @@
 		
 		$err = curl_error($curl); //if error occurs
 		curl_close($curl); //close curl
-		if ($err) {
-			echo "cURL Error #:" . $err;
-		} 
+		
 		else {	
 			$contents = json_decode($response, true);
 			
@@ -66,7 +64,7 @@
 			}		
 					
 			//check for errors before signing in
-			if($memberOf != '' || !isset($err)){	
+			if($memberOf != '' || $err != ''){	
 				//set $_SESSION variables
 				if($memberOf == "inventory_admin_group"){ //admin user
 					$_SESSION["userType"] = 'admin';	
@@ -86,11 +84,7 @@
 					
 				$query = "INSERT INTO logging VALUES ('{$username}', '{$action}', '{$log_time}');";
 				
-				echo $query; echo "<br>";
-				
 				$results = pg_query($conn, $query);
-				
-				echo "results: {$results}";
 				
 				pg_close($conn);
 				//header('Location: /home/'); //redirect to home page
