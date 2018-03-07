@@ -9,7 +9,6 @@
 		password: qeMay8qef2KEp7Pe
 	**************************************/
 	date_default_timezone_set('America/Chicago'); //set timezone to CST
-	require('/app/web/connect.php');
 	session_start(); //start user session to send data between pages
 	
 	if(isset($_POST) & !empty($_POST)){
@@ -81,10 +80,12 @@
 				$_SESSION["username"] = $username;
 				
 				//create log
+				include('/app/web/connect.php');
+				
 				$action = "Login";
 				$log_time = date('M-d-Y H:i:s A');
 					
-				$query = "INSERT INTO logging(user,action,log_time) VALUES('$username',$action,$log_time)";
+				$query = "INSERT INTO 'logging' (user, action, log_time) VALUES('$username','$action','$log_time')";
 				$results = pg_query($conn, $query);
 			
 				pg_close($conn);
