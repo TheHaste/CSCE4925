@@ -85,7 +85,7 @@
 				$action = "Login";
 				$log_time = date('M-d-Y H:i:s A');
 					
-				$query = "INSERT INTO 'logging' (user, action, log_time) VALUES('$username','$action','$log_time')";
+				$query = "INSERT INTO logging (user, action, log_time) VALUES('{$username}','{$action}','{$log_time}');";
 				$results = pg_query($conn, $query);
 			
 				pg_close($conn);
