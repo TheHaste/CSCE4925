@@ -58,7 +58,7 @@
 			//check if response was received
 			if($response == ": unauthorized"){
 				$error = true;
-				$err = "Login Failed: Invalid username or password"; //empty or no response was received 
+				$err = "Invalid username or password"; //empty or no response was received 
 			}		
 					
 			//check for errors before signing in
