@@ -87,6 +87,7 @@
 				$query = "INSERT INTO logging(user,action,log_time) VALUES('$username',$action,$log_time)";
 				$results = pg_query($conn, $query);
 			
+				pg_close($conn);
 				header('Location: /home/'); //redirect to home page
 			}
 		}
