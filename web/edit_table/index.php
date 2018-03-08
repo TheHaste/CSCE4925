@@ -110,7 +110,7 @@ $(document).ready(function() {
 		$.post('/scripts/write_log.php', {action: 'remove'}, function(){
             
           });
-	});
+	}); 
  
 	$('#assets').DataTable( {
         dom: "Bfrtip",
