@@ -96,19 +96,19 @@ $(document).ready(function() {
 	
 	editor.on('create', function ( ){
 		$.post('scripts/write_log.php', {action: create}, function(){
-            
+            return;
           });
 	});
 	
 	editor.on('edit', function ( ){
 		$.post('scripts/write_log.php', {action: edit}, function(){
-            
+            return;
           });
 	});
 	
 	editor.on('remove', function ( ){
 		$.post('scripts/write_log.php', {action: remove}, function(){
-            
+            return;
           });
 	});
  
