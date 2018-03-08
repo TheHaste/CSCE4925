@@ -94,19 +94,19 @@ $(document).ready(function() {
 				.set('last_updated', "<?php echo date("Y-m-d");?>")
     } );
 	
-	editor.on('create', function ( ){
+	editor.on('postCreate', function ( ){
 		$.post('/scripts/write_log.php', {action: 'create'}, function(){
             
           });
 	});
 	
-	editor.on('edit', function ( ){
+	editor.on('postEdit', function ( ){
 		$.post('/scripts/write_log.php', {action: 'edit'}, function(){
             
           });
 	});
 	
-	editor.on('remove', function ( ){
+	editor.on('postRemove', function ( ){
 		$.post('/scripts/write_log.php', {action: 'remove'}, function(){
             
           });
