@@ -95,19 +95,19 @@ $(document).ready(function() {
     } );
 	
 	editor.on('create', function ( ){
-		$.post('/scripts/write_log.php', {action: create}, function(){
+		$.post('/scripts/write_log.php', {action: 'create'}, function(){
             
           });
 	});
 	
 	editor.on('edit', function ( ){
-		$.post('/scripts/write_log.php', {action: edit}, function(){
+		$.post('/scripts/write_log.php', {action: 'edit'}, function(){
             
           });
 	});
 	
 	editor.on('remove', function ( ){
-		$.post('/scripts/write_log.php', {action: remove}, function(){
+		$.post('/scripts/write_log.php', {action: 'remove'}, function(){
             
           });
 	});
