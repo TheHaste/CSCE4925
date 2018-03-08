@@ -26,7 +26,7 @@
 		
 		$query = "INSERT INTO logging VALUES ('{$username}', '{$action_string}', '{$log_time}');"; 
 		
-		$results = pg_query($conn, $query);
+		$results = pg_query($conn1, $query);
 		
 		pg_close($conn1);
 	}
