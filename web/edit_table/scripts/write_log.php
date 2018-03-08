@@ -25,4 +25,6 @@
 		$query = "INSERT INTO logging VALUES ('{$username}', '{$action}', '{$log_time}');"; $results = pg_query($conn, $query);
 
 	}
+	else
+		echo "NO LOG WRITTEN";
 ?>
