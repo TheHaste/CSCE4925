@@ -20,7 +20,7 @@
 		$empty_action = true;
 	}
 	
-	if($empty_action != true){
+	//if($empty_action != true){
 		
 		$log_time = date('M-d-Y H:i:s A'); 
 		
@@ -29,7 +29,7 @@
 		$results = pg_query($conn1, $query);
 		
 		pg_close($conn1);
-	}
-	else
-		echo "NO LOG WRITTEN";
+	//}
+	//else
+	//	echo "NO LOG WRITTEN";
 ?>
