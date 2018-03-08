@@ -122,7 +122,7 @@
 								<div style="height:10px"></div>
 								<label>Password </label> <input class="form-control" type="password" name="password" value="<?php if(isset($password) & !empty($password)){echo $password;} ?>">
 								<div style="height:20px"></div>
-								<button class="btn btn-success btn-block" type="submit" name="login_button">LOGIN</button>
+								<button style="background-color:#07223D"class="btn btn-success btn-block" type="submit" name="login_button">LOGIN</button>
 								</form>
 						</div>
 					</div> 
