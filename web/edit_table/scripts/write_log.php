@@ -20,16 +20,16 @@
 		$empty_action = true;
 	}
 	
-	//if($empty_action != true){
+	if($empty_action != true){
 		
 		$log_time = date('M-d-Y H:i:s A'); 
 		
 		$query = "INSERT INTO logging VALUES ('{$username}', '{$action_string}', '{$log_time}');"; 
 		
-		$results = pg_query($conn1, $query);
+		$results = pg_query($conn, $query);
 		
 		pg_close($conn1);
-	//}
-	//else
-	//	echo "NO LOG WRITTEN";
+	}
+	else
+		echo "NO LOG WRITTEN";
 ?>
