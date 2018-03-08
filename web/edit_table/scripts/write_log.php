@@ -30,6 +30,5 @@
 		
 		pg_close($conn1);
 	}
-	else
-		echo "NO LOG WRITTEN";
+
 ?>
