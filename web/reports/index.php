@@ -67,6 +67,30 @@ session_start(); //start user session to send data between pages
 
 </script>
 
+<script type="text/javascript">
+	function showHideInventoryInfo(){
+		if(document.getElementById('inventoryReport').checked){
+			document.getElementById('inventory').style.display='block';
+		}
+		else{
+			document.getElementById('inventory').style.display='none';
+		}
+	}
+
+</script>
+
+<script type="text/javascript">
+	function showHideLogInfo(){
+		if(document.getElementById('logReport').checked){
+			document.getElementById('logs').style.display='block';
+		}
+		else{
+			document.getElementById('logs').style.display='none';
+		}
+	}
+
+</script>
+
 </head>
 
 <body>
@@ -167,10 +191,10 @@ session_start(); //start user session to send data between pages
             <div class="col-md-12"><button class="btn btn-default" type="button">Run Report</button></div>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="checkbox"><label style="font-size:22px;"><input type="checkbox"><strong>Inventory Report</strong></label></div>
+                    <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="inventoryReport" name="inventoryReport" value="yes" onclick="showHideInventoryInfo()"><strong>Inventory Report</strong></label></div>
                 </div>
                 <div class="col-md-6">
-                    <div class="checkbox"><label style="font-size:22px;"><input type="checkbox"><strong>System Log Report</strong></label></div>
+                    <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="logReport" name="logReport" value="yes" onclick="showHideLogInfo"><strong>System Log Report</strong></label></div>
                 </div>
             </div>
         </div>
@@ -178,6 +202,7 @@ session_start(); //start user session to send data between pages
 	<div>
         <div class="container">
             <div class="row">
+			  <form method="post">
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-12">
@@ -185,15 +210,18 @@ session_start(); //start user session to send data between pages
                                 <div></div>
                             </header>
                             <div>
-                                <div class="checkbox"><label><input type="checkbox">Serial Number</label></div><input type="text">
-                                <div class="checkbox"><label><input type="checkbox">Brand</label></div><input type="text">
-                                <div class="checkbox"><label><input type="checkbox">Model</label></div><input type="text">
-                                <div class="checkbox"><label><input type="checkbox">Assigned User</label></div><input type="text">
-                                <div class="checkbox"><label><input type="checkbox">Location</label></div><input type="text">
-                                <div class="checkbox"><label><input type="checkbox">Cost</label></div><input type="text">
-                                <div class="checkbox"><label><input type="checkbox">Date Deployed</label></div><input type="date">
-                                <div class="checkbox"><label><input type="checkbox">Date Surplused</label></div><input type="date">
-                                <div class="checkbox"><label><input type="checkbox">Last Updated</label></div><input type="date"></div>
+							 <fieldset id="inventory">
+                                <div class="checkbox"><label>  <input type="checkbox">Serial Number</label></div><input type="text" id="serialnumber" name="serialnumber">
+                                <div class="checkbox"><label>  <input type="checkbox">Brand</label></div><input type="text" id="brand" name="brand">
+                                <div class="checkbox"><label>  <input type="checkbox">Model</label></div><input type="text" id="model" name="model">
+                                <div class="checkbox"><label>  <input type="checkbox">Assigned User</label></div><input type="text" id="assigneduser" name="assigneduser">
+                                <div class="checkbox"><label>  <input type="checkbox">Location</label></div><input type="text" id="location" name="location">
+                                <div class="checkbox"><label>  <input type="checkbox">Cost</label></div><input type="text" id="cost" name="cost">
+                                <div class="checkbox"><label>  <input type="checkbox">Date Deployed</label></div><input type="date" id="datedeployed" name="datedeployed">
+                                <div class="checkbox"><label>  <input type="checkbox">Date Surplused</label></div><input type="date" id="datesurplused" name="datesurplused">
+                                <div class="checkbox"><label>  <input type="checkbox">Last Updated</label></div><input type="date" id="lastupdated" name="lastupdated">
+							 </fieldset>
+							</div>
                         </div>
                     </div>
                 </div>
@@ -202,12 +230,16 @@ session_start(); //start user session to send data between pages
                         <div class="col-md-12">
                             <header></header>
                             <div>
-                                <div class="checkbox"><label><input type="checkbox">Username</label></div><input type="text">
-                                <div class="checkbox"><label><input type="checkbox">Action</label></div><input type="text">
-                                <div class="checkbox"><label><input type="checkbox">Date</label></div><input type="date"></div>
+							  <fieldset id="logs">
+                                <div class="checkbox"><label>  <input type="checkbox">Username</label></div><input type="text" id="logusername" name="logusername">
+                                <div class="checkbox"><label>  <input type="checkbox">Action</label></div><input type="text" id="logaction" name="logaction">
+                                <div class="checkbox"><label>  <input type="checkbox">Date</label></div><input type="date" id="logdate" name="logdate">
+							  </fieldset>
+							</div>
                         </div>
                     </div>
                 </div>
+			  </form>
             </div>
         </div>
         <div style="height:50px;"></div>
