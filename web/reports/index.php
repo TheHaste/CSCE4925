@@ -12,9 +12,7 @@
     <title>Meridian Inventory</title>
 	
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
     <link rel="stylesheet" href="assets/css/styles.css">
 	
 	<!-- DataTable Extensions -->
