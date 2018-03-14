@@ -185,10 +185,12 @@ session_start(); //start user session to send data between pages
   </div>
   <div>
         <div class="container">
-            <div class="col-md-12" style="height:50px;">
+            <div class="col-md-12" style="height:40px;">
                 <p class="help-block">Choose your report type and select fields to filter your report. When filtering one field with multiple criteria, separate with a comma.</p>
 			</div>
-            <div class="col-md-12"><button class="btn btn-default" type="button">Run Report</button></div>
+            <div class="col-md-12" style="height:40px;">
+				<button class="btn btn-default" type="button">Run Report</button>
+			</div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="inventoryReport" name="inventoryReport" value="yes" onclick="showHideInventoryInfo()"><strong>Inventory Report</strong></label></div>
