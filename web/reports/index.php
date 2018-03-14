@@ -10,12 +10,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meridian Inventory</title>
+	
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 	
 	<!-- DataTable Extensions -->
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"></link> 
 	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
@@ -76,52 +78,52 @@
             <div class="row">
                 <div class="col-md-12">
 					<table id="assets" class="display" cellspacing="0" width="100%">
-				<thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Serial Number</th>
-						<th>Brand </th>
-						<th>Model </th>
-						<th>Assigned</th>
-						<th>Location</th>
-						<th>Cost</th>
-						<th>Date Deployed</th>
-						<th>Date Surplused</th>
-						<th>Last Updated</th>
-					</tr> 
-				  </thead>
-
-                   <tbody>
-					
-					<?php
-						//fill table
-						$query = "SELECT * FROM assets;";
-						$item = array(); //array for assets
-
-						$rs = pg_query($conn, $query); //run query
-
-						while ($item = pg_fetch_assoc($rs)) //fetch and fill array
-						{
-							//$item[] = $line;
-							echo '
+						<thead>
 							<tr>
-							<td>'.$item['name_id'].'</td>
-							<td>'.$item['serial_number'].'</td>
-							<td>'.$item['brand'].'</td>
-							<td>'.$item['model'].'</td>
-							<td>'.$item['assigned'].'</td>
-							<td>'.$item['location'].'</td>
-							<td>'.$item['cost'].'</td>
-							<td>'.$item['date_deployed'].'</td>
-							<td>'.$item['date_surplused'].'</td>
-							<td>'.$item['last_updated'].'</td>
+								<th>Name</th>
+								<th>Serial Number</th>
+								<th>Brand </th>
+								<th>Model </th>
+								<th>Assigned</th>
+								<th>Location</th>
+								<th>Cost</th>
+								<th>Date Deployed</th>
+								<th>Date Surplused</th>
+								<th>Last Updated</th>
 							</tr> 
-							'; 
-						}
-					?>
-					 
-                   </tbody>
-			</table>
+						  </thead>
+
+						  <tbody>
+							
+							<?php
+								//fill table
+								$query = "SELECT * FROM assets;";
+								$item = array(); //array for assets
+
+								$rs = pg_query($conn, $query); //run query
+
+								while ($item = pg_fetch_assoc($rs)) //fetch and fill array
+								{
+									//$item[] = $line;
+									echo '
+									<tr>
+									<td>'.$item['name_id'].'</td>
+									<td>'.$item['serial_number'].'</td>
+									<td>'.$item['brand'].'</td>
+									<td>'.$item['model'].'</td>
+									<td>'.$item['assigned'].'</td>
+									<td>'.$item['location'].'</td>
+									<td>'.$item['cost'].'</td>
+									<td>'.$item['date_deployed'].'</td>
+									<td>'.$item['date_surplused'].'</td>
+									<td>'.$item['last_updated'].'</td>
+									</tr> 
+									'; 
+								}
+							?>
+							 
+						   </tbody>
+					</table>
 				</div>
             </div>
         </div>
