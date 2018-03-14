@@ -209,8 +209,8 @@ session_start(); //start user session to send data between pages
                             <header>
                                 <div></div>
                             </header>
-                            <div style="display: none">
-							 <fieldset id="inventory">
+                            <div>
+							 <fieldset id="inventory"  style="display: none">
                                 <div class="checkbox"><label>  <input type="checkbox">Serial Number</label></div><input type="text" id="serialnumber" name="serialnumber">
                                 <div class="checkbox"><label>  <input type="checkbox">Brand</label></div><input type="text" id="brand" name="brand">
                                 <div class="checkbox"><label>  <input type="checkbox">Model</label></div><input type="text" id="model" name="model">
@@ -229,8 +229,8 @@ session_start(); //start user session to send data between pages
                     <div class="row">
                         <div class="col-md-12">
                             <header></header>
-                            <div style="display: none">
-							  <fieldset id="logs">
+                            <div>
+							  <fieldset id="logs" style="display: none">
                                 <div class="checkbox"><label>  <input type="checkbox">Username</label></div><input type="text" id="logusername" name="logusername">
                                 <div class="checkbox"><label>  <input type="checkbox">Action</label></div><input type="text" id="logaction" name="logaction">
                                 <div class="checkbox"><label>  <input type="checkbox">Date</label></div><input type="date" id="logdate" name="logdate">
