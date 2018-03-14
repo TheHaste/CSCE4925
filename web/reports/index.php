@@ -185,7 +185,7 @@ session_start(); //start user session to send data between pages
   </div>
   <div>
         <div class="container">
-            <div class="col-md-12">
+            <div class="col-md-12" style="height:50px;">
                 <p class="help-block">Choose your report type and select fields to filter your report. When filtering one field with multiple criteria, separate with a comma.</p>
 			</div>
             <div class="col-md-12"><button class="btn btn-default" type="button">Run Report</button></div>
