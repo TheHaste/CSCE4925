@@ -258,7 +258,7 @@ session_start(); //start user session to send data between pages
                             <header></header>
                             <div>
 							  <fieldset id="logs" style="display: none">
-                              <div class="checkbox"><label>  <input type="checkbox">10%</label></div><input id="Thresh_Nof" name="Thresh_Nof">
+                              <div class="checkbox"><label>  <input type="checkbox">10%</label></div>
 
                                 
 							  </fieldset>
