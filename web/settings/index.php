@@ -1,5 +1,5 @@
 <?php
-//Reporting Index
+//Home Index
 require('/app/web/connect.php');
 session_start(); //start user session to send data between pages
 ?>
@@ -59,79 +59,8 @@ session_start(); //start user session to send data between pages
 				}
 			]
 		});	
+	} );
 	
-		$('#report').submit(function() {
-			if(document.getElementById('inventoryReport').checked){
-				
-				var serialnumber = document.getElementById('serialnumber').value
-				var brand = document.getElementById('brand').value
-				var model = document.getElementById('model').value
-				var assigneduser = document.getElementById('assigneduser').value
-				var location = document.getElementById('location').value
-				var cost = document.getElementById('cost').value
-				var datedeployed = document.getElementById('datedeployed').value
-				var datesurplused = document.getElementById('datesurplused').value
-				var lastupdated = document.getElementById('lastupdated').value
-				
-				$.post('/reports/scripts/run_report.php', {type: 'Notification',
-					serialnumber: serialnumber,
-					brand: brand,
-					model: model,
-					assigneduser: assigneduser,
-					location: location,
-					cost: cost,
-					datedeployed: datedeployed,
-					datesurplused: datesurplused,
-					lastupdated: lastupdated}, function(){
-						window.location.replace("/reports/inventory_report/");
-				});
-				
-			}
-			else if(document.getElementById('logReport').checked){
-				var logusername = document.getElementById('logusername').value
-				var logaction = document.getElementById('logaction').value
-				var logdate = document.getElementById('logdate').value
-				
-				$.post('/reports/scripts/run_report.php', {type: 'logs',
-					logusername: logusername,
-					logaction: logaction,
-					logdate: logdate}, function(){
-						window.location.replace("/reports/logs_report/");
-				});
-			}
-			else {
-				alert("You did not choose a report type! Please check the box next to the report you want to run.");
-			}
-		});
-	
-	});
-	
-</script>
-
-<script type="text/javascript">
-	function showHideInventoryInfo(){
-		if(document.getElementById('Notification').checked){
-			document.getElementById('Notification').style.display='block';
-			document.getElementById('logs').style.display='none';
-			$('#logReport').prop('checked', false);
-		}
-		else{
-			document.getElementById('Notification').style.display='none';
-		}
-	}
-</script>
-
-<script type="text/javascript">
-	function showHideLogInfo(){
-		if(document.getElementById('logReport').checked){
-			document.getElementById('logs').style.display='block';
-			document.getElementById('Notification').style.display='none'
-			$('#inventoryReport').prop('checked', false);
-		}
-		else{
-			document.getElementById('logs').style.display='none';
-		}
-	}
 </script>
 
 </head>
@@ -224,62 +153,6 @@ session_start(); //start user session to send data between pages
 			</div>
 			</div>
   </div>
-  <div>
-        <div class="container">
-            <div class="col-md-12" style="height:40px;">
-                <p class="help-block">Choose your report type and select fields to filter your report. When filtering one field with multiple criteria, separate with a comma.</p>
-			</div>
-		<form method="post" id="report">
-            <div class="col-md-12" style="height:40px;">
-				<button class="btn btn-default" type="submit" name="runReport">Run Report</button>
-			</div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="inventoryReport" name="inventoryReport" value="yes" onclick="showHideInventoryInfo()"><strong>Notification</strong></label></div>
-                </div>
-                <div class="col-md-6">
-                    <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="logReport" name="logReport" value="yes" onclick="showHideLogInfo()"><strong>Threshold</strong></label></div>
-                </div>
-            </div>
-        </div>
-    </div>
-	<div>
-        <div class="container">
-            <div class="row">
-			  
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <header>
-                                <div></div>
-                            </header>
-                            <div>
-							 <fieldset id="Notification"  style="display: none">
-                                <div class="checkbox"><label>  <input type="checkbox">Laptop</label></div>
-							 </fieldset>
-							</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <header></header>
-                            <div>
-							  <fieldset id="logs" style="display: none">
-                                <div class="checkbox"><label>  <input type="checkbox">10%</label></div>
-                                
-							  </fieldset>
-							</div>
-                        </div>
-                    </div>
-                </div>
-			  </form>
-            </div>
-        </div>
-        <div style="height:50px;"></div>
-    </div>
-	
 
 </body>
 	
