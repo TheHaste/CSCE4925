@@ -267,7 +267,7 @@ session_start(); //start user session to send data between pages
                             <header></header>
                             <div>
 							  <fieldset id="logs" style="display: none">
-                                <div class="checkbox"><label>  <input type="checkbox">Username</label></div><input type="text" id="logusername" name="logusername">
+                                <div class="checkbox"><label>  <input type="checkbox">10%</label></div>
                                 <div class="checkbox"><label>  <input type="checkbox">Action</label></div><input type="text" id="logaction" name="logaction">
                                 <div class="checkbox"><label>  <input type="checkbox">Date</label></div><input type="date" id="logdate" name="logdate">
 							  </fieldset>
