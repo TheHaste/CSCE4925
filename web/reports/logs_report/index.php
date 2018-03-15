@@ -5,9 +5,9 @@
 
 	session_start(); //start user session to send data between pages
 		
-	echo $_SESSION['logs'][0]; echo '<br />';
-	echo $_SESSION['logs'][1]; echo '<br />';
-	echo $_SESSION['logs'][2]; echo '<br />';
+	echo $_SESSION['data'][0]; echo '<br />';
+	echo $_SESSION['data'][1]; echo '<br />';
+	echo $_SESSION['data'][2]; echo '<br />';
 
 ?>
 <html>
@@ -69,18 +69,30 @@
 	
 		$('#report').submit(function() {
 			if(document.getElementById('inventoryReport').checked){
-			/*	$.post('/reports/scripts/run_report.php', {type: 'iventory',
-					serialnumber: document.getElementById('serialnumber').value,
-					brand: document.getElementById('brand').value,
-					model: document.getElementById('model').value
-					assigneduser: document.getElementById('assigneduser').value
-					location: document.getElementById('location').value
-					cost: document.getElementById('cost').value
-					datedeployed: document.getElementById('datedeployed').value
-					datesurplused: document.getElementById('datesurplused').value
-					lastupdated: document.getElementById('lastupdated').value}, function(){
+				
+				var serialnumber = document.getElementById('serialnumber').value
+				var brand = document.getElementById('brand').value
+				var model = document.getElementById('model').value
+				var assigneduser = document.getElementById('assigneduser').value
+				var location = document.getElementById('location').value
+				var cost = document.getElementById('cost').value
+				var datedeployed = document.getElementById('datedeployed').value
+				var datesurplused = document.getElementById('datesurplused').value
+				var lastupdated = document.getElementById('lastupdated').value
+				
+				$.post('/reports/scripts/run_report.php', {type: 'inventory',
+					serialnumber: serialnumber,
+					brand: brand,
+					model: model,
+					assigneduser: assigneduser,
+					location: location,
+					cost: cost,
+					datedeployed: datedeployed,
+					datesurplused: datesurplused,
+					lastupdated: lastupdated}, function(){
+						window.location.replace("/reports/inventory_report/");
 				});
-			*/	
+				
 			}
 			else if(document.getElementById('logReport').checked){
 				var logusername = document.getElementById('logusername').value
@@ -90,7 +102,12 @@
 				$.post('/reports/scripts/run_report.php', {type: 'logs',
 					logusername: logusername,
 					logaction: logaction,
-					logdate: logdate});
+					logdate: logdate}, function(){
+						window.location.replace("/reports/logs_report/");
+				});
+			}
+			else {
+				alert("You did not choose a report type! Please check the box next to the report you want to run.");
 			}
 		});
 	
