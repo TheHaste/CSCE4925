@@ -69,7 +69,7 @@ session_start(); //start user session to send data between pages
 <script type="text/javascript">
 	function showHideNotificationInfo(){
 		if(document.getElementById('Notification').checked){
-			document.getElementById('Notification').style.display='block';
+			document.getElementById('notify').style.display='block';
 			document.getElementById('Logs').style.display='none';
 			$('#Threshold').prop('checked', false);
 		}
@@ -200,7 +200,7 @@ session_start(); //start user session to send data between pages
                                 <div></div>
                             </header>
                             <div>
-							 <fieldset id="Notification"  style="display: none">
+							 <fieldset id="Notify"  style="display: none">
                                 <div class="checkbox"><label>  <input type="checkbox">Laptops</label></div>
                                 
 							 </fieldset>
