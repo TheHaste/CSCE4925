@@ -110,8 +110,8 @@ session_start(); //start user session to send data between pages
 
 <script type="text/javascript">
 	function showHideInventoryInfo(){
-		if(document.getElementById('inventoryReport').checked){
-			document.getElementById('inventory').style.display='block';
+		if(document.getElementById('Notification').checked){
+			document.getElementById('Notification').style.display='block';
 			document.getElementById('logs').style.display='none';
 			$('#logReport').prop('checked', false);
 		}
@@ -254,7 +254,7 @@ session_start(); //start user session to send data between pages
                                 <div></div>
                             </header>
                             <div>
-							 <fieldset id="inventory"  style="display: none">
+							 <fieldset id="Notification"  style="display: none">
                                 <div class="checkbox"><label>  <input type="checkbox">Laptop</label></div>
 							 </fieldset>
 							</div>
