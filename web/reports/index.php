@@ -63,7 +63,7 @@ session_start(); //start user session to send data between pages
 			]
 		});	
 	
-		$(#report).submit(function() {
+		$('#report').submit(function() {
 			if(document.getElementById('inventoryReport').checked){
 			/*	$.post('/reports/scripts/run_report.php', {type: 'iventory',
 					serialnumber: document.getElementById('serialnumber').value,
@@ -79,10 +79,14 @@ session_start(); //start user session to send data between pages
 				
 			}
 			else if(document.getElementById('logReport').checked){
+				var logusername = document.getElementById('logusername').value
+				var logaction = document.getElementById('logaction').value
+				var logdate = document.getElementById('logdate').value
+				
 				$.post('/reports/scripts/run_report.php', {type: 'logs',
-					logusername: document.getElementById('logusername').value,
-					logaction: document.getElementById('logaction').value,
-					logdate: document.getElementById('logdate').value}, function(){
+					logusername: ,
+					logaction: ,
+					logdate: , function(){
 				});
 			}
 		});
