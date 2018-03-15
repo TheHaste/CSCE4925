@@ -19,8 +19,10 @@
 		$column_array = array($serialnumber, $brand, $model, $assigneduser, $location, $cost, $datedeployed, $datesurplused, $lastupdated);
 		$_SESSION['inventory'] = $column_array;
 		
+		pg_close($conn1);
+		
 		//redirect
-		header('Location: ../inventory_report/');
+		header('Location: ../reports/inventory_report/');
 	}
 	else if($_POST['type'] == 'logs'){
 		$logusername = $_POST['logusername'];
@@ -29,6 +31,8 @@
 		
 		$column_array = array($logusername, $logaction, $logdate);
 		$_SESSION['logs'] = $column_array;
+		
+		pg_close($conn1);
 		
 		//redirect
 		header('Location: ../logs_report/');
