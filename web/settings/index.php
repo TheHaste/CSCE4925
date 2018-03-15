@@ -238,7 +238,7 @@ session_start(); //start user session to send data between pages
                     <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="inventoryReport" name="inventoryReport" value="yes" onclick="showHideInventoryInfo()"><strong>Notification</strong></label></div>
                 </div>
                 <div class="col-md-6">
-                    <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="logReport" name="logReport" value="yes" onclick="showHideLogInfo()"><strong>System Log Report</strong></label></div>
+                    <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="logReport" name="logReport" value="yes" onclick="showHideLogInfo()"><strong>Threshold</strong></label></div>
                 </div>
             </div>
         </div>
