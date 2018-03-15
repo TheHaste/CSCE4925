@@ -65,7 +65,7 @@ session_start(); //start user session to send data between pages
 	
 		$(#report).submit(function() {
 			if(document.getElementById('inventoryReport').checked){
-				$.post('/reports/scripts/run_report.php', {type: 'iventory',
+			/*	$.post('/reports/scripts/run_report.php', {type: 'iventory',
 					serialnumber: document.getElementById('serialnumber').value,
 					brand: document.getElementById('brand').value,
 					model: document.getElementById('model').value
@@ -75,7 +75,7 @@ session_start(); //start user session to send data between pages
 					datedeployed: document.getElementById('datedeployed').value
 					datesurplused: document.getElementById('datesurplused').value
 					lastupdated: document.getElementById('lastupdated').value}, function(){
-				});
+			*/	});
 				
 			}
 			else if(document.getElementById('logReport').checked){
@@ -87,7 +87,7 @@ session_start(); //start user session to send data between pages
 			}
 		});
 	
-	} );
+	});
 	
 
 </script>
