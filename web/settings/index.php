@@ -1,16 +1,7 @@
 <?php
 //Reporting Index
-	require('/app/web/connect.php');
-	session_start(); //start user session to send data between pages
-	echo $_SESSION['data'][0]; echo '<br />';
-	echo $_SESSION['data'][1]; echo '<br />';
-	echo $_SESSION['data'][2]; echo '<br />';
-	echo $_SESSION['data'][3]; echo '<br />';
-	echo $_SESSION['data'][4]; echo '<br />';
-	echo $_SESSION['data'][5]; echo '<br />';
-	echo $_SESSION['data'][6]; echo '<br />';
-	echo $_SESSION['data'][7]; echo '<br />';
-	echo $_SESSION['data'][8]; echo '<br />';
+require('/app/web/connect.php');
+session_start(); //start user session to send data between pages
 ?>
 <html>
 
