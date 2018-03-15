@@ -126,16 +126,48 @@ session_start(); //start user session to send data between pages
 		$('#report').submit(function() {
 
 			if(document.getElementById('inventoryReport').checked){
-				var name_id = document.getElementById('name_id').value
-				
 
 				
+
+				var serialnumber = document.getElementById('serialnumber').value
+
+				var brand = document.getElementById('brand').value
+
+				var model = document.getElementById('model').value
+
+				var assigneduser = document.getElementById('assigneduser').value
+
+				var location = document.getElementById('location').value
+
+				var cost = document.getElementById('cost').value
+
+				var datedeployed = document.getElementById('datedeployed').value
+
+				var datesurplused = document.getElementById('datesurplused').value
+
+				var lastupdated = document.getElementById('lastupdated').value
 
 				
 
 				$.post('/reports/scripts/run_report.php', {type: 'inventory',
-					name_id: name_id,
-					}, function(){
+
+					serialnumber: serialnumber,
+
+					brand: brand,
+
+					model: model,
+
+					assigneduser: assigneduser,
+
+					location: location,
+
+					cost: cost,
+
+					datedeployed: datedeployed,
+
+					datesurplused: datesurplused,
+
+					lastupdated: lastupdated}, function(){
 
 						window.location.replace("/reports/inventory_report/");
 
@@ -145,19 +177,23 @@ session_start(); //start user session to send data between pages
 
 			}
 
-			else if(document.getElementById('Threshold').checked){
+			else if(document.getElementById('logReport').checked){
 
-				var name_id = document.getElementById('10%').value
+				var logusername = document.getElementById('logusername').value
 
-				
+				var logaction = document.getElementById('logaction').value
+
+				var logdate = document.getElementById('logdate').value
 
 				
 
 				$.post('/reports/scripts/run_report.php', {type: 'logs',
 
-					name_id: 10%,
+					logusername: logusername,
 
-					}, function(){
+					logaction: logaction,
+
+					logdate: logdate}, function(){
 
 						window.location.replace("/reports/logs_report/");
 
@@ -187,7 +223,7 @@ session_start(); //start user session to send data between pages
 
 	function showHideInventoryInfo(){
 
-		if(document.getElementById('Notification').checked){
+		if(document.getElementById('inventoryReport').checked){
 
 			document.getElementById('inventory').style.display='block';
 
@@ -312,8 +348,8 @@ session_start(); //start user session to send data between pages
                     <h3 class="panel-title">Meridian Inventory</h3>
 
                   </div>
-		      
-		      </div>
+
+                </div>
 
               </div>
 
@@ -359,8 +395,7 @@ session_start(); //start user session to send data between pages
 
 						//fill table
 
-						$query = "SELECT * FROM assets;"; 
-			   			//$query = "SELECT * FROM assets WHERE name_id = 'laptop'";
+						$query = "SELECT * FROM assets;";
 
 						$item = array(); //array for assets
 
