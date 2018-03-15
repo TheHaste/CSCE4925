@@ -66,7 +66,18 @@ session_start(); //start user session to send data between pages
 	
 </script>
 
-
+<script type="text/javascript">
+	function showHideNotificationInfo(){
+		if(document.getElementById('Notification').checked){
+			document.getElementById('Notification').style.display='block';
+			document.getElementById('Logs').style.display='none';
+			$('#Threshold').prop('checked', false);
+		}
+		else{
+			document.getElementById('Notification').style.display='none';
+		}
+	}
+</script>
 
 </head>
 
