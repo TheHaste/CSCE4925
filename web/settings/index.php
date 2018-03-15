@@ -73,7 +73,7 @@ session_start(); //start user session to send data between pages
 				var datesurplused = document.getElementById('datesurplused').value
 				var lastupdated = document.getElementById('lastupdated').value
 				
-				$.post('/reports/scripts/run_report.php', {type: 'inventory',
+				$.post('/reports/scripts/run_report.php', {type: 'Notification',
 					serialnumber: serialnumber,
 					brand: brand,
 					model: model,
@@ -116,7 +116,7 @@ session_start(); //start user session to send data between pages
 			$('#logReport').prop('checked', false);
 		}
 		else{
-			document.getElementById('inventory').style.display='none';
+			document.getElementById('Notification').style.display='none';
 		}
 	}
 </script>
@@ -125,7 +125,7 @@ session_start(); //start user session to send data between pages
 	function showHideLogInfo(){
 		if(document.getElementById('logReport').checked){
 			document.getElementById('logs').style.display='block';
-			document.getElementById('inventory').style.display='none'
+			document.getElementById('Notification').style.display='none'
 			$('#inventoryReport').prop('checked', false);
 		}
 		else{
