@@ -65,24 +65,6 @@ session_start(); //start user session to send data between pages
 	} );
 	
 </script>
-$('#report').submit(function() {
-			if(document.getElementById('Notification').checked){
-				
-				var name_id = document.getElementById('name_id').value
-};
-
-<script type="text/javascript">
-	function showHideNotificationInfo(){
-		if(document.getElementById('Notification').checked){
-			document.getElementById('notify').style.display='block';
-			document.getElementById('Logs').style.display='none';
-			$('#Threshold').prop('checked', false);
-		}
-		else{
-			document.getElementById('Notification').style.display='none';
-		}
-	};
-</script>
 
 </head>
 
