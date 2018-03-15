@@ -158,6 +158,71 @@ session_start(); //start user session to send data between pages
 			</div>
 			</div>
   </div>
+	<div>
+        <div class="container">
+            <div class="col-md-12" style="height:40px;">
+                <p class="help-block">Choose your report type and select fields to filter your report. When filtering one field with multiple criteria, separate with a comma.</p>
+			</div>
+		<form method="post" id="report">
+            <div class="col-md-12" style="height:40px;">
+				<button class="btn btn-default" type="submit" name="runReport">Run Report</button>
+			</div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="inventoryReport" name="inventoryReport" value="yes" onclick="showHideInventoryInfo()"><strong>Inventory Report</strong></label></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="logReport" name="logReport" value="yes" onclick="showHideLogInfo()"><strong>System Log Report</strong></label></div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div>
+        <div class="container">
+            <div class="row">
+			  
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <header>
+                                <div></div>
+                            </header>
+                            <div>
+							 <fieldset id="inventory"  style="display: none">
+                                <div class="checkbox"><label>  <input type="checkbox">Serial Number</label></div><input type="text" id="serialnumber" name="serialnumber">
+                                <div class="checkbox"><label>  <input type="checkbox">Brand</label></div><input type="text" id="brand" name="brand">
+                                <div class="checkbox"><label>  <input type="checkbox">Model</label></div><input type="text" id="model" name="model">
+                                <div class="checkbox"><label>  <input type="checkbox">Assigned User</label></div><input type="text" id="assigneduser" name="assigneduser">
+                                <div class="checkbox"><label>  <input type="checkbox">Location</label></div><input type="text" id="location" name="location">
+                                <div class="checkbox"><label>  <input type="checkbox">Cost</label></div><input type="text" id="cost" name="cost">
+                                <div class="checkbox"><label>  <input type="checkbox">Date Deployed</label></div><input type="date" id="datedeployed" name="datedeployed">
+                                <div class="checkbox"><label>  <input type="checkbox">Date Surplused</label></div><input type="date" id="datesurplused" name="datesurplused">
+                                <div class="checkbox"><label>  <input type="checkbox">Last Updated</label></div><input type="date" id="lastupdated" name="lastupdated">
+							 </fieldset>
+							</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <header></header>
+                            <div>
+							  <fieldset id="logs" style="display: none">
+                                <div class="checkbox"><label>  <input type="checkbox">Username</label></div><input type="text" id="logusername" name="logusername">
+                                <div class="checkbox"><label>  <input type="checkbox">Action</label></div><input type="text" id="logaction" name="logaction">
+                                <div class="checkbox"><label>  <input type="checkbox">Date</label></div><input type="date" id="logdate" name="logdate">
+							  </fieldset>
+							</div>
+                        </div>
+                    </div>
+                </div>
+			  </form>
+            </div>
+        </div>
+        <div style="height:50px;"></div>
+    </div>
+	
 
 </body>
 	
