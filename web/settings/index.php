@@ -63,6 +63,17 @@ session_start(); //start user session to send data between pages
 	
 </script>
 
+$query = "SELECT * FROM name_info WHERE name_id = 'laptop'";
+$item = array(); //array for assets
+$rs = pg_query($conn, $query); //run query
+$count = pg_num_rows($rs); //counts the number of rows
+while ($line = pg_fetch_assoc($rs)) //fetch and fill array
+{
+	$item[] = $line;
+	
+	
+}
+
 </head>
 
 <body>
