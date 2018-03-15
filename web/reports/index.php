@@ -1,5 +1,5 @@
 <?php
-//Home Index
+//Reporting Index
 
 require('/app/web/connect.php');
 
@@ -62,6 +62,31 @@ session_start(); //start user session to send data between pages
 				}
 			]
 		});	
+	
+		$(#report).submit(function() {
+			if(document.getElementById('inventoryReport').checked){
+				$.post('/reports/scripts/run_report.php', {type: 'iventory',
+					serialnumber: document.getElementById('serialnumber').value,
+					brand: document.getElementById('brand').value,
+					model: document.getElementById('model').value
+					assigneduser: document.getElementById('assigneduser').value
+					location: document.getElementById('location').value
+					cost: document.getElementById('cost').value
+					datedeployed: document.getElementById('datedeployed').value
+					datesurplused: document.getElementById('datesurplused').value
+					lastupdated: document.getElementById('lastupdated').value}, function(){
+				});
+				
+			}
+			else if(document.getElementById('logReport').checked){
+				$.post('/reports/scripts/run_report.php', {type: 'logs',
+					logusername: document.getElementById('logusername').value,
+					logaction: document.getElementById('logaction').value,
+					logdate: document.getElementById('logdate').value}, function(){
+				});
+			}
+		});
+	
 	} );
 	
 
@@ -71,6 +96,7 @@ session_start(); //start user session to send data between pages
 	function showHideInventoryInfo(){
 		if(document.getElementById('inventoryReport').checked){
 			document.getElementById('inventory').style.display='block';
+			document.getElementById('logs').style.display='none';
 		}
 		else{
 			document.getElementById('inventory').style.display='none';
@@ -83,6 +109,7 @@ session_start(); //start user session to send data between pages
 	function showHideLogInfo(){
 		if(document.getElementById('logReport').checked){
 			document.getElementById('logs').style.display='block';
+			document.getElementById('inventory').style.display='none';
 		}
 		else{
 			document.getElementById('logs').style.display='none';
@@ -188,8 +215,9 @@ session_start(); //start user session to send data between pages
             <div class="col-md-12" style="height:40px;">
                 <p class="help-block">Choose your report type and select fields to filter your report. When filtering one field with multiple criteria, separate with a comma.</p>
 			</div>
+		<form method="post" id="report">
             <div class="col-md-12" style="height:40px;">
-				<button class="btn btn-default" type="button">Run Report</button>
+				<button class="btn btn-default" type="submit" name="runReport">Run Report</button>
 			</div>
             <div class="row">
                 <div class="col-md-6">
@@ -204,7 +232,7 @@ session_start(); //start user session to send data between pages
 	<div>
         <div class="container">
             <div class="row">
-			  <form method="post">
+			  
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-12">
