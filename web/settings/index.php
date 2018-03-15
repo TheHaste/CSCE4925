@@ -1,7 +1,7 @@
 <?php
 //Reporting Index
-//require('/app/web/connect.php');
-require('Connecttodb_Users1.php');
+require('/app/web/connect.php');
+//require('Connecttodb_Users1.php');
 
 session_start(); //start user session to send data between pages
 ?>
