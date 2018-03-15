@@ -235,7 +235,7 @@ session_start(); //start user session to send data between pages
 			</div>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="inventoryReport" name="inventoryReport" value="yes" onclick="showHideInventoryInfo()"><strong>Inventory Report</strong></label></div>
+                    <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="inventoryReport" name="inventoryReport" value="yes" onclick="showHideInventoryInfo()"><strong>Notification</strong></label></div>
                 </div>
                 <div class="col-md-6">
                     <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="logReport" name="logReport" value="yes" onclick="showHideLogInfo()"><strong>System Log Report</strong></label></div>
@@ -255,7 +255,7 @@ session_start(); //start user session to send data between pages
                             </header>
                             <div>
 							 <fieldset id="inventory"  style="display: none">
-                                <div class="checkbox"><label>  <input type="checkbox">Serial Number</label></div><input type="text" id="serialnumber" name="serialnumber">
+                                <div class="checkbox"><label>  <input type="checkbox">Laptops</label></div><input type="text" id="serialnumber" name="serialnumber">
                                 <div class="checkbox"><label>  <input type="checkbox">Brand</label></div><input type="text" id="brand" name="brand">
                                 <div class="checkbox"><label>  <input type="checkbox">Model</label></div><input type="text" id="model" name="model">
                                 <div class="checkbox"><label>  <input type="checkbox">Assigned User</label></div><input type="text" id="assigneduser" name="assigneduser">
