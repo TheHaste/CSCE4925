@@ -2,20 +2,8 @@
 //Home Index
 require('/app/web/connect.php');
 session_start(); //start user session to send data between pages
-$query = "SELECT * FROM name_info WHERE name_id = 'laptop'";
-$item = array(); //array for assets
-$rs = pg_query($conn, $query); //run query
-$count = pg_num_rows($rs); //counts the number of rows
-while ($line = pg_fetch_assoc($rs)) //fetch and fill array
-{
-	$item[] = $line;
-	
-	
-}
- 
-echo $item [0] ['name_id'];
-echo $item [1] ['name_id'];
-echo $item [2] ['name_id'];
+
+
 
 ?>
 <html>
