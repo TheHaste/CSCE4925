@@ -255,8 +255,7 @@ session_start(); //start user session to send data between pages
                             </header>
                             <div>
 							 <fieldset id="inventory"  style="display: none">
-                                <div class="checkbox"><label>  <input type="checkbox">Laptop</label></div><input type="text" id="Laptop" name="Laptop">
-                               
+                                <div class="checkbox"><label>  <input type="checkbox">Laptop</label></div>
 							 </fieldset>
 							</div>
                         </div>
