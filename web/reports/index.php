@@ -68,12 +68,12 @@ session_start(); //start user session to send data between pages
 				$.post('/reports/scripts/run_report.php', {type: 'iventory',
 					serialnumber: document.getElementById('serialnumber').value,
 					brand: document.getElementById('brand').value,
-					model: document.getElementById('model').value
-					assigneduser: document.getElementById('assigneduser').value
-					location: document.getElementById('location').value
-					cost: document.getElementById('cost').value
-					datedeployed: document.getElementById('datedeployed').value
-					datesurplused: document.getElementById('datesurplused').value
+					model: document.getElementById('model').value,
+					assigneduser: document.getElementById('assigneduser').value,
+					location: document.getElementById('location').value,
+					cost: document.getElementById('cost').value,
+					datedeployed: document.getElementById('datedeployed').value,
+					datesurplused: document.getElementById('datesurplused').value,
 					lastupdated: document.getElementById('lastupdated').value}, function(){
 				});
 				
