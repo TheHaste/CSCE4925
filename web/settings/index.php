@@ -1,15 +1,14 @@
 <?php
-//Home Index
-require('/app/web/connect.php');
+//Reporting Index
+//require('/app/web/connect.php');
+require('Connecttodb_Users1.php');
+
 session_start(); //start user session to send data between pages
-
-
-
 ?>
 <html>
 
 <head>
-   <title>Meridian Inventory</title>
+    <title>Meridian Inventory</title>
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
 	
@@ -29,7 +28,6 @@ session_start(); //start user session to send data between pages
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script> 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-
 
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
@@ -63,8 +61,65 @@ session_start(); //start user session to send data between pages
 				}
 			]
 		});	
-	} );
 	
+		$('#report').submit(function() {
+			if(document.getElementById('Notification').checked){
+				
+				var Laptops= document.getElementById('Laptops').value
+				
+				
+				/*$.post('/reports/scripts/run_report.php', {type: 'inventory',
+					Laptops: Laptops,
+					}, function(){
+						window.location.replace("/reports/inventory_report/");
+				});*/
+				
+			}
+			else if(document.getElementById('Threshold').checked){
+				var logusername = document.getElementById('logusername').value
+				var logaction = document.getElementById('logaction').value
+				var logdate = document.getElementById('logdate').value
+				
+				/*$.post('/reports/scripts/run_report.php', {type: 'logs',
+					logusername: logusername,
+					logaction: logaction,
+					logdate: logdate}, function(){
+						window.location.replace("/reports/logs_report/");
+				});*/
+			}
+			else {
+				alert("You did not choose a report type! Please check the box next to the report you want to run.");
+			}
+		});
+	
+	});
+	
+</script>
+
+<script type="text/javascript">
+	function showHideNotificationInfo(){
+		if(document.getElementById('Notification').checked){
+			document.getElementById('inventory').style.display='block';
+			document.getElementById('logs').style.display='none';
+			$('#Threshold').prop('checked', false);
+		}
+		else{
+			document.getElementById('inventory').style.display='none';
+		}
+	}
+</script>
+
+<script type="text/javascript">
+	function showHideThresholdInfo(){
+		if(document.getElementById('Threshold').checked){
+			document.getElementById('logs').style.display='block';
+			document.getElementById('inventory').style.display='none'
+			$('#Notification').prop('checked', false);
+		}
+		else{
+			document.getElementById('logs').style.display='none';
+		}
+	}
 </script>
 
 </head>
@@ -79,7 +134,7 @@ session_start(); //start user session to send data between pages
         </div>
         </div>
     </nav>
-   <div>
+    <div>
 	<!--Nav bar settings-->
         <nav class="navbar navbar-default navigation-clean" style="background-color:rgb(72,143,174);min-width:0px;max-width:100%;margin-right:0px;margin-top:-51px;">
             <div class="container">
@@ -157,22 +212,23 @@ session_start(); //start user session to send data between pages
 			</div>
 			</div>
   </div>
-	<div>
+  <div>
         <div class="container">
             <div class="col-md-12" style="height:40px;">
-                <p class="help-block">Choose your settings notification </p>
+                <p class="help-block">Choose your report type and select fields to filter your report. When filtering one field with multiple criteria, separate with a comma.</p>
 			</div>
 		<form method="post" id="report">
             <div class="col-md-12" style="height:40px;">
-				<button class="btn btn-default" type="submit" name="Save_Settings">Save Settings</button>
-		    		<button class="btn btn-default" type="submit" name="Logs">Logs On</button>
+				<button class="btn btn-default" type="submit" name="runReport">Save Settings</button>
+				<button class="btn btn-default" type="submit" name="runReport">Logs off</button>
+
 			</div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="Notification" name="Notification" value="yes" onclick="showHideNotificationInfo()"><strong>Notification</strong></label></div>
                 </div>
                 <div class="col-md-6">
-                    <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="Threshold" name="Threshold" value="yes" onclick="ThresholdInfo()"><strong>Threshold</strong></label></div>
+                    <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="Threshold" name="Threshold" value="yes" onclick="showHideThresholdInfo()"><strong>Threshold</strong></label></div>
                 </div>
             </div>
         </div>
@@ -188,9 +244,8 @@ session_start(); //start user session to send data between pages
                                 <div></div>
                             </header>
                             <div>
-							 <fieldset id="Notify"  style="display: none">
-                               <!-- <div class="checkbox"><label>  <input type="checkbox">Laptops</label></div>-->
-								  <option>Laptops </option>
+							 <fieldset id="inventory"  style="display: none">
+                                <div class="checkbox"><label>  <input type="checkbox">Laptops</label></div>
                                 
 							 </fieldset>
 							</div>
@@ -202,7 +257,7 @@ session_start(); //start user session to send data between pages
                         <div class="col-md-12">
                             <header></header>
                             <div>
-							  <fieldset id="Logs" style="display: none">
+							  <fieldset id="logs" style="display: none">
                                 <div class="checkbox"><label>  <input type="checkbox">10%</label></div>
                                 
 							  </fieldset>
