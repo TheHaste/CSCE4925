@@ -348,8 +348,8 @@ session_start(); //start user session to send data between pages
                     <h3 class="panel-title">Meridian Inventory</h3>
 
                   </div>
-
-                </div>
+		      
+		      </div>
 
               </div>
 
@@ -396,7 +396,7 @@ session_start(); //start user session to send data between pages
 						//fill table
 
 						//$query = "SELECT * FROM assets 
-			   			$query = "SELECT * FROM name_info WHERE name_id = 'laptop'";
+			   			$query = "SELECT * FROM assets WHERE name_id = 'laptop'";
 
 						$item = array(); //array for assets
 
