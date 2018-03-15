@@ -161,11 +161,12 @@ session_start(); //start user session to send data between pages
 	<div>
         <div class="container">
             <div class="col-md-12" style="height:40px;">
-                <p class="help-block">Choose your report type and select fields to filter your report. When filtering one field with multiple criteria, separate with a comma.</p>
+                <p class="help-block">Choose your settings notification </p>
 			</div>
 		<form method="post" id="report">
             <div class="col-md-12" style="height:40px;">
-				<button class="btn btn-default" type="submit" name="runReport">Run Report</button>
+				<button class="btn btn-default" type="submit" name="Save_Settings">Save Settings</button>
+		    		<button class="btn btn-default" type="submit" name="Logs">Logs On</button>
 			</div>
             <div class="row">
                 <div class="col-md-6">
