@@ -9,7 +9,7 @@ session_start(); //start user session to send data between pages
 <html>
 
 <head>
-    <title>Meridian Inventory</title>
+   <title>Meridian Inventory</title>
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
 	
@@ -29,6 +29,7 @@ session_start(); //start user session to send data between pages
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script> 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+
 
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
