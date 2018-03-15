@@ -35,7 +35,7 @@
 		pg_close($conn1);
 		
 		//redirect
-		header('Location: http://giganto-inventory-dev.herokuapp.com/reports/logs_report/index.php');
+		header('Location: http://giganto-inventory-dev.herokuapp.com/');
 	}
 	
 ?>
