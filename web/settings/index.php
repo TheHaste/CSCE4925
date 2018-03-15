@@ -473,7 +473,7 @@ session_start(); //start user session to send data between pages
 
                 <div class="col-md-6">
 
-                    <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="Notification" name="Notification" value="yes" onclick="showHideNotificationinfo()"><strong>Notification</strong></label></div>
+                    <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="inventoryReport" name="inventoryReport" value="yes" onclick="showHideInventoryInfo()"><strong>Inventory Report</strong></label></div>
 
                 </div>
 
