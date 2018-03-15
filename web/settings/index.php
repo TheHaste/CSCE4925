@@ -75,8 +75,8 @@ session_start(); //start user session to send data between pages
 				});*/
 				
 			}
-			else if(document.getElementById('Threshold').checked){
-				var Thresh_Nof = document.getElementById('Thresh_Nof).value
+			else if(document.getElementById('logReport').checked){
+				var logusername = document.getElementById('logusername').value
 				var logaction = document.getElementById('logaction').value
 				var logdate = document.getElementById('logdate').value
 				
