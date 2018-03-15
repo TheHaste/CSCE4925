@@ -255,15 +255,8 @@ session_start(); //start user session to send data between pages
                             </header>
                             <div>
 							 <fieldset id="inventory"  style="display: none">
-                                <div class="checkbox"><label>  <input type="checkbox">Laptops</label></div><input type="text" id="serialnumber" name="serialnumber">
-                                <div class="checkbox"><label>  <input type="checkbox">Brand</label></div><input type="text" id="brand" name="brand">
-                                <div class="checkbox"><label>  <input type="checkbox">Model</label></div><input type="text" id="model" name="model">
-                                <div class="checkbox"><label>  <input type="checkbox">Assigned User</label></div><input type="text" id="assigneduser" name="assigneduser">
-                                <div class="checkbox"><label>  <input type="checkbox">Location</label></div><input type="text" id="location" name="location">
-                                <div class="checkbox"><label>  <input type="checkbox">Cost</label></div><input type="text" id="cost" name="cost">
-                                <div class="checkbox"><label>  <input type="checkbox">Date Deployed</label></div><input type="date" id="datedeployed" name="datedeployed">
-                                <div class="checkbox"><label>  <input type="checkbox">Date Surplused</label></div><input type="date" id="datesurplused" name="datesurplused">
-                                <div class="checkbox"><label>  <input type="checkbox">Last Updated</label></div><input type="date" id="lastupdated" name="lastupdated">
+                                <div class="checkbox"><label>  <input type="checkbox">Laptop</label></div><input type="text" id="Laptop" name="Laptop">
+                               
 							 </fieldset>
 							</div>
                         </div>
