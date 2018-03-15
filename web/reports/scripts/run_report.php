@@ -37,5 +37,10 @@
 		//redirect
 		header('Location: http://giganto-inventory-dev.herokuapp.com/');
 	}
-	
+	else{
+		pg_close($conn1);
+		
+		//redirect
+		header('Location: http://giganto-inventory-dev.herokuapp.com/edit_table/');
+	}
 ?>
