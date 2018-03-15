@@ -20,7 +20,7 @@
 		$_SESSION['inventory'] = $column_array;
 		
 		//redirect
-		header('Location: /inventory_report/');
+		header('Location: ../inventory_report/');
 	}
 	else if($_POST['type'] == 'logs'){
 		$logusername = $_POST['logusername'];
@@ -31,7 +31,7 @@
 		$_SESSION['logs'] = $column_array;
 		
 		//redirect
-		header('Location: /logs_report/');
+		header('Location: ../logs_report/');
 	}
 	
 ?>
