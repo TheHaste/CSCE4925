@@ -16,35 +16,22 @@
 		$datesurplused = $_POST['datesurplused'];
 		$lastupdated = $_POST['lastupdated'];
 		
-		//build string
-		$SQL = "SELECT * FROM logs WHERE ";
-		
-		echo $serialnumber; echo <br>;
-		echo $brand; echo <br>;
-		echo $model; echo <br>;
-		echo $assigneduser; echo <br>;
-		echo $location; echo <br>;
-		echo $cost; echo <br>;
-		echo $datedeployed; echo <br>;
-		echo $datesurplused; echo <br>;
-		echo $lastupdated; echo <br>;
+		$column_array = array($serialnumber, $brand, $model, $assigneduser, $location, $cost, $datedeployed, $datesurplused, $lastupdated);
+		$_SESSION['inventory'] = $column_array;
 		
 		//redirect
-		
+		header(Location: "/inventory_report/");
 	}
 	else if($_POST['type'] == 'logs'){
 		$logusername = $_POST['logusername'];
 		$logaction = $_POST['logaction'];
 		$logdate = $_POST['logdate'];
 		
-		//build string
-		$SQL = "SELECT * FROM logs WHERE ";
-		
-		echo $logusername; echo <br>;
-		echo $logaction; echo <br>;
-		echo $logdate; echo <br>;
+		$column_array = array($logusername, $logaction, $logdate);
+		$_SESSION['logs'] = $column_array;
 		
 		//redirect
+		header(Location: "/logs_report/");
 	}
 	
 ?>
