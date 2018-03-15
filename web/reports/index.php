@@ -75,6 +75,7 @@ session_start(); //start user session to send data between pages
 					datedeployed: document.getElementById('datedeployed').value,
 					datesurplused: document.getElementById('datesurplused').value,
 					lastupdated: document.getElementById('lastupdated').value}, function(){
+						window.location.replace("../inventory_report/");
 				});
 				
 			}
@@ -87,6 +88,7 @@ session_start(); //start user session to send data between pages
 					logusername: logusername,
 					logaction: logaction,
 					logdate: logdate}, function(){
+						window.location.replace("../logs_report/");
 				});
 			}
 			else {
