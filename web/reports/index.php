@@ -84,9 +84,9 @@ session_start(); //start user session to send data between pages
 				var logdate = document.getElementById('logdate').value
 				
 				$.post('/reports/scripts/run_report.php', {type: 'logs',
-					logusername: ,
-					logaction: ,
-					logdate: , function(){
+					logusername: logusername,
+					logaction: logaction,
+					logdate: logdate, function(){
 				});
 			}
 		});
