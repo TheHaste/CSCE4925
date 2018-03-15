@@ -76,7 +76,7 @@ session_start(); //start user session to send data between pages
 				
 			}
 			else if(document.getElementById('Threshold').checked){
-				var logusername = document.getElementById('logusername').value
+				var Thresh_Nof = document.getElementById('Thresh_Nof).value
 				var logaction = document.getElementById('logaction').value
 				var logdate = document.getElementById('logdate').value
 				
@@ -258,7 +258,8 @@ session_start(); //start user session to send data between pages
                             <header></header>
                             <div>
 							  <fieldset id="logs" style="display: none">
-                                <div class="checkbox"><label>  <input type="checkbox">10%</label></div>
+                              <div class="checkbox"><label>  <input type="checkbox">10%</label></div><input id="Thresh_Nof" name="Thresh_Nof">
+
                                 
 							  </fieldset>
 							</div>
