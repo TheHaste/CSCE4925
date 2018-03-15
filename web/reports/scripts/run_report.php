@@ -2,6 +2,9 @@
 //Reporting Script
 	session_start(); //start user session to send data between pages
 
+	
+	$_SESSION['data'] = [];
+	
 	//store parameters
 	if($_POST['type'] == 'inventory'){
 		$serialnumber = $_POST['serialnumber'];
@@ -15,7 +18,7 @@
 		$lastupdated = $_POST['lastupdated'];
 		
 		$column_array = array($serialnumber, $brand, $model, $assigneduser, $location, $cost, $datedeployed, $datesurplused, $lastupdated);
-		$_SESSION['inventory'] = $column_array;
+		$_SESSION['data'] = $column_array;
 
 	}
 	else if($_POST['type'] == 'logs'){
@@ -24,7 +27,7 @@
 		$logdate = $_POST['logdate'];
 		
 		$column_array = array($logusername, $logaction, $logdate);
-		$_SESSION['logs'] = $column_array;
+		$_SESSION['data'] = $column_array;
 		
 	}
 
