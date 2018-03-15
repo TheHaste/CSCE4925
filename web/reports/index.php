@@ -117,7 +117,7 @@ session_start(); //start user session to send data between pages
 		if(document.getElementById('inventoryReport').checked){
 			document.getElementById('inventory').style.display='block';
 			document.getElementById('logs').style.display='none';
-			document.getElementById('logReport').attr('checked', false);
+			$('logReport').attr('checked', false);
 		}
 		else{
 			document.getElementById('inventory').style.display='none';
@@ -131,7 +131,7 @@ session_start(); //start user session to send data between pages
 		if(document.getElementById('logReport').checked){
 			document.getElementById('logs').style.display='block';
 			document.getElementById('inventory').style.display='none'
-			document.getElementById('inventoryReport').attr('checked', false);
+			$('inventoryReport').attr('checked', false);
 		}
 		else{
 			document.getElementById('logs').style.display='none';
