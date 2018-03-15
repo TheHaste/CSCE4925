@@ -188,7 +188,8 @@ session_start(); //start user session to send data between pages
                             </header>
                             <div>
 							 <fieldset id="Notify"  style="display: none">
-                                <div class="checkbox"><label>  <input type="checkbox">Laptops</label></div>
+                               <!-- <div class="checkbox"><label>  <input type="checkbox">Laptops</label></div>-->
+								  <option>Laptops </option>
                                 
 							 </fieldset>
 							</div>
