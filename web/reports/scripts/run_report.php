@@ -22,7 +22,7 @@
 		pg_close($conn1);
 		
 		//redirect
-		header('Location: ../reports/inventory_report/index.php');
+		header('Location: ../inventory_report/');
 	}
 	else if($_POST['type'] == 'logs'){
 		$logusername = $_POST['logusername'];
@@ -37,10 +37,5 @@
 		//redirect
 		header('Location: http://giganto-inventory-dev.herokuapp.com/');
 	}
-	else{
-		pg_close($conn1);
-		
-		//redirect
-		header('Location: http://giganto-inventory-dev.herokuapp.com/edit_table/');
-	}
+
 ?>
