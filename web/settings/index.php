@@ -69,7 +69,7 @@ $('#report').submit(function() {
 			if(document.getElementById('Notification').checked){
 				
 				var name_id = document.getElementById('name_id').value
-}
+};
 
 <script type="text/javascript">
 	function showHideNotificationInfo(){
@@ -81,7 +81,7 @@ $('#report').submit(function() {
 		else{
 			document.getElementById('Notification').style.display='none';
 		}
-	}
+	};
 </script>
 
 </head>
