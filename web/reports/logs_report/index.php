@@ -121,6 +121,7 @@
 		if(document.getElementById('inventoryReport').checked){
 			document.getElementById('inventory').style.display='block';
 			document.getElementById('logs').style.display='none';
+			$('#logReport').prop('checked', false);
 		}
 		else{
 			document.getElementById('inventory').style.display='none';
@@ -133,7 +134,8 @@
 	function showHideLogInfo(){
 		if(document.getElementById('logReport').checked){
 			document.getElementById('logs').style.display='block';
-			document.getElementById('inventory').style.display='none';
+			document.getElementById('inventory').style.display='none'
+			$('#inventoryReport').prop('checked', false);
 		}
 		else{
 			document.getElementById('logs').style.display='none';
