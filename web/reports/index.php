@@ -75,8 +75,8 @@ session_start(); //start user session to send data between pages
 					datedeployed: document.getElementById('datedeployed').value
 					datesurplused: document.getElementById('datesurplused').value
 					lastupdated: document.getElementById('lastupdated').value}, function(){
-			*/	});
-				
+				});
+			*/	
 			}
 			else if(document.getElementById('logReport').checked){
 				var logusername = document.getElementById('logusername').value
