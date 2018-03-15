@@ -89,6 +89,9 @@ session_start(); //start user session to send data between pages
 					logdate: logdate}, function(){
 				});
 			}
+			else {
+				alert("You are not going anywhere you idiot");
+			}
 		});
 	
 	});
