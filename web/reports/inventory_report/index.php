@@ -248,7 +248,7 @@
 	*	checkNine() - Runs a check on column 9 to see if data is to be added to the SQL string
 	*******************************************************************************************/
 	function checkNine($SQL_where){
-		if($nine_nill != false){ //atleast another column has data
+		if($nine_nill === false){ //last column has data
 			$SQL_where .= "last updated = {$_SESSION['data'][8]}"; //append with comma and move to next column
 		}
 		
