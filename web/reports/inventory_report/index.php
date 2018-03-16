@@ -105,6 +105,7 @@
 	function checkOne($SQL_where){
 		if($one_nill == false){ //1 not null
 			echo "Hello, I should be false"; echo '<br />';
+			echo false; echo '<br />';
 			if(($two_nill == false) || ($three_nill == false) || ($four_nill == false) || ($five_nill == false) || ($six_nill == false) || ($seven_nill == false) || ($eight_nill == false) || ($nine_nill == false)){ //atleast another column has data
 				$SQL_where .= "serial number = {$_SESSION['data'][0]}, "; //append with comma and move to next column
 				return checkTwo($SQL_where);
