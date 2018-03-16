@@ -114,7 +114,7 @@
 	*				 there is more data present past column 2.
 	*******************************************************************************************/
 	function checkTwo($SQL_where){
-		if($two_nill == false){ //2 not null
+		if(!(empty($_SESSION['data'][1]))){ //2 not null
 			echo "HELLO I HAVE A VALUE"; echo '<br/>';
 			if(($three_nill === false) || ($four_nill === false) || ($five_nill === false) || ($six_nill === false) || ($seven_nill === false) || ($eight_nill === false) || ($nine_nill === false)){ //atleast another column has data
 				$SQL_where .= "brand = {$_SESSION['data'][1]}, "; //append with comma and move to next column
