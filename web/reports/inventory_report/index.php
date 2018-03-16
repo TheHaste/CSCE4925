@@ -69,6 +69,16 @@
 		$nine_nill = false;
 	}
 
+	echo $one_nill; echo '<br/>';
+	echo $two_nill; echo '<br/>';
+	echo $three_nill; echo '<br/>';
+	echo $four_nill; echo '<br/>';
+	echo $five_nill; echo '<br/>';
+	echo $six_nill; echo '<br/>';
+	echo $seven_nill; echo '<br/>';
+	echo $eight_nill; echo '<br/>';
+	echo $nine_nill; echo '<br/>';
+	
 	/******************************************************************************************
 	*	buildString() - Returns a formatted string for SQL queries for Inventory Reporting
 	*******************************************************************************************/
