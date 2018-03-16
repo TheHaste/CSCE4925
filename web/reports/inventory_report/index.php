@@ -5,7 +5,7 @@
 
 	session_start(); //start user session to send data between pages
 
-	echo $_SESSION['data'][0]; echo '<br />'; //serial number
+/*	echo $_SESSION['data'][0]; echo '<br />'; //serial number
 	echo $_SESSION['data'][1]; echo '<br />'; //brand
 	echo $_SESSION['data'][2]; echo '<br />'; //model
 	echo $_SESSION['data'][3]; echo '<br />'; //assigned user
@@ -14,6 +14,7 @@
 	echo $_SESSION['data'][6]; echo '<br />'; //date deployed
 	echo $_SESSION['data'][7]; echo '<br />'; //date surplussed
 	echo $_SESSION['data'][8]; echo '<br />'; //last updated
+*/
 	
 	//find out which are null
 	if($_SESSION['data'][0] == NULL){ 
