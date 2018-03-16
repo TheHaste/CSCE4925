@@ -17,12 +17,11 @@
 */
 	
 	//find out which are null
-	if($_SESSION['data'][0] == ''){ 
+	if(empty($_SESSION['data'][0])){ 
 		$one_nill = true;
 	}
 	else{
 		$one_nill = false;
-		echo "ONE HAS A VALUE";
 	}
 	
 	if(empty($_SESSION['data'][1])){
@@ -80,7 +79,7 @@
 	else{
 		$nine_nill = false;
 	}
-	
+/*	
 	echo $one_nill; echo '<br />'; //serial number
 	echo $two_nill; echo '<br />'; //brand
 	echo $three_nill; echo '<br />'; //model
@@ -90,7 +89,7 @@
 	echo $seven_nill; echo '<br />'; //date deployed
 	echo $eight_nill; echo '<br />'; //date surplussed
 	echo $nine_nill; echo '<br />'; //last updated
-	
+*/	
 	/******************************************************************************************
 	*	buildString() - Returns a formatted string for SQL queries for Inventory Reporting
 	*******************************************************************************************/
@@ -105,6 +104,7 @@
 	*******************************************************************************************/
 	function checkOne($SQL_where){
 		if($one_nill == false){ //1 not null
+			echo "Hello, I should be false"; echo '<br />';
 			if(($two_nill == false) || ($three_nill == false) || ($four_nill == false) || ($five_nill == false) || ($six_nill == false) || ($seven_nill == false) || ($eight_nill == false) || ($nine_nill == false)){ //atleast another column has data
 				$SQL_where .= "serial number = {$_SESSION['data'][0]}, "; //append with comma and move to next column
 				return checkTwo($SQL_where);
