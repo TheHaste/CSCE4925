@@ -1,165 +1,82 @@
 <?php
-//Reporting Index
-require('/app/web/connect.php');
-//require('Connecttodb_Users1.php');
+
+
+require('C:\xampp\htdocs\Connecttodb_Users1.php');
 
 session_start(); //start user session to send data between pages
 
-/*$query = "SELECT * FROM assets;
-$item = array(); //array for assets
-$rs = pg_query($conn, $query); //run query
-$count = pg_num_rows($rs); //counts the number of rows
-while ($line = pg_fetch_assoc($rs)) //fetch and fill array
-{
-	$item[] = $line;
-	
-	
-}*/
+//queries all laptops in database search for the word LP
+//$countLP holds total number of laptops
 
-if(isset($_POST['Save_Settings']))
+if(isset($_POST['save']))
 {
-	$selected_val = $_POST['help'];
+	$LPquery = "SELECT * FROM name_info WHERE name_id LIKE '%LP%'"; 
+	$Laptops = array(); //array for assets
+	$rs = pg_query($conn, $LPquery); //run query
+	$countLP = pg_num_rows($rs); //counts the number of rows
+	while ($line = pg_fetch_assoc($rs)) //fetch and fill array
+{
+	$Laptops[] = $line;
 	
-	echo "You selected:" .$selected_val;
 	
-	
- if(isset($_POST['Save_Settings']))
-
-	$selected_val2 = $_POST['hello'];
-		echo "You selected:" .$selected_val2;
-		
-		
 }
 
 
 
+	//Get null values in assigned column 
+	//Unassignedquery holds total number of unassigned Laptops in the database
+	
+	
+	$UnassignedQuery = "SELECT* FROM name_info WHERE assigned IS NULL";
+	//echo $query1;
+	$UnassignedLP = array(); //array for assets
+	$rs = pg_query($conn, $UnassignedQuery); //run query
+	$countUnassigned = pg_num_rows($rs); //counts the number of rows
+		while ($line = pg_fetch_assoc($rs)) //fetch and fill array
+{
+	$UnassignedLP[] = $line;
+	
+	
+}
 
 
+	$countLP = $countLP * .1;
+	//echo " the number is " .$countLP; 
 
+	if($countUnassigned < $countLP)
+	{
+		//echo "Need more laptops";
+	}
+	else if ($countUnassigned > $countLP)
+		{
+		
+		}
 
+}
 
 ?>
+
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title>Meridian Inventory</title>
-	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
-	
-	<!-- DataTable Extensions -->
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"></link> 
-	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-	<!-- DataTable Buttons Extensions -->
-	<link rel="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css"></link>
-	<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
-	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap.min.js"></script>	
-	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
-	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script> 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-
-	<!-- DataTable Javascript Implementation -->
-	<script type="text/javascript">
-	$(document).ready(function() {
-		$('#name_info').DataTable(
-		 {
-			dom: 'Bfrtip',
-			lengthMenu: [
-				[ 10, 25, 50, -1 ],
-				[ '10 rows', '25 rows', '50 rows', 'Show all' ]
-			],
-			buttons: [
-				'pageLength',
-				{extend: 'pdf',
-					text: 'Export to PDF',
-					filename: 'Meridian Inventory',
-					exportOptions: {
-						modifier: {
-							page: 'current'
-						}
-					}
-				},
-				{extend: 'excel',
-					text: 'Export to Excel',
-					filename: 'Meridian Inventory',
-					exportOptions: {
-						modifier: {
-							page: 'current'
-						}
-					}
-				}
-			]
-		});	
-	
-		$('#report').submit(function() {
-			if(document.getElementById('Notification').checked){
-				
-				var Laptops= document.getElementById('Laptops').value
-				
-				
-				/*$.post('/reports/scripts/run_report.php', {type: 'inventory',
-					Laptops: Laptops,
-					}, function(){
-						window.location.replace("/reports/inventory_report/");
-				});*/
-				
-			}
-			else if(document.getElementById('logReport').checked){
-				var logusername = document.getElementById('logusername').value
-				var logaction = document.getElementById('logaction').value
-				var logdate = document.getElementById('logdate').value
-				
-				/*$.post('/reports/scripts/run_report.php', {type: 'logs',
-					logusername: logusername,
-					logaction: logaction,
-					logdate: logdate}, function(){
-						window.location.replace("/reports/logs_report/");
-				});*/
-			}
-			else {
-				alert("You did not choose a report type! Please check the box next to the report you want to run.");
-			}
-		});
-	
-	});
-	
-</script>
-
-<script type="text/javascript">
-	function showHideNotificationInfo(){
-		if(document.getElementById('Notification').checked){
-			document.getElementById('inventory').style.display='block';
-			document.getElementById('logs').style.display='none';
-			$('#Threshold').prop('checked', false);
-		}
-		else{
-			document.getElementById('inventory').style.display='none';
-		}
-	}
-</script>
-
-<script type="text/javascript">
-	function showHideThresholdInfo(){
-		if(document.getElementById('Threshold').checked){
-			document.getElementById('logs').style.display='block';
-			document.getElementById('inventory').style.display='none'
-			$('#Notification').prop('checked', false);
-		}
-		else{
-			document.getElementById('logs').style.display='none';
-		}
-	}
-</script>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>settingsuse</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Article-Dual-Column.css">
+    <link rel="stylesheet" href="assets/css/Features-Boxed.css">
+    <link rel="stylesheet" href="assets/css/Google-Style-Text-Input.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/thumbnails1.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-
-<body>
-<nav class="navbar navbar-default">
+<!--Nav bar settings-->
+<body style="padding-left:-1px;">
+    <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header"><a class="navbar-brand" href="#"> </a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
             <div
@@ -170,16 +87,16 @@ if(isset($_POST['Save_Settings']))
     </nav>
     <div>
 	<!--Nav bar settings-->
-        <nav class="navbar navbar-default navigation-clean" style="background-color:rgb(72,143,174);min-width:0px;max-width:100%;margin-right:0px;margin-top:-51px;">
+        <nav class="navbar navbar-default navigation-clean" style="background-color:rgb(72,143,174);min-width:0px;max-width:10001px;margin-right:0px;margin-top:-51px;">
             <div class="container">
-              <div class="navbar-header"><a class="navbar-brand" href="/home"><img src="/assets/img/big_logo_tiny.png"></a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+              <div class="navbar-header"><a class="navbar-brand" href="/home">Meridian Solutions</a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
 			  </div>
                 <div
                     class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-right" style="margin-top:0px;margin-right:-20px;">
-					   
-                        <?php if($_SESSION["userType"] == 'admin') { ?><li role="presentation"><a href="/edit_table" style="color:rgb(51,51,51);">Edit Table</a></li> <?php } ?>  <!-- if an admin, show settings button -->
-						<?php if($_SESSION["userType"] == 'admin') { ?><li role="presentation"><a href="/settings" style="color:rgb(51,51,51);">Settings </a></li> <?php } ?> <!-- if an admin, show settings button -->
+					  <li role="presentation"><a href="/add_item" style="color:rgb(51,51,51);">Add Item</a></li> <!-- if an admin, show add item button -->
+                        <!--<li role="presentation"><a href="/search_item" style="color:rgb(51,51,51);">Search Item</a></li>-->
+						<li role="presentation"><a href="/settings" style="color:rgb(51,51,51);">Settings </a></li> <!-- if an admin, show settings button -->
 						<li role="presentation"><a href="/reports" style="color:rgb(51,51,51);">Reports </a></li>
                         <li role="presentation"><a href="/logout.php" style="color:rgb(51,51,51);">Logout </a></li>							
                     </ul>
@@ -187,127 +104,72 @@ if(isset($_POST['Save_Settings']))
 			</div>
 		</nav>
     </div>
-
-<div class="container">
-	<div class="panel panel-default panel-table">
-              <div class="panel-heading">
-                <div class="row">
-                  <div class="col col-xs-6">
-                    <h3 class="panel-title">Meridian Inventory</h3>
-                  </div>
-                </div>
-              </div>
-			  <div class="panel-body">
-			<table id="name_info" class="display" cellspacing="0" width="100%">
-				<thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Serial Number</th>
-						<th>Brand </th>
-						<th>Model </th>
-						<th>Assigned</th>
-						<th>Location</th>
-						<th>Cost</th>
-						<th>Date Deployed</th>
-						<th>Date Surplused</th>
-						<th>Last Updated</th>
-					</tr> 
-				  </thead>
-
-                   <tbody>
-					
-					<?php
-						//fill table
-						$query = "SELECT * FROM assets;";
-						$item = array(); //array for assets
-						$rs = pg_query($conn, $query); //run query
-						while ($item = pg_fetch_assoc($rs)) //fetch and fill array
-						{
-							//$item[] = $line;
-							echo '
-							<tr>
-							<td>'.$item['name_id'].'</td>
-							<td>'.$item['serial_number'].'</td>
-							<td>'.$item['brand'].'</td>
-							<td>'.$item['model'].'</td>
-							<td>'.$item['assigned'].'</td>
-							<td>'.$item['location'].'</td>
-							<td>'.$item['cost'].'</td>
-							<td>'.$item['date_deployed'].'</td>
-							<td>'.$item['date_surplused'].'</td>
-							<td>'.$item['last_updated'].'</td>
-							</tr> 
-							'; 
-						}
-					?>
-					 
-                   </tbody>
-			</table>
-			</div>
-			</div>
+	
+ <div class="alert alert-danger alert-dismissible fade in" style = "padding-left:525px;">
+    <a href="index.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Warning!</strong> LAPTOPS ARE LESS 10% OF INVENTORY!
   </div>
-  <div>
+    <div style="height:15px;"></div>
+    <div style="max-width:-7px;min-width:3px;">
         <div class="container">
-            <div class="col-md-12" style="height:40px;">
-                <p class="help-block">Choose your report type and select fields to filter your report. When filtering one field with multiple criteria, separate with a comma.</p>
-			</div>
-		<form action="index.php" method="post" id="report">
-            <div class="col-md-12" style="height:40px;">
-				<button class="btn btn-default" type="submit" name="Save_Settings">Save Settings</button>
-				<button class="btn btn-default" type="submit" name="Logs_Off" >Logs Off</button>
-				<!--<input onclick="change()" type="button" value="Logs Off" id="myButton1">-->
+            <div class="row" style+"width:983px;">
+                <div class="col-md-6" style="width:240px;height:380px;padding-left:535px;"><img src="/img/login_logo.png" style="margin-bottom:0px;margin-top:91px;margin-left:-165px;margin-right:0px;width:492px;"></div>
+                <div class="col-md-12" style="width:10px;">
+                    <div></div>
+                </div>
+                <div class="col-md-6" style="width:750px;">
+                    <div class="row" style="padding:77px;padding-right:83px;padding-left:163px;width:917px;">
+                        <div class="col-md-12" style="width:910px;">
+                            <div></div>
+                        </div>
+                        <div class="col-md-4" style="width:250px;height:250px;">
+                            <div style="height:11px;"></div><form class="form-inline">
+							
+  <div class="form-group">
+    
+     <select class="form-control" >
+	  
+	     <form action = "index11.php" method = "POST">
+		
+		<option selected hidden value="Notifications">Notify</option>
+        <option value = "Laptops"> Laptops </option>
+		
+      </select>
+	  
+  </div>
+</form></div>
 
-			</div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="Notification" name="Notification" value="yes" onclick="showHideNotificationInfo()"><strong>Notification</strong></label></div>
-                </div>
-                <div class="col-md-6">
-                    <div class="checkbox"><label style="font-size:22px;"><input type="checkbox" id="Threshold" name="Threshold" value="yes" onclick="showHideThresholdInfo()"><strong>Threshold</strong></label></div>
-                </div>
-            </div>
-        </div>
-    </div>
-	<div>
-        <div class="container">
-            <div class="row">
-			  
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <header>
-                                <div></div>
-                            </header>
-                            <div>
-							 <fieldset id="inventory"  style="display: none">
-                                <div class="checkbox"><label>  <input type="checkbox" name="help" value="Laptops">Laptops</label></div>
-							 </fieldset>
-							</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <header></header>
-                            <div>
-							  <fieldset id="logs" style="display: none">
-                                <div class="checkbox"><label>  <input type="checkbox" name= "hello" value="10%">10%</label></div>
-                                
-							  </fieldset>
-							</div>
-                        </div>
-                    </div>
-                </div>
-			  </form>
-            </div>
-        </div>
-        <div style="height:50px;"></div>
-    </div>
+
+<div class="col-md-4" style="width:250px;height:250px;margin-left:715px;margin-top:-249px;margin-right:55px;">
+<div style="height:11px;"></div><form class="form-inline"><div class="form-group">
+
+
 	
+     <select class="form-control">
+	 	<option selected hidden>Threshold</option>
+        <option value = "10">10%</option>
+		<option value = "20">20%</option>
+		<option value = "30">30%</option>
+		
+      </select>
+  </div>
+</form></div>
 
+                        <div class="col-md-4" style="width:473px;height:239px;margin-right:-6px;padding-right:8px;margin-top:5px;">
+							 <div style="height:-30px;"></div><button class="btn btn-default" type="button" style="width:150px;margin-left:326px;margin-top:-50px;margin-right:0px;">LogsOff</button>
+							
+							<form action = "index11.php" method = "post" id = "save"
+							
+                            <div style="height:11px;"></div><button class="btn btn-default" type="submit" name = "save" style="width:150px;margin-left:340px;margin-top:-3px;margin-right:0px;">Save</button>
+							<!--<button class="btn btn-default" type="button" style="width:150px;margin-left:621px;margin-top:-496px;margin-right:5px;">Notifications</button></div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	</form>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
-	
-	
 
 </html>
