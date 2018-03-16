@@ -117,11 +117,11 @@
 		if(!(empty($_SESSION['data'][1]))){ //2 not null
 			echo "HELLO I HAVE A VALUE"; echo '<br/>';
 			if(($three_nill === false) || ($four_nill === false) || ($five_nill === false) || ($six_nill === false) || ($seven_nill === false) || ($eight_nill === false) || ($nine_nill === false)){ //atleast another column has data
-				$SQL_where .= "brand = {$_SESSION['data'][1]}, "; //append with comma and move to next column
+				$SQL_where .= "brand = '{$_SESSION['data'][1]}', "; //append with comma and move to next column
 				return checkThree($SQL_where);
 			}
 			else{ //no other data for query
-				$SQL_where .= "brand = {$_SESSION['data'][1]}"; //end of where
+				$SQL_where .= "brand = '{$_SESSION['data'][1]}'"; //end of where
 				return $SQL_where;
 			}
 		}
