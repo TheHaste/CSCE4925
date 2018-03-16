@@ -1,20 +1,251 @@
 <?php
-//Reporting Index
+//Inventory Report Index
 
 	require('/app/web/connect.php');
 
 	session_start(); //start user session to send data between pages
 
-	echo $_SESSION['data'][0]; echo '<br />';
-	echo $_SESSION['data'][1]; echo '<br />';
-	echo $_SESSION['data'][2]; echo '<br />';
-	echo $_SESSION['data'][3]; echo '<br />';
-	echo $_SESSION['data'][4]; echo '<br />';
-	echo $_SESSION['data'][5]; echo '<br />';
-	echo $_SESSION['data'][6]; echo '<br />';
-	echo $_SESSION['data'][7]; echo '<br />';
-	echo $_SESSION['data'][8]; echo '<br />';
+	echo $_SESSION['data'][0]; echo '<br />'; //serial number
+	echo $_SESSION['data'][1]; echo '<br />'; //brand
+	echo $_SESSION['data'][2]; echo '<br />'; //model
+	echo $_SESSION['data'][3]; echo '<br />'; //assigned user
+	echo $_SESSION['data'][4]; echo '<br />'; //location
+	echo $_SESSION['data'][5]; echo '<br />'; //cost
+	echo $_SESSION['data'][6]; echo '<br />'; //date deployed
+	echo $_SESSION['data'][7]; echo '<br />'; //date surplussed
+	echo $_SESSION['data'][8]; echo '<br />'; //last updated
+	
+	//find out which are null
+	if($_SESSION['data'][0] == ""){ 
+		$one_nill = true;
+	}
+	
+	if($_SESSION['data'][1] == ""){
+		$two_nill = true;
+	}
+	
+	if($_SESSION['data'][2] == ""){
+		$three_nill = true;
+	}
+	
+	if($_SESSION['data'][3] == ""){
+		$four_nill = true;
+	}
+	
+	if($_SESSION['data'][4] == ""){
+		$five_nill = true;
+	}
+	
+	if($_SESSION['data'][5] == ""){
+		$six_nill = true;
+	}
+	
+	if($_SESSION['data'][6] == ""){
+		$seven_nill = true;
+	}
+	
+	if($_SESSION['data'][7] == ""){
+		$eight_nill = true;
+	}
+	
+	if($_SESSION['data'][8] == ""){
+		$nine_nill = true;
+	}
+	
+	/******************************************************************************************
+	*	buildString() - Returns a formatted string for SQL queries for Inventory Reporting
+	*******************************************************************************************/
+	function buildString($SQL_where){
+		return checkOne($SQL_where);
+	}
+	
+	/******************************************************************************************
+	*	checkOne() - Runs a check on column 1 to see if data is to be added to the SQL string.
+	*				 This is a recursive function that runs checks for columns 2 through 9 if
+	*				 there is more data present past column 1.
+	*******************************************************************************************/
+	function checkOne($SQL_where){
+		if($one_nill != true){ //1 not null
+			if($two_nill != true || $three_nill != true || $four_nill != true || $five_nill != true || $six_nill != true || $seven_nill != true || $eight_nill != true || $nine_nill != true){ //atleast another column has data
+				$SQL_where .= "serial number = {$_SESSION['data'][0]}, "; //append with comma and move to next column
+				return checkTwo($SQL_where);
+			}
+			else{ //no other data for query
+				$SQL_where .= "serial number = {$_SESSION['data'][0]}"; //end of where
+				return $SQL_where;
+			}
+		}
+		else{ //1 is null, check other columns
+			return checkTwo($SQL_where);
+		}
+	}
+	
+	/******************************************************************************************
+	*	checkTwo() - Runs a check on column 2 to see if data is to be added to the SQL string.
+	*				 This is a recursive function that runs checks for columns 3 through 9 if
+	*				 there is more data present past column 2.
+	*******************************************************************************************/
+	function checkTwo($SQL_where){
+		if($two_nill != true){ //2 not null
+			if($three_nill != true || $four_nill != true || $five_nill != true || $six_nill != true || $seven_nill != true || $eight_nill != true || $nine_nill != true){ //atleast another column has data
+				$SQL_where .= "brand = {$_SESSION['data'][1]}, "; //append with comma and move to next column
+				return checkThree($SQL_where);
+			}
+			else{ //no other data for query
+				$SQL_where .= "brand = {$_SESSION['data'][1]}"; //end of where
+				return $SQL_where;
+			}
+		}
+		else{ //2 is null, check other columns
+			return checkThree($SQL_where);
+		}
+	}
+	
+	/******************************************************************************************
+	*	checkThree() - Runs a check on column 3 to see if data is to be added to the SQL string.
+	*				 This is a recursive function that runs checks for columns 4 through 9 if
+	*				 there is more data present past column 3.
+	*******************************************************************************************/
+	function checkThree($SQL_where){
+		if($three_nill != true){ //3 not null
+			if($four_nill != true || $five_nill != true || $six_nill != true || $seven_nill != true || $eight_nill != true || $nine_nill != true){ //atleast another column has data
+				$SQL_where .= "model = {$_SESSION['data'][2]}, "; //append with comma and move to next column
+				return checkFour($SQL_where);
+			}
+			else{ //no other data for query
+				$SQL_where .= "model = {$_SESSION['data'][2]}"; //end of where
+				return $SQL_where;
+			}
+		}
+		else{ //3 is null, check other columns
+			return checkFour($SQL_where);
+		}
+	}
+	
+	/******************************************************************************************
+	*	checkFour() - Runs a check on column 4 to see if data is to be added to the SQL string.
+	*				 This is a recursive function that runs checks for columns 5 through 9 if
+	*				 there is more data present past column 4.
+	*******************************************************************************************/
+	function checkFour($SQL_where){
+		if($four_nill != true){ //4 not null
+			if($five_nill != true || $six_nill != true || $seven_nill != true || $eight_nill != true || $nine_nill != true){ //atleast another column has data
+				$SQL_where .= "assigned user = {$_SESSION['data'][3]}, "; //append with comma and move to next column
+				return checkFive($SQL_where);
+			}
+			else{ //no other data for query
+				$SQL_where .= "assigned user = {$_SESSION['data'][3]}"; //end of where
+				return $SQL_where;
+			}
+		}
+		else{ //4 is null, check other columns
+			return checkFive($SQL_where);
+		}
+	}
+	
+	/******************************************************************************************
+	*	checkFive() - Runs a check on column 5 to see if data is to be added to the SQL string.
+	*				 This is a recursive function that runs checks for columns 6 through 9 if
+	*				 there is more data present past column 5.
+	*******************************************************************************************/
+	function checkFive($SQL_where){
+		if($five_nill != true){ //5 not null
+			if($six_nill != true || $seven_nill != true || $eight_nill != true || $nine_nill != true){ //atleast another column has data
+				$SQL_where .= "location = {$_SESSION['data'][4]}, "; //append with comma and move to next column
+				return checkSix($SQL_where);
+			}
+			else{ //no other data for query
+				$SQL_where .= "location = {$_SESSION['data'][4]}"; //end of where
+				return $SQL_where;
+			}
+		}
+		else{ //5 is null, check other columns
+			return checkSix($SQL_where);
+		}
+	}
+	
+	/******************************************************************************************
+	*	checkSix() - Runs a check on column 6 to see if data is to be added to the SQL string.
+	*				 This is a recursive function that runs checks for columns 7 through 9 if
+	*				 there is more data present past column 6.
+	*******************************************************************************************/
+	function checkSix($SQL_where){
+		if($six_nill != true){ //6 not null
+			if($seven_nill != true || $eight_nill != true || $nine_nill != true){ //atleast another column has data
+				$SQL_where .= "cost = {$_SESSION['data'][5]}, "; //append with comma and move to next column
+				return checkSeven($SQL_where);
+			}
+			else{ //no other data for query
+				$SQL_where .= "cost = {$_SESSION['data'][5]}"; //end of where
+				return $SQL_where;
+			}
+		}
+		else{ //6 is null, check other columns
+			return checkSeven($SQL_where);
+		}
+	}
+	
+	/******************************************************************************************
+	*	checkSeven() - Runs a check on column 7 to see if data is to be added to the SQL string.
+	*				 This is a recursive function that runs checks for columns 7 through 9 if
+	*				 there is more data present past column 7.
+	*******************************************************************************************/
+	function checkSeven($SQL_where){
+		if($seven_nill != true){ //7 not null
+			if($eight_nill != true || $nine_nill != true){ //atleast another column has data
+				$SQL_where .= "date deployed = {$_SESSION['data'][6]}, "; //append with comma and move to next column
+				return checkEight($SQL_where);
+			}
+			else{ //no other data for query
+				$SQL_where .= "date deployed = {$_SESSION['data'][6]}"; //end of where
+				return $SQL_where;
+			}
+		}
+		else{ //7 is null, check other columns
+			return checkEight($SQL_where);
+		}
+	}
+	
+	/******************************************************************************************
+	*	checkEight() - Runs a check on column 8 to see if data is to be added to the SQL string.
+	*				 This is a recursive function that runs checks for columns 8 through 9 if
+	*				 there is more data present past column 8.
+	*******************************************************************************************/
+	function checkEight($SQL_where){
+		if($eight_nill != true){ //8 not null
+			if($nine_nill != true){ //atleast another column has data
+				$SQL_where .= "date surplussed = {$_SESSION['data'][7]}, "; //append with comma and move to next column
+				return checkNine($SQL_where);
+			}
+			else{ //no other data for query
+				$SQL_where .= "date surplussed = {$_SESSION['data'][7]}"; //end of where
+				return $SQL_where;
+			}
+		}
+		else{ //8 is null, check other columns
+			return checkNine($SQL_where);
+		}
+	}
+	
+	/******************************************************************************************
+	*	checkNine() - Runs a check on column 9 to see if data is to be added to the SQL string
+	*******************************************************************************************/
+	function checkNine($SQL_where){
+		if($nine_nill != true){ //atleast another column has data
+			$SQL_where .= "last updated = {$_SESSION['data'][8]}"; //append with comma and move to next column
+		}
+		
+		return $SQL_where;
+	}
 
+	
+	//build string
+	$SQL_where = "";
+	$SQL_FINAL = buildString($SQL_where);
+	
+	echo "The SQL query looks like this: SELECT * FROM assets WHERE {$SQL_FINAL};"; echo '<br />';
+	
+	
 ?>
 <html>
 
@@ -212,7 +443,7 @@
 					
 					<?php
 						//fill table
-						$query = "SELECT * FROM assets;";
+						$query = "SELECT * FROM assets WHERE {$SQL_FINAL};";
 						$item = array(); //array for assets
 
 						$rs = pg_query($conn, $query); //run query
