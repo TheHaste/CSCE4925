@@ -1,11 +1,11 @@
 <?php
 //Reporting Index
-//require('/app/web/connect.php');
-require('Connecttodb_Users1.php');
+require('/app/web/connect.php');
+//require('Connecttodb_Users1.php');
 
 session_start(); //start user session to send data between pages
 
-$query = "SELECT * FROM name_info WHERE name_id = 'laptop'";
+$query = "SELECT * FROM assets;
 $item = array(); //array for assets
 $rs = pg_query($conn, $query); //run query
 $count = pg_num_rows($rs); //counts the number of rows
@@ -218,7 +218,7 @@ if(isset($_POST['Save_Settings']))
 					
 					<?php
 						//fill table
-						$query = "SELECT * FROM name_info;";
+						$query = "SELECT * FROM assets;";
 						$item = array(); //array for assets
 						$rs = pg_query($conn, $query); //run query
 						while ($item = pg_fetch_assoc($rs)) //fetch and fill array
