@@ -103,7 +103,7 @@
 	*				 there is more data present past column 1.
 	*******************************************************************************************/
 	function checkOne($SQL_where){
-		if($one_nill == false){ //1 not null
+		if($one_nill === false){ //1 not null
 			echo "Hello, I should be false"; echo '<br />';
 			echo false; echo '<br />';
 			if(($two_nill == false) || ($three_nill == false) || ($four_nill == false) || ($five_nill == false) || ($six_nill == false) || ($seven_nill == false) || ($eight_nill == false) || ($nine_nill == false)){ //atleast another column has data
