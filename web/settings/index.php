@@ -114,7 +114,7 @@ if(isset($_POST['save']))
     <div style="max-width:-7px;min-width:3px;">
         <div class="container">
             <div class="row" style+"width:983px;">
-                <div class="col-md-6" style="width:240px;height:380px;padding-left:535px;"><img src="/img/login_logo.png" style="margin-bottom:0px;margin-top:91px;margin-left:-165px;margin-right:0px;width:492px;"></div>
+                <div class="col-md-6" style="width:240px;height:380px;padding-left:535px;"><img src="/assets/img/login_logo.png" style="margin-bottom:0px;margin-top:91px;margin-left:-165px;margin-right:0px;width:492px;"></div>
                 <div class="col-md-12" style="width:10px;">
                     <div></div>
                 </div>
