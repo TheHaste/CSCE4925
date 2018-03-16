@@ -292,7 +292,7 @@ if(isset($_POST['Save_Settings']))
                             <header></header>
                             <div>
 							  <fieldset id="logs" style="display: none">
-                                <div class="checkbox"><label>  <input type="checkbox" name= "hello" value="10">10%</label></div>
+                                <div class="checkbox"><label>  <input type="checkbox" name= "hello" value="10%">10%</label></div>
                                 
 							  </fieldset>
 							</div>
