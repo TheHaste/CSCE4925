@@ -1,9 +1,43 @@
 <?php
 //Reporting Index
-require('/app/web/connect.php');
-//require('Connecttodb_Users1.php');
+//require('/app/web/connect.php');
+require('Connecttodb_Users1.php');
 
 session_start(); //start user session to send data between pages
+
+$query = "SELECT * FROM name_info WHERE name_id = 'laptop'";
+$item = array(); //array for assets
+$rs = pg_query($conn, $query); //run query
+$count = pg_num_rows($rs); //counts the number of rows
+while ($line = pg_fetch_assoc($rs)) //fetch and fill array
+{
+	$item[] = $line;
+	
+	
+}
+
+if(isset($_POST['Save_Settings']))
+{
+	$selected_val = $_POST['help'];
+	
+	//echo "You selected:" .$selected_val;
+	
+	
+ if(isset($_POST['Save_Settings']))
+
+	$selected_val2 = $_POST['hello'];
+		echo "You selected:" .$selected_val2;
+		
+		
+}
+
+
+
+
+
+
+
+
 ?>
 <html>
 
@@ -32,7 +66,7 @@ session_start(); //start user session to send data between pages
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
 	$(document).ready(function() {
-		$('#assets').DataTable(
+		$('#name_info').DataTable(
 		 {
 			dom: 'Bfrtip',
 			lengthMenu: [
@@ -164,7 +198,7 @@ session_start(); //start user session to send data between pages
                 </div>
               </div>
 			  <div class="panel-body">
-			<table id="assets" class="display" cellspacing="0" width="100%">
+			<table id="name_info" class="display" cellspacing="0" width="100%">
 				<thead>
                     <tr>
                         <th>Name</th>
@@ -184,7 +218,7 @@ session_start(); //start user session to send data between pages
 					
 					<?php
 						//fill table
-						$query = "SELECT * FROM assets;";
+						$query = "SELECT * FROM name_info;";
 						$item = array(); //array for assets
 						$rs = pg_query($conn, $query); //run query
 						while ($item = pg_fetch_assoc($rs)) //fetch and fill array
@@ -217,10 +251,11 @@ session_start(); //start user session to send data between pages
             <div class="col-md-12" style="height:40px;">
                 <p class="help-block">Choose your report type and select fields to filter your report. When filtering one field with multiple criteria, separate with a comma.</p>
 			</div>
-		<form method="post" id="report">
+		<form action="testing.php" method="post" id="report">
             <div class="col-md-12" style="height:40px;">
-				<button class="btn btn-default" type="submit" name="runReport">Save Settings</button>
-				<button class="btn btn-default" type="submit" name="runReport">Logs off</button>
+				<button class="btn btn-default" type="submit" name="Save_Settings">Save Settings</button>
+				<button class="btn btn-default" type="submit" name="Logs_Off" >Logs Off</button>
+				<!--<input onclick="change()" type="button" value="Logs Off" id="myButton1">-->
 
 			</div>
             <div class="row">
@@ -245,8 +280,7 @@ session_start(); //start user session to send data between pages
                             </header>
                             <div>
 							 <fieldset id="inventory"  style="display: none">
-                                <div class="checkbox"><label>  <input type="checkbox">Laptops</label></div>
-                                
+                                <div class="checkbox"><label>  <input type="checkbox" name="help" value="Laptops">Laptops</label></div>
 							 </fieldset>
 							</div>
                         </div>
@@ -258,8 +292,7 @@ session_start(); //start user session to send data between pages
                             <header></header>
                             <div>
 							  <fieldset id="logs" style="display: none">
-                              <div class="checkbox"><label>  <input type="checkbox">10%</label></div>
-
+                                <div class="checkbox"><label>  <input type="checkbox" name= "hello" value="10">10%</label></div>
                                 
 							  </fieldset>
 							</div>
