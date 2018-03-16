@@ -5,7 +5,7 @@ require('/app/web/connect.php');
 
 session_start(); //start user session to send data between pages
 
-$query = "SELECT * FROM assets;
+/*$query = "SELECT * FROM assets;
 $item = array(); //array for assets
 $rs = pg_query($conn, $query); //run query
 $count = pg_num_rows($rs); //counts the number of rows
@@ -14,7 +14,7 @@ while ($line = pg_fetch_assoc($rs)) //fetch and fill array
 	$item[] = $line;
 	
 	
-}
+}*/
 
 if(isset($_POST['Save_Settings']))
 {
