@@ -103,7 +103,7 @@
 	*				 there is more data present past column 2.
 	*******************************************************************************************/
 	function checkTwo($SQL_where){
-		if($two_nill === true){ //2 not null
+		if($two_nill === false){ //2 not null
 			if(($three_nill === false) || ($four_nill === false) || ($five_nill === false) || ($six_nill === false) || ($seven_nill === false) || ($eight_nill === false) || ($nine_nill === false)){ //atleast another column has data
 				$SQL_where .= "brand = {$_SESSION['data'][1]}, "; //append with comma and move to next column
 				return checkThree($SQL_where);
@@ -124,7 +124,7 @@
 	*				 there is more data present past column 3.
 	*******************************************************************************************/
 	function checkThree($SQL_where){
-		if($three_nill === true){ //3 not null
+		if($three_nill === false){ //3 not null
 			if(($four_nill === false) || ($five_nill === false) || ($six_nill === false) || ($seven_nill === false) || ($eight_nill === false) || ($nine_nill === false)){ //atleast another column has data
 				$SQL_where .= "model = {$_SESSION['data'][2]}, "; //append with comma and move to next column
 				return checkFour($SQL_where);
@@ -145,7 +145,7 @@
 	*				 there is more data present past column 4.
 	*******************************************************************************************/
 	function checkFour($SQL_where){
-		if($four_nill === true){ //4 not null
+		if($four_nill === false){ //4 not null
 			if(($five_nill === false) || ($six_nill === false) || ($seven_nill === false) || ($eight_nill === false) || ($nine_nill === false)){ //atleast another column has data
 				$SQL_where .= "assigned user = {$_SESSION['data'][3]}, "; //append with comma and move to next column
 				return checkFive($SQL_where);
@@ -166,7 +166,7 @@
 	*				 there is more data present past column 5.
 	*******************************************************************************************/
 	function checkFive($SQL_where){
-		if($five_nill === true){ //5 not null
+		if($five_nill === false){ //5 not null
 			if(($six_nill === false) || ($seven_nill === false) || ($eight_nill === false) || ($nine_nill === false)){ //atleast another column has data
 				$SQL_where .= "location = {$_SESSION['data'][4]}, "; //append with comma and move to next column
 				return checkSix($SQL_where);
@@ -187,7 +187,7 @@
 	*				 there is more data present past column 6.
 	*******************************************************************************************/
 	function checkSix($SQL_where){
-		if($six_nill === true){ //6 not null
+		if($six_nill === false){ //6 not null
 			if(($seven_nill === false) || ($eight_nill === false) || ($nine_nill === false)){ //atleast another column has data
 				$SQL_where .= "cost = {$_SESSION['data'][5]}, "; //append with comma and move to next column
 				return checkSeven($SQL_where);
@@ -208,7 +208,7 @@
 	*				 there is more data present past column 7.
 	*******************************************************************************************/
 	function checkSeven($SQL_where){
-		if($seven_nill === true){ //7 not null
+		if($seven_nill === false){ //7 not null
 			if(($eight_nill === false) || ($nine_nill === false)){ //atleast another column has data
 				$SQL_where .= "date deployed = {$_SESSION['data'][6]}, "; //append with comma and move to next column
 				return checkEight($SQL_where);
@@ -248,7 +248,7 @@
 	*	checkNine() - Runs a check on column 9 to see if data is to be added to the SQL string
 	*******************************************************************************************/
 	function checkNine($SQL_where){
-		if($nine_nill != true){ //atleast another column has data
+		if($nine_nill != false){ //atleast another column has data
 			$SQL_where .= "last updated = {$_SESSION['data'][8]}"; //append with comma and move to next column
 		}
 		
