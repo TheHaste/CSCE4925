@@ -20,13 +20,13 @@ if(isset($_POST['Save_Settings']))
 {
 	$selected_val = $_POST['help'];
 	
-	//echo "You selected:" .$selected_val;
+	echo "You selected:" .$selected_val;
 	
 	
  if(isset($_POST['Save_Settings']))
 
 	$selected_val2 = $_POST['hello'];
-		//echo "You selected:" .$selected_val2;
+		echo "You selected:" .$selected_val2;
 		
 		
 }
