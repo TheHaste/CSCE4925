@@ -1,13 +1,13 @@
 <?php
-//Reporting Index
+//Logs Report Index
 
 	require('/app/web/connect.php');
 
 	session_start(); //start user session to send data between pages
 		
-	echo $_SESSION['data'][0]; echo '<br />';
-	echo $_SESSION['data'][1]; echo '<br />';
-	echo $_SESSION['data'][2]; echo '<br />';
+	echo $_SESSION['data'][0]; echo '<br />'; //username
+	echo $_SESSION['data'][1]; echo '<br />'; //action
+	echo $_SESSION['data'][2]; echo '<br />'; //time
 
 ?>
 <html>
