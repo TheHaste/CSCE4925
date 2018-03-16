@@ -19,39 +19,65 @@
 	//find out which are null
 	if(empty($_SESSION['data'][0])){ 
 		$one_nill = true;
-		echo "ONE IS NULL"; echo '<br />';
+	}
+	else{
+		$one_nill = false;
 	}
 	
-	if($_SESSION['data'][1] == ""){
+	if(empty($_SESSION['data'][1])){
 		$two_nill = true;
 	}
+	else{
+		$two_nill = false;
+	}
 	
-	if($_SESSION['data'][2] == ""){
+	if(empty($_SESSION['data'][2])){
 		$three_nill = true;
 	}
+	else{
+		$three_nill = false;
+	}
 	
-	if($_SESSION['data'][3] == ""){
+	if(empty($_SESSION['data'][3])){
 		$four_nill = true;
 	}
+	else{
+		$four_nill = false;
+	}
 	
-	if($_SESSION['data'][4] == ""){
+	if(empty($_SESSION['data'][4])){
 		$five_nill = true;
 	}
+	else{
+		$five_nill = false;
+	}
 	
-	if($_SESSION['data'][5] == ""){
+	if(empty($_SESSION['data'][5])){
 		$six_nill = true;
 	}
+	else{
+		$six_nill = false;
+	}
 	
-	if($_SESSION['data'][6] == ""){
+	if(empty($_SESSION['data'][6])){
 		$seven_nill = true;
 	}
-	
-	if($_SESSION['data'][7] == ""){
-		$eight_nill = true;
+	else{
+		$seven_nill = false;
 	}
 	
-	if($_SESSION['data'][8] == ""){
+	if(empty($_SESSION['data'][7])){
+		$eight_nill = true;
+	}
+	else{
+		$eight_nill = false;
+	}
+	
+	if(empty($_SESSION['data'][8])){
 		$nine_nill = true;
+	}
+	else{
+		$nine_nill = false;
 	}
 	
 	/******************************************************************************************
@@ -67,8 +93,8 @@
 	*				 there is more data present past column 1.
 	*******************************************************************************************/
 	function checkOne($SQL_where){
-		if($one_nill != true){ //1 not null
-			if($two_nill != true || $three_nill != true || $four_nill != true || $five_nill != true || $six_nill != true || $seven_nill != true || $eight_nill != true || $nine_nill != true){ //atleast another column has data
+		if($one_nill == false){ //1 not null
+			if($two_nill == false || $three_nill == false || $four_nill != false || $five_nill == false || $six_nill == false || $seven_nill == false || $eight_nill == false || $nine_nill == false){ //atleast another column has data
 				$SQL_where .= "serial number = {$_SESSION['data'][0]}, "; //append with comma and move to next column
 				return checkTwo($SQL_where);
 			}
