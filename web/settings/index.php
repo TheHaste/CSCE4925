@@ -251,7 +251,7 @@ if(isset($_POST['Save_Settings']))
             <div class="col-md-12" style="height:40px;">
                 <p class="help-block">Choose your report type and select fields to filter your report. When filtering one field with multiple criteria, separate with a comma.</p>
 			</div>
-		<form action="testing.php" method="post" id="report">
+		<form action="index.php" method="post" id="report">
             <div class="col-md-12" style="height:40px;">
 				<button class="btn btn-default" type="submit" name="Save_Settings">Save Settings</button>
 				<button class="btn btn-default" type="submit" name="Logs_Off" >Logs Off</button>
