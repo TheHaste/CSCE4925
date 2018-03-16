@@ -80,6 +80,16 @@
 		$nine_nill = false;
 	}
 	
+	echo $one_nill; echo '<br />'; //serial number
+	echo $two_nill; echo '<br />'; //brand
+	echo $three_nill; echo '<br />'; //model
+	echo $four_nill; echo '<br />'; //assigned user
+	echo $five_nill; echo '<br />'; //location
+	echo $six_nill; echo '<br />'; //cost
+	echo $seven_nill; echo '<br />'; //date deployed
+	echo $eight_nill; echo '<br />'; //date surplussed
+	echo $nine_nill; echo '<br />'; //last updated
+	
 	/******************************************************************************************
 	*	buildString() - Returns a formatted string for SQL queries for Inventory Reporting
 	*******************************************************************************************/
