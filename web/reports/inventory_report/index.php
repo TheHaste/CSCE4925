@@ -16,7 +16,7 @@
 	echo $_SESSION['data'][8]; echo '<br />'; //last updated
 	
 	//find out which are null
-	if($_SESSION['data'][0] == ""){ 
+	if($_SESSION['data'][0] == NULL){ 
 		$one_nill = true;
 	}
 	
