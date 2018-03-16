@@ -17,7 +17,7 @@
 */
 	
 	//find out which are null
-	if(empty($_SESSION['data'][0])){ 
+	if($_SESSION['data'][0] == ''){ 
 		$one_nill = true;
 	}
 	else{
