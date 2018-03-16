@@ -20,7 +20,7 @@ if(isset($_POST['Save_Settings']))
 {
 	$selected_val = $_POST['help'];
 	
-	//echo "You selected:" .$selected_val;
+	echo "You selected:" .$selected_val;
 	
 	
  if(isset($_POST['Save_Settings']))
