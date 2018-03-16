@@ -22,6 +22,7 @@
 	}
 	else{
 		$one_nill = false;
+		echo "ONE HAS A VALUE";
 	}
 	
 	if(empty($_SESSION['data'][1])){
