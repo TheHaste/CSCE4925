@@ -106,10 +106,10 @@ if(isset($_POST['save']))
 		</nav>
     </div>
 	
- <div class="alert alert-danger alert-dismissible fade in" style = "padding-left:525px;">
+<!-- <div class="alert alert-danger alert-dismissible fade in" style = "padding-left:525px;">
     <a href="index.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>
     <strong>Warning!</strong> LAPTOPS ARE LESS 10% OF INVENTORY!
-  </div>
+  </div>-->
     <div style="height:15px;"></div>
     <div style="max-width:-7px;min-width:3px;">
         <div class="container">
