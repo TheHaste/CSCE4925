@@ -15,6 +15,7 @@
 	
 	if(empty($_SESSION['data'][1])){
 		$two_nill = true;
+		echo "HELLO I AM EMPTY"; echo '</br>';
 	}
 	else{
 		$two_nill = false;
@@ -22,7 +23,6 @@
 	
 	if(empty($_SESSION['data'][2])){
 		$three_nill = true;
-		echo "HELLO I AM EMPTY"; echo '</br>';
 	}
 	else{
 		$three_nill = false;
