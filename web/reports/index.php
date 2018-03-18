@@ -200,7 +200,7 @@ session_start(); //start user session to send data between pages
 
                    <tbody>
 					
-					<?php
+					<?php /*
 						//fill table
 						$query = "SELECT * FROM assets;";
 						$item = array(); //array for assets
@@ -224,7 +224,7 @@ session_start(); //start user session to send data between pages
 							<td>'.$item['last_updated'].'</td>
 							</tr> 
 							'; 
-						}
+						} */
 					?>
 					 
                    </tbody>
