@@ -25,7 +25,7 @@
 				return checkTwo($SQL_where);
 			}
 			else{ //no other data for query
-				$SQL_where .= "serial number = '{$_SESSION['data'][0]}'"; //end of where
+				$SQL_where .= "serial_number = '{$_SESSION['data'][0]}'"; //end of where
 				return $SQL_where;
 			}
 		}
