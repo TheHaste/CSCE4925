@@ -154,7 +154,7 @@ if(isset($_POST['save']))
                         <div class="col-md-4" style="width:473px;height:239px;margin-right:-6px;padding-right:8px;margin-top:5px;">
 							 <div style="height:-30px;"></div><button class="btn btn-default" type="button" style="width:150px;margin-left:326px;margin-top:-50px;margin-right:0px;">LogsOff</button>
 							
-							<form action = "index11.php" method = "post" id = "save"
+							<form action = "index.php" method = "post" id = "save"
 							
                             <div style="height:11px;"></div><button class="btn btn-default" type="submit" name = "save" style="width:150px;margin-left:340px;margin-top:-3px;margin-right:0px;">Save</button>
 							<!--<button class="btn btn-default" type="button" style="width:150px;margin-left:621px;margin-top:-496px;margin-right:5px;">Notifications</button></div>-->
