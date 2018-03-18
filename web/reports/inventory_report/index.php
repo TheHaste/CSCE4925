@@ -85,11 +85,11 @@
 	function checkFour($SQL_where){
 		if((!(empty($_SESSION['data'][3])))){ //4 not null
 			if((!(empty($_SESSION['data'][4]))) || (!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8])))){ //atleast another column has data
-				$SQL_where .= "assigned_user = '{$_SESSION['data'][3]}' AND "; //append with comma and move to next column
+				$SQL_where .= "assigned = '{$_SESSION['data'][3]}' AND "; //append with comma and move to next column
 				return checkFive($SQL_where);
 			}
 			else{ //no other data for query
-				$SQL_where .= "assigned_user = '{$_SESSION['data'][3]}'"; //end of where
+				$SQL_where .= "assigned = '{$_SESSION['data'][3]}'"; //end of where
 				return $SQL_where;
 			}
 		}
@@ -169,11 +169,11 @@
 	function checkEight($SQL_where){
 		if((!(empty($_SESSION['data'][7])))){ //8 not null
 			if((!(empty($_SESSION['data'][8])))){ //atleast another column has data
-				$SQL_where .= "date_surplussed = '{$_SESSION['data'][7]}' AND "; //append with comma and move to next column
+				$SQL_where .= "date_surplused = '{$_SESSION['data'][7]}' AND "; //append with comma and move to next column
 				return checkNine($SQL_where);
 			}
 			else{ //no other data for query
-				$SQL_where .= "date_surplussed = '{$_SESSION['data'][7]}'"; //end of where
+				$SQL_where .= "date_surplused = '{$_SESSION['data'][7]}'"; //end of where
 				return $SQL_where;
 			}
 		}
