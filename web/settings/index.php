@@ -44,14 +44,12 @@ if(isset($_POST['save']))
 	$countLP = $countLP * .1;
 	//echo " the number is " .$countLP; 
 
-	if($countUnassigned < $countLP)
+	if($countUnassigned > $countLP)
 	{
-		//echo "Need more laptops";
-	}
-	else if ($countUnassigned > $countLP)
-		{
+		$message = "LAPTOPS ARE LESS 10% OF INVENTORY!";
 		
-		}
+	}
+	
 
 }
 
@@ -105,11 +103,8 @@ if(isset($_POST['save']))
 			</div>
 		</nav>
     </div>
-	
-<!-- <div class="alert alert-danger alert-dismissible fade in" style = "padding-left:525px;">
-    <a href="index.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Warning!</strong> LAPTOPS ARE LESS 10% OF INVENTORY!
-  </div>-->
+	<?php if(isset($message)){ ?><div style="text-center;height:50px; padding-left:525px" class="alert alert-danger" role="alert"> <?php echo "WARNING: {$message}"; ?> </div><?php } ?>
+			<div class="row row-login">
     <div style="height:15px;"></div>
     <div style="max-width:-7px;min-width:3px;">
         <div class="container">
