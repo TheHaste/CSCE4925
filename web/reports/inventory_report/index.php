@@ -186,7 +186,7 @@
 	*	checkNine() - Runs a check on column 9 to see if data is to be added to the SQL string
 	*******************************************************************************************/
 	function checkNine($SQL_where){
-		if($nine_nill === false){ //last column has data
+		if(!(empty($_SESSION['data'][8]))){ //last column has data
 			$SQL_where .= "last_updated = '{$_SESSION['data'][8]}'"; //append with comma and move to next column
 		}
 		
@@ -294,7 +294,8 @@
 				$.post('/reports/scripts/run_report.php', {type: 'logs',
 					logusername: logusername,
 					logaction: logaction,
-					logdate: logdate}, function(){
+					logdate1: logdate1,
+					logdate2: logdate2}, function(){
 						window.location.replace("/reports/logs_report/");
 				});
 			}
@@ -481,7 +482,8 @@
 							  <fieldset id="logs" style="display: none">
                                 <div class="checkbox"><label>  <input type="checkbox">Username</label></div><input type="text" id="logusername" name="logusername">
                                 <div class="checkbox"><label>  <input type="checkbox">Action</label></div><input type="text" id="logaction" name="logaction">
-                                <div class="checkbox"><label>  <input type="checkbox">Date</label></div><input type="date" id="logdate" name="logdate">
+                                <div class="checkbox"><label>  <input type="checkbox">Start Date</label></div><input type="date" id="logdate1" name="logdate1">
+								<div class="checkbox"><label>  <input type="checkbox">End Date</label></div><input type="date" id="logdate2" name="logdate2">
 							  </fieldset>
 							</div>
                         </div>
