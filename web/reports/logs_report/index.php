@@ -1,14 +1,101 @@
 <?php
-//Logs Report Index
+//Logging Report Index
 
 	require('/app/web/connect.php');
 
 	session_start(); //start user session to send data between pages
-		
-	echo $_SESSION['data'][0]; echo '<br />'; //username
-	echo $_SESSION['data'][1]; echo '<br />'; //action
-	echo $_SESSION['data'][2]; echo '<br />'; //time
 
+	
+	/******************************************************************************************
+	*	buildString() - Returns a formatted string for SQL queries for Inventory Reporting
+	*******************************************************************************************/
+	function buildString($SQL_where){
+		return checkOne($SQL_where);
+	}
+	
+	/******************************************************************************************
+	*	checkOne() - Runs a check on column 1 to see if data is to be added to the SQL string.
+	*				 This is a recursive function that runs checks for columns 2 through 9 if
+	*				 there is more data present past column 1.
+	*******************************************************************************************/
+	function checkOne($SQL_where){
+		if(!(empty($_SESSION['data'][0]))){ //1 not null
+			if((!(empty($_SESSION['data'][1]))) || (!(empty($_SESSION['data'][2]))) || (!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4]))) || (!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8])))){ //atleast another column has data
+				$SQL_where .= "user = '{$_SESSION['data'][0]}' AND "; //append with comma and move to next column
+				return checkTwo($SQL_where);
+			}
+			else{ //no other data for query
+				$SQL_where .= "user = '{$_SESSION['data'][0]}'"; //end of where
+				return $SQL_where;
+			}
+		}
+		else{ //1 is null, check other columns
+			return checkTwo($SQL_where);
+		}
+	}
+	
+	/******************************************************************************************
+	*	checkTwo() - Runs a check on column 2 to see if data is to be added to the SQL string.
+	*				 This is a recursive function that runs checks for columns 3 through 9 if
+	*				 there is more data present past column 2.
+	*******************************************************************************************/
+	function checkTwo($SQL_where){
+		if(!(empty($_SESSION['data'][1]))){ //2 not null
+			echo "HELLO I HAVE A VALUE"; echo '<br/>';
+			if((!(empty($_SESSION['data'][2]))) || (!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4])))){ //atleast another column has data
+				$SQL_where .= "action = '{$_SESSION['data'][1]}' AND "; //append with comma and move to next column
+				return checkThree($SQL_where);
+			}
+			else{ //no other data for query
+				$SQL_where .= "action = '{$_SESSION['data'][1]}'"; //end of where
+				return $SQL_where;
+			}
+		}
+		else{ //2 is null, check other columns
+			return checkThree($SQL_where);
+		}
+	}
+	
+	/******************************************************************************************
+	*	checkThree() - Runs a check on column 3 to see if data is to be added to the SQL string.
+	*				 This is a recursive function that runs checks for columns 4 through 9 if
+	*				 there is more data present past column 3.
+	*******************************************************************************************/
+	function checkThree($SQL_where){
+		if((!(empty($_SESSION['data'][2])))){ //3 not null
+			if((!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4])))){ //atleast another column has data
+				$SQL_where .= "log_time LIKE '%{$_SESSION['data'][2]}%' OR "; //append with comma and move to next column
+				return checkFour($SQL_where);
+			}
+			else{ //no other data for query
+				$SQL_where .= "log_time LIKE '%{$_SESSION['data'][2]}%'"; //end of where
+				return $SQL_where;
+			}
+		}
+		else{ //3 is null, check other columns
+			return checkFour($SQL_where);
+		}
+	}
+	
+	/**********************************************************************************************
+	*	checkFour() - Runs a check on last column to see if data is to be added to the SQL string *
+	***********************************************************************************************/
+	function checkFour($SQL_where){
+		if((!(empty($_SESSION['data'][4])))){ //last column has data
+			$SQL_where .= "log_time LIKE '%{$_SESSION['data'][3]}%'"; //append with comma and move to next column
+		}
+		
+		return $SQL_where;
+	}
+
+	
+	//build string
+	$SQL_where = "";
+	$SQL_FINAL = buildString($SQL_where);
+	
+	echo "The SQL query looks like this: SELECT * FROM assets WHERE {$SQL_FINAL} ORDER BY log_time DESC;"; echo '<br />';
+	
+	
 ?>
 <html>
 
@@ -48,7 +135,7 @@
 				'pageLength',
 				{extend: 'pdf',
 					text: 'Export to PDF',
-					filename: 'Meridian Inventory',
+					filename: 'Meridian Inventory Logs',
 					exportOptions: {
 						modifier: {
 							page: 'current'
@@ -57,7 +144,7 @@
 				},
 				{extend: 'excel',
 					text: 'Export to Excel',
-					filename: 'Meridian Inventory',
+					filename: 'Meridian Inventory Logs',
 					exportOptions: {
 						modifier: {
 							page: 'current'
@@ -97,12 +184,14 @@
 			else if(document.getElementById('logReport').checked){
 				var logusername = document.getElementById('logusername').value
 				var logaction = document.getElementById('logaction').value
-				var logdate = document.getElementById('logdate').value
+				var logdate = document.getElementById('logdate1').value
+				var logdate = document.getElementById('logdate2').value
 				
 				$.post('/reports/scripts/run_report.php', {type: 'logs',
 					logusername: logusername,
 					logaction: logaction,
-					logdate: logdate}, function(){
+					logdate1: logdate1,
+					logdate2: logdate2}, function(){
 						window.location.replace("/reports/logs_report/");
 				});
 			}
@@ -189,16 +278,9 @@
 			<table id="assets" class="display" cellspacing="0" width="100%">
 				<thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Serial Number</th>
-						<th>Brand </th>
-						<th>Model </th>
-						<th>Assigned</th>
-						<th>Location</th>
-						<th>Cost</th>
-						<th>Date Deployed</th>
-						<th>Date Surplused</th>
-						<th>Last Updated</th>
+                        <th>User</th>
+                        <th>Action</th>
+						<th>Log Time</th>
 					</tr> 
 				  </thead>
 
@@ -206,7 +288,7 @@
 					
 					<?php
 						//fill table
-						$query = "SELECT * FROM assets;";
+						$query = "SELECT * FROM logging WHERE {$SQL_FINAL};";
 						$item = array(); //array for assets
 
 						$rs = pg_query($conn, $query); //run query
@@ -216,16 +298,9 @@
 							//$item[] = $line;
 							echo '
 							<tr>
-							<td>'.$item['name_id'].'</td>
-							<td>'.$item['serial_number'].'</td>
-							<td>'.$item['brand'].'</td>
-							<td>'.$item['model'].'</td>
-							<td>'.$item['assigned'].'</td>
-							<td>'.$item['location'].'</td>
-							<td>'.$item['cost'].'</td>
-							<td>'.$item['date_deployed'].'</td>
-							<td>'.$item['date_surplused'].'</td>
-							<td>'.$item['last_updated'].'</td>
+							<td>'.$item['user'].'</td>
+							<td>'.$item['action'].'</td>
+							<td>'.$item['log_time'].'</td>
 							</tr> 
 							'; 
 						}
@@ -289,7 +364,8 @@
 							  <fieldset id="logs" style="display: none">
                                 <div class="checkbox"><label>  <input type="checkbox">Username</label></div><input type="text" id="logusername" name="logusername">
                                 <div class="checkbox"><label>  <input type="checkbox">Action</label></div><input type="text" id="logaction" name="logaction">
-                                <div class="checkbox"><label>  <input type="checkbox">Date</label></div><input type="date" id="logdate" name="logdate">
+                                <div class="checkbox"><label>  <input type="checkbox">Start Date</label></div><input type="date" id="logdate1" name="logdate1">
+								<div class="checkbox"><label>  <input type="checkbox">End Date</label></div><input type="date" id="logdate2" name="logdate2">
 							  </fieldset>
 							</div>
                         </div>
