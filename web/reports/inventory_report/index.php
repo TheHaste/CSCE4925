@@ -147,11 +147,15 @@
 	function checkSeven($SQL_where){
 		if((!(empty($_SESSION['data'][6])))){ //7 not null
 			if((!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8])))){ //atleast another column has data
-				$SQL_where .= "date_deployed = '{$_SESSION['data'][6]}' AND "; //append with comma and move to next column
+				$old_time1 = $_SESSION['data'][6];
+				$new_date1 = date('M-d-Y', strtotime($old_time1));
+				$SQL_where .= "date_deployed = '{$new_date1}' AND "; //append with comma and move to next column
 				return checkEight($SQL_where);
 			}
 			else{ //no other data for query
-				$SQL_where .= "date_deployed = '{$_SESSION['data'][6]}'"; //end of where
+				$old_time1 = $_SESSION['data'][6];
+				$new_date1 = date('M-d-Y', strtotime($old_time1));
+				$SQL_where .= "date_deployed = '{$new_date1}'"; //end of where
 				return $SQL_where;
 			}
 		}
@@ -168,11 +172,15 @@
 	function checkEight($SQL_where){
 		if((!(empty($_SESSION['data'][7])))){ //8 not null
 			if((!(empty($_SESSION['data'][8])))){ //atleast another column has data
-				$SQL_where .= "date_surplused = '{$_SESSION['data'][7]}' AND "; //append with comma and move to next column
+				$old_time2 = $_SESSION['data'][7];
+				$new_date2 = date('M-d-Y', strtotime($old_time2));
+				$SQL_where .= "date_surplused = '{$new_date2}' AND "; //append with comma and move to next column
 				return checkNine($SQL_where);
 			}
 			else{ //no other data for query
-				$SQL_where .= "date_surplused = '{$_SESSION['data'][7]}'"; //end of where
+				$old_time2 = $_SESSION['data'][7];
+				$new_date2 = date('M-d-Y', strtotime($old_time2));
+				$SQL_where .= "date_surplused = '{$new_date2}'"; //end of where
 				return $SQL_where;
 			}
 		}
@@ -186,7 +194,9 @@
 	*******************************************************************************************/
 	function checkNine($SQL_where){
 		if(!(empty($_SESSION['data'][8]))){ //last column has data
-			$SQL_where .= "last_updated = '{$_SESSION['data'][8]}'"; //append with comma and move to next column
+			$old_time3 = $_SESSION['data'][8];
+			$new_date3 = date('M-d-Y', strtotime($old_time3));
+			$SQL_where .= "last_updated = '{$new_date3}'"; //append with comma and move to next column
 		}
 		
 		return $SQL_where;
