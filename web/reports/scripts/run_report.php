@@ -5,6 +5,7 @@
 	
 	$_SESSION['data'] = [];
 	
+	
 	//store parameters
 	if($_POST['type'] == 'inventory'){
 		$serialnumber = $_POST['serialnumber'];
@@ -32,4 +33,5 @@
 		
 	}
 
+	$_POST['type'] = "";
 ?>
