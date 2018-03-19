@@ -41,7 +41,6 @@
 	*******************************************************************************************/
 	function checkTwo($SQL_where){
 		if(!(empty($_SESSION['data'][1]))){ //2 not null
-			echo "HELLO I HAVE A VALUE"; echo '<br/>';
 			if((!(empty($_SESSION['data'][2]))) || (!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4]))) || (!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8])))){ //atleast another column has data
 				$SQL_where .= "brand = '{$_SESSION['data'][1]}' AND "; //append with comma and move to next column
 				return checkThree($SQL_where);
@@ -289,7 +288,8 @@
 			else if(document.getElementById('logReport').checked){
 				var logusername = document.getElementById('logusername').value
 				var logaction = document.getElementById('logaction').value
-				var logdate = document.getElementById('logdate').value
+				var logdate1 = document.getElementById('logdate1').value
+				var logdate2 = document.getElementById('logdate2').value
 				
 				$.post('/reports/scripts/run_report.php', {type: 'logs',
 					logusername: logusername,
