@@ -1,17 +1,22 @@
 <?php
 
 
+//require('C:\xampp\htdocs\Connecttodb_Users1.php');
 require('/app/web/connect.php');
-
 
 session_start(); //start user session to send data between pages
 
 //queries all laptops in database search for the word LP
 //$countLP holds total number of laptops
 
+
 if(isset($_POST['save']))
 {
-	$LPquery = "SELECT * FROM name_info WHERE name_id LIKE '%LP%'"; 
+	if(isset($_POST['Laptops']['10%']));
+{
+	//echo "Laptops selected";
+//}
+	$LPquery = "SELECT * FROM assets WHERE name_id LIKE '%LT%'"; 
 	$Laptops = array(); //array for assets
 	$rs = pg_query($conn, $LPquery); //run query
 	$countLP = pg_num_rows($rs); //counts the number of rows
@@ -28,7 +33,7 @@ if(isset($_POST['save']))
 	//Unassignedquery holds total number of unassigned Laptops in the database
 	
 	
-	$UnassignedQuery = "SELECT* FROM name_info WHERE assigned IS NULL";
+	$UnassignedQuery = "SELECT* FROM assets WHERE assigned IS NULL";
 	//echo $query1;
 	$UnassignedLP = array(); //array for assets
 	$rs = pg_query($conn, $UnassignedQuery); //run query
@@ -40,8 +45,10 @@ if(isset($_POST['save']))
 	
 }
 
+//If the notification selected is to be notified when laptops reach threshold of 10% 
 
 	$countLP = $countLP * .1;
+	
 	//echo " the number is " .$countLP; 
 
 	if($countUnassigned < $countLP)
@@ -49,10 +56,14 @@ if(isset($_POST['save']))
 		$message = "LAPTOPS ARE LESS 10% OF INVENTORY!";
 		
 	}
-	
+}	
 
 }
 
+/*if(isset($_POST['Desktop']));
+{
+	echo "Desktop was selected";
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -103,13 +114,15 @@ if(isset($_POST['save']))
 			</div>
 		</nav>
     </div>
+	
 	<?php if(isset($message)){ ?><div style="text-center;height:50px; padding-left:525px" class="alert alert-danger" role="alert"> <?php echo "WARNING: {$message}"; ?> </div><?php } ?>
 			<div class="row row-login">
+	
     <div style="height:15px;"></div>
     <div style="max-width:-7px;min-width:3px;">
         <div class="container">
             <div class="row" style+"width:983px;">
-                <div class="col-md-6" style="width:240px;height:380px;padding-left:535px;"><img src="/assets/img/login_logo.png" style="margin-bottom:0px;margin-top:91px;margin-left:-165px;margin-right:0px;width:492px;"></div>
+                <div class="col-md-6" style="width:240px;height:380px;padding-left:535px;"><img src="/img/login_logo.png" style="margin-bottom:0px;margin-top:91px;margin-left:-165px;margin-right:0px;width:492px;"></div>
                 <div class="col-md-12" style="width:10px;">
                     <div></div>
                 </div>
@@ -123,17 +136,19 @@ if(isset($_POST['save']))
 							
   <div class="form-group">
     
-     <select class="form-control" >
+     <select class="form-control">
 	  
-	     <form action = "index11.php" method = "POST">
+	     <form action = "index.php" method = "post">
 		
 		<option selected hidden value="Notifications">Notify</option>
         <option value = "Laptops"> Laptops </option>
+		<option value = "Desktop"> Desktop </option>
 		
       </select>
 	  
+	
   </div>
-</form></div>
+<!--</form>--></div>
 
 
 <div class="col-md-4" style="width:250px;height:250px;margin-left:715px;margin-top:-249px;margin-right:55px;">
@@ -143,7 +158,7 @@ if(isset($_POST['save']))
 	
      <select class="form-control">
 	 	<option selected hidden>Threshold</option>
-        <option value = "10">10%</option>
+        <option value = "10%">10%</option>
 		<option value = "20">20%</option>
 		<option value = "30">30%</option>
 		
