@@ -93,12 +93,14 @@ session_start(); //start user session to send data between pages
 			else if(document.getElementById('logReport').checked){
 				var logusername = document.getElementById('logusername').value
 				var logaction = document.getElementById('logaction').value
-				var logdate = document.getElementById('logdate').value
+				var logdate1 = document.getElementById('logdate1').value
+				var logdate2 = document.getElementById('logdate2').value
 				
 				$.post('/reports/scripts/run_report.php', {type: 'logs',
 					logusername: logusername,
 					logaction: logaction,
-					logdate: logdate}, function(){
+					logdate1: logdate1,
+					logdate2: logdate2}, function(){
 						window.location.replace("/reports/logs_report/");
 				});
 			}
@@ -260,7 +262,8 @@ session_start(); //start user session to send data between pages
 							  <fieldset id="logs" style="display: none">
                                 <div class="checkbox"><label>  <input type="checkbox">Username</label></div><input type="text" id="logusername" name="logusername">
                                 <div class="checkbox"><label>  <input type="checkbox">Action</label></div><input type="text" id="logaction" name="logaction">
-                                <div class="checkbox"><label>  <input type="checkbox">Date</label></div><input type="date" id="logdate" name="logdate">
+                                <div class="checkbox"><label>  <input type="checkbox">Start Date</label></div><input type="date" id="logdate1" name="logdate1">
+								<div class="checkbox"><label>  <input type="checkbox">End Date</label></div><input type="date" id="logdate2" name="logdate2">
 							  </fieldset>
 							</div>
                         </div>
