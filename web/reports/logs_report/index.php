@@ -85,7 +85,7 @@
 	*	checkFour() - Runs a check on last column to see if data is to be added to the SQL string *
 	***********************************************************************************************/
 	function checkFour($SQL_where){
-		if((!(empty($_SESSION['data'][4])))){ //last column has data
+		if((!(empty($_SESSION['data'][3])))){ //last column has data
 			$old_time2 = $_SESSION['data'][3];
 			$new_date2 = date('M-d-Y', strtotime($old_time2));
 			$SQL_where .= "log_time LIKE '%{$old_time2}%'"; //append with comma and move to next column
