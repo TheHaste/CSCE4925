@@ -13,7 +13,7 @@ if(isset($_POST['save']))
 {
 	if(isset($_POST['Laptops']['10%']));
 	{
-	$LPquery = "SELECT * FROM name_info WHERE name_id LIKE '%LT%'"; 
+	$LPquery = "SELECT * FROM assets WHERE name_id LIKE '%LT%'"; 
 	$Laptops = array(); //array for assets
 	$rs = pg_query($conn, $LPquery); //run query
 	$countLP = pg_num_rows($rs); //counts the number of rows
@@ -30,7 +30,7 @@ if(isset($_POST['save']))
 	//Unassignedquery holds total number of unassigned Laptops in the database
 	
 	
-	$UnassignedQuery = "SELECT* FROM name_info WHERE assigned IS NULL";
+	$UnassignedQuery = "SELECT* FROM assets WHERE assigned IS NULL";
 	//echo $query1;
 	$UnassignedLP = array(); //array for assets
 	$rs = pg_query($conn, $UnassignedQuery); //run query
