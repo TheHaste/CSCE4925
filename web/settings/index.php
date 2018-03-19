@@ -49,7 +49,8 @@ if(isset($_POST['save']))
 	if($countUnassigned < $countLP)
 	{
 		$message = "LAPTOPS ARE LESS 10% OF INVENTORY!";
-		
+		header('location: /home/'); //redirect to home page
+
 	}
 	
 }
