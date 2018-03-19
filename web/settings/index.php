@@ -46,7 +46,7 @@ if(isset($_POST['save']))
 	$countLP = $countLP * .1;
 	//echo " the number is " .$countLP; 
 
-	if($countUnassigned < $countLP)
+	if($countUnassigned > $countLP)
 	{
 		$message = "LAPTOPS ARE LESS 10% OF INVENTORY!";
 		
