@@ -183,8 +183,8 @@
 			else if(document.getElementById('logReport').checked){
 				var logusername = document.getElementById('logusername').value
 				var logaction = document.getElementById('logaction').value
-				var logdate = document.getElementById('logdate1').value
-				var logdate = document.getElementById('logdate2').value
+				var logdate1 = document.getElementById('logdate1').value
+				var logdate2 = document.getElementById('logdate2').value
 				
 				$.post('/reports/scripts/run_report.php', {type: 'logs',
 					logusername: logusername,
