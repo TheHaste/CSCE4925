@@ -41,7 +41,6 @@
 	*******************************************************************************************/
 	function checkTwo($SQL_where){
 		if(!(empty($_SESSION['data'][1]))){ //2 not null
-			echo "HELLO I HAVE A VALUE"; echo '<br/>';
 			if((!(empty($_SESSION['data'][2]))) || (!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4])))){ //atleast another column has data
 				$SQL_where .= "action = '{$_SESSION['data'][1]}' AND "; //append with comma and move to next column
 				return checkThree($SQL_where);
