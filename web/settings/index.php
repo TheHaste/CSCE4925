@@ -11,7 +11,9 @@ session_start(); //start user session to send data between pages
 
 if(isset($_POST['save']))
 {
-	$LPquery = "SELECT * FROM name_info WHERE name_id LIKE '%LP%'"; 
+	if(isset($_POST['Laptops']['10%']));
+	{
+	$LPquery = "SELECT * FROM name_info WHERE name_id LIKE '%LT%'"; 
 	$Laptops = array(); //array for assets
 	$rs = pg_query($conn, $LPquery); //run query
 	$countLP = pg_num_rows($rs); //counts the number of rows
@@ -50,7 +52,7 @@ if(isset($_POST['save']))
 		
 	}
 	
-
+}
 }
 
 ?>
@@ -125,7 +127,7 @@ if(isset($_POST['save']))
     
      <select class="form-control" >
 	  
-	     <form action = "index11.php" method = "POST">
+	     <form action = "index.php" method = "POST">
 		
 		<option selected hidden value="Notifications">Notify</option>
         <option value = "Laptops"> Laptops </option>
@@ -142,6 +144,7 @@ if(isset($_POST['save']))
 
 	
      <select class="form-control">
+	     <form action = "index11.php" method = "post">
 	 	<option selected hidden>Threshold</option>
         <option value = "10">10%</option>
 		<option value = "20">20%</option>
