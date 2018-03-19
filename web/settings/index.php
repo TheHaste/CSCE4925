@@ -146,9 +146,8 @@ if(isset($_POST['save']))
      <select class="form-control">
 	     <form action = "index11.php" method = "post">
 	 	<option selected hidden>Threshold</option>
-        <option value = "10">10%</option>
-		<option value = "20">20%</option>
-		<option value = "30">30%</option>
+        <option value = "10%">10%</option>
+		
 		
       </select>
   </div>
