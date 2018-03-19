@@ -21,11 +21,11 @@
 	function checkOne($SQL_where){
 		if(!(empty($_SESSION['data'][0]))){ //1 not null
 			if((!(empty($_SESSION['data'][1]))) || (!(empty($_SESSION['data'][2]))) || (!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4]))) || (!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8])))){ //atleast another column has data
-				$SQL_where .= "user = '{$_SESSION['data'][0]}' AND "; //append with comma and move to next column
+				$SQL_where .= "log_user = '{$_SESSION['data'][0]}' AND "; //append with comma and move to next column
 				return checkTwo($SQL_where);
 			}
 			else{ //no other data for query
-				$SQL_where .= "user = '{$_SESSION['data'][0]}'"; //end of where
+				$SQL_where .= "log_user = '{$_SESSION['data'][0]}'"; //end of where
 				return $SQL_where;
 			}
 		}
@@ -298,7 +298,7 @@
 							//$item[] = $line;
 							echo '
 							<tr>
-							<td>'.$item['user'].'</td>
+							<td>'.$item['log_user'].'</td>
 							<td>'.$item['action'].'</td>
 							<td>'.$item['log_time'].'</td>
 							</tr> 
