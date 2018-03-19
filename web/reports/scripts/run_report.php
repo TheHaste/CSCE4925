@@ -24,9 +24,10 @@
 	else if($_POST['type'] == 'logs'){
 		$logusername = $_POST['logusername'];
 		$logaction = $_POST['logaction'];
-		$logdate = $_POST['logdate'];
+		$logdate1 = $_POST['logdate1'];
+		$logdate2 = $_POST['logdate2'];
 		
-		$column_array = array($logusername, $logaction, $logdate);
+		$column_array = array($logusername, $logaction, $logdate1, $logdate2);
 		$_SESSION['data'] = $column_array;
 		
 	}
