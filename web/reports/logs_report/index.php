@@ -119,7 +119,6 @@
 			if((!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4])))){ //atleast another column has data
 				$old_time1 = $_SESSION['data'][2];
 				$new_date1 = date('M-d-Y', strtotime($old_time1));
-				//$SQL_where .= "log_time LIKE '%{$new_date1}%' OR "; //append with comma and move to next column
 				$SQL_where .= "log_time >= '%{$new_date1}%' AND "; //append with comma and move to next column 
 				return checkFour($SQL_where);
 			}
@@ -142,7 +141,6 @@
 		if((!(empty($_SESSION['data'][3])))){ //last column has data
 			$old_time2 = $_SESSION['data'][3];
 			$new_date2 = date('M-d-Y', strtotime($old_time2));
-			//$SQL_where .= "log_time LIKE '%{$new_date2}%'"; //append with comma and move to next column
 			$SQL_where .= "log_time <= '%{$new_date2}%'"; //append with comma and move to next column
 		}
 		
