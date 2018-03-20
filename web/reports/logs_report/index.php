@@ -14,6 +14,33 @@
 		return checkOne($SQL_where);
 	}
 	
+	/***************************************************************************
+	*	formatIN() - Returns a formatted string for SQL queries with IN clause *
+	****************************************************************************/
+	function formatIN($col, $index){
+		
+		$SQL_IN .= "{$col} IN ('";
+		
+		$len = strlen($_SESSION['data'][$index]);
+		
+		for($i=0; $i<=$len; $i++){
+			$temp = substr($_SESSION['data'][$index], $i, 1);
+			
+			if($temp == ','){
+				$SQL_IN .= "', '";
+			}
+			else if($temp == ' '){
+			}
+			else{
+				$SQL_IN .= $temp;
+			}
+		}
+		
+		$SQL_IN .= "') ";
+		
+		return $SQL_IN;
+	}
+	
 	/******************************************************************************************
 	*	checkOne() - Runs a check on column 1 to see if data is to be added to the SQL string.
 	*				 This is a recursive function that runs checks for columns 2 through 9 if
@@ -22,12 +49,25 @@
 	function checkOne($SQL_where){
 		if(!(empty($_SESSION['data'][0]))){ //1 not null
 			if((!(empty($_SESSION['data'][1]))) || (!(empty($_SESSION['data'][2]))) || (!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4]))) || (!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8])))){ //atleast another column has data
-				$SQL_where .= "log_user = '{$_SESSION['data'][0]}' AND "; //append with comma and move to next column
-				return checkTwo($SQL_where);
+				if (strpos($_SESSION['data'][0], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("log_user", 0);
+					$SQL_where .= "AND ";
+					return checkTwo($SQL_where);
+				}
+				else{ //if more than one column and NO comma
+					$SQL_where .= "log_user = '{$_SESSION['data'][0]}' AND "; //append with comma and move to next column
+					return checkTwo($SQL_where);
+				}
 			}
 			else{ //no other data for query
-				$SQL_where .= "log_user = '{$_SESSION['data'][0]}'"; //end of where
-				return $SQL_where;
+				if (strpos($_SESSION['data'][0], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("log_user", 0);
+					return checkTwo($SQL_where);
+				}
+				else{ //if more than one column and NO comma
+					$SQL_where .= "log_user = '{$_SESSION['data'][0]}'"; //end of where
+					return $SQL_where;
+				}
 			}
 		}
 		else{ //1 is null, check other columns
@@ -43,12 +83,25 @@
 	function checkTwo($SQL_where){
 		if(!(empty($_SESSION['data'][1]))){ //2 not null
 			if((!(empty($_SESSION['data'][2]))) || (!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4])))){ //atleast another column has data
-				$SQL_where .= "action = '{$_SESSION['data'][1]}' AND "; //append with comma and move to next column
-				return checkThree($SQL_where);
+				if (strpos($_SESSION['data'][1], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("action", 1);
+					$SQL_where .= "AND ";
+					return checkTwo($SQL_where);
+				}
+				else{ //if more than one column and NO comma
+					$SQL_where .= "action = '{$_SESSION['data'][1]}' AND "; //append with comma and move to next column
+					return checkThree($SQL_where);
+				}
 			}
 			else{ //no other data for query
-				$SQL_where .= "action = '{$_SESSION['data'][1]}'"; //end of where
-				return $SQL_where;
+				if (strpos($_SESSION['data'][1], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("action", 1);
+					return checkTwo($SQL_where);
+				}
+				else{ //if more than one column and NO comma
+					$SQL_where .= "action = '{$_SESSION['data'][1]}'"; //end of where
+					return $SQL_where;
+				}
 			}
 		}
 		else{ //2 is null, check other columns
