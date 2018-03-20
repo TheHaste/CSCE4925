@@ -376,7 +376,7 @@
   <div>
         <div class="container">
             <div class="col-md-12" style="height:40px;">
-                <p class="help-block">Choose your report type and select fields to filter your report. When filtering one field with multiple criteria, separate with a comma.</p>
+                <p class="help-block">Choose your report type and enter data in desired fields to filter your report. When filtering one field with multiple criteria, separate with a comma.</p>
 			</div>
 		<form method="post" id="report">
             <div class="col-md-12" style="height:40px;">
