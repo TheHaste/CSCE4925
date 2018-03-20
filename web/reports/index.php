@@ -240,15 +240,15 @@ session_start(); //start user session to send data between pages
                             </header>
                             <div>
 							 <fieldset id="inventory"  style="display: none">
-                                <div class="checkbox"><label>  <input type="checkbox">Serial Number</label></div><input type="text" id="serialnumber" name="serialnumber">
-                                <div class="checkbox"><label>  <input type="checkbox">Brand</label></div><input type="text" id="brand" name="brand">
-                                <div class="checkbox"><label>  <input type="checkbox">Model</label></div><input type="text" id="model" name="model">
-                                <div class="checkbox"><label>  <input type="checkbox">Assigned User</label></div><input type="text" id="assigneduser" name="assigneduser">
-                                <div class="checkbox"><label>  <input type="checkbox">Location</label></div><input type="text" id="location" name="location">
-                                <div class="checkbox"><label>  <input type="checkbox">Cost</label></div><input type="text" id="cost" name="cost">
-                                <div class="checkbox"><label>  <input type="checkbox">Date Deployed</label></div><input type="date" id="datedeployed" name="datedeployed">
-                                <div class="checkbox"><label>  <input type="checkbox">Date Surplused</label></div><input type="date" id="datesurplused" name="datesurplused">
-                                <div class="checkbox"><label>  <input type="checkbox">Last Updated</label></div><input type="date" id="lastupdated" name="lastupdated">
+                                <div><label>Serial Number</label></div><input type="text" id="serialnumber" name="serialnumber">
+                                <div><label>Brand</label></div><input type="text" id="brand" name="brand">
+                                <div><label>Model</label></div><input type="text" id="model" name="model">
+                                <div><label>Assigned User</label></div><input type="text" id="assigneduser" name="assigneduser">
+                                <div><label>Location</label></div><input type="text" id="location" name="location">
+                                <div><label>Cost</label></div><input type="text" id="cost" name="cost">
+                                <div><label>Date Deployed</label></div><input type="date" id="datedeployed" name="datedeployed">
+                                <div><label>Date Surplused</label></div><input type="date" id="datesurplused" name="datesurplused">
+                                <div><label>Last Updated</label></div><input type="date" id="lastupdated" name="lastupdated">
 							 </fieldset>
 							</div>
                         </div>
@@ -260,10 +260,10 @@ session_start(); //start user session to send data between pages
                             <header></header>
                             <div>
 							  <fieldset id="logs" style="display: none">
-                                <div class="checkbox"><label>  <input type="checkbox">Username</label></div><input type="text" id="logusername" name="logusername">
-                                <div class="checkbox"><label>  <input type="checkbox">Action</label></div><input type="text" id="logaction" name="logaction">
-                                <div class="checkbox"><label>  <input type="checkbox">Start Date</label></div><input type="date" id="logdate1" name="logdate1">
-								<div class="checkbox"><label>  <input type="checkbox">End Date</label></div><input type="date" id="logdate2" name="logdate2">
+                                <div><label>Username</label></div><input type="text" id="logusername" name="logusername">
+                                <div><label>Action</label></div><input type="text" id="logaction" name="logaction">
+                                <div><label>Start Date</label></div><input type="date" id="logdate1" name="logdate1">
+								<div><label>End Date</label></div><input type="date" id="logdate2" name="logdate2">
 							  </fieldset>
 							</div>
                         </div>
