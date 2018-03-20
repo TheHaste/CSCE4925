@@ -374,6 +374,9 @@
 				}
 			]
 		});	
+		
+		$('#inventoryReport').prop('checked', true);
+		document.getElementById('inventory').style.display='block';
 	
 		$('#report').submit(function() {
 			if(document.getElementById('inventoryReport').checked){
@@ -422,9 +425,6 @@
 		});
 	
 	});
-	
-	$('#inventoryReport').prop('checked', true);
-	document.getElementById('inventory').style.display='block';
 
 </script>
 
