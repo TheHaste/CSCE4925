@@ -63,7 +63,7 @@
 			else{ //no other data for query
 				if (strpos($_SESSION['data'][0], ',') !== false) { //if just one column and has a comma
 					$SQL_where .= formatIN("serial_number", 0);
-					return checkTwo($SQL_where);
+					return SQL_where;
 				}
 				else{ //if just one column and NO comma
 					$SQL_where .= "serial_number = '{$_SESSION['data'][0]}'"; //end of where
@@ -84,12 +84,25 @@
 	function checkTwo($SQL_where){
 		if(!(empty($_SESSION['data'][1]))){ //2 not null
 			if((!(empty($_SESSION['data'][2]))) || (!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4]))) || (!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8])))){ //atleast another column has data
-				$SQL_where .= "brand = '{$_SESSION['data'][1]}' AND "; //append with comma and move to next column
-				return checkThree($SQL_where);
+				if (strpos($_SESSION['data'][1], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("brand", 1);
+					$SQL_where .= "AND ";
+					return checkThree($SQL_where);
+				}
+				else{ 
+					$SQL_where .= "brand = '{$_SESSION['data'][1]}' AND "; //append with comma and move to next column
+					return checkThree($SQL_where);
+				}
 			}
 			else{ //no other data for query
-				$SQL_where .= "brand = '{$_SESSION['data'][1]}'"; //end of where
-				return $SQL_where;
+				if (strpos($_SESSION['data'][1], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("brand", 1);
+					return $SQL_where;
+				}
+				else{ 
+					$SQL_where .= "brand = '{$_SESSION['data'][1]}'"; //end of where
+					return $SQL_where;
+				}
 			}
 		}
 		else{ //2 is null, check other columns
