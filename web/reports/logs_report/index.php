@@ -214,6 +214,7 @@
 		});	
 	
 		$('#logReport').prop('checked', true);
+		document.getElementById('logs').style.display='block';
 	
 		$('#report').submit(function() {
 			if(document.getElementById('inventoryReport').checked){
