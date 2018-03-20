@@ -314,7 +314,7 @@
 	$SQL_where = "";
 	$SQL_FINAL = buildString($SQL_where);
 	
-	echo "The SQL query looks like this: SELECT * FROM assets WHERE {$SQL_FINAL};"; echo '<br />';
+	//echo "The SQL query looks like this: SELECT * FROM assets WHERE {$SQL_FINAL};"; echo '<br />';
 	
 	
 ?>
@@ -423,6 +423,8 @@
 	
 	});
 	
+	$('#inventoryReport').prop('checked', true);
+	document.getElementById('inventory').style.display='block';
 
 </script>
 
@@ -577,15 +579,15 @@
                             </header>
                             <div>
 							 <fieldset id="inventory"  style="display: none">
-                                <div class="checkbox"><label>  <input type="checkbox">Serial Number</label></div><input type="text" id="serialnumber" name="serialnumber">
-                                <div class="checkbox"><label>  <input type="checkbox">Brand</label></div><input type="text" id="brand" name="brand">
-                                <div class="checkbox"><label>  <input type="checkbox">Model</label></div><input type="text" id="model" name="model">
-                                <div class="checkbox"><label>  <input type="checkbox">Assigned User</label></div><input type="text" id="assigneduser" name="assigneduser">
-                                <div class="checkbox"><label>  <input type="checkbox">Location</label></div><input type="text" id="location" name="location">
-                                <div class="checkbox"><label>  <input type="checkbox">Cost</label></div><input type="text" id="cost" name="cost">
-                                <div class="checkbox"><label>  <input type="checkbox">Date Deployed</label></div><input type="date" id="datedeployed" name="datedeployed">
-                                <div class="checkbox"><label>  <input type="checkbox">Date Surplused</label></div><input type="date" id="datesurplused" name="datesurplused">
-                                <div class="checkbox"><label>  <input type="checkbox">Last Updated</label></div><input type="date" id="lastupdated" name="lastupdated">
+                                <div><label>Serial Number</label></div><input type="text" id="serialnumber" name="serialnumber" value="<?php if(!(empty($_SESSION['data'][0]))){ echo $_SESSION['data'][0]; } ?>">
+                                <div><label>Brand</label></div><input type="text" id="brand" name="brand" value="<?php if(!(empty($_SESSION['data'][1]))){ echo $_SESSION['data'][1]; } ?>">
+                                <div><label>Model</label></div><input type="text" id="model" name="model" value="<?php if(!(empty($_SESSION['data'][2]))){ echo $_SESSION['data'][2]; } ?>">
+                                <div><label>Assigned User</label></div><input type="text" id="assigneduser" name="assigneduser" value="<?php if(!(empty($_SESSION['data'][3]))){ echo $_SESSION['data'][3]; } ?>">
+                                <div><label>Location</label></div><input type="text" id="location" name="location" value="<?php if(!(empty($_SESSION['data'][4]))){ echo $_SESSION['data'][4]; } ?>">
+                                <div><label>Cost</label></div><input type="text" id="cost" name="cost" value="<?php if(!(empty($_SESSION['data'][5]))){ echo $_SESSION['data'][5]; } ?>">
+                                <div><label>Date Deployed</label></div><input type="date" id="datedeployed" name="datedeployed" value="<?php if(!(empty($_SESSION['data'][6]))){ echo $_SESSION['data'][6]; } ?>">
+                                <div><label>Date Surplused</label></div><input type="date" id="datesurplused" name="datesurplused" value="<?php if(!(empty($_SESSION['data'][7]))){ echo $_SESSION['data'][7]; } ?>">
+                                <div><label>Last Updated</label></div><input type="date" id="lastupdated" name="lastupdated" value="<?php if(!(empty($_SESSION['data'][8]))){ echo $_SESSION['data'][8]; } ?>">
 							 </fieldset>
 							</div>
                         </div>
@@ -597,10 +599,10 @@
                             <header></header>
                             <div>
 							  <fieldset id="logs" style="display: none">
-                                <div class="checkbox"><label>  <input type="checkbox">Username</label></div><input type="text" id="logusername" name="logusername">
-                                <div class="checkbox"><label>  <input type="checkbox">Action</label></div><input type="text" id="logaction" name="logaction">
-                                <div class="checkbox"><label>  <input type="checkbox">Start Date</label></div><input type="date" id="logdate1" name="logdate1">
-								<div class="checkbox"><label>  <input type="checkbox">End Date</label></div><input type="date" id="logdate2" name="logdate2">
+                                <div><label>Username</label></div><input type="text" id="logusername" name="logusername">
+                                <div><label>Action</label></div><input type="text" id="logaction" name="logaction">
+                                <div><label>Start Date</label></div><input type="date" id="logdate1" name="logdate1">
+								<div><label>End Date</label></div><input type="date" id="logdate2" name="logdate2">
 							  </fieldset>
 							</div>
                         </div>
