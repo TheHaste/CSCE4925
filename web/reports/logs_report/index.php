@@ -86,7 +86,7 @@
 				if (strpos($_SESSION['data'][1], ',') !== false) { //if more than one column and has a comma
 					$SQL_where .= formatIN("action", 1);
 					$SQL_where .= "AND ";
-					return checkTwo($SQL_where);
+					return checkThree($SQL_where);
 				}
 				else{ //if more than one column and NO comma
 					$SQL_where .= "action = '{$_SESSION['data'][1]}' AND "; //append with comma and move to next column
@@ -96,7 +96,7 @@
 			else{ //no other data for query
 				if (strpos($_SESSION['data'][1], ',') !== false) { //if more than one column and has a comma
 					$SQL_where .= formatIN("action", 1);
-					return checkTwo($SQL_where);
+					return checkThree($SQL_where);
 				}
 				else{ //if more than one column and NO comma
 					$SQL_where .= "action = '{$_SESSION['data'][1]}'"; //end of where
