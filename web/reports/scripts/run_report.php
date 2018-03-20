@@ -8,25 +8,39 @@
 	
 	//store parameters
 	if($_POST['type'] == 'inventory'){
-		$serialnumber = $_POST['serialnumber'];
-		$brand = $_POST['brand'];
-		$model = $_POST['model'];
-		$assigneduser = $_POST['assigneduser'];
-		$location = $_POST['location'];
-		$cost = $_POST['cost'];
-		$datedeployed = $_POST['datedeployed'];
-		$datesurplused = $_POST['datesurplused'];
-		$lastupdated = $_POST['lastupdated'];
+		
+		foreach($_POST as $data){
+			if(strpos($data, ';') !== false){
+				return;
+			}
+		}
+		
+		$serialnumber = mysqli_real_escape_string($_POST['serialnumber']);
+		$brand = mysqli_real_escape_string($_POST['brand']);
+		$model = mysqli_real_escape_string($_POST['model']);
+		$assigneduser = mysqli_real_escape_string($_POST['assigneduser']);
+		$location = mysqli_real_escape_string($_POST['location']);
+		$cost = mysqli_real_escape_string($_POST['cost']);
+		$datedeployed = mysqli_real_escape_string($_POST['datedeployed']);
+		$datesurplused = mysqli_real_escape_string($_POST['datesurplused']);
+		$lastupdated = mysqli_real_escape_string($_POST['lastupdated']);
 		
 		$column_array = array($serialnumber, $brand, $model, $assigneduser, $location, $cost, $datedeployed, $datesurplused, $lastupdated);
 		$_SESSION['data'] = $column_array;
 
 	}
 	else if($_POST['type'] == 'logs'){
-		$logusername = $_POST['logusername'];
-		$logaction = $_POST['logaction'];
-		$logdate1 = $_POST['logdate1'];
-		$logdate2 = $_POST['logdate2'];
+		
+		foreach($_POST as $data){
+			if(strpos($data, ';') !== false){
+				return;
+			}
+		}
+		
+		$logusername = mysqli_real_escape_string($_POST['logusername']);
+		$logaction = mysqli_real_escape_string($_POST['logaction']);
+		$logdate1 = mysqli_real_escape_string($_POST['logdate1']);
+		$logdate2 = mysqli_real_escape_string($_POST['logdate2']);
 		
 		$column_array = array($logusername, $logaction, $logdate1, $logdate2);
 		$_SESSION['data'] = $column_array;
