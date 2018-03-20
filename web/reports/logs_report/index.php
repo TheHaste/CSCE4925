@@ -424,7 +424,7 @@
                             <header></header>
                             <div>
 							  <fieldset id="logs" style="display: none">
-                                <div ><label>  <input type="text">Username</label></div><input type="text" id="logusername" name="logusername" value="<?php if(!(empty($_SESSION['data'][0]))){ echo $_SESSION['data'][0]; } ?>">
+                                <div ><label>Username</label></div><input type="text" id="logusername" name="logusername" value="<?php if(!(empty($_SESSION['data'][0]))){ echo $_SESSION['data'][0]; } ?>">
                                 <div class="checkbox"><label>  <input type="checkbox">Action</label></div><input type="text" id="logaction" name="logaction" value="<?php if(!(empty($_SESSION['data'][1]))){ echo $_SESSION['data'][1]; } ?>">
                                 <div class="checkbox"><label>  <input type="checkbox">Start Date</label></div><input type="date" id="logdate1" name="logdate1" value="<?php if(!(empty($_SESSION['data'][2]))){ echo $_SESSION['data'][2]; } ?>">
 								<div class="checkbox"><label>  <input type="checkbox">End Date</label></div><input type="date" id="logdate2" name="logdate2"value="<?php if(!(empty($_SESSION['data'][3]))){ echo $_SESSION['data'][3]; } ?>">
