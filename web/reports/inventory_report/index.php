@@ -118,12 +118,25 @@
 	function checkThree($SQL_where){
 		if((!(empty($_SESSION['data'][2])))){ //3 not null
 			if((!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4]))) || (!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8])))){ //atleast another column has data
-				$SQL_where .= "model = '{$_SESSION['data'][2]}' AND "; //append with comma and move to next column
-				return checkFour($SQL_where);
+				if (strpos($_SESSION['data'][2], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("model", 2);
+					$SQL_where .= "AND ";
+					return checkFour($SQL_where);
+				}
+				else{ 
+					$SQL_where .= "model = '{$_SESSION['data'][2]}' AND "; //append with comma and move to next column
+					return checkFour($SQL_where);
+				}
 			}
 			else{ //no other data for query
-				$SQL_where .= "model = '{$_SESSION['data'][2]}'"; //end of where
-				return $SQL_where;
+				if (strpos($_SESSION['data'][2], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("model", 2);
+					return checkFour($SQL_where);
+				}
+				else{
+					$SQL_where .= "model = '{$_SESSION['data'][2]}'"; //end of where
+					return $SQL_where;
+				}
 			}
 		}
 		else{ //3 is null, check other columns
@@ -139,12 +152,25 @@
 	function checkFour($SQL_where){
 		if((!(empty($_SESSION['data'][3])))){ //4 not null
 			if((!(empty($_SESSION['data'][4]))) || (!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8])))){ //atleast another column has data
-				$SQL_where .= "assigned = '{$_SESSION['data'][3]}' AND "; //append with comma and move to next column
-				return checkFive($SQL_where);
+				if (strpos($_SESSION['data'][3], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("assigned", 3);
+					$SQL_where .= "AND ";
+					return checkFive($SQL_where);
+				}
+				else{
+					$SQL_where .= "assigned = '{$_SESSION['data'][3]}' AND "; //append with comma and move to next column
+					return checkFive($SQL_where);
+				}
 			}
 			else{ //no other data for query
-				$SQL_where .= "assigned = '{$_SESSION['data'][3]}'"; //end of where
-				return $SQL_where;
+				if (strpos($_SESSION['data'][3], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("assigned", 3);
+					return checkFive($SQL_where);
+				}
+				else{
+					$SQL_where .= "assigned = '{$_SESSION['data'][3]}'"; //end of where
+					return $SQL_where;
+				}
 			}
 		}
 		else{ //4 is null, check other columns
@@ -160,12 +186,25 @@
 	function checkFive($SQL_where){
 		if((!(empty($_SESSION['data'][4])))){ //5 not null
 			if((!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8])))){ //atleast another column has data
-				$SQL_where .= "location = '{$_SESSION['data'][4]}' AND "; //append with comma and move to next column
-				return checkSix($SQL_where);
+				if (strpos($_SESSION['data'][4], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("location", 4);
+					$SQL_where .= "AND ";
+					return checkSix($SQL_where);
+				}
+				else{
+					$SQL_where .= "location = '{$_SESSION['data'][4]}' AND "; //append with comma and move to next column
+					return checkSix($SQL_where);
+				}
 			}
 			else{ //no other data for query
-				$SQL_where .= "location = '{$_SESSION['data'][4]}'"; //end of where
-				return $SQL_where;
+				if (strpos($_SESSION['data'][4], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("location", 4);
+					return checkSix($SQL_where);
+				}
+				else{
+					$SQL_where .= "location = '{$_SESSION['data'][4]}'"; //end of where
+					return $SQL_where;
+				}
 			}
 		}
 		else{ //5 is null, check other columns
@@ -181,12 +220,25 @@
 	function checkSix($SQL_where){
 		if((!(empty($_SESSION['data'][5])))){ //6 not null
 			if((!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8])))){ //atleast another column has data
-				$SQL_where .= "cost = '{$_SESSION['data'][5]}' AND "; //append with comma and move to next column
-				return checkSeven($SQL_where);
+				if (strpos($_SESSION['data'][5], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("cost", 5);
+					$SQL_where .= "AND ";
+					return checkSeven($SQL_where);
+				}
+				else{
+					$SQL_where .= "cost = '{$_SESSION['data'][5]}' AND "; //append with comma and move to next column
+					return checkSeven($SQL_where);
+				}	
 			}
 			else{ //no other data for query
-				$SQL_where .= "cost = '{$_SESSION['data'][5]}'"; //end of where
-				return $SQL_where;
+				if (strpos($_SESSION['data'][5], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("cost", 5);
+					return checkSeven($SQL_where);
+				}
+				else{
+					$SQL_where .= "cost = '{$_SESSION['data'][5]}'"; //end of where
+					return $SQL_where;
+				}
 			}
 		}
 		else{ //6 is null, check other columns
