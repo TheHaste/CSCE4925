@@ -213,6 +213,8 @@
 			]
 		});	
 	
+		$('#logReport').prop('checked', true);
+	
 		$('#report').submit(function() {
 			if(document.getElementById('inventoryReport').checked){
 				
