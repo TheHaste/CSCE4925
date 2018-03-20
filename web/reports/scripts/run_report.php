@@ -21,15 +21,15 @@
 			}
 		}
 		
-		$serialnumber = mysqli_real_escape_string($conn, $_POST['serialnumber']);
-		$brand = mysqli_real_escape_string($conn, $_POST['brand']);
-		$model = mysqli_real_escape_string($conn, $_POST['model']);
-		$assigneduser = mysqli_real_escape_string($conn, $_POST['assigneduser']);
-		$location = mysqli_real_escape_string($conn, $_POST['location']);
-		$cost = mysqli_real_escape_string($conn, $_POST['cost']);
-		$datedeployed = mysqli_real_escape_string($conn, $_POST['datedeployed']);
-		$datesurplused = mysqli_real_escape_string($conn, $_POST['datesurplused']);
-		$lastupdated = mysqli_real_escape_string($conn, $_POST['lastupdated']);
+		$serialnumber = pg_escape_string($conn, $_POST['serialnumber']);
+		$brand = pg_escape_string($conn, $_POST['brand']);
+		$model = pg_escape_string($conn, $_POST['model']);
+		$assigneduser = pg_escape_string($conn, $_POST['assigneduser']);
+		$location = pg_escape_string($conn, $_POST['location']);
+		$cost = pg_escape_string($conn, $_POST['cost']);
+		$datedeployed = pg_escape_string($conn, $_POST['datedeployed']);
+		$datesurplused = pg_escape_string($conn, $_POST['datesurplused']);
+		$lastupdated = pg_escape_string($conn, $_POST['lastupdated']);
 		
 		$column_array = array($serialnumber, $brand, $model, $assigneduser, $location, $cost, $datedeployed, $datesurplused, $lastupdated);
 		$_SESSION['data'] = $column_array;
@@ -43,10 +43,10 @@
 			}
 		}
 		
-		$logusername = mysqli_real_escape_string($conn, $_POST['logusername']);
-		$logaction = mysqli_real_escape_string($conn, $_POST['logaction']);
-		$logdate1 = mysqli_real_escape_string($conn, $_POST['logdate1']);
-		$logdate2 = mysqli_real_escape_string($conn, $_POST['logdate2']);
+		$logusername = pg_escape_string($conn, $_POST['logusername']);
+		$logaction = pg_escape_string($conn, $_POST['logaction']);
+		$logdate1 = pg_escape_string($conn, $_POST['logdate1']);
+		$logdate2 = pg_escape_string($conn, $_POST['logdate2']);
 		
 		$column_array = array($logusername, $logaction, $logdate1, $logdate2);
 		$_SESSION['data'] = $column_array;
