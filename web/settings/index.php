@@ -52,7 +52,7 @@ if(isset($_POST['save']))
 		
 		pg_close($conn);
 				
-				header('Location: /home/'); //redirect to home page
+				//header('Location: /home/'); //redirect to home page
 
 	}
 	
