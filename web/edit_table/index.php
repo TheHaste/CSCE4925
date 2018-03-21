@@ -91,7 +91,7 @@ $(document).ready(function() {
             }, 
 			
         ]
-    } );
+    }  } );
 	
 	editor.hide( [ 'last_updated' ] );
 	
