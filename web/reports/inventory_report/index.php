@@ -10,7 +10,7 @@
 	*	buildString() - Returns a formatted string for SQL queries for Inventory Reporting
 	*******************************************************************************************/
 	function buildString($SQL_where){
-		return checkOne($SQL_where);
+		return checkType($SQL_where);
 	}
 	
 	
@@ -42,266 +42,282 @@
 	}
 	
 	
-	/******************************************************************************************
-	*	checkOne() - Runs a check on column 1 to see if data is to be added to the SQL string.
-	*				 This is a recursive function that runs checks for columns 2 through 9 if
-	*				 there is more data present past column 1.
-	*******************************************************************************************/
-	function checkOne($SQL_where){
+	/*********************************************************************************************
+	*	checkType() - Runs a check on the Asset Type field and formats to the SQL string if needed
+	**********************************************************************************************/
+	function checkType($SQL_where){
 		if(!(empty($_SESSION['data'][0]))){ //1 not null
-			if((!(empty($_SESSION['data'][1]))) || (!(empty($_SESSION['data'][2]))) || (!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4]))) || (!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8])))){ //atleast another column has data
+			if((!(empty($_SESSION['data'][1]))) || (!(empty($_SESSION['data'][2]))) || (!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4]))) || (!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8]))) || (!(empty($_SESSION['data'][9])))){ //atleast another column has data
 				if (strpos($_SESSION['data'][0], ',') !== false) { //if more than one column and has a comma
-					$SQL_where .= formatIN("serial_number", 0);
+					$SQL_where .= formatIN("asset_type", 0);
 					$SQL_where .= "AND ";
-					return checkTwo($SQL_where);
+					return checkSN($SQL_where);
 				}
 				else{ //if more than one column and NO comma
-					$SQL_where .= "serial_number = '{$_SESSION['data'][0]}' AND "; //append with comma and move to next column
-					return checkTwo($SQL_where);
+					$SQL_where .= "asset_type = '{$_SESSION['data'][0]}' AND "; //append with comma and move to next column
+					return checkSN($SQL_where);
 				}
 			}
 			else{ //no other data for query
 				if (strpos($_SESSION['data'][0], ',') !== false) { //if just one column and has a comma
-					$SQL_where .= formatIN("serial_number", 0);
+					$SQL_where .= formatIN("asset_type", 0);
 					return SQL_where;
 				}
 				else{ //if just one column and NO comma
-					$SQL_where .= "serial_number = '{$_SESSION['data'][0]}'"; //end of where
+					$SQL_where .= "asset_type = '{$_SESSION['data'][0]}'"; //end of where
 					return $SQL_where;
 				}
 			}
 		}
 		else{ //1 is null, check other columns
-			return checkTwo($SQL_where);
+			return checkSN($SQL_where);
+		}
+	}
+	
+	/***********************************************************************************************
+	*	checkSN() - Runs a check on the Serial Number field and formats to the SQL string if needed
+	************************************************************************************************/
+	function checkSN($SQL_where){
+		if(!(empty($_SESSION['data'][1]))){ //1 not null
+			if((!(empty($_SESSION['data'][2]))) || (!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4]))) || (!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8]))) || (!(empty($_SESSION['data'][9])))){ //atleast another column has data
+				if (strpos($_SESSION['data'][1], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("serial_number", 1);
+					$SQL_where .= "AND ";
+					return checkBrand($SQL_where);
+				}
+				else{ //if more than one column and NO comma
+					$SQL_where .= "serial_number = '{$_SESSION['data'][1]}' AND "; //append with comma and move to next column
+					return checkBrand($SQL_where);
+				}
+			}
+			else{ //no other data for query
+				if (strpos($_SESSION['data'][1], ',') !== false) { //if just one column and has a comma
+					$SQL_where .= formatIN("serial_number", 1);
+					return SQL_where;
+				}
+				else{ //if just one column and NO comma
+					$SQL_where .= "serial_number = '{$_SESSION['data'][1]}'"; //end of where
+					return $SQL_where;
+				}
+			}
+		}
+		else{ //1 is null, check other columns
+			return checkBrand($SQL_where);
 		}
 	}
 	
 	/******************************************************************************************
-	*	checkTwo() - Runs a check on column 2 to see if data is to be added to the SQL string.
-	*				 This is a recursive function that runs checks for columns 3 through 9 if
-	*				 there is more data present past column 2.
+	*	checkBrand() - Runs a check on the Brand field and formats to the SQL string if needed
 	*******************************************************************************************/
-	function checkTwo($SQL_where){
-		if(!(empty($_SESSION['data'][1]))){ //2 not null
-			if((!(empty($_SESSION['data'][2]))) || (!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4]))) || (!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8])))){ //atleast another column has data
-				if (strpos($_SESSION['data'][1], ',') !== false) { //if more than one column and has a comma
-					$SQL_where .= formatIN("brand", 1);
+	function checkBrand($SQL_where){
+		if(!(empty($_SESSION['data'][2]))){ //2 not null
+			if((!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4]))) || (!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8]))) || (!(empty($_SESSION['data'][9])))){ //atleast another column has data
+				if (strpos($_SESSION['data'][2], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("brand", 2);
 					$SQL_where .= "AND ";
-					return checkThree($SQL_where);
+					return checkModel($SQL_where);
 				}
 				else{ 
-					$SQL_where .= "brand = '{$_SESSION['data'][1]}' AND "; //append with comma and move to next column
-					return checkThree($SQL_where);
+					$SQL_where .= "brand = '{$_SESSION['data'][2]}' AND "; //append with comma and move to next column
+					return checkModel($SQL_where);
 				}
 			}
 			else{ //no other data for query
-				if (strpos($_SESSION['data'][1], ',') !== false) { //if more than one column and has a comma
-					$SQL_where .= formatIN("brand", 1);
+				if (strpos($_SESSION['data'][2], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("brand", 2);
 					return $SQL_where;
 				}
 				else{ 
-					$SQL_where .= "brand = '{$_SESSION['data'][1]}'"; //end of where
+					$SQL_where .= "brand = '{$_SESSION['data'][2]}'"; //end of where
 					return $SQL_where;
 				}
 			}
 		}
 		else{ //2 is null, check other columns
-			return checkThree($SQL_where);
+			return checkModel($SQL_where);
 		}
 	}
 	
 	/******************************************************************************************
-	*	checkThree() - Runs a check on column 3 to see if data is to be added to the SQL string.
-	*				 This is a recursive function that runs checks for columns 4 through 9 if
-	*				 there is more data present past column 3.
+	*	checkModel() - Runs a check on the Model field and formats to the SQL string if needed
 	*******************************************************************************************/
-	function checkThree($SQL_where){
-		if((!(empty($_SESSION['data'][2])))){ //3 not null
-			if((!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4]))) || (!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8])))){ //atleast another column has data
-				if (strpos($_SESSION['data'][2], ',') !== false) { //if more than one column and has a comma
-					$SQL_where .= formatIN("model", 2);
+	function checkModel($SQL_where){
+		if((!(empty($_SESSION['data'][3])))){ //3 not null
+			if((!(empty($_SESSION['data'][4]))) || (!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8]))) || (!(empty($_SESSION['data'][9])))){ //atleast another column has data
+				if (strpos($_SESSION['data'][3], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("model", 3);
 					$SQL_where .= "AND ";
-					return checkFour($SQL_where);
+					return checkAssignedUser($SQL_where);
 				}
 				else{ 
-					$SQL_where .= "model = '{$_SESSION['data'][2]}' AND "; //append with comma and move to next column
-					return checkFour($SQL_where);
+					$SQL_where .= "model = '{$_SESSION['data'][3]}' AND "; //append with comma and move to next column
+					return checkAssignedUser($SQL_where);
 				}
 			}
 			else{ //no other data for query
-				if (strpos($_SESSION['data'][2], ',') !== false) { //if more than one column and has a comma
-					$SQL_where .= formatIN("model", 2);
-					return checkFour($SQL_where);
+				if (strpos($_SESSION['data'][3], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("model", 3);
+					return $SQL_where;
 				}
 				else{
-					$SQL_where .= "model = '{$_SESSION['data'][2]}'"; //end of where
+					$SQL_where .= "model = '{$_SESSION['data'][3]}'"; //end of where
 					return $SQL_where;
 				}
 			}
 		}
 		else{ //3 is null, check other columns
-			return checkFour($SQL_where);
+			return checkAssignedUser($SQL_where);
 		}
 	}
 	
-	/******************************************************************************************
-	*	checkFour() - Runs a check on column 4 to see if data is to be added to the SQL string.
-	*				 This is a recursive function that runs checks for columns 5 through 9 if
-	*				 there is more data present past column 4.
-	*******************************************************************************************/
-	function checkFour($SQL_where){
-		if((!(empty($_SESSION['data'][3])))){ //4 not null
-			if((!(empty($_SESSION['data'][4]))) || (!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8])))){ //atleast another column has data
-				if (strpos($_SESSION['data'][3], ',') !== false) { //if more than one column and has a comma
-					$SQL_where .= formatIN("assigned", 3);
+	/**********************************************************************************************************
+	*	checkAssignedUser() - Runs a check on the Assigned User field and formats to the SQL string if needed
+	***********************************************************************************************************/
+	function checkAssignedUser($SQL_where){
+		if((!(empty($_SESSION['data'][4])))){ //4 not null
+			if((!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8]))) || (!(empty($_SESSION['data'][9])))){ //atleast another column has data
+				if (strpos($_SESSION['data'][4], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("assigned", 4);
 					$SQL_where .= "AND ";
-					return checkFive($SQL_where);
+					return checkLocation($SQL_where);
 				}
 				else{
-					$SQL_where .= "assigned = '{$_SESSION['data'][3]}' AND "; //append with comma and move to next column
-					return checkFive($SQL_where);
+					$SQL_where .= "assigned = '{$_SESSION['data'][4]}' AND "; //append with comma and move to next column
+					return checkLocation($SQL_where);
 				}
 			}
 			else{ //no other data for query
-				if (strpos($_SESSION['data'][3], ',') !== false) { //if more than one column and has a comma
-					$SQL_where .= formatIN("assigned", 3);
-					return checkFive($SQL_where);
+				if (strpos($_SESSION['data'][4], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("assigned", 4);
+					return $SQL_where;
 				}
 				else{
-					$SQL_where .= "assigned = '{$_SESSION['data'][3]}'"; //end of where
+					$SQL_where .= "assigned = '{$_SESSION['data'][4]}'"; //end of where
 					return $SQL_where;
 				}
 			}
 		}
 		else{ //4 is null, check other columns
-			return checkFive($SQL_where);
+			return checkLocation($SQL_where);
 		}
 	}
 	
-	/******************************************************************************************
-	*	checkFive() - Runs a check on column 5 to see if data is to be added to the SQL string.
-	*				 This is a recursive function that runs checks for columns 6 through 9 if
-	*				 there is more data present past column 5.
-	*******************************************************************************************/
-	function checkFive($SQL_where){
-		if((!(empty($_SESSION['data'][4])))){ //5 not null
-			if((!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8])))){ //atleast another column has data
-				if (strpos($_SESSION['data'][4], ',') !== false) { //if more than one column and has a comma
-					$SQL_where .= formatIN("location", 4);
+	/************************************************************************************************
+	*	checkLocation() - Runs a check on the Location field and formats to the SQL string if needed
+	*************************************************************************************************/
+	function checkLocation($SQL_where){
+		if((!(empty($_SESSION['data'][5])))){ //5 not null
+			if((!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8]))), (!(empty($_SESSION['data'][9])))){ //atleast another column has data
+				if (strpos($_SESSION['data'][5], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("location", 5);
 					$SQL_where .= "AND ";
-					return checkSix($SQL_where);
+					return checkCost($SQL_where);
 				}
 				else{
-					$SQL_where .= "location = '{$_SESSION['data'][4]}' AND "; //append with comma and move to next column
-					return checkSix($SQL_where);
+					$SQL_where .= "location = '{$_SESSION['data'][5]}' AND "; //append with comma and move to next column
+					return checkCost($SQL_where);
 				}
 			}
 			else{ //no other data for query
-				if (strpos($_SESSION['data'][4], ',') !== false) { //if more than one column and has a comma
-					$SQL_where .= formatIN("location", 4);
-					return checkSix($SQL_where);
+				if (strpos($_SESSION['data'][5], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("location", 5);
+					return $SQL_where;
 				}
 				else{
-					$SQL_where .= "location = '{$_SESSION['data'][4]}'"; //end of where
+					$SQL_where .= "location = '{$_SESSION['data'][5]}'"; //end of where
 					return $SQL_where;
 				}
 			}
 		}
 		else{ //5 is null, check other columns
-			return checkSix($SQL_where);
+			return checkCost($SQL_where);
 		}
 	}
 	
-	/******************************************************************************************
-	*	checkSix() - Runs a check on column 6 to see if data is to be added to the SQL string.
-	*				 This is a recursive function that runs checks for columns 7 through 9 if
-	*				 there is more data present past column 6.
-	*******************************************************************************************/
-	function checkSix($SQL_where){
-		if((!(empty($_SESSION['data'][5])))){ //6 not null
-			if((!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8])))){ //atleast another column has data
-				if (strpos($_SESSION['data'][5], ',') !== false) { //if more than one column and has a comma
-					$SQL_where .= formatIN("cost", 5);
+	/************************************************************************************************
+	*	checkCost() - Runs a check on the Cost field and formats to the SQL string if needed
+	*************************************************************************************************/
+	function checkCost($SQL_where){
+		if((!(empty($_SESSION['data'][6])))){ //6 not null
+			if((!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8]))), (!(empty($_SESSION['data'][9])))){ //atleast another column has data
+				if (strpos($_SESSION['data'][6], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("cost", 6);
 					$SQL_where .= "AND ";
-					return checkSeven($SQL_where);
+					return checkDateDeployed($SQL_where);
 				}
 				else{
-					$SQL_where .= "cost = '{$_SESSION['data'][5]}' AND "; //append with comma and move to next column
-					return checkSeven($SQL_where);
+					$SQL_where .= "cost = '{$_SESSION['data'][6]}' AND "; //append with comma and move to next column
+					return checkDateDeployed($SQL_where);
 				}	
 			}
 			else{ //no other data for query
-				if (strpos($_SESSION['data'][5], ',') !== false) { //if more than one column and has a comma
-					$SQL_where .= formatIN("cost", 5);
-					return checkSeven($SQL_where);
+				if (strpos($_SESSION['data'][6], ',') !== false) { //if more than one column and has a comma
+					$SQL_where .= formatIN("cost", 6);
+					return $SQL_where;
 				}
 				else{
-					$SQL_where .= "cost = '{$_SESSION['data'][5]}'"; //end of where
+					$SQL_where .= "cost = '{$_SESSION['data'][6]}'"; //end of where
 					return $SQL_where;
 				}
 			}
 		}
 		else{ //6 is null, check other columns
-			return checkSeven($SQL_where);
+			return checkDateDeployed($SQL_where);
 		}
 	}
 	
-	/******************************************************************************************
-	*	checkSeven() - Runs a check on column 7 to see if data is to be added to the SQL string.
-	*				 This is a recursive function that runs checks for columns 7 through 9 if
-	*				 there is more data present past column 7.
-	*******************************************************************************************/
-	function checkSeven($SQL_where){
-		if((!(empty($_SESSION['data'][6])))){ //7 not null
-			if((!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8])))){ //atleast another column has data
-				$old_time1 = $_SESSION['data'][6];
+	/********************************************************************************************************
+	*	checkDateDeployed() - Runs a check on the Date Deployed field and formats to the SQL string if needed
+	*********************************************************************************************************/
+	function checkDateDeployed($SQL_where){
+		if((!(empty($_SESSION['data'][7])))){ //7 not null
+			if((!(empty($_SESSION['data'][8]))), (!(empty($_SESSION['data'][9])))){ //atleast another column has data
+				$old_time1 = $_SESSION['data'][7];
 				$new_date1 = date('M-d-Y', strtotime($old_time1));
 				$SQL_where .= "date_deployed = '{$new_date1}' AND "; //append with comma and move to next column
-				return checkEight($SQL_where);
+				return checkDateSurplussed($SQL_where);
 			}
 			else{ //no other data for query
-				$old_time1 = $_SESSION['data'][6];
+				$old_time1 = $_SESSION['data'][7];
 				$new_date1 = date('M-d-Y', strtotime($old_time1));
 				$SQL_where .= "date_deployed = '{$new_date1}'"; //end of where
 				return $SQL_where;
 			}
 		}
 		else{ //7 is null, check other columns
-			return checkEight($SQL_where);
+			return checkDateSurplussed($SQL_where);
 		}
 	}
 	
-	/******************************************************************************************
-	*	checkEight() - Runs a check on column 8 to see if data is to be added to the SQL string.
-	*				 This is a recursive function that runs checks for columns 8 through 9 if
-	*				 there is more data present past column 8.
-	*******************************************************************************************/
-	function checkEight($SQL_where){
-		if((!(empty($_SESSION['data'][7])))){ //8 not null
-			if((!(empty($_SESSION['data'][8])))){ //atleast another column has data
-				$old_time2 = $_SESSION['data'][7];
+	/********************************************************************************************************
+	*	checkDateSurplussed() - Runs a check on the Date Deployed field and formats to the SQL string if needed
+	*********************************************************************************************************/
+	function checkDateSurplussed($SQL_where){
+		if((!(empty($_SESSION['data'][8])))){ //8 not null
+			if((!(empty($_SESSION['data'][9])))){ //atleast another column has data
+				$old_time2 = $_SESSION['data'][8];
 				$new_date2 = date('M-d-Y', strtotime($old_time2));
 				$SQL_where .= "date_surplused = '{$new_date2}' AND "; //append with comma and move to next column
-				return checkNine($SQL_where);
+				return checkLastUpdated($SQL_where);
 			}
 			else{ //no other data for query
-				$old_time2 = $_SESSION['data'][7];
+				$old_time2 = $_SESSION['data'][8];
 				$new_date2 = date('M-d-Y', strtotime($old_time2));
 				$SQL_where .= "date_surplused = '{$new_date2}'"; //end of where
 				return $SQL_where;
 			}
 		}
 		else{ //8 is null, check other columns
-			return checkNine($SQL_where);
+			return checkLastUpdated($SQL_where);
 		}
 	}
 	
-	/******************************************************************************************
-	*	checkNine() - Runs a check on column 9 to see if data is to be added to the SQL string
-	*******************************************************************************************/
-	function checkNine($SQL_where){
-		if(!(empty($_SESSION['data'][8]))){ //last column has data
-			$old_time3 = $_SESSION['data'][8];
+	/********************************************************************************************************
+	*	 checkLastUpdated() - Runs a check on the Last Updated field and formats to the SQL string if needed
+	*********************************************************************************************************/
+	function checkLastUpdated($SQL_where){
+		if(!(empty($_SESSION['data'][9]))){ //last column has data
+			$old_time3 = $_SESSION['data'][9];
 			$new_date3 = date('M-d-Y', strtotime($old_time3));
 			$SQL_where .= "last_updated = '{$new_date3}'"; //append with comma and move to next column
 		}
@@ -314,7 +330,7 @@
 	$SQL_where = "";
 	$SQL_FINAL = buildString($SQL_where);
 	
-	//echo "The SQL query looks like this: SELECT * FROM assets WHERE {$SQL_FINAL};"; echo '<br />';
+	echo "The SQL query looks like this: SELECT * FROM assets WHERE {$SQL_FINAL};"; echo '<br />';
 	
 	
 ?>
@@ -381,6 +397,7 @@
 		$('#report').submit(function() {
 			if(document.getElementById('inventoryReport').checked){
 				
+				var brand = document.getElementById('assettype').value
 				var serialnumber = document.getElementById('serialnumber').value
 				var brand = document.getElementById('brand').value
 				var model = document.getElementById('model').value
@@ -392,6 +409,7 @@
 				var lastupdated = document.getElementById('lastupdated').value
 				
 				$.post('/reports/scripts/run_report.php', {type: 'inventory',
+					assettype: assettype,
 					serialnumber: serialnumber,
 					brand: brand,
 					model: model,
@@ -502,6 +520,7 @@
 				<thead>
                     <tr>
                         <th>Name</th>
+						<th>Asset Type</th>
                         <th>Serial Number</th>
 						<th>Brand </th>
 						<th>Model </th>
@@ -529,6 +548,7 @@
 							echo '
 							<tr>
 							<td>'.$item['name_id'].'</td>
+							<td>'.$item['asset_type'].'</td>
 							<td>'.$item['serial_number'].'</td>
 							<td>'.$item['brand'].'</td>
 							<td>'.$item['model'].'</td>
@@ -579,15 +599,16 @@
                             </header>
                             <div>
 							 <fieldset id="inventory"  style="display: none">
-                                <div><label>Serial Number</label></div><input type="text" id="serialnumber" name="serialnumber" value="<?php if(!(empty($_SESSION['data'][0]))){ echo $_SESSION['data'][0]; } ?>">
-                                <div><label>Brand</label></div><input type="text" id="brand" name="brand" value="<?php if(!(empty($_SESSION['data'][1]))){ echo $_SESSION['data'][1]; } ?>">
-                                <div><label>Model</label></div><input type="text" id="model" name="model" value="<?php if(!(empty($_SESSION['data'][2]))){ echo $_SESSION['data'][2]; } ?>">
-                                <div><label>Assigned User</label></div><input type="text" id="assigneduser" name="assigneduser" value="<?php if(!(empty($_SESSION['data'][3]))){ echo $_SESSION['data'][3]; } ?>">
-                                <div><label>Location</label></div><input type="text" id="location" name="location" value="<?php if(!(empty($_SESSION['data'][4]))){ echo $_SESSION['data'][4]; } ?>">
-                                <div><label>Cost</label></div><input type="text" id="cost" name="cost" value="<?php if(!(empty($_SESSION['data'][5]))){ echo $_SESSION['data'][5]; } ?>">
-                                <div><label>Date Deployed</label></div><input type="date" id="datedeployed" name="datedeployed" value="<?php if(!(empty($_SESSION['data'][6]))){ echo $_SESSION['data'][6]; } ?>">
-                                <div><label>Date Surplused</label></div><input type="date" id="datesurplused" name="datesurplused" value="<?php if(!(empty($_SESSION['data'][7]))){ echo $_SESSION['data'][7]; } ?>">
-                                <div><label>Last Updated</label></div><input type="date" id="lastupdated" name="lastupdated" value="<?php if(!(empty($_SESSION['data'][8]))){ echo $_SESSION['data'][8]; } ?>">
+                                <div><label>Serial Number</label></div><input type="text" id="serialnumber" name="serialnumber" value="<?php if(!(empty($_SESSION['data'][1]))){ echo $_SESSION['data'][1]; } ?>">
+								<div><label>Asset Type</label></div><input type="text" id="assettype" name="assettype" value="<?php if(!(empty($_SESSION['data'][0]))){ echo $_SESSION['data'][0]; } ?>">
+                                <div><label>Brand</label></div><input type="text" id="brand" name="brand" value="<?php if(!(empty($_SESSION['data'][2]))){ echo $_SESSION['data'][2]; } ?>">
+                                <div><label>Model</label></div><input type="text" id="model" name="model" value="<?php if(!(empty($_SESSION['data'][3]))){ echo $_SESSION['data'][3]; } ?>">
+                                <div><label>Assigned User</label></div><input type="text" id="assigneduser" name="assigneduser" value="<?php if(!(empty($_SESSION['data'][4]))){ echo $_SESSION['data'][4]; } ?>">
+                                <div><label>Location</label></div><input type="text" id="location" name="location" value="<?php if(!(empty($_SESSION['data'][5]))){ echo $_SESSION['data'][5]; } ?>">
+                                <div><label>Cost</label></div><input type="text" id="cost" name="cost" value="<?php if(!(empty($_SESSION['data'][6]))){ echo $_SESSION['data'][6]; } ?>">
+                                <div><label>Date Deployed</label></div><input type="date" id="datedeployed" name="datedeployed" value="<?php if(!(empty($_SESSION['data'][7]))){ echo $_SESSION['data'][7]; } ?>">
+                                <div><label>Date Surplused</label></div><input type="date" id="datesurplused" name="datesurplused" value="<?php if(!(empty($_SESSION['data'][8]))){ echo $_SESSION['data'][8]; } ?>">
+                                <div><label>Last Updated</label></div><input type="date" id="lastupdated" name="lastupdated" value="<?php if(!(empty($_SESSION['data'][9]))){ echo $_SESSION['data'][9]; } ?>">
 							 </fieldset>
 							</div>
                         </div>
