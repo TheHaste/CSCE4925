@@ -61,13 +61,12 @@ if(isset($_POST['save']))
 
 ?>
 
-<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>settingsuse</title>
+    <title>Meridian Inventory</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Article-Dual-Column.css">
     <link rel="stylesheet" href="assets/css/Features-Boxed.css">
@@ -92,16 +91,15 @@ if(isset($_POST['save']))
     </nav>
     <div>
 	<!--Nav bar settings-->
-        <nav class="navbar navbar-default navigation-clean" style="background-color:rgb(72,143,174);min-width:0px;max-width:10001px;margin-right:0px;margin-top:-51px;">
+        <nav class="navbar navbar-default navigation-clean" style="background-color:rgb(72,143,174);min-width:0px;max-width:100%;margin-right:0px;margin-top:-51px;">
             <div class="container">
-              <div class="navbar-header"><a class="navbar-brand" href="/home">Meridian Solutions</a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+              <div class="navbar-header"><a class="navbar-brand" href="/home"><img src="/assets/img/big_logo_tiny.png"></a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
 			  </div>
                 <div
                     class="collapse navbar-collapse" id="navcol-1">
                     <ul class="nav navbar-nav navbar-right" style="margin-top:0px;margin-right:-20px;">
-					  <li role="presentation"><a href="/add_item" style="color:rgb(51,51,51);">Add Item</a></li> <!-- if an admin, show add item button -->
-                        <!--<li role="presentation"><a href="/search_item" style="color:rgb(51,51,51);">Search Item</a></li>-->
-						<li role="presentation"><a href="/settings" style="color:rgb(51,51,51);">Settings </a></li> <!-- if an admin, show settings button -->
+                        <?php if($_SESSION["userType"] == 'admin') { ?><li role="presentation"><a href="/edit_table" style="color:rgb(51,51,51);">Edit Table</a></li> <?php } ?> <!-- if an admin, show button -->
+						<?php if($_SESSION["userType"] == 'admin') { ?><li role="presentation"><a href="/settings" style="color:rgb(51,51,51);">Settings </a></li><?php } ?> <!-- if an admin, show button -->
 						<li role="presentation"><a href="/reports" style="color:rgb(51,51,51);">Reports </a></li>
                         <li role="presentation"><a href="/logout.php" style="color:rgb(51,51,51);">Logout </a></li>							
                     </ul>
