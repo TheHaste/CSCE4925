@@ -53,6 +53,9 @@ $(document).ready(function() {
                 label: "Name:",
                 name: "name_id"
             }, {
+                label: "Asset Type:",
+                name: "asset_type"
+            }, {
                 label: "Serial Number:",
                 name: "serial_number"
             }, {
@@ -118,6 +121,7 @@ $(document).ready(function() {
 				"type": "POST"},
         columns: [
             { data: "name_id" },
+			{ data: "asset_type" },
             { data: "serial_number" },
             { data: "brand" },
             { data: "model" },
@@ -188,6 +192,7 @@ $(document).ready(function() {
 				<thead>
                     <tr>
                         <th>Name</th>
+						<th>Asset Type</th>
                         <th>Serial Number</th>
 						<th>Brand </th>
 						<th>Model </th>
