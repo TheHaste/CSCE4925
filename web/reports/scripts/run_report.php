@@ -21,6 +21,7 @@
 			}
 		}
 		
+		$assettype = pg_escape_string($conn, $_POST['assettype']);
 		$serialnumber = pg_escape_string($conn, $_POST['serialnumber']);
 		$brand = pg_escape_string($conn, $_POST['brand']);
 		$model = pg_escape_string($conn, $_POST['model']);
@@ -31,7 +32,7 @@
 		$datesurplused = pg_escape_string($conn, $_POST['datesurplused']);
 		$lastupdated = pg_escape_string($conn, $_POST['lastupdated']);
 		
-		$column_array = array($serialnumber, $brand, $model, $assigneduser, $location, $cost, $datedeployed, $datesurplused, $lastupdated);
+		$column_array = array($assettype, $serialnumber, $brand, $model, $assigneduser, $location, $cost, $datedeployed, $datesurplused, $lastupdated);
 		$_SESSION['data'] = $column_array;
 
 	}
