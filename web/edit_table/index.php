@@ -121,7 +121,7 @@ $(document).ready(function() {
 				"type": "POST"},
         columns: [
             { data: "name_id" },
-	    { data: "asset_type },
+	    { data: "asset_type" },
             { data: "serial_number" },
             { data: "brand" },
             { data: "model" },
