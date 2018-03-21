@@ -53,6 +53,9 @@ $(document).ready(function() {
                 label: "Name:",
                 name: "name_id"
             }, {
+		label: "Asset Type,
+	        name:  "asset_type"
+	    },{
                 label: "Serial Number:",
                 name: "serial_number"
             }, {
