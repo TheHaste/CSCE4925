@@ -143,7 +143,7 @@ $(document).ready(function() {
             { extend: "remove", editor: editor }
         ],
 		columnDefs: [
-			{ "visible": false, "targets": [10] }
+			{ "visible": false, "targets": [9] }
 		]
     } );
 
