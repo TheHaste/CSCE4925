@@ -11,7 +11,7 @@
 	*	buildString() - Returns a formatted string for SQL queries for Inventory Reporting
 	*******************************************************************************************/
 	function buildString($SQL_where){
-		return checkOne($SQL_where);
+		return checkUsername($SQL_where);
 	}
 	
 	/***************************************************************************
@@ -41,28 +41,26 @@
 		return $SQL_IN;
 	}
 	
-	/******************************************************************************************
-	*	checkOne() - Runs a check on column 1 to see if data is to be added to the SQL string.
-	*				 This is a recursive function that runs checks for columns 2 through 9 if
-	*				 there is more data present past column 1.
-	*******************************************************************************************/
-	function checkOne($SQL_where){
+	/***************************************************************************************************
+	*	checkUsername() - Runs a check on the Username field and formats to the SQL string if needed
+	****************************************************************************************************/
+	function checkUsername($SQL_where){
 		if(!(empty($_SESSION['data'][0]))){ //1 not null
 			if((!(empty($_SESSION['data'][1]))) || (!(empty($_SESSION['data'][2]))) || (!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4]))) || (!(empty($_SESSION['data'][5]))) || (!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8])))){ //atleast another column has data
 				if (strpos($_SESSION['data'][0], ',') !== false) { //if more than one column and has a comma
 					$SQL_where .= formatIN("log_user", 0);
 					$SQL_where .= "AND ";
-					return checkTwo($SQL_where);
+					return checkAction($SQL_where);
 				}
 				else{ //if more than one column and NO comma
 					$SQL_where .= "log_user = '{$_SESSION['data'][0]}' AND "; //append with comma and move to next column
-					return checkTwo($SQL_where);
+					return checkAction($SQL_where);
 				}
 			}
 			else{ //no other data for query
 				if (strpos($_SESSION['data'][0], ',') !== false) { //if more than one column and has a comma
 					$SQL_where .= formatIN("log_user", 0);
-					return checkTwo($SQL_where);
+					return $SQL_where;
 				}
 				else{ //if more than one column and NO comma
 					$SQL_where .= "log_user = '{$_SESSION['data'][0]}'"; //end of where
@@ -71,32 +69,30 @@
 			}
 		}
 		else{ //1 is null, check other columns
-			return checkTwo($SQL_where);
+			return checkAction($SQL_where);
 		}
 	}
 	
-	/******************************************************************************************
-	*	checkTwo() - Runs a check on column 2 to see if data is to be added to the SQL string.
-	*				 This is a recursive function that runs checks for columns 3 through 9 if
-	*				 there is more data present past column 2.
-	*******************************************************************************************/
-	function checkTwo($SQL_where){
+	/***************************************************************************************************
+	*	checkAction() - Runs a check on the Action field and formats to the SQL string if needed
+	****************************************************************************************************/
+	function checkAction($SQL_where){
 		if(!(empty($_SESSION['data'][1]))){ //2 not null
 			if((!(empty($_SESSION['data'][2]))) || (!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4])))){ //atleast another column has data
 				if (strpos($_SESSION['data'][1], ',') !== false) { //if more than one column and has a comma
 					$SQL_where .= formatIN("action", 1);
 					$SQL_where .= "AND ";
-					return checkThree($SQL_where);
+					return checkStartDate($SQL_where);
 				}
 				else{ //if more than one column and NO comma
 					$SQL_where .= "action = '{$_SESSION['data'][1]}' AND "; //append with comma and move to next column
-					return checkThree($SQL_where);
+					return checkStartDate($SQL_where);
 				}
 			}
 			else{ //no other data for query
 				if (strpos($_SESSION['data'][1], ',') !== false) { //if more than one column and has a comma
 					$SQL_where .= formatIN("action", 1);
-					return checkThree($SQL_where);
+					return checkStartDate($SQL_where);
 				}
 				else{ //if more than one column and NO comma
 					$SQL_where .= "action = '{$_SESSION['data'][1]}'"; //end of where
@@ -105,22 +101,20 @@
 			}
 		}
 		else{ //2 is null, check other columns
-			return checkThree($SQL_where);
+			return checkStartDate($SQL_where);
 		}
 	}
 	
-	/******************************************************************************************
-	*	checkThree() - Runs a check on column 3 to see if data is to be added to the SQL string.
-	*				 This is a recursive function that runs checks for columns 4 through 9 if
-	*				 there is more data present past column 3.
-	*******************************************************************************************/
-	function checkThree($SQL_where){
+	/***************************************************************************************************
+	*	checkStartDate() - Runs a check on the Start Date field and formats to the SQL string if needed.
+	****************************************************************************************************/
+	function checkStartDate($SQL_where){
 		if((!(empty($_SESSION['data'][2])))){ //3 not null
 			if((!(empty($_SESSION['data'][3]))) || (!(empty($_SESSION['data'][4])))){ //atleast another column has data
 				$old_time1 = $_SESSION['data'][2];
 				$new_date1 = date('M-d-Y', strtotime($old_time1));
 				$SQL_where .= "log_time >= '%{$new_date1}%' AND "; //append with comma and move to next column 
-				return checkFour($SQL_where);
+				return checkEndDate($SQL_where);
 			}
 			else{ //no other data for query
 			$old_time1 = $_SESSION['data'][2];
@@ -130,14 +124,14 @@
 			}
 		}
 		else{ //3 is null, check other columns
-			return checkFour($SQL_where);
+			return checkEndDate($SQL_where);
 		}
 	}
 	
-	/**********************************************************************************************
-	*	checkFour() - Runs a check on last column to see if data is to be added to the SQL string *
-	***********************************************************************************************/
-	function checkFour($SQL_where){
+	/*************************************************************************************************
+	*	checkEndDate() - Runs a check on the End date field and formats to the SQL string if needed 
+	**************************************************************************************************/
+	function checkEndDate($SQL_where){
 		if((!(empty($_SESSION['data'][3])))){ //last column has data
 			$old_time2 = $_SESSION['data'][3];
 			$new_date2 = date('M-d-Y', strtotime($old_time2));
@@ -152,7 +146,7 @@
 	$SQL_where = "";
 	$SQL_FINAL = buildString($SQL_where);
 	
-	//echo "The SQL query looks like this: SELECT * FROM logging WHERE {$SQL_FINAL} ORDER BY log_time DESC;"; echo '<br />';
+	echo "The SQL query looks like this: SELECT * FROM logging WHERE {$SQL_FINAL} ORDER BY log_time DESC;"; echo '<br />';
 	
 	
 ?>
@@ -219,6 +213,7 @@
 		$('#report').submit(function() {
 			if(document.getElementById('inventoryReport').checked){
 				
+				var assettype = document.getElementById('assettype').value
 				var serialnumber = document.getElementById('serialnumber').value
 				var brand = document.getElementById('brand').value
 				var model = document.getElementById('model').value
@@ -230,6 +225,7 @@
 				var lastupdated = document.getElementById('lastupdated').value
 				
 				$.post('/reports/scripts/run_report.php', {type: 'inventory',
+					assettype: assettype,
 					serialnumber: serialnumber,
 					brand: brand,
 					model: model,
@@ -405,6 +401,7 @@
                             <div>
 							 <fieldset id="inventory"  style="display: none">
                                 <div><label>Serial Number</label></div><input type="text" id="serialnumber" name="serialnumber">
+								<div><label>Asset Type</label></div><input type="text" id="assettype" name="assettype">
                                 <div><label>Brand</label></div><input type="text" id="brand" name="brand">
                                 <div><label>Model</label></div><input type="text" id="model" name="model">
                                 <div><label>Assigned User</label></div><input type="text" id="assigneduser" name="assigneduser">
