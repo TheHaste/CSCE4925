@@ -66,6 +66,7 @@ session_start(); //start user session to send data between pages
 		$('#report').submit(function() {
 			if(document.getElementById('inventoryReport').checked){
 				
+				var brand = document.getElementById('assettype').value
 				var serialnumber = document.getElementById('serialnumber').value
 				var brand = document.getElementById('brand').value
 				var model = document.getElementById('model').value
@@ -77,6 +78,7 @@ session_start(); //start user session to send data between pages
 				var lastupdated = document.getElementById('lastupdated').value
 				
 				$.post('/reports/scripts/run_report.php', {type: 'inventory',
+					assettype: assettype,
 					serialnumber: serialnumber,
 					brand: brand,
 					model: model,
@@ -188,6 +190,7 @@ session_start(); //start user session to send data between pages
 				<thead>
                     <tr>
                         <th>Name</th>
+						<th>Asset Type</th>
                         <th>Serial Number</th>
 						<th>Brand </th>
 						<th>Model </th>
@@ -240,6 +243,7 @@ session_start(); //start user session to send data between pages
                             </header>
                             <div>
 							 <fieldset id="inventory"  style="display: none">
+								<div><label>Asset Type</label></div><input type="text" id="assettype" name="assettype">
                                 <div><label>Serial Number</label></div><input type="text" id="serialnumber" name="serialnumber">
                                 <div><label>Brand</label></div><input type="text" id="brand" name="brand">
                                 <div><label>Model</label></div><input type="text" id="model" name="model">
