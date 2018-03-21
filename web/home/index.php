@@ -112,8 +112,9 @@ session_start(); //start user session to send data between pages
 			<table id="assets" class="display" cellspacing="0" width="100%">
 				<thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Serial Number</th>
+                      				<th>Name</th>
+			    			<th>Asset Type</th>
+                        			<th>Serial Number</th>
 						<th>Brand </th>
 						<th>Model </th>
 						<th>Assigned</th>
@@ -122,6 +123,7 @@ session_start(); //start user session to send data between pages
 						<th>Date Deployed</th>
 						<th>Date Surplused</th>
 						<th>Last Updated</th>
+			    			
 					</tr> 
 				  </thead>
 
@@ -140,6 +142,7 @@ session_start(); //start user session to send data between pages
 							echo '
 							<tr>
 							<td>'.$item['name_id'].'</td>
+							<td>'.$item['asset_type'].'</td>
 							<td>'.$item['serial_number'].'</td>
 							<td>'.$item['brand'].'</td>
 							<td>'.$item['model'].'</td>
