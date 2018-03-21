@@ -52,9 +52,7 @@ $(document).ready(function() {
         fields: [ {
                 label: "Name:",
                 name: "name_id"
-            }, {
-		label: "Asset Type:",
-	        name:  "asset_type"
+		
 	    },{
                 label: "Serial Number:",
                 name: "serial_number"
@@ -85,6 +83,9 @@ $(document).ready(function() {
                 label: "Last Updated:",
                 name: "last_updated",
 				type: "datetime"
+	    },{
+		    label: "Asset Type:",
+	        name:  "asset_type"
             }, 
 			
         ]
@@ -121,7 +122,7 @@ $(document).ready(function() {
 				"type": "POST"},
         columns: [
             { data: "name_id" },
-	    { data: "asset_type" },
+	    
             { data: "serial_number" },
             { data: "brand" },
             { data: "model" },
@@ -130,7 +131,8 @@ $(document).ready(function() {
 			{ data: "cost"},
 			{ data: "date_deployed"},
 			{ data:"date_surplused"},
-			{ data:"last_updated"}
+			{ data:"last_updated"},
+			{ data: "asset_type" }
         ],
         select: true,
         buttons: [
