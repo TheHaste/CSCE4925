@@ -23,6 +23,7 @@ use
 Editor::inst( $db, 'assets' )
 	->fields(
 		Field::inst( 'name_id' ),
+		Field::inst( 'asset_type' ),
 		Field::inst( 'serial_number' ),
 		Field::inst( 'brand' ),
 		Field::inst( 'model' ),
