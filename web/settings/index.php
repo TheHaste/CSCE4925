@@ -58,7 +58,7 @@
 	  <form>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-6" style="outline-style:solid; outline-color:black;">
 						<h1 style="font-size:25px;">Notifications</h1>
 						<p style="color:rgba(61,67,74,0.89);font-size:14px;">When creating Notifications, enter your asset type and select a threshold. Once the threshold is met, you will receive a notification.</p>
 						<div id="notifications-block">
