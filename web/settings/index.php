@@ -63,18 +63,18 @@
 						<p style="color:rgba(61,67,74,0.89);font-size:14px;">When creating Notifications, enter your asset type and select a threshold. Once the threshold is met, you will receive a notification.</p>
 						<div id="notifications-block">
 							<div><label>Type</label><input type="text" style="margin-left:10px;">
-								<select style="margin-left:5px; width:55px; " name="percent">
+								<select style="margin-left:5px; height:25px; width:55px; " name="percent">
 									<option>10%</option>
 									<option>20%</option>
 									<option>30%</option>
-									<option>40%<option>
-									<option>50%<option>
-									<option>60%<option>
+									<option>40%</option>
+									<option>50%</option>
+									<option>60%</option>
 									<option>70%</option>
 									<option>80%</option>
 									<option>90%</option>
 								</select>
-								<button class="btn btn-danger" type="button" style="flat:right; margin-left:5px;">Delete</button>
+								<button class="btn btn-danger" type="button" style="flat:right; margin-left:50px;">Delete</button>
 							</div>
 						</div>
 						<button class="btn btn-primary" type="button" style="background-color:rgb(30,61,88);margin-bottom:0px;margin-top:16px;" name="Add">+ Add</button>
