@@ -68,7 +68,7 @@
 						<div
 							style="height:10px;"></div>
 				</div>
-				<div class="col">
+				<div class="col" style="outline-style:solid; outline-color:black;">
 					<h1 style="font-size:25px;">Monitoring;</h1>
 					<p style="color:rgba(61,67,74,0.89);font-size:14px;">Turn monitoring of Logs and Notifications on or off.</p>
 					<div></div>
