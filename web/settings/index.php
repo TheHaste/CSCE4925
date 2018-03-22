@@ -53,8 +53,9 @@
 		</nav>
     </div>
     <div style="height:25px;"></div>
-    <h1 style="margin-right:0px;margin-left:20px;font-size:42px;">Settings</h1>
+    <div style="margin:0 auto; width:200px;"><h1 style="font-size:42px; ">Settings</h1></div>
     <div>
+	  <form>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
@@ -77,6 +78,7 @@
 				</div>
 			</div>
 		</div>
+	  </form>
     </div>
     <div style="margin-top:20px; width:100px; margin:0 auto;"><button class="btn btn-success" type="submit" style="width:100px;" name="Save">Save</button></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
