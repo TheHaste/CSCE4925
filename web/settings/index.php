@@ -1,4 +1,6 @@
 <?php 
+	session_start(); //start user session to send data between pages
+	
 	
 ?>
 <html>
@@ -11,8 +13,15 @@
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="assets/css/styles.min.css">
+	
+	<script type="text/javascript">
+	
+	$(document).ready(function() {
+		
+	});
+	
+	</script>
 </head>
 
 <body>
@@ -51,22 +60,25 @@
 				<div class="col-md-6">
 						<h1 style="font-size:25px;">Notifications</h1>
 						<p style="color:rgba(61,67,74,0.89);font-size:14px;">When creating Notifications, enter your asset type and select a threshold. Once the threshold is met, you will receive a notification.</p>
-						<div><label>Type</label><input type="text" style="margin-left:10px;"><button class="btn btn-danger" type="button" style="margin-right:0px;margin-left:15px;">Delete</button></div><button class="btn btn-primary" type="button" style="background-color:rgb(30,61,88);margin-bottom:0px;margin-top:16px;">+ Add</button>
+						<div id="notifications-block">
+							<div><label>Type</label><input type="text" style="margin-left:10px;"><button class="btn btn-danger" type="button" style="margin-right:0px;margin-left:15px;">Delete</button></div>
+						</div>
+						<button class="btn btn-primary" type="button" style="background-color:rgb(30,61,88);margin-bottom:0px;margin-top:16px;" name="Add">+ Add</button>
 						<div
 							style="height:10px;"></div>
 				</div>
 				<div class="col">
 					<h1 style="font-size:25px;">Monitoring;</h1>
-					<p style="color:rgba(61,67,74,0.89);font-size:14px;">Turn monitoring of Logs and Notifications on and off.</p>
+					<p style="color:rgba(61,67,74,0.89);font-size:14px;">Turn monitoring of Logs and Notifications on or off.</p>
 					<div></div>
-					<div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1">System Logging</label></div>
-					<div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label class="form-check-label" for="formCheck-2">Notifications</label></div>
+					<div class="form-check"><input class="form-check-input" type="checkbox" id="logs"><label class="form-check-label" >System Logging</label></div>
+					<div class="form-check"><input class="form-check-input" type="checkbox" id="notifications"><label class="form-check-label" >Notifications</label></div>
 					<div style="margin-top:14px;"></div>
 				</div>
 			</div>
 		</div>
     </div>
-    <div style="margin-top:20px; width:100px; margin:0 auto;"><button class="btn btn-success" type="submit" style="width:100px;">Save</button></div>
+    <div style="margin-top:20px; width:100px; margin:0 auto;"><button class="btn btn-success" type="submit" style="width:100px;" name="Save">Save</button></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
 </body>
