@@ -79,12 +79,10 @@
 						</div>
 						<button class="btn btn-primary" type="button" style="background-color:rgb(30,61,88);margin-bottom:0px;margin-top:16px;" name="Add">+ Add</button>
 						<div
-							style="height:10px;"></div>
+							style="height:10px;">
+						</div>
 				</div>
-				<div class="col-md-6">
-					<div style="width:5px;"></div>
-				</div>
-				<div class="col-md-6" style="border-style:solid; border-width:thin; border-color:black;">
+				<div class="col-md-6" style="border-style:solid; border-width:thin; margin-left:10px; border-color:black;">
 					<h1 style="font-size:25px;">Monitoring</h1>
 					<p style="color:rgba(61,67,74,0.89);font-size:14px;">Turn monitoring of Logs and Notifications on or off.</p>
 					<div></div>
