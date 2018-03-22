@@ -25,7 +25,7 @@
 	
 	<script type="text/javascript">
 	function addNotification(){
-		$("#notifications-block").append('<div><label>Type</label><input type="text" style="margin-left:10px;"> <select style="margin-left:5px; height:27px; width:55px; " name="percent"> <option value="10">10%</option> <option value="20">20%</option> option value="30">30%</option> <option value="40">40%</option> <option value="50">50%</option> <option value="60">60%</option> <option value="70">70%</option> <option value="80">80%</option> <option value="90">90%</option> </select> <button class="btn btn-danger" type="button" style="padding:0px; width:25px; vertical-align: middle; margin-left:15px;">x</button> </div>');
+		$("#notifications-block").append('<div><label>Type</label><input type="text" style="margin-left:10px;"> <select style="margin-left:5px; height:27px; width:55px; " name="percent"> <option value="10">10%</option> <option value="20">20%</option> <option value="30">30%</option> <option value="40">40%</option> <option value="50">50%</option> <option value="60">60%</option> <option value="70">70%</option> <option value="80">80%</option> <option value="90">90%</option> </select> <button class="btn btn-danger" type="button" style="padding:0px; width:25px; vertical-align: middle; margin-left:15px;">x</button> </div>');
 	}
 
 	</script>
