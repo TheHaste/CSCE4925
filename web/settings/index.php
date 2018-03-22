@@ -63,7 +63,7 @@
 						<p style="color:rgba(61,67,74,0.89);font-size:14px;">When creating Notifications, enter your asset type and select a threshold. Once the threshold is met, you will receive a notification.</p>
 						<div id="notifications-block">
 							<div><label>Type</label><input type="text" style="margin-left:10px;">
-								<select style="margin-left:5px; height:25px; width:55px; " name="percent">
+								<select style="margin-left:5px; height:27px; width:55px; " name="percent">
 									<option>10%</option>
 									<option>20%</option>
 									<option>30%</option>
@@ -82,11 +82,11 @@
 							style="height:10px;"></div>
 				</div>
 				<div class="col-md-6" style="border-style:solid; border-width:thin; border-color:black;">
-					<h1 style="font-size:25px;">Monitoring;</h1>
+					<h1 style="font-size:25px;">Monitoring</h1>
 					<p style="color:rgba(61,67,74,0.89);font-size:14px;">Turn monitoring of Logs and Notifications on or off.</p>
 					<div></div>
-					<div class="form-check"><input class="form-check-input" type="checkbox" id="logs"><label class="form-check-label" >System Logging</label></div>
-					<div class="form-check"><input class="form-check-input" type="checkbox" id="notifications"><label class="form-check-label" >Notifications</label></div>
+					<div class="form-check"><input class="form-check-input" type="checkbox" id="logs"><label class="form-check-label" > System Logging</label></div>
+					<div class="form-check"><input class="form-check-input" type="checkbox" id="notifications"><label class="form-check-label" > Notifications</label></div>
 					<div style="margin-top:14px;"></div>
 				</div>
 			</div>
