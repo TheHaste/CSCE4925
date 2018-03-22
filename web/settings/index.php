@@ -53,7 +53,7 @@
 		</nav>
     </div>
     <div style="height:25px;"></div>
-    <div style="margin:0 auto; width:200px;"><h1 style="font-size:42px; ">Settings</h1></div>
+    <div style="margin:0 auto;"><h1 style="font-size:42px; ">Settings</h1></div>
     <div>
 	  <form>
 		<div class="container">
