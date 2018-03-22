@@ -58,7 +58,7 @@
 	  <form>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6" style="border-style:solid; border-width:thin; border-color:black;">
+				<div class="col-md-6" style="border-right:double; border-color:black;">
 						<h1 style="font-size:25px;">Notifications</h1>
 						<p style="color:rgba(61,67,74,0.89);font-size:14px;">When creating Notifications, enter your asset type and select a threshold. Once the threshold is met, you will receive a notification.</p>
 						<div id="notifications-block">
@@ -82,7 +82,7 @@
 							style="height:10px;">
 						</div>
 				</div>
-				<div class="col-md-6" style="border-style:solid; border-width:thin; margin-left:10px; border-color:black;">
+				<div class="col-md-6" style="">
 					<h1 style="font-size:25px;">Monitoring</h1>
 					<p style="color:rgba(61,67,74,0.89);font-size:14px;">Turn monitoring of Logs and Notifications on or off.</p>
 					<div></div>
