@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	
 	<script type="text/javascript">
 	
@@ -117,7 +118,7 @@
 	  </form>
     </div>
     <div style="margin-top:20px; width:100px; margin:0 auto;"><button class="btn btn-success" type="submit" style="width:100px;" name="Save">Save</button></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
 </body>
 
