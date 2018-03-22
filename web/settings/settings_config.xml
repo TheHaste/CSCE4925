@@ -1,6 +1,9 @@
 <settings>
+	<notifications>
+		
+	</notifications>
 	<monitoring>
-		<logs>On<logs/>
+		<logs>On</logs>
 		<notifications>On</notifications>
-	<monitoring/>
+	</monitoring>
 </settings>
