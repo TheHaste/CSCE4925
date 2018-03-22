@@ -53,7 +53,7 @@
 		</nav>
     </div>
     <div style="height:25px;"></div>
-    <div style="width:100px; margin:0 auto;"><h1 style="font-size:42px; ">Settings</h1></div>
+    <div style="width:100px; margin:auto;"><h1 style="font-size:42px; ">Settings</h1></div>
     <div>
 	  <form>
 		<div class="container">
@@ -64,15 +64,15 @@
 						<div id="notifications-block">
 							<div><label>Type</label><input type="text" style="margin-left:10px;">
 								<select style="margin-left:5px; height:27px; width:55px; " name="percent">
-									<option>10%</option>
-									<option>20%</option>
-									<option>30%</option>
-									<option>40%</option>
-									<option>50%</option>
-									<option>60%</option>
-									<option>70%</option>
-									<option>80%</option>
-									<option>90%</option>
+									<option value="10">10%</option>
+									<option value="20">20%</option>
+									<option value="30">30%</option>
+									<option value="40">40%</option>
+									<option value="50">50%</option>
+									<option value="60">60%</option>
+									<option value="70">70%</option>
+									<option value="80">80%</option>
+									<option value="90">90%</option>
 								</select>
 								<button class="btn btn-danger" type="button" style="flat:right; margin-left:50px;">Delete</button>
 							</div>
