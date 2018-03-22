@@ -1,6 +1,6 @@
 <settings>
 	<monitoring>
 		<logs>On<logs/>
-		<notifications>Off</notifications>
+		<notifications>On</notifications>
 	<monitoring/>
 </settings>
