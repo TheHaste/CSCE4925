@@ -1,1 +1,6 @@
-<settings></settings>
+<settings>
+	<monitoring>
+		<logs>On<logs/>
+		<notifications>Off</notifications>
+	<monitoring/>
+</settings>
