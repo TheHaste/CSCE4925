@@ -64,15 +64,15 @@
 						<div id="notifications-block">
 							<div><label>Type</label><input type="text" style="margin-left:0px;">
 								<label>%</label><select style="width:50px; " name="percent">
-									<option>10</option>
-									<option>20</option>
-									<option>30</option>
-									<option>40</option>
-									<option>50</option>
-									<option>60</option>
-									<option>70</option>
-									<option>80</option>
-									<option>90</option>
+									<option>10%</option>
+									<option>20%</option>
+									<option>30%</option>
+									<option>40%<option>
+									<option>50%<option>
+									<option>60%<option>
+									<option>70%</option>
+									<option>80%</option>
+									<option>90%</option>
 								</select>
 								<button class="btn btn-danger" type="button" style="margin-left:5px;">Delete</button>
 							</div>
