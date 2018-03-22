@@ -81,6 +81,9 @@
 						<div
 							style="height:10px;"></div>
 				</div>
+				<div class="col-md-6">
+					<div style="width:5px;"></div>
+				</div>
 				<div class="col-md-6" style="border-style:solid; border-width:thin; border-color:black;">
 					<h1 style="font-size:25px;">Monitoring</h1>
 					<p style="color:rgba(61,67,74,0.89);font-size:14px;">Turn monitoring of Logs and Notifications on or off.</p>
