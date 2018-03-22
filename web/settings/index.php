@@ -37,7 +37,7 @@
 	
 	<script type="text/javascript"> 
 	function deleteNotification(input){
-		$('#notifications-block').removeChild(input.parentNode); 
+		document.getElementById('notifications-block').removeChild(input.parentNode); 
 	}
 
 </script>
