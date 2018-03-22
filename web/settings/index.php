@@ -25,7 +25,7 @@
 	
 	<script type="text/javascript">
 	function addNotification(){
-		$("#notifications-block").append('<div><label>Type</label><input type="text" style="margin-left:10px;"> <select style="margin-left:5px; height:27px; width:55px; " name="percent"> <option value="10">10%</option> <option value="20">20%</option> option value="30">30%</option> <option value="40">40%</option> <option value="50">50%</option> <option value="60">60%</option> <option value="70">70%</option> <option value="80">80%</option> <option value="90">90%</option> </select> <button class="btn btn-danger" type="button" style="flat:right; margin-left:50px;">Delete</button> </div>');
+		$("#notifications-block").append('<div><label>Type</label><input type="text" style="margin-left:10px;"> <select style="margin-left:5px; height:27px; width:55px; " name="percent"> <option value="10">10%</option> <option value="20">20%</option> option value="30">30%</option> <option value="40">40%</option> <option value="50">50%</option> <option value="60">60%</option> <option value="70">70%</option> <option value="80">80%</option> <option value="90">90%</option> </select> <button class="btn btn-danger" type="button" style="height:27px; flat:right; margin-left:50px;">Delete</button> </div>');
 	}
 
 	</script>
@@ -70,6 +70,7 @@
     </div>
     <div style="height:25px;"></div>
     <div style="width:150px;margin:0 auto;"><h1 style="font-size:42px; ">Settings</h1></div>
+	 <div style="height:15px;"></div>
     <div>
 	  <form>
 		<div class="container">
@@ -78,7 +79,7 @@
 						<h1 style="font-size:25px;">Notifications</h1>
 						<p style="color:rgba(61,67,74,0.89);font-size:14px;">When creating Notifications, enter your asset type and select a threshold. Once the threshold is met, you will receive a notification.</p>
 						<div id="notifications-block">
-							<div><label>Type</label><input type="text" style="margin-left:10px;">
+							<!--<div><label>Type</label><input type="text" style="margin-left:10px;">
 								<select style="margin-left:5px; height:27px; width:55px; " name="percent">
 									<option value="10">10%</option>
 									<option value="20">20%</option>
@@ -91,7 +92,7 @@
 									<option value="90">90%</option>
 								</select>
 								<button class="btn btn-danger" type="button" style="flat:right; margin-left:50px;">Delete</button>
-							</div>
+							</div> -->
 						</div>
 						<button class="btn btn-primary" type="button" style="background-color:rgb(30,61,88);margin-bottom:0px;margin-top:16px;" onclick="addNotification()" name="Add">+ Add</button>
 						<div
