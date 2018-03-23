@@ -1,6 +1,8 @@
 <?php 
 	session_start(); //start user session to send data between pages
-	
+	if(isset($_POST[])){
+			
+	}
 	
 ?>
 <html>
@@ -20,10 +22,7 @@
 	
 	$(document).ready(function() {
 		$('#settings-form').submit(function() {
-			var data = document.getElementsByID('notifications-block').getElementsByTagName('text');
-			for(var i=0; i< data.length; i++){
-				alert(data[i].value);
-			}
+			
 		});
 	});
 	
@@ -31,7 +30,10 @@
 	
 	<script type="text/javascript">
 	function addNotification(){
-
+		var total = $('#notifications-block').length;
+		
+		alert(total);
+		
 		var div = document.createElement('div');
 		
 		div.innerHTML = '<label>Type</label><input id="threshold" type="text" style="margin-left:10px;"> <select style="margin-left:5px; height:27px; width:55px; " id="percent"> <option value="10">10%</option> <option value="20">20%</option> <option value="30">30%</option> <option value="40">40%</option> <option value="50">50%</option> <option value="60">60%</option> <option value="70">70%</option> <option value="80">80%</option> <option value="90">90%</option> </select> <button class="btn btn-danger" type="button" style="padding:0px; width:25px; vertical-align: middle; margin-left:15px;" onclick="deleteNotification(this)">x</button>';
