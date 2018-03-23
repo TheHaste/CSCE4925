@@ -46,21 +46,10 @@
 			else{
 				var notifications = "Off";
 			}
-/*			
-			if(system_logging == "On"){
-				alert(Logging is: ON);
-			}
-			else if(system_logging == "Off"){
-				alert(notifications is: OFF);
-			}
+
+			alert(notifications);
+			alert(system_logging);
 			
-			if(notifications == "On"){
-				alert(Logging is: ON);
-			}
-			else if(notifications == "Off"){
-				alert(notifications is: OFF);
-			}
-*/			
 			$.post('/settings/scripts/save_settings.php', {types: types, thresholds: thresholds, system_logging: system_logging, notifications: notifications}, function(){
 			});
 		});
