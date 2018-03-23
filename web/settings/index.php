@@ -18,7 +18,7 @@
 	<script type="text/javascript">
 	
 	$(document).ready(function() {
-		$('#settings-form > div').submit(function() {
+		$('#settings-form').submit(function() {
 			
 		});
 	});
@@ -27,7 +27,7 @@
 	
 	<script type="text/javascript">
 	function addNotification(){
-		var total = $('#notifications-block').length;
+		var total = $('#notifications-block > div').length;
 		
 		alert(total);
 		
