@@ -34,21 +34,18 @@
 			});
 			
 			if(document.getElementById('logs').checked){
-				var system_logging = "On";
+				var system_logging = "ON";
 			}
 			else{
-				var system_logging = "Off";
+				var system_logging = "OFF";
 			}
 			
 			if(document.getElementById('notifications').checked){
-				var notifications = "On";
+				var notifications = "ON";
 			}
 			else{
-				var notifications = "Off";
+				var notifications = "OFF";
 			}
-
-			alert(notifications);
-			alert(system_logging);
 			
 			$.post('/settings/scripts/save_settings.php', {types: types, thresholds: thresholds, system_logging: system_logging, notifications: notifications}, function(){
 			});
