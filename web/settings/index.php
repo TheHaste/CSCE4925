@@ -18,7 +18,7 @@
 	<script type="text/javascript">
 	
 	$(document).ready(function() {
-		$('#settings-form').submit(function() {
+		$('#settings-form > div').submit(function() {
 			
 		});
 	});
