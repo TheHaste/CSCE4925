@@ -33,7 +33,7 @@
 				thresholds.push(this.value);
 			});
 			
-			if(document.getElementById('logs').checked){
+/*			if(document.getElementById('logs').checked){
 				var system_logging = "On";
 			}
 			else{
@@ -46,7 +46,7 @@
 			else{
 				var notifications = "Off";
 			}
-			
+*/			
 			if(system_logging == "On"){
 				alert(Logging is: ON);
 			}
