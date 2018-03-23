@@ -19,7 +19,6 @@
 	
 	$(document).ready(function() {
 		$('#settings-form').submit(function() {
-			
 		});
 	});
 	
@@ -27,9 +26,8 @@
 	
 	<script type="text/javascript">
 	function addNotification(){
-		var total = $('#notifications-block > div').length;
+		var currentTotal = 1 + $('#notifications-block > div').length;
 		
-		alert(total);
 		
 		var div = document.createElement('div');
 		
