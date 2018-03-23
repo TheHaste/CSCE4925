@@ -3,45 +3,17 @@
 	
 	$_SESSION['settings'] = [];
 	
+	//store settings values
 	$types = $_POST['types'];
 	$thresholds = $_POST['thresholds'];
+	$logs_setting = $_POST['system_logging'];
+	$notifications_setting = $_POST['notifications'];
 	
-	$settings_array = array($types, $thresholds);
+	$settings_array = array($types, $thresholds, $logs_setting, $notifications_setting);
 	
-	$_SESSION['settings'] = $settings_array;
+	$_SESSION['settings'] = $settings_array; //save array of data to session_cache_expire
 	
-	//delete old XML
-	unlink('/settings_config.xml');
+	//update tables
 	
-	//build new XML
-	$xml = new DomDocument('1.0', "UTF-8");
-	
-	//create root element
-	$rootTag=$xml->createElement("settings");
-	$rootTag->appendChild($rootTag);
-	
-	for($i=0; $i<count($types); $i++){
-		if($types[$i] == ""){ //empty asset type
-		}
-		else{
-			//store values for objects
-			$notification=$xml->createElement("notification");
-			$type=$xml->createElement("type", $types[$i]);
-			$threshold=$xml->createElement("threshold", $thresholds[$i]);
-			
-			//append attributes
-			$notification->appendChild($type);
-			$notification->appendChild($threshold);
-			
-			//append child object to root
-			$rootTag->appendChild($notification);
-			
-		}
-	}
-		
-	//save new XML
-	$xml->formatoutput = true;
-		
-	$xml->save("settings_config.xml");
 	
 ?>
