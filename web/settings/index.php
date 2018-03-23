@@ -31,7 +31,8 @@
 				thresholds.push(this.value);
 			});
 			
-			alert(thresholds);
+			$.post('/settings/scripts/save_settings.php', {types: types, thresholds: thresholds}, function(){
+			});
 		});
 	});
 	
