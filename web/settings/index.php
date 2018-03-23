@@ -120,9 +120,9 @@
 				</div>
 			</div>
 		</div>
-	  </form>
     </div>
     <div style="margin-top:20px; width:100px; margin:0 auto;"><button class="btn btn-success" type="submit" style="width:100px;" name="Save">Save</button></div>
+	</form>
 </body>
 
 </html>
