@@ -19,10 +19,13 @@
 	
 	$(document).ready(function() {
 		$('#settings-form').submit(function() {
-			//var elements = document.getElementById("notifications-block").elements;
+			var types[];
+			
 			$('#notifications-block input').each(function () {
-				alert(this.value);
+				types.push(this.value);
 			});
+			
+			alert(types);
 		});
 	});
 	
