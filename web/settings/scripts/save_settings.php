@@ -11,13 +11,14 @@
 	$_SESSION['settings'] = $settings_array;
 	
 	//delete old XML
-	unlink('/settings/settings_config.xml');
+	unlink('../settings/settings_config.xml');
 	
 	//build new XML
 	$xml = new DomDocument('1.0', "UTF-8");
 	$xml->load('settings_config.xml');
 	
-	$rootTag = $xml->getElementByTagName("settings")->$item(0);
+	$rootTag=$xml->createElement("settings");
+	$rootTag->appendChild($rootTag);
 	
 	for($i=0; $i<count($types); $i++){
 		if($types[$i] == ""){ //empty asset type
