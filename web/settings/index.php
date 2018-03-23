@@ -19,7 +19,7 @@
 	
 	$(document).ready(function() {
 		$('#settings-form').submit(function() {
-			var types[];
+			var types = [];
 			
 			$('#notifications-block input').each(function () {
 				types.push(this.value);
