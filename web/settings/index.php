@@ -28,7 +28,7 @@
 			var thresholds = [];
 			
 			$('#notifications-block option:selected').each(function () {
-				types.push(this.value);
+				thresholds.push(this.value);
 			});
 			
 			alert(thresholds);
