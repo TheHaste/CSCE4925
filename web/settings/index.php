@@ -33,7 +33,35 @@
 				thresholds.push(this.value);
 			});
 			
-			$.post('/settings/scripts/save_settings.php', {types: types, thresholds: thresholds}, function(){
+			if(document.getElementById('logs').checked){
+				var system_logging = "On";
+			}
+			else{
+				var system_logging = "Off";
+			}
+			
+			if(document.getElementById('notifications').checked){
+				var notifications = "On";
+			}
+			else{
+				var notifications = "Off";
+			}
+			
+			if(system_logging == "On"){
+				alert(Logging is: ON);
+			}
+			else if(system_logging == "Off"){
+				alert(notifications is: OFF);
+			}
+			
+			if(notifications == "On"){
+				alert(Logging is: ON);
+			}
+			else if(notifications == "Off"){
+				alert(notifications is: OFF);
+			}
+			
+			$.post('/settings/scripts/save_settings.php', {types: types, thresholds: thresholds, system_logging: system_logging, notifications: notifications}, function(){
 			});
 		});
 	});
@@ -100,20 +128,7 @@
 						<h1 style="font-size:25px;">Notifications</h1>
 						<p style="color:rgba(61,67,74,0.89);font-size:14px;">When creating Notifications, enter your asset type and select a threshold. Once the threshold is met, you will receive a notification.</p>
 						<div id="notifications-block">
-							<!--<div><label>Type</label><input type="text" style="margin-left:10px;">
-								<select style="margin-left:5px; height:27px; width:55px; " name="percent">
-									<option value="10">10%</option>
-									<option value="20">20%</option>
-									<option value="30">30%</option>
-									<option value="40">40%</option>
-									<option value="50">50%</option>
-									<option value="60">60%</option>
-									<option value="70">70%</option>
-									<option value="80">80%</option>
-									<option value="90">90%</option>
-								</select>
-								<button class="btn btn-danger" type="button" style="flat:right; margin-left:50px;">Delete</button>
-							</div> -->
+							<!-- Filled with PHP or via + Add button -->
 						</div>
 						<button class="btn btn-primary" type="button" style="background-color:rgb(30,61,88);margin-bottom:0px;margin-top:16px;" onclick="addNotification()" name="Add">+ Add</button>
 						<div
