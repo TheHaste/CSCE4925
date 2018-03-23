@@ -25,7 +25,13 @@
 				types.push(this.value);
 			});
 			
-			alert(types);
+			var thresholds = [];
+			
+			$('#notifications-block select').each(function () {
+				types.push(this.value);
+			});
+			
+			alert(thresholds);
 		});
 	});
 	
