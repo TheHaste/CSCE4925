@@ -33,7 +33,7 @@
 				thresholds.push(this.value);
 			});
 			
-/*			if(document.getElementById('logs').checked){
+			if(document.getElementById('logs').checked){
 				var system_logging = "On";
 			}
 			else{
@@ -46,7 +46,7 @@
 			else{
 				var notifications = "Off";
 			}
-*/			
+/*			
 			if(system_logging == "On"){
 				alert(Logging is: ON);
 			}
@@ -60,7 +60,7 @@
 			else if(notifications == "Off"){
 				alert(notifications is: OFF);
 			}
-			
+*/			
 			$.post('/settings/scripts/save_settings.php', {types: types, thresholds: thresholds, system_logging: system_logging, notifications: notifications}, function(){
 			});
 		});
