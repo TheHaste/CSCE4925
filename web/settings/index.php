@@ -21,9 +21,9 @@
 	$(document).ready(function() {
 		$('#settings-form').submit(function() {
 			var data = document.getElementsByID('notifications-block').getElementsByTagName('text');
-			for(var i=0; i< data.length; i++){
+//			for(var i=0; i< data.length; i++){
 				alert(data[i].value);
-			}
+//			}
 		});
 	});
 	
