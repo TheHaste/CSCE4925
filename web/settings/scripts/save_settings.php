@@ -19,7 +19,7 @@
 	
 	$rootTag = $xml->getElementByTagName("settings")->$item(0);
 	
-	for($i=0; $i<count($types); i++){
+	for($i=0; $i<count($types); $i++){
 		if($types[$i] == ""){ //empty asset type
 		}
 		else{
