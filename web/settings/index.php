@@ -28,6 +28,7 @@
 	function addNotification(){
 		var currentTotal = 1 + $('#notifications-block > div').length;
 		
+		alert(currentTotal);
 		
 		var div = document.createElement('div');
 		
