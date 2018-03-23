@@ -1,32 +1,6 @@
 <?php 
 	session_start(); //start user session to send data between pages
 	
-	if(isset($_POST[])){
-		//create XML object
-		$xml = new DomDocument('1.0', "UTF-8");
-		$xml->load('settings_config.xml');
-		
-		/* STORE VARIABLES HERE FOR SETTINGS */
-		
-		//get the root tag
-		$rootTag = $xml->getElementByTagName("settings")->$item(0);
-		
-		//create child objects
-		$notification=$xml->createElement("notification");
-			$type=$xml->createElement("type", /*TYPE OF ASSET*/);
-			$threshold=$xml->createElement("threshold", /*THRESHOLD PERCENTAGE*/);
-			
-		//append attributes
-		$notification->appendChild($type);
-		$notification->appendChild($threshold);
-		
-		//append child object to root
-		$rootTag->appendChild($notification);
-		
-		$xml->formatoutput = true;
-		
-		$xml->save("settings_config.xml");	
-	}
 	
 ?>
 <html>
