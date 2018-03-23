@@ -11,12 +11,12 @@
 	$_SESSION['settings'] = $settings_array;
 	
 	//delete old XML
-	unlink('../settings/settings_config.xml');
+	unlink('settings_config.xml');
 	
 	//build new XML
 	$xml = new DomDocument('1.0', "UTF-8");
-	$xml->load('settings_config.xml');
 	
+	//create root element
 	$rootTag=$xml->createElement("settings");
 	$rootTag->appendChild($rootTag);
 	
