@@ -11,7 +11,7 @@
 	$_SESSION['settings'] = $settings_array;
 	
 	//delete old XML
-	unlink('settings_config.xml');
+	unlink('/settings_config.xml');
 	
 	//build new XML
 	$xml = new DomDocument('1.0', "UTF-8");
