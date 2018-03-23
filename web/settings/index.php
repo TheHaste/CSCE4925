@@ -1,6 +1,32 @@
 <?php 
 	session_start(); //start user session to send data between pages
 	
+	if(isset($_POST[])){
+		//create XML object
+		$xml = new DomDocument('1.0', "UTF-8");
+		$xml->load('settings_config.xml');
+		
+		/* STORE VARIABLES HERE FOR SETTINGS */
+		
+		//get the root tag
+		$rootTag = $xml->getElementByTagName("settings")->$item(0);
+		
+		//create child objects
+		$notification=$xml->createElement("notification");
+			$type=$xml->createElement("type", /*TYPE OF ASSET*/);
+			$threshold=$xml->createElement("threshold", /*THRESHOLD PERCENTAGE*/);
+			
+		//append attributes
+		$notification->appendChild($type);
+		$notification->appendChild($threshold);
+		
+		//append child object to root
+		$rootTag->appendChild($notification);
+		
+		$xml->formatoutput = true;
+		
+		$xml->save("settings_config.xml");	
+	}
 	
 ?>
 <html>
@@ -19,13 +45,19 @@
 	<script type="text/javascript">
 	
 	$(document).ready(function() {
-		
+		$('#settings-form').submit(function() {
+			var data = document.getElementsByID('notifications-block').getElementsByTagName('text');
+			for(var i=0; i< data.length; i++){
+				alert(data.value);
+			}
+		});
 	});
 	
 	</script>
 	
 	<script type="text/javascript">
 	function addNotification(){
+		var total = 
 		var div = document.createElement('div');
 		
 		div.innerHTML = '<label>Type</label><input type="text" style="margin-left:10px;"> <select style="margin-left:5px; height:27px; width:55px; " name="percent"> <option value="10">10%</option> <option value="20">20%</option> <option value="30">30%</option> <option value="40">40%</option> <option value="50">50%</option> <option value="60">60%</option> <option value="70">70%</option> <option value="80">80%</option> <option value="90">90%</option> </select> <button class="btn btn-danger" type="button" style="padding:0px; width:25px; vertical-align: middle; margin-left:15px;" onclick="deleteNotification(this)">x</button>';
@@ -40,7 +72,14 @@
 		document.getElementById('notifications-block').removeChild(input.parentNode); 
 	}
 
-</script>
+	</script>
+
+	<script type="text/javascript"> 
+	function deleteNotification(input){
+		document.getElementById('notifications-block').removeChild(input.parentNode); 
+	}
+
+	</script>
 
 
 </head>
@@ -77,7 +116,7 @@
     <div style="width:150px;margin:0 auto;"><h1 style="font-size:42px; ">Settings</h1></div>
 	 <div style="height:15px;"></div>
     <div>
-	  <form>
+	  <form method="post" id="settings-form">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6" style="border-right:double; border-color:black;">
