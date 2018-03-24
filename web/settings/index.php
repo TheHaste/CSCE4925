@@ -7,7 +7,7 @@
 	echo '<br/>'; 
 	echo $_SESSION['settings'][0][0]; //types
 	echo '<br/>';
-*/	echo $_SESSION['settings'][1][0];
+*/	echo "TYPE: "; echo $_SESSION['settings'][4];
 	
 ?>
 <html>
@@ -130,6 +130,7 @@
 			</div>
 		</div>
     </div>
+	<div style="height:25px;"></div>
     <div style="margin-top:20px; width:100px; margin:0 auto;"><button class="btn btn-success" type="submit" style="width:100px;" name="Save">Save</button></div>
 	</form>
 </body>
