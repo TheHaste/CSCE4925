@@ -4,6 +4,8 @@
 	$conn = pg_connect("host=ec2-54-227-243-210.compute-1.amazonaws.com dbname=d3f2mm484o32jn user=tdqtwhcckycshu password=5d86125f0d185bf2918a76dca2adcd104f4a452b71cbcefe831f1d2bd65e98ee");
 	
 	$_SESSION['settings'] = [];
+	$types = [];
+	$thresholds = [];
 	
 	//store settings values
 	$types = $_POST['types'];
@@ -50,16 +52,18 @@
 	//check for settings to add
 	for($i=0; $i<$total_notifications; $i++){
 		$add = true;
-		for($j=0; $j<$total_db_notifications; $j++){
-			if(($types[$i] == $db_types[$j]) && ($thresholds[$i] == $db_thresholds[$j])){
-				$add = false;
-				break;
+		if($types[$i] != ""){
+			for($j=0; $j<$total_db_notifications; $j++){
+				if(($types[$i] == $db_types[$j]) && ($thresholds[$i] == $db_thresholds[$j])){
+					$add = false;
+					break;
+				}
 			}
-		}
-		//store setting to be added if needed
-		if($add){
-			array_push($types_to_save, $types[$i]);
-			array_push($thresholds_to_save, $thresholds[$i]);
+			//store setting to be added if needed
+			if($add){
+				array_push($types_to_save, $types[$i]);
+				array_push($thresholds_to_save, $thresholds[$i]);
+			}
 		}
 	}
 	
