@@ -82,6 +82,7 @@
 			array_push($thresholds_to_delete, $db_thresholds[$i]);
 		}
 	}
+	array_push($_SESSION['settings'],$types_to_add[$i]);
 	
 	//delete settings from table
 	for($i=0; $i<sizeof($types_to_delete); $i++){
