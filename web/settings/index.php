@@ -7,7 +7,7 @@
 	echo '<br/>';
 	echo $_SESSION['settings'][0][0]; //types
 	echo '<br/>';
-	echo $_SESSION['settings'][1][0]; //thresholds
+	echo $_SESSION['settings'][1][0]; //thresholds 
 	
 ?>
 <html>
