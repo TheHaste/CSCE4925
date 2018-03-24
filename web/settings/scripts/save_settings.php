@@ -34,7 +34,7 @@
 	}
 	
 	//retrieve notification_settings
-	$query = "SELECT * FROM notifications_settings;";
+	$query = "SELECT * FROM notification_settings;";
 	$item = array(); //array for assets
 	$rs = pg_query($conn, $query); //run query
 
