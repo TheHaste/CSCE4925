@@ -82,7 +82,7 @@
 			array_push($thresholds_to_delete, $db_thresholds[$i]);
 		}
 	}
-	array_push($_SESSION['settings'],$types_to_add[0]);
+	array_push($_SESSION['settings'],$types_to_save[0]);
 	
 	//delete settings from table
 	for($i=0; $i<sizeof($types_to_delete); $i++){
@@ -91,7 +91,7 @@
 	}
 	//insert new settings into table
 	for($i=0; $i<sizeof($types_to_delete); $i++){
-		$addSQL = "INSERT INTO notification_settings (type, threshold) VALUES ('{$types_to_add[$i]}','{$thresholds_to_add[$i]}');";
+		$addSQL = "INSERT INTO notification_settings (type, threshold) VALUES ('{$types_to_save[$i]}','{$thresholds_to_save[$i]}');";
 		$add_query = pg_query($conn, $addSQL); //run query
 	}
 	
