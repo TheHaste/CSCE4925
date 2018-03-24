@@ -4,10 +4,10 @@
 /* 	echo $_SESSION['settings'][2]; //logs monitor setting
 	echo '<br/>';
 	echo $_SESSION['settings'][3]; //notifications monitor setting
-	echo '<br/>'; */
+	echo '<br/>'; 
 	echo $_SESSION['settings'][0][0]; //types
 	echo '<br/>';
-	echo $_SESSION['settings'][1][0];
+*/	echo $_SESSION['settings'][1][0];
 	
 ?>
 <html>
