@@ -2,11 +2,11 @@
 	session_start(); //start user session to send data between pages
 	
 /* 	echo $_SESSION['settings'][2]; //logs monitor setting
-	echo <br/>;
+	echo '<br/>';
 	echo $_SESSION['settings'][3]; //notifications monitor setting
-	echo <br/>; */
+	echo '<br/>'; */
 	echo $_SESSION['settings'][0][0]; //types
-	echo <br/>;
+	echo '<br/>';
 	echo $_SESSION['settings'][1][0];
 	
 ?>
