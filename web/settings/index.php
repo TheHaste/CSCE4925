@@ -2,11 +2,11 @@
 	session_start(); //start user session to send data between pages
 	
 	echo $_SESSION['settings'][2]; //logs monitor setting
-	echo <br/>;
+	echo '<br/>';
 	echo $_SESSION['settings'][3]; //notifications monitor setting
-	echo <br/>;
+	echo '<br/>';
 	echo $_SESSION['settings'][0][0]; //types
-	echo <br/>;
+	echo '<br/>';
 	echo $_SESSION['settings'][1][0]; //thresholds
 	
 ?>
@@ -82,15 +82,6 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header"><a class="navbar-brand" href="#"> </a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
-            <div
-                class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav navbar-right"></ul>
-        </div>
-        </div>
-    </nav>
     <div>
 	<!--Nav bar settings-->
         <nav class="navbar navbar-default navigation-clean" style="background-color:rgb(72,143,174);min-width:0px;max-width:100%;margin-right:0px;margin-top:-51px;">
