@@ -82,7 +82,8 @@
 </head>
 
 <body>
-    <div class="container">
+	<div style="height:50px"></div>
+    <div>
 	<!--Nav bar settings-->
         <nav class="navbar navbar-default navigation-clean" style="background-color:rgb(72,143,174);min-width:0px;max-width:100%;margin-right:0px;margin-top:-51px;">
             <div class="container">
