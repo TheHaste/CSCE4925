@@ -1,12 +1,10 @@
 <?php 
 	session_start(); //start user session to send data between pages
 	
-	if($_SESSION['settings'][2][0] == "OFF"){
-		echo "LOGS OFF";
-	}
-	else if($_SESSION['settings'][2][0] == "ON"){
-		echo "LOGS ON";
-	}
+	echo $_SESSION['settings'][2][0];
+	echo $_SESSION['settings'][2];
+
+	echo $_SESSION['settings'];
 	
 ?>
 <html>
