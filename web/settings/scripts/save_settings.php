@@ -49,6 +49,9 @@
 	$total_notifications = sizeof($types);
 	$total_db_notifications = sizeof($db_types);
 	
+	array_push($_SESSION['settings'], $db_types);
+	array_push($_SESSION['settings'], $db_thresholds);
+	
 	//check for settings to add
 	for($i=0; $i<$total_notifications; $i++){
 		$add = true;
