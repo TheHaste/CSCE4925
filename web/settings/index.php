@@ -8,7 +8,7 @@
 	echo $_SESSION['settings'][0][0]; //types
 	echo '<br/>';
 */	echo "TYPE: "; echo $_SESSION['settings'][4][0];
-	echo "TYPE: "; echo $_SESSION['settings'][4][0];
+	echo "TYPE: "; echo $_SESSION['settings'][5][0];
 	
 ?>
 <html>
