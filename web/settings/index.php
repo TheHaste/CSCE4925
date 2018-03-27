@@ -1,6 +1,7 @@
 <?php 
 	session_start(); //start user session to send data between pages
-	
+	echo $_SESSION['settings'][2];
+	echo $_SESSION['settings'][3]
 ?>
 <html>
 
