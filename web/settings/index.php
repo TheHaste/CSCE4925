@@ -1,14 +1,6 @@
 <?php 
 	session_start(); //start user session to send data between pages
-	
-/* 	echo $_SESSION['settings'][2]; //logs monitor setting
-	echo '<br/>';
-	echo $_SESSION['settings'][3]; //notifications monitor setting
-	echo '<br/>'; 
-	echo $_SESSION['settings'][0][0]; //types
-	echo '<br/>';
-*/	echo "TYPE: "; echo $_SESSION['settings'][4][0]; 
-	echo "TYPE: "; echo $_SESSION['settings'][5][0];
+
 	
 ?>
 <html>
@@ -114,6 +106,41 @@
 						<p style="color:rgba(61,67,74,0.89);font-size:14px;">When creating Notifications, enter your asset type and select a threshold. Once the threshold is met, you will receive a notification.</p>
 						<div id="notifications-block">
 							<!-- Filled with PHP or via + Add button -->
+							<?php 
+								$index=0;
+								for($i=0; $i<sizeof($_SESSION['settings'][0]); $i++){
+									if(isset($_SESSION['settings'][0])){
+										if($_SESSION['settings'][1][$index] == '10'){
+											echo '<label>Type</label><input type="text" value='.$_SESSION['settings'][0][$index].'style="margin-left:10px;"> <select style="margin-left:5px; height:27px; width:55px; "> <option selected value="10">10%</option> <option value="20">20%</option> <option value="30">30%</option> <option value="40">40%</option> <option value="50">50%</option> <option value="60">60%</option> <option value="70">70%</option> <option value="80">80%</option> <option value="90">90%</option> </select> <button class="btn btn-danger" type="button" style="padding:0px; width:25px; vertical-align: middle; margin-left:15px;" onclick="deleteNotification(this)">x</button>';
+										}
+										else if($_SESSION['settings'][1][$index] == '20'){
+											echo '<label>Type</label><input type="text" value='.$_SESSION['settings'][0][$index].'style="margin-left:10px;"> <select style="margin-left:5px; height:27px; width:55px; "> <option value="10">10%</option> <option selected value="20">20%</option> <option value="30">30%</option> <option value="40">40%</option> <option value="50">50%</option> <option value="60">60%</option> <option value="70">70%</option> <option value="80">80%</option> <option value="90">90%</option> </select> <button class="btn btn-danger" type="button" style="padding:0px; width:25px; vertical-align: middle; margin-left:15px;" onclick="deleteNotification(this)">x</button>';
+										}
+										else if($_SESSION['settings'][1][$index] == '30'){
+											echo '<label>Type</label><input type="text" value='.$_SESSION['settings'][0][$index].'style="margin-left:10px;"> <select style="margin-left:5px; height:27px; width:55px; "> <option value="10">10%</option> <option value="20">20%</option> <option selected value="30">30%</option> <option value="40">40%</option> <option value="50">50%</option> <option value="60">60%</option> <option value="70">70%</option> <option value="80">80%</option> <option value="90">90%</option> </select> <button class="btn btn-danger" type="button" style="padding:0px; width:25px; vertical-align: middle; margin-left:15px;" onclick="deleteNotification(this)">x</button>';
+										}
+										else if($_SESSION['settings'][1][$index] == '40'){
+											echo '<label>Type</label><input type="text" value='.$_SESSION['settings'][0][$index].'style="margin-left:10px;"> <select style="margin-left:5px; height:27px; width:55px; "> <option  value="10">10%</option> <option value="20">20%</option> <option value="30">30%</option> <option selected value="40">40%</option> <option value="50">50%</option> <option value="60">60%</option> <option value="70">70%</option> <option value="80">80%</option> <option value="90">90%</option> </select> <button class="btn btn-danger" type="button" style="padding:0px; width:25px; vertical-align: middle; margin-left:15px;" onclick="deleteNotification(this)">x</button>';
+										}
+										else if($_SESSION['settings'][1][$index] == '50'){
+											echo '<label>Type</label><input type="text" value='.$_SESSION['settings'][0][$index].'style="margin-left:10px;"> <select style="margin-left:5px; height:27px; width:55px; "> <option value="10">10%</option> <option value="20">20%</option> <option value="30">30%</option> <option value="40">40%</option> <option selected value="50">50%</option> <option value="60">60%</option> <option value="70">70%</option> <option value="80">80%</option> <option value="90">90%</option> </select> <button class="btn btn-danger" type="button" style="padding:0px; width:25px; vertical-align: middle; margin-left:15px;" onclick="deleteNotification(this)">x</button>';
+										}
+										else if($_SESSION['settings'][1][$index] == '60'){
+											echo '<label>Type</label><input type="text" value='.$_SESSION['settings'][0][$index].'style="margin-left:10px;"> <select style="margin-left:5px; height:27px; width:55px; "> <option value="10">10%</option> <option value="20">20%</option> <option value="30">30%</option> <option value="40">40%</option> <option value="50">50%</option> <option selected value="60">60%</option> <option value="70">70%</option> <option value="80">80%</option> <option value="90">90%</option> </select> <button class="btn btn-danger" type="button" style="padding:0px; width:25px; vertical-align: middle; margin-left:15px;" onclick="deleteNotification(this)">x</button>';
+										}
+										else if($_SESSION['settings'][1][$index] == '70'){
+											echo '<label>Type</label><input type="text" value='.$_SESSION['settings'][0][$index].'style="margin-left:10px;"> <select style="margin-left:5px; height:27px; width:55px; "> <option value="10">10%</option> <option value="20">20%</option> <option value="30">30%</option> <option value="40">40%</option> <option value="50">50%</option> <option value="60">60%</option> <option selected value="70">70%</option> <option value="80">80%</option> <option value="90">90%</option> </select> <button class="btn btn-danger" type="button" style="padding:0px; width:25px; vertical-align: middle; margin-left:15px;" onclick="deleteNotification(this)">x</button>';
+										}
+										else if($_SESSION['settings'][1][$index] == '80'){
+											echo '<label>Type</label><input type="text" value='.$_SESSION['settings'][0][$index].'style="margin-left:10px;"> <select style="margin-left:5px; height:27px; width:55px; "> <option value="10">10%</option> <option value="20">20%</option> <option value="30">30%</option> <option value="40">40%</option> <option value="50">50%</option> <option value="60">60%</option> <option value="70">70%</option> <option selected value="80">80%</option> <option value="90">90%</option> </select> <button class="btn btn-danger" type="button" style="padding:0px; width:25px; vertical-align: middle; margin-left:15px;" onclick="deleteNotification(this)">x</button>';
+										}
+										else if($_SESSION['settings'][1][$index] == '90'){
+											echo '<label>Type</label><input type="text" value='.$_SESSION['settings'][0][$index].'style="margin-left:10px;"> <select style="margin-left:5px; height:27px; width:55px; "> <option value="10">10%</option> <option value="20">20%</option> <option value="30">30%</option> <option value="40">40%</option> <option value="50">50%</option> <option value="60">60%</option> <option value="70">70%</option> <option value="80">80%</option> <option selected value="90">90%</option> </select> <button class="btn btn-danger" type="button" style="padding:0px; width:25px; vertical-align: middle; margin-left:15px;" onclick="deleteNotification(this)">x</button>';
+										}
+									}
+									$index++;
+								}
+							?>
 						</div>
 						<button class="btn btn-primary" type="button" style="background-color:rgb(30,61,88);margin-bottom:0px;margin-top:16px;" onclick="addNotification()" name="Add">+ Add</button>
 						<div
