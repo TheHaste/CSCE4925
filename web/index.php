@@ -65,10 +65,19 @@
 			if($memberOf != '' || !isset($err)){	
 				//set $_SESSION variables
 				if($memberOf == "inventory_admin_group"){ //admin user
-					$_SESSION["userType"] = 'admin';	
+					//$_SESSION["userType"] = 'admin';
+					$is_admin_account = true;
 				}
 				
 				if($memberOf == "inventory_user_group"){ //standard user
+					//$_SESSION["userType"] = 'user';
+					$is_user_account = true;
+				}
+				
+				if($is_admin_account){
+					$_SESSION["userType"] = 'admin';
+				}
+				else if($is_user_account){
 					$_SESSION["userType"] = 'user';
 				}
 				
@@ -77,6 +86,36 @@
 				//create log
 				include('/app/web/connect.php');
 				
+				//populate settings SESSION
+				$_SESSION['settings'] = [];
+				$types = [];
+				$thresholds = [];
+				$monitoring_settings = [];
+				
+				//retrieve monitoring_settings
+				$query = "SELECT * FROM monitoring_settings;";
+				$item = array(); //array for assets
+				$rs = pg_query($conn, $query); //run query
+
+				while ($item = pg_fetch_assoc($rs)){ //fetch and fill array
+					array_push($monitoring_settings, $item['status']);
+				}
+				
+				//retrieve notification_settings
+				$query = "SELECT * FROM notification_settings;";
+				$item = array(); //array for assets
+				$rs = pg_query($conn, $query); //run query
+
+				while ($item = pg_fetch_assoc($rs)){ //fetch and fill array
+					array_push($types, $item['type']);
+					array_push($thresholds, $item['threshold']);
+				}
+				
+				$settings = array($types, $thresholds, $monitoring_settings[0], $monitoring_settings[1]);
+	
+				$_SESSION['settings'] = $settings; //save array of data to session
+				
+				//if logs are turned on, capture log
 				$action = "Login";
 				$log_time = date('M-d-Y H:i:s A');
 					
