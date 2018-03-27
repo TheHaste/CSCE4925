@@ -49,53 +49,63 @@
 	$total_notifications = sizeof($types);
 	$total_db_notifications = sizeof($db_types);
 	
-	array_push($_SESSION['settings'], $types);
-	array_push($_SESSION['settings'], $thresholds); 
+	$index1 = 0;
+	$index2 = 0;
 	
 	//check for settings to add
 	for($i=0; $i<$total_notifications; $i++){
 		$add = true;
-		if($types[$i] != ""){
+		if($types[$index1] != ""){
 			for($j=0; $j<$total_db_notifications; $j++){
-				if(($types[$i] == $db_types[$j]) && ($thresholds[$i] == $db_thresholds[$j])){
+				if(($types[$index1] == $db_types[$index2]) && ($thresholds[$index1] == $db_thresholds[$index2])){
 					$add = false;
 					break;
 				}
+				$index2++;
 			}
 			//store setting to be added if needed
 			if($add){
-				array_push($types_to_save, $types[$i]);
-				array_push($thresholds_to_save, $thresholds[$i]);
+				array_push($types_to_save, $types[$index1]);
+				array_push($thresholds_to_save, $thresholds[$index1]);
 			}
 		}
+		$index1++;
 	}
 	
+	$index1 = 0;
+	$index2 = 0;
 	//check for settings to delete
 	for($i=0; $i<$total_db_notifications; $i++){
 		$delete = true;
 		for($j=0; $j<$total_notifications; $j++){
-			if(($db_types[$i] == $types[$j]) && ($db_thresholds[$i] == $thresholds[$j])){
+			if(($db_types[$index1] == $types[$index2]) && ($db_thresholds[$index1] == $thresholds[$index2])){
 				$add = false;
 				break;
 			}
+			$index2++;
 		}
 		//store setting to be deleted if needed
 		if($delete){
-			array_push($types_to_delete, $db_types[$i]);
-			array_push($thresholds_to_delete, $db_thresholds[$i]);
+			array_push($types_to_delete, $db_types[$index1]);
+			array_push($thresholds_to_delete, $db_thresholds[$index1]);
 		}
+		$index1++;
 	}
-	array_push($_SESSION['settings'],$types_to_save[0]);
 	
+	$index1=0;
 	//delete settings from table
 	for($i=0; $i<sizeof($types_to_delete); $i++){
-		$deleteSQL = "DELETE FROM notification_settings WHERE type = '{$types_to_delete[$i]}' AND threshold ='{$thresholds_to_delete[$i]}';";
+		$deleteSQL = "DELETE FROM notification_settings WHERE type = '{$types_to_delete[$index1]}' AND threshold ='{$thresholds_to_delete[$index1]}';";
 		$delete_query = pg_query($conn, $deleteSQL); //run query
+		$index1++;
 	}
+	
+	$index1=0
 	//insert new settings into table
 	for($i=0; $i<sizeof($types_to_delete); $i++){
-		$addSQL = "INSERT INTO notification_settings (type, threshold) VALUES ('{$types_to_save[$i]}','{$thresholds_to_save[$i]}');";
+		$addSQL = "INSERT INTO notification_settings (type, threshold) VALUES ('{$types_to_save[$index1]}','{$thresholds_to_save[$index1]}');";
 		$add_query = pg_query($conn, $addSQL); //run query
+		$index1++;
 	}
 	
 	//check for monitoring changes	
