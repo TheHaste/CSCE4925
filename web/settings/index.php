@@ -1,6 +1,39 @@
 <?php 
 	session_start(); //start user session to send data between pages
 	
+	$conn = pg_connect("host=ec2-54-227-243-210.compute-1.amazonaws.com dbname=d3f2mm484o32jn user=tdqtwhcckycshu password=5d86125f0d185bf2918a76dca2adcd104f4a452b71cbcefe831f1d2bd65e98ee"); 
+	
+	//populate settings SESSION
+	$_SESSION['settings'] = [];
+	$types = [];
+	$thresholds = [];
+	$monitoring_settings = [];
+		
+	//retrieve monitoring_settings
+	$query = "SELECT * FROM monitoring_settings;";
+	$item = array(); //array for assets
+	$rs = pg_query($conn, $query); //run query
+
+	while ($item = pg_fetch_assoc($rs)){ //fetch and fill array
+		array_push($monitoring_settings, $item['status']);
+	}
+				
+	//retrieve notification_settings
+	$query = "SELECT * FROM notification_settings;";
+	$item = array(); //array for assets
+	$rs = pg_query($conn, $query); //run query
+
+	while ($item = pg_fetch_assoc($rs)){ //fetch and fill array
+		array_push($types, $item['type']);
+		array_push($thresholds, $item['threshold']);
+	}
+				
+	$settings = array($types, $thresholds, $monitoring_settings[0], $monitoring_settings[1]);
+
+	$_SESSION['settings'] = $settings; //save array of data to session
+	
+	pg_close($conn);
+	
 	echo $_SESSION['settings'][2];
 	echo $_SESSION['settings'][3];
 ?>
