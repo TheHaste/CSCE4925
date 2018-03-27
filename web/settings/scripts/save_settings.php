@@ -79,7 +79,7 @@
 		$delete = true;
 		for($j=0; $j<$total_notifications; $j++){
 			if(($db_types[$index1] == $types[$index2]) && ($db_thresholds[$index1] == $thresholds[$index2])){
-				$add = false;
+				$delete = false;
 				break;
 			}
 			$index2++;
