@@ -1,6 +1,5 @@
 <?php 
 	session_start(); //start user session to send data between pages
-
 	
 ?>
 <html>
@@ -151,8 +150,8 @@
 					<h1 style="font-size:25px;">Monitoring</h1>
 					<p style="color:rgba(61,67,74,0.89);font-size:14px;">Turn monitoring of Logs and Notifications on or off.</p>
 					<div></div>
-					<div class="form-check"><input class="form-check-input" type="checkbox" id="logs"><label class="form-check-label" > System Logging</label></div>
-					<div class="form-check"><input class="form-check-input" type="checkbox" id="notifications"><label class="form-check-label" > Notifications</label></div>
+					<div class="form-check"><input class="form-check-input" type="checkbox" id="logs"><label class="form-check-label" <?php if($_SESSION['settings'][2] == "ON"){ echo "checked='checked'";} ?>> System Logging</label></div>
+					<div class="form-check"><input class="form-check-input" type="checkbox" id="notifications"><label class="form-check-label" <?php if($_SESSION['settings'][3] == "ON"){ echo "checked='checked'";} ?>> Notifications</label></div>
 					<div style="margin-top:14px;"></div>
 				</div>
 			</div>
