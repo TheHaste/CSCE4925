@@ -33,9 +33,7 @@
 	$_SESSION['settings'] = $settings; //save array of data to session
 	
 	pg_close($conn);
-	
-	echo $_SESSION['settings'][2];
-	echo $_SESSION['settings'][3];
+
 ?>
 <html>
 
@@ -186,7 +184,7 @@
 					<p style="color:rgba(61,67,74,0.89);font-size:14px;">Turn monitoring of Logs and Notifications on or off.</p>
 					<div></div>
 					<?php if($_SESSION['settings'][2] == "ON"){ echo '<div class="form-check"><input class="form-check-input" checked="checked" type="checkbox" id="logs"><label class="form-check-label"> System Logging</label></div>';}else{ echo '<div class="form-check"><input class="form-check-input" type="checkbox" id="logs"><label class="form-check-label"> System Logging</label></div>'; }?>
-					<?php if($_SESSION['settings'][2] == "ON"){ echo '<div class="form-check"><input class="form-check-input" checked="checked" type="checkbox" id="notifications"><label class="form-check-label"> Notifications</label></div>';}else{ echo '<div class="form-check"><input class="form-check-input" type="checkbox" id="notifications"><label class="form-check-label"> Notifications</label></div>'; }?>
+					<?php if($_SESSION['settings'][3] == "ON"){ echo '<div class="form-check"><input class="form-check-input" checked="checked" type="checkbox" id="notifications"><label class="form-check-label"> Notifications</label></div>';}else{ echo '<div class="form-check"><input class="form-check-input" type="checkbox" id="notifications"><label class="form-check-label"> Notifications</label></div>'; }?>
 					<div style="margin-top:14px;"></div>
 				</div>
 			</div>
