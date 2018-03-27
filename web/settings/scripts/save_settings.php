@@ -100,7 +100,7 @@
 		$index1++;
 	}
 	
-	$index1=0
+	$index1=0;
 	//insert new settings into table
 	for($i=0; $i<sizeof($types_to_delete); $i++){
 		$addSQL = "INSERT INTO notification_settings (type, threshold) VALUES ('{$types_to_save[$index1]}','{$thresholds_to_save[$index1]}');";
