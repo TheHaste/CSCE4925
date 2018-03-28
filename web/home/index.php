@@ -68,7 +68,7 @@ session_start(); //start user session to send data between pages
 		});
 
 		
-		$.getJSON('/scripts/get_alerts.php', function(data) {
+		$.getJSON('/home/scripts/get_alerts.php', function(data) {
                 var total_alerts = data.length;
 				var message = "Alert: Threshold reached for ";
 				for(i=0; i<total_alerts; i++){
@@ -125,7 +125,7 @@ session_start(); //start user session to send data between pages
                 </div>
               </div>
 			  <div class="panel-body">
-			<table id="assets" class="display" cellspacing="0" width="100%">
+			<table id="assets" class="display" cellspacing="0" width="2000px;">
 				<thead>
                     <tr>
                       	<th>Name</th>
