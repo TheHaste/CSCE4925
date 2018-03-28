@@ -116,7 +116,6 @@
 				$_SESSION['settings'] = $settings; //save array of data to session
 				
 				
-				
 				//if logs are turned on, capture log
 				if($_SESSION['settings'][2] == "ON"){
 					$action = "Login";
