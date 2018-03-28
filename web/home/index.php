@@ -36,10 +36,10 @@ $alerts = [];
 		$available_total = floatval(pg_fetch_row($rs)); //fetch result
 	
 		//calculate if threshold is reached
-		$calculation = 10* floatval($type_total / $available_total);
+		$calculation = 100 * floatval($type_total / $available_total);
 		
 		//if threshold reached
-		if(floatval($calculation) < floatval($thresholds[$index]) ){
+		if(floatval($calculation) >= floatval($thresholds[$index]) ){
 			//append type to the alerts array
 			array_push($alerts, $type[$index]);
 		}
