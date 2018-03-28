@@ -346,7 +346,7 @@
 					
 					<?php
 						//fill table
-						$query = "SELECT * FROM logging WHERE {$SQL_FINAL};";
+						$query = "SELECT * FROM logging WHERE {$SQL_FINAL} ORDER BY log_time DESC;";
 						$item = array(); //array for assets
 
 						$rs = pg_query($conn, $query); //run query
