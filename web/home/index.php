@@ -119,20 +119,18 @@ $alerts = [];
 		});
 
 		
-		$.getJSON('/home/scripts/get_alerts.php', function(alerts) {
+	//	$.getJSON('/home/scripts/get_alerts.php', function(alerts) {
+				var alerts = <?php echo json_encode($alerts) ?>;
 				var message = "Alert: Threshold reached for ";
-				$.each(alerts, function(key, value){ 
-					toastr.error(message.concat(value)); 
-				});
-                /*var total_alerts = alerts.length;
-				var message = "Alert: Threshold reached for ";
+
+                var total_alerts = alerts.length;
 				for(i=0; i<total_alerts; i++){
 					toastr.options.timeOut = 0;
 					toastr.options.closeButton = true;
-					toastr.error(message.concat(key));
+					toastr.error(message.concat(alerts[i]));
 				}
-				*/
-        });		
+				
+    //    });		
 		
 	});
 	
