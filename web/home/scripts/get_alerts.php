@@ -32,7 +32,7 @@ $alerts = [];
 		$query = "SELECT COUNT(*) FROM assets WHERE type='{$types[$index]}' AND assigned='';";
 		$rs = pg_query($conn, $query); //run query
 
-		$available_total = floatval(pg_fetch_result($rs))); //fetch result
+		$available_total = floatval(pg_fetch_result($rs)); //fetch result
 	
 		//calculate if threshold is reached
 		$calculation = floatval($available_total / $available_total);
