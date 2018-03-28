@@ -12,6 +12,7 @@ session_start(); //start user session to send data between pages
     <title>Meridian Inventory</title>
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
+	<link rel="stylesheet" href="assets/css/table_width.css">
 	
 	<!-- DataTable Extensions -->
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -147,15 +148,7 @@ session_start(); //start user session to send data between pages
 </head>
 
 <body>
-<nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header"><a class="navbar-brand" href="#"> </a><button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
-            <div
-                class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav navbar-right"></ul>
-        </div>
-        </div>
-    </nav>
+<div style="height:50px"></div>
     <div>
 	<!--Nav bar settings-->
         <nav class="navbar navbar-default navigation-clean" style="background-color:rgb(72,143,174);min-width:0px;max-width:100%;margin-right:0px;margin-top:-51px;">
