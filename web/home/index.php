@@ -36,7 +36,7 @@ $alerts = [];
 		$available_total = floatval(pg_fetch_row($rs)); //fetch result
 	
 		//calculate if threshold is reached
-		$calculation = floatval($available_total / $available_total);
+		$calculation = 10* floatval($type_total / $available_total);
 		
 		//if threshold reached
 		if(floatval($calculation) < floatval($thresholds[$index]) ){
@@ -45,6 +45,13 @@ $alerts = [];
 		}
 		$index++;
 	}	
+	
+	echo "calculation: {$calculation}";
+	echo "</br>";
+	echo "type_total: {$type_total}";
+	echo "</br>";
+	echo "available_total: {$available_total}";
+	echo "</br>";
 	
 	echo json_encode($alerts);
 
