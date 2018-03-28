@@ -41,7 +41,7 @@ $alerts = [];
 		//if threshold reached
 		if(floatval($calculation) >= floatval($thresholds[$index]) ){
 			//append type to the alerts array
-			array_push($alerts, $type[$index]);
+			array_push($alerts, $types[$index]);
 		}
 		$index++;
 	}	
