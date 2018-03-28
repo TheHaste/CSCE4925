@@ -11,7 +11,7 @@
 	$rs = pg_query($conn, $query); //run query
 
 	while ($item = pg_fetch_assoc($rs)){ //fetch and fill array
-		$monitoring_setting = $item['status']);
+		$monitoring_setting = $item['status'];
 	}
 	echo $monitoring_setting;
 	if($monitoring_setting == "ON"){
