@@ -119,17 +119,22 @@ $alerts = [];
 		});
 
 		
-		$.getJSON('/home/scripts/get_alerts.php', data, function(alerts) {
-                var total_alerts = alerts.length;
+		$.getJSON('/home/scripts/get_alerts.php', function(alerts) {
+				var message = "Alert: Threshold reached for ";
+				$.each(alerts, function(key, value){ 
+					toastr.error(message.concat(key));
+				});
+                /*var total_alerts = alerts.length;
 				var message = "Alert: Threshold reached for ";
 				for(i=0; i<total_alerts; i++){
 					toastr.options.timeOut = 0;
 					toastr.options.closeButton = true;
-					toastr.error(message.concat(alerts[i]));
+					toastr.error(message.concat(key));
 				}
+				*/
         });		
 		
-	} );
+	});
 	
 
 </script>
