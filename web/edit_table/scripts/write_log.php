@@ -8,18 +8,15 @@
 	$monitoring_settings = [];
 		
 	//retrieve monitoring_settings
-	$query = "SELECT * FROM monitoring_settings;";
+	$query = "SELECT * FROM monitoring_settings WHERE name='logs';";
 	$item = array(); //array for assets
 	$rs = pg_query($conn, $query); //run query
 
 	while ($item = pg_fetch_assoc($rs)){ //fetch and fill array
-		array_push($monitoring_settings, $item['status']);
+		$monitoring_setting = $item['status'];
 	}
-	
-	$_SESSION['settings'] = $settings; //save array of data to session
-				
-	//if logs are turned on, capture log
-	if($monitoring_settings[0] == "ON"){
+
+	if($monitoring_setting == "ON"){
 	
 		$username = $_SESSION["username"]; 
 		$action = $_POST['action'];
