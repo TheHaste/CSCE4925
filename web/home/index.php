@@ -24,19 +24,19 @@ $alerts = [];
 	//check alerts/notifications
 	for($i=0; $i<$num_of_notifications; $i++){
 		//query for count of items with matching type
-		$query = "SELECT COUNT(*) FROM assets WHERE asset_type='{$types[$index]}';";
+		$query = "SELECT * FROM assets WHERE asset_type='{$types[$index]}';";
 		$rs = pg_query($conn, $query); //run query
 
-		$type_total = floatval(pg_fetch_all($rs)); //fetch result
+		$type_total = floatval(pg_num_rows($rs)); //fetch result
 	
 		//query for count of items with matching type and assigned is empty
-		$query = "SELECT COUNT(*) FROM assets WHERE asset_type='{$types[$index]}' AND assigned='';";
+		$query = "SELECT * FROM assets WHERE asset_type='{$types[$index]}' AND assigned='';";
 		$rs = pg_query($conn, $query); //run query
 
-		$available_total = floatval(pg_fetch_all($rs)); //fetch result
+		$available_total = floatval(pg_num_rows($rs)); //fetch result
 	
 		//calculate if threshold is reached
-		$calculation = 100 * floatval($type_total / $available_total);
+		$calculation = 100 * floatval($available_total / $type_total);
 		
 		//if threshold reached
 		if(floatval($calculation) >= floatval($thresholds[$index]) ){
