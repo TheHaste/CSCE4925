@@ -3,6 +3,7 @@
 	//include('/app/web/connect.php');
 	
 	$conn1 = pg_connect("host=ec2-54-227-243-210.compute-1.amazonaws.com dbname=d3f2mm484o32jn user=tdqtwhcckycshu password=5d86125f0d185bf2918a76dca2adcd104f4a452b71cbcefe831f1d2bd65e98ee");
+	date_default_timezone_set('America/Chicago'); //set timezone to CST
 	
 	//populate settings
 	$monitoring_settings = [];
