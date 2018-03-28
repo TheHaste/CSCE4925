@@ -21,18 +21,18 @@ $alerts = [];
 	$num_of_notifications = sizeof($types);
 	$index = 0;
 	//check alerts/notifications
-	for($i=0; i<$num_of_notifications; $i++){
+	for($i=0; $i<$num_of_notifications; $i++){
 		//query for count of items with matching type
 		$query = "SELECT COUNT(*) FROM assets WHERE type='{$types[$index]}';";
 		$rs = pg_query($conn, $query); //run query
 
-		$type_total = floatval(pg_fetch_result($rs)); //fetch result
+		$type_total = floatval(pg_fetch_row($rs)); //fetch result
 	
 		//query for count of items with matching type and assigned is empty
 		$query = "SELECT COUNT(*) FROM assets WHERE type='{$types[$index]}' AND assigned='';";
 		$rs = pg_query($conn, $query); //run query
 
-		$available_total = floatval(pg_fetch_result($rs)); //fetch result
+		$available_total = floatval(pg_fetch_row($rs)); //fetch result
 	
 		//calculate if threshold is reached
 		$calculation = floatval($available_total / $available_total);
