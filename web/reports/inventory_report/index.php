@@ -330,7 +330,7 @@
 	$SQL_where = "";
 	$SQL_FINAL = buildString($SQL_where);
 	
-	echo "The SQL query looks like this: SELECT * FROM assets WHERE {$SQL_FINAL};"; echo '<br />';
+	//echo "The SQL query looks like this: SELECT * FROM assets WHERE {$SQL_FINAL};"; echo '<br />';
 	
 	
 ?>
