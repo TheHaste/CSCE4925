@@ -6,15 +6,15 @@
 	session_start(); //start user session to send data between pages
 
 	//retrieve monitoring_settings
-	$query = "SELECT * FROM monitoring_settings;";
+	$query = "SELECT * FROM monitoring_settings WHERE name='notifications';";
 	$item = array(); //array for assets
 	$rs = pg_query($conn, $query); //run query
 
 	while ($item = pg_fetch_assoc($rs)){ //fetch and fill array
-		array_push($monitoring_settings, $item['status']);
+		$monitoring_setting = $item['status']);
 	}
-	
-	if($monitoring_settings[1] == "ON"){
+	echo $monitoring_setting;
+	if($monitoring_setting == "ON"){
 	
 		$types = [];
 		$thresholds = [];
