@@ -27,13 +27,13 @@ $alerts = [];
 		$query = "SELECT COUNT(*) FROM assets WHERE asset_type='{$types[$index]}';";
 		$rs = pg_query($conn, $query); //run query
 
-		$type_total = floatval(pg_fetch_row($rs)); //fetch result
+		$type_total = floatval(pg_fetch_all($rs)); //fetch result
 	
 		//query for count of items with matching type and assigned is empty
 		$query = "SELECT COUNT(*) FROM assets WHERE asset_type='{$types[$index]}' AND assigned='';";
 		$rs = pg_query($conn, $query); //run query
 
-		$available_total = floatval(pg_fetch_row($rs)); //fetch result
+		$available_total = floatval(pg_fetch_all($rs)); //fetch result
 	
 		//calculate if threshold is reached
 		$calculation = 100 * floatval($type_total / $available_total);
@@ -118,8 +118,6 @@ $alerts = [];
 			]
 		});
 
-		
-	//	$.getJSON('/home/scripts/get_alerts.php', function(alerts) {
 				var alerts = <?php echo json_encode($alerts, JSON_PRETTY_PRINT) ?>;
 				var message = "Alert: Threshold reached for ";
 
@@ -128,9 +126,7 @@ $alerts = [];
 					toastr.options.timeOut = 0;
 					toastr.options.closeButton = true;
 					toastr.error(message.concat(alerts[i]));
-				}
-				
-    //    });		
+				}	
 		
 	});
 	
