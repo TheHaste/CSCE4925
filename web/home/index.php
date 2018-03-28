@@ -76,9 +76,7 @@ session_start(); //start user session to send data between pages
 					toastr.options.closeButton = true;
 					toastr.error(message.concat(data[i].value));
 				}
-            },
-        });
-		
+        });		
 		
 	} );
 	
