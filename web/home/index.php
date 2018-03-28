@@ -120,7 +120,7 @@ $alerts = [];
 
 		
 	//	$.getJSON('/home/scripts/get_alerts.php', function(alerts) {
-				var alerts = <?php echo json_encode($alerts) ?>;
+				var alerts = <?php echo json_encode($alerts, JSON_PRETTY_PRINT) ?>;
 				var message = "Alert: Threshold reached for ";
 
                 var total_alerts = alerts.length;
