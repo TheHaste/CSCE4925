@@ -127,7 +127,7 @@ $alerts = [];
 				for(i=0; i<total_alerts; i++){
 					toastr.options.timeOut = 0;
 					toastr.options.closeButton = true;
-					toastr.error(message.concat(alerts[i]));
+					toastr.error(message.concat(alerts);
 				}
 				
     //    });		
