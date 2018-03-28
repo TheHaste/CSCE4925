@@ -1,0 +1,12 @@
+.img-thumbnail, .thumbnail {
+  display:table;
+}
+
+.col-md-12 {
+  display:table-row;
+}
+
+.img-thumbnail, .thumbnail {
+  display:table-cell;
+}
+
