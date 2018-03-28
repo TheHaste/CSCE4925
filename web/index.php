@@ -115,14 +115,17 @@
 	
 				$_SESSION['settings'] = $settings; //save array of data to session
 				
+				
+				
 				//if logs are turned on, capture log
-				$action = "Login";
-				$log_time = date('M-d-Y H:i:s A');
+				if($_SESSION['settings'][2] == "ON"){
+					$action = "Login";
+					$log_time = date('M-d-Y H:i:s A');
+						
+					$query = "INSERT INTO logging VALUES ('{$username}', '{$action}', '{$log_time}');";
 					
-				$query = "INSERT INTO logging VALUES ('{$username}', '{$action}', '{$log_time}');";
-				
-				$results = pg_query($conn, $query);
-				
+					$results = pg_query($conn, $query);
+				}
 				pg_close($conn);
 				
 				header('Location: /home/'); //redirect to home page
