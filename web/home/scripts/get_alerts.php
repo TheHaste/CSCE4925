@@ -23,7 +23,7 @@ $alerts = [];
 	//check alerts/notifications
 	for($i=0; $i<$num_of_notifications; $i++){
 		//query for count of items with matching type
-		$query = "SELECT COUNT(*) FROM assets WHERE type='{$types[$index]}';";
+		$query = "SELECT COUNT(*) FROM assets WHERE asset_type='{$types[$index]}';";
 		$rs = pg_query($conn, $query); //run query
 
 		$type_total = floatval(pg_fetch_row($rs)); //fetch result
