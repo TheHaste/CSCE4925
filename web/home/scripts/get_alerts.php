@@ -29,7 +29,7 @@ $alerts = [];
 		$type_total = floatval(pg_fetch_row($rs)); //fetch result
 	
 		//query for count of items with matching type and assigned is empty
-		$query = "SELECT COUNT(*) FROM assets WHERE type='{$types[$index]}' AND assigned='';";
+		$query = "SELECT COUNT(*) FROM assets WHERE asset_type='{$types[$index]}' AND assigned='';";
 		$rs = pg_query($conn, $query); //run query
 
 		$available_total = floatval(pg_fetch_row($rs)); //fetch result
