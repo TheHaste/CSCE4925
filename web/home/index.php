@@ -13,7 +13,7 @@
 	while ($item = pg_fetch_assoc($rs)){ //fetch and fill array
 		$monitoring_setting = $item['status'];
 	}
-	echo $monitoring_setting;
+
 	if($monitoring_setting == "ON"){
 	
 		$types = [];
