@@ -119,15 +119,15 @@ $alerts = [];
 		});
 
 		
-		var data = $.getJSON('/home/scripts/get_alerts.php', function() {});		
-		
-		var total_alerts = data.length;
-		var message = "Alert: Threshold reached for ";
-		for(i=0; i<total_alerts; i++){
-			toastr.options.timeOut = 0;
-			toastr.options.closeButton = true;
-			toastr.error(message.concat(data[i]));
-		}
+		$.getJSON('/home/scripts/get_alerts.php', data, function(alerts) {
+                var total_alerts = alerts.length;
+				var message = "Alert: Threshold reached for ";
+				for(i=0; i<total_alerts; i++){
+					toastr.options.timeOut = 0;
+					toastr.options.closeButton = true;
+					toastr.error(message.concat(alerts[i]));
+				}
+        });		
 		
 	} );
 	
