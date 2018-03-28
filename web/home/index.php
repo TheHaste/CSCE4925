@@ -29,6 +29,10 @@ session_start(); //start user session to send data between pages
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script> 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+	
+	<!-- Toastr Extensions -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"></link>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 	<!-- DataTable Javascript Implementation -->
 	<script type="text/javascript">
@@ -61,7 +65,21 @@ session_start(); //start user session to send data between pages
 					}
 				}
 			]
-		});	
+		});
+
+		
+		$.getJSON('/scripts/get_alerts.php', function(data) {
+                var total_alerts = data.length;
+				var message = "Alert: Threshold reached for ";
+				for(i=0; i<total_alerts; i++){
+					toastr.options.timeOut = 0;
+					toastr.options.closeButton = true;
+					toastr.error(message.concat(data[i].value));
+				}
+            },
+        });
+		
+		
 	} );
 	
 
