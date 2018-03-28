@@ -10,7 +10,7 @@
 	//retrieve monitoring_settings
 	$query = "SELECT * FROM monitoring_settings WHERE name='logs';";
 	$item = array(); //array for assets
-	$rs = pg_query($conn, $query); //run query
+	$rs = pg_query($conn1, $query); //run query
 
 	while ($item = pg_fetch_assoc($rs)){ //fetch and fill array
 		$monitoring_setting = $item['status'];
