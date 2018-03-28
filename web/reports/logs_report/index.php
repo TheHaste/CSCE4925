@@ -146,7 +146,7 @@
 	$SQL_where = "";
 	$SQL_FINAL = buildString($SQL_where);
 	
-	echo "The SQL query looks like this: SELECT * FROM logging WHERE {$SQL_FINAL} ORDER BY log_time DESC;"; echo '<br />';
+	//echo "The SQL query looks like this: SELECT * FROM logging WHERE {$SQL_FINAL} ORDER BY log_time DESC;"; echo '<br />';
 	
 	
 ?>
