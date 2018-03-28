@@ -75,7 +75,7 @@ session_start(); //start user session to send data between pages
 				for(i=0; i<total_alerts; i++){
 					toastr.options.timeOut = 0;
 					toastr.options.closeButton = true;
-					toastr.error(message.concat(data[i].value));
+					toastr.error(message.concat(data[i]));
 				}
         });		
 		
