@@ -328,6 +328,7 @@
 	
 	//build string
 	$SQL_where = "";
+	
 	if($_SESSION['none'] != "empty"){
 		$SQL_FINAL = buildString($SQL_where);
 	}
