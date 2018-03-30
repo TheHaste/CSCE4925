@@ -12,18 +12,9 @@
 	$_SESSION['data'] = [];
 	
 	$counter = 0;
-	$index = 0;
-	for($i=0; $i<10; $i++){
-		if(empty($_POST[$index])){
-			$counter++;
-		}
-		$index++;
-	}
 		
-	if($counter == sizeof($_POST)){
-		$_SESSION['none'] = "empty";
-	}
-	else if($_POST['type'] == 'inventory'){ //store parameters
+
+	if($_POST['type'] == 'inventory'){ //store parameters
 		
 		foreach($_POST as $data){
 			if(strpos($data, ';') !== false){
@@ -31,6 +22,41 @@
 			}
 		}
 		
+		if(empty($_POST['assettype'])){
+			$counter++;
+		}
+		if(empty($_POST['serialnumber'])){
+			$counter++;
+		}
+		if(empty($_POST['brand'])){
+			$counter++;
+		}
+		if(empty($_POST['model'])){
+			$counter++;
+		}
+		if(empty($_POST['assigneduser'])){
+			$counter++;
+		}
+		if(empty($_POST['location'])){
+			$counter++;
+		}
+		if(empty($_POST['cost'])){
+			$counter++;
+		}
+		if(empty($_POST['datedeployed'])){
+			$counter++;
+		}
+		if(empty($_POST['datesurplused'])){
+			$counter++;
+		}
+		if(empty($_POST['lastupdated'])){
+			$counter++;
+		}
+		
+		if($counter == 10){
+			$_SESSION['none'] = "empty";
+		}
+
 		$assettype = pg_escape_string($conn, $_POST['assettype']);
 		$serialnumber = pg_escape_string($conn, $_POST['serialnumber']);
 		$brand = pg_escape_string($conn, $_POST['brand']);
@@ -52,6 +78,23 @@
 			if(strpos($data, ';') !== false){
 				return;
 			}
+		}
+		
+		if(empty($_POST['logusername'])){
+			$counter++;
+		}
+		if(empty($_POST['logaction'])){
+			$counter++;
+		}
+		if(empty($_POST['logdate1'])){
+			$counter++;
+		}
+		if(empty($_POST['logdate2'])){
+			$counter++;
+		}
+		
+		if($counter == 4){
+			$_SESSION['none'] = "empty";
 		}
 		
 		$logusername = pg_escape_string($conn, $_POST['logusername']);
