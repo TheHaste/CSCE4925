@@ -328,8 +328,9 @@
 	
 	//build string
 	$SQL_where = "";
-	$SQL_FINAL = buildString($SQL_where);
-	
+	if($_SESSION['data'][0] != "empty"){
+		$SQL_FINAL = buildString($SQL_where);
+	}
 	//echo "The SQL query looks like this: SELECT * FROM assets WHERE {$SQL_FINAL};"; echo '<br />';
 	
 	
@@ -530,7 +531,12 @@
 					
 					<?php
 						//fill table
-						$query = "SELECT * FROM assets WHERE {$SQL_FINAL};";
+						if($_SESSION['data'][0] != "empty"){
+							$query = "SELECT * FROM assets WHERE {$SQL_FINAL};";
+						}
+						else{
+							$query = "SELECT * FROM assets;";
+						}
 						$item = array(); //array for assets
 
 						$rs = pg_query($conn, $query); //run query
