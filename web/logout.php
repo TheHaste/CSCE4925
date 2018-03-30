@@ -7,7 +7,7 @@
 	//create log
 	include('/app/web/connect.php');
 	
-		//populate settings
+	//populate settings
 	$monitoring_settings = [];
 		
 	//retrieve monitoring_settings
