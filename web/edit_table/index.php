@@ -3,7 +3,11 @@
 
 require('/app/web/connect.php');
 
-session_start(); //start user session to send data between pages		
+session_start(); //start user session to send data between pages	
+
+if(empty($_SESSION["userType"])){
+		header('Location: /');
+}	
 
 date_default_timezone_set('America/Chicago'); //set timezone to CST
 
