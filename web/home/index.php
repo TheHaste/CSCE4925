@@ -4,6 +4,10 @@
 	require('/app/web/connect.php');
 
 	session_start(); //start user session to send data between pages
+	
+	if(empty($_SESSION["userType"])){
+		header('Location: /');
+	}
 
 	//retrieve monitoring_settings
 	$query = "SELECT * FROM monitoring_settings WHERE name='notifications';";
