@@ -144,7 +144,7 @@
 	
 	//build string
 	$SQL_where = "";
-	if($_SESSION['data'][0] != "empty"){
+	if($_SESSION['none'] != "empty"){
 		$SQL_FINAL = buildString($SQL_where);
 	}
 	//echo "The SQL query looks like this: SELECT * FROM logging WHERE {$SQL_FINAL} ORDER BY log_time DESC;"; echo '<br />';
@@ -340,7 +340,7 @@
 					
 					<?php
 						//fill table
-						if($_SESSION['data'][0] != "empty"){
+						if($_SESSION['none'] != "empty"){
 							$query = "SELECT * FROM logging WHERE {$SQL_FINAL} ORDER BY log_time DESC;";
 						}
 						else{
