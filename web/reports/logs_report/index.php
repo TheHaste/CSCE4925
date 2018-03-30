@@ -144,8 +144,9 @@
 	
 	//build string
 	$SQL_where = "";
-	$SQL_FINAL = buildString($SQL_where);
-	
+	if($_SESSION['data'][0] != "empty"){
+		$SQL_FINAL = buildString($SQL_where);
+	}
 	//echo "The SQL query looks like this: SELECT * FROM logging WHERE {$SQL_FINAL} ORDER BY log_time DESC;"; echo '<br />';
 	
 	
@@ -339,7 +340,13 @@
 					
 					<?php
 						//fill table
-						$query = "SELECT * FROM logging WHERE {$SQL_FINAL} ORDER BY log_time DESC;";
+						if($_SESSION['data'][0] != "empty"){
+							$query = "SELECT * FROM logging WHERE {$SQL_FINAL} ORDER BY log_time DESC;";
+						}
+						else{
+							$query = "SELECT * FROM logging;";
+						}
+						
 						$item = array(); //array for assets
 
 						$rs = pg_query($conn, $query); //run query
