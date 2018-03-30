@@ -11,9 +11,18 @@
 	
 	$_SESSION['data'] = [];
 	
-	
-	//store parameters
-	if($_POST['type'] == 'inventory'){
+	$counter = 0;
+	foreach($_POST as $data){
+		if($data == ''){
+			$counter++;
+		}
+	}
+		
+	if($counter == sizeof($_POST)){
+		$column_array = array("empty");
+		$_SESSION['data'] = $column_array;
+	}
+	else if($_POST['type'] == 'inventory'){ //store parameters
 		
 		foreach($_POST as $data){
 			if(strpos($data, ';') !== false){
@@ -36,7 +45,7 @@
 		$_SESSION['data'] = $column_array;
 
 	}
-	else if($_POST['type'] == 'logs'){
+	else if($_POST['type'] == 'logs'){ //store parameters
 		
 		foreach($_POST as $data){
 			if(strpos($data, ';') !== false){
