@@ -67,7 +67,7 @@ session_start(); //start user session to send data between pages
 		$('#report').submit(function() {
 			if(document.getElementById('inventoryReport').checked){
 				
-				var brand = document.getElementById('assettype').value
+				var assettype = document.getElementById('assettype').value
 				var serialnumber = document.getElementById('serialnumber').value
 				var brand = document.getElementById('brand').value
 				var model = document.getElementById('model').value
