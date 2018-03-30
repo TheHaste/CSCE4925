@@ -12,7 +12,7 @@ session_start(); //start user session to send data between pages
     <title>Meridian Inventory</title>
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/Navigation-with-Search1.css">
-	<link rel="stylesheet" href="assets/css/table_width.css">
+	<!-- <link rel="stylesheet" href="assets/css/table_width.css"> -->
 	
 	<!-- DataTable Extensions -->
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
