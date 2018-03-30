@@ -13,7 +13,7 @@
 	
 	$counter = 0;
 	foreach($_POST as $data){
-		if(empty($data)){
+		if(empty($data) === true){
 			$counter++;
 		}
 	}
