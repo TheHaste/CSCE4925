@@ -19,7 +19,9 @@
 		$monitoring_setting = $item['status'];
 	}
 
-	if($monitoring_setting == "ON"){
+	if(empty($_SESSION["userType"])){
+	}
+	else if($monitoring_setting == "ON"){
 		$action = "Logout";
 		$log_time = date('M-d-Y H:i:s A');
 						
