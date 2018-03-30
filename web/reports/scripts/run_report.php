@@ -12,10 +12,12 @@
 	$_SESSION['data'] = [];
 	
 	$counter = 0;
-	foreach($_POST as $data){
-		if($data == ''){
+	$index = 0;
+	for($i=0; $i<10; $i++){
+		if(empty($_POST[$index])){
 			$counter++;
 		}
+		$index++;
 	}
 		
 	if($counter == sizeof($_POST)){
