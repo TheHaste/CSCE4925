@@ -4,7 +4,10 @@
 	require('/app/web/connect.php');
 
 	session_start(); //start user session to send data between pages
-
+	
+	if(empty($_SESSION["userType"])){
+		header('Location: /');
+	}
 	
 	/******************************************************************************************
 	*	buildString() - Returns a formatted string for SQL queries for Inventory Reporting
