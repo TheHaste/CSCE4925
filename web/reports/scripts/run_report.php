@@ -13,9 +13,9 @@
 	
 	$counter = 0;
 	foreach($_POST as $data){
-		//if($data == null){
+		if(empty($data)){
 			$counter++;
-		//}
+		}
 	}
 		
 	if($counter == sizeof($_POST)){
