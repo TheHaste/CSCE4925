@@ -1,9 +1,13 @@
 <?php
 //Reporting Index
 
-require('/app/web/connect.php');
+	require('/app/web/connect.php');
 
-session_start(); //start user session to send data between pages
+	session_start(); //start user session to send data between pages
+
+	if(empty($_SESSION["userType"])){
+		header('Location: /');
+	}
 
 ?>
 <html>
