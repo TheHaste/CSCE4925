@@ -207,7 +207,7 @@
 	*************************************************************************************************/
 	function checkLocation($SQL_where){
 		if((!(empty($_SESSION['data'][5])))){ //5 not null
-			if((!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8]))), (!(empty($_SESSION['data'][9])))){ //atleast another column has data
+			if((!(empty($_SESSION['data'][6]))) || (!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8]))) || (!(empty($_SESSION['data'][9])))){ //atleast another column has data
 				if (strpos($_SESSION['data'][5], ',') !== false) { //if more than one column and has a comma
 					$SQL_where .= formatIN("location", 5);
 					$SQL_where .= "AND ";
@@ -239,7 +239,7 @@
 	*************************************************************************************************/
 	function checkCost($SQL_where){
 		if((!(empty($_SESSION['data'][6])))){ //6 not null
-			if((!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8]))), (!(empty($_SESSION['data'][9])))){ //atleast another column has data
+			if((!(empty($_SESSION['data'][7]))) || (!(empty($_SESSION['data'][8]))) || (!(empty($_SESSION['data'][9])))){ //atleast another column has data
 				if (strpos($_SESSION['data'][6], ',') !== false) { //if more than one column and has a comma
 					$SQL_where .= formatIN("cost", 6);
 					$SQL_where .= "AND ";
@@ -271,7 +271,7 @@
 	*********************************************************************************************************/
 	function checkDateDeployed($SQL_where){
 		if((!(empty($_SESSION['data'][7])))){ //7 not null
-			if((!(empty($_SESSION['data'][8]))), (!(empty($_SESSION['data'][9])))){ //atleast another column has data
+			if((!(empty($_SESSION['data'][8]))) || (!(empty($_SESSION['data'][9])))){ //atleast another column has data
 				$old_time1 = $_SESSION['data'][7];
 				$new_date1 = date('M-d-Y', strtotime($old_time1));
 				$SQL_where .= "date_deployed = '{$new_date1}' AND "; //append with comma and move to next column
