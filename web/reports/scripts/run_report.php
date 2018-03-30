@@ -19,8 +19,7 @@
 	}
 		
 	if($counter == sizeof($_POST)){
-		$column_array = array("empty");
-		$_SESSION['data'] = $column_array;
+		$_SESSION['none'] = "empty";
 	}
 	else if($_POST['type'] == 'inventory'){ //store parameters
 		
