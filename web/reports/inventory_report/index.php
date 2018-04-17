@@ -39,8 +39,6 @@
 				$SQL_IN .= $temp;
 			}
 
-			
-			$SQL_IN .= $temp;
 		}
 		
 		$SQL_IN .= "') ";
