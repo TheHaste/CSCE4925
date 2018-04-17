@@ -33,6 +33,7 @@
 				$SQL_IN .= "', '";
 			}
 			else if($temp == ' '){
+				$SQL_IN .= $temp;
 			}
 			else{
 				$SQL_IN .= $temp;
