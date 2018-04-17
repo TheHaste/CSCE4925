@@ -29,7 +29,7 @@
 		for($i=0; $i<=$len; $i++){
 			$temp = substr($_SESSION['data'][$index], $i, 1);
 			
-			if($temp == ','){
+			/*if($temp == ','){
 				$SQL_IN .= "', '";
 			}
 			else if($temp == ' '){
@@ -38,6 +38,9 @@
 			else{
 				$SQL_IN .= $temp;
 			}
+			*/
+			
+			$SQL_IN .= $temp;
 		}
 		
 		$SQL_IN .= "') ";
