@@ -58,7 +58,7 @@
 			}
 		}	
 			//check if response was received
-			if($response == ": unauthorized"){
+			if(strpos($response,": unauthorized")!== false){
 				$error = true;
 				$err = "Invalid username or password"; //empty or no response was received
 				
