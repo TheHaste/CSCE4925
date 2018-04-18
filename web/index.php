@@ -96,7 +96,7 @@
 				if($_SESSION['settings'][2] == "ON"){
 					$action = "Failed Login Attempt";
 					$log_time = date('M-d-Y H:i:s A');
-					if(is_null($username)){
+					if(empty($username)){
 						$username = "None";
 					}
 					$query = "INSERT INTO logging VALUES ('{$username}', '{$action}', '{$log_time}');";
