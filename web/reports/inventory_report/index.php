@@ -334,12 +334,11 @@
 	//build string
 	$SQL_where = "";
 	
-	echo $_SESSION['data'][2];
+
 	
 	if($_SESSION['none'] != "empty"){
 		$SQL_FINAL = buildString($SQL_where);
 	}
-	echo "The SQL query looks like this: SELECT * FROM assets WHERE {$SQL_FINAL};"; echo '<br />';
 	
 	
 ?>
@@ -417,8 +416,6 @@
 				var datedeployed = document.getElementById('datedeployed').value
 				var datesurplused = document.getElementById('datesurplused').value
 				var lastupdated = document.getElementById('lastupdated').value
-				
-				alert(brand);
 				
 				$.post('/reports/scripts/run_report.php', {type: 'inventory',
 					assettype: assettype,
