@@ -186,6 +186,7 @@
 	$(document).ready(function() {
 		$('#assets').DataTable(
 		 {
+			"ordering": false,
 			dom: 'Bfrtip',
 			lengthMenu: [
 				[ 10, 25, 50, -1 ],
