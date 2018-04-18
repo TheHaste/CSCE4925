@@ -100,7 +100,6 @@
 						$username = "None";
 					}
 					$query = "INSERT INTO logging VALUES ('{$username}', '{$action}', '{$log_time}');";
-					echo $query;
 					
 					$results = pg_query($conn, $query);
 				}	
