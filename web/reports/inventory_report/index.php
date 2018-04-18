@@ -334,6 +334,8 @@
 	//build string
 	$SQL_where = "";
 	
+	echo $_SESSION['data'][2];
+	
 	if($_SESSION['none'] != "empty"){
 		$SQL_FINAL = buildString($SQL_where);
 	}
@@ -415,6 +417,8 @@
 				var datedeployed = document.getElementById('datedeployed').value
 				var datesurplused = document.getElementById('datesurplused').value
 				var lastupdated = document.getElementById('lastupdated').value
+				
+				alert(brand);
 				
 				$.post('/reports/scripts/run_report.php', {type: 'inventory',
 					assettype: assettype,
