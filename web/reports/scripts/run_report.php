@@ -9,6 +9,7 @@
 		die("Connection failed: " . $conn->connect_error);
 	} 
 	unset($_SESSION['data']);
+	unset($_SESSION['none']);
 	
 	$_SESSION['data'] = [];
 	
