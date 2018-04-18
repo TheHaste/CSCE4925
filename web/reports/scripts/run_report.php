@@ -8,6 +8,7 @@
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	} 
+	unset($_SESSION['data']);
 	
 	$_SESSION['data'] = [];
 	
