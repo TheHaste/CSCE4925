@@ -39,6 +39,8 @@
 	
 		$response = curl_exec($curl); //response from curl
 		
+		echo $response;
+		
 		$err = curl_error($curl); //if error occurs
 		curl_close($curl); //close curl
 			
