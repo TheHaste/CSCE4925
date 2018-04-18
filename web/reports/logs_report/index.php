@@ -346,10 +346,10 @@
 					<?php
 						//fill table
 						if($_SESSION['none'] != "empty"){
-							$query = "SELECT * FROM logging WHERE {$SQL_FINAL} ORDER BY log_time DESC;";
+							$query = "SELECT * FROM logging WHERE {$SQL_FINAL} ORDER BY id DESC;";
 						}
 						else{
-							$query = "SELECT * FROM logging;";
+							$query = "SELECT * FROM logging ORDER BY id DESC;";
 						}
 						
 						$item = array(); //array for assets
