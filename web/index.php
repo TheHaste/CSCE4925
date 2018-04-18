@@ -39,8 +39,6 @@
 	
 		$response = curl_exec($curl); //response from curl
 		
-		echo $response;
-		
 		$err = curl_error($curl); //if error occurs
 		curl_close($curl); //close curl
 			
@@ -70,6 +68,7 @@
 						$username = "None";
 					}
 					$query = "INSERT INTO logging VALUES ('{$username}', '{$action}', '{$log_time}');";
+					echo $query;
 					
 					$results = pg_query($conn, $query);
 				}	
