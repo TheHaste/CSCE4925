@@ -57,7 +57,7 @@
 		if($counter == 10){
 			$_SESSION['none'] = "empty";
 		}
-
+		else{
 		$assettype = pg_escape_string($conn, $_POST['assettype']);
 		$serialnumber = pg_escape_string($conn, $_POST['serialnumber']);
 		$brand = pg_escape_string($conn, $_POST['brand']);
@@ -71,7 +71,7 @@
 		
 		$column_array = array($assettype, $serialnumber, $brand, $model, $assigneduser, $location, $cost, $datedeployed, $datesurplused, $lastupdated);
 		$_SESSION['data'] = $column_array;
-
+		}
 	}
 	else if($_POST['type'] == 'logs'){ //store parameters
 		
