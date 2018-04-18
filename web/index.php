@@ -11,6 +11,38 @@
 	date_default_timezone_set('America/Chicago'); //set timezone to CST
 	session_start(); //start user session to send data between pages
 	
+	//create log
+	include('/app/web/connect.php');
+			
+	//populate settings SESSION
+	$_SESSION['settings'] = [];
+	$types = [];
+	$thresholds = [];
+	$monitoring_settings = [];
+			
+	//retrieve monitoring_settings
+	$query = "SELECT * FROM monitoring_settings;";
+	$item = array(); //array for assets
+	$rs = pg_query($conn, $query); //run query
+	
+	while ($item = pg_fetch_assoc($rs)){ //fetch and fill array
+		array_push($monitoring_settings, $item['status']);
+	}
+				
+	//retrieve notification_settings
+	$query = "SELECT * FROM notification_settings;";
+	$item = array(); //array for assets
+	$rs = pg_query($conn, $query); //run query
+
+	while ($item = pg_fetch_assoc($rs)){ //fetch and fill array
+		array_push($types, $item['type']);
+		array_push($thresholds, $item['threshold']);
+	}
+				
+	$settings = array($types, $thresholds, $monitoring_settings[0], $monitoring_settings[1]);
+	
+	$_SESSION['settings'] = $settings; //save array of data to session
+	
 	if(isset($_POST) & !empty($_POST)){
 		
 		$username = $_POST['username'];
@@ -96,38 +128,6 @@
 				}
 				
 				$_SESSION["username"] = $username;
-				
-				//create log
-				include('/app/web/connect.php');
-				
-				//populate settings SESSION
-				$_SESSION['settings'] = [];
-				$types = [];
-				$thresholds = [];
-				$monitoring_settings = [];
-				
-				//retrieve monitoring_settings
-				$query = "SELECT * FROM monitoring_settings;";
-				$item = array(); //array for assets
-				$rs = pg_query($conn, $query); //run query
-
-				while ($item = pg_fetch_assoc($rs)){ //fetch and fill array
-					array_push($monitoring_settings, $item['status']);
-				}
-				
-				//retrieve notification_settings
-				$query = "SELECT * FROM notification_settings;";
-				$item = array(); //array for assets
-				$rs = pg_query($conn, $query); //run query
-
-				while ($item = pg_fetch_assoc($rs)){ //fetch and fill array
-					array_push($types, $item['type']);
-					array_push($thresholds, $item['threshold']);
-				}
-				
-				$settings = array($types, $thresholds, $monitoring_settings[0], $monitoring_settings[1]);
-	
-				$_SESSION['settings'] = $settings; //save array of data to session
 				
 				
 				//if logs are turned on, capture log
