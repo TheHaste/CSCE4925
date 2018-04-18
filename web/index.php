@@ -58,7 +58,19 @@
 			//check if response was received
 			if($response == ": unauthorized"){
 				$error = true;
-				$err = "Invalid username or password"; //empty or no response was received 
+				$err = "Invalid username or password"; //empty or no response was received
+				
+				//if logs are turned on, capture log
+				if($_SESSION['settings'][2] == "ON"){
+					$action = "Failed Login Attempt";
+					$log_time = date('M-d-Y H:i:s A');
+					if(is_null($username)){
+						$username = "None";
+					}
+					$query = "INSERT INTO logging VALUES ('{$username}', '{$action}', '{$log_time}');";
+					
+					$results = pg_query($conn, $query);
+				
 			}		
 					
 			//check for errors before signing in
