@@ -59,7 +59,12 @@
 				array_push($alerts, $types[$index]);
 			}
 			$index++;
-		}	
+		}
+
+		echo "calculation is: {$calculation}</br>";
+		echo "type total is: {$type_total}</br>";
+		echo "available total is: {$available_total}</br>";
+		echo "Alerts is: {$alerts[0]} </br>";
 	}
 
 ?>
