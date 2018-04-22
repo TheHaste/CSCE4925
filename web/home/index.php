@@ -54,7 +54,7 @@
 			$calculation = 100 * floatval($available_total / $type_total);
 			
 			//if threshold reached
-			if(floatval($calculation) >= floatval($thresholds[$index]) ){
+			if(floatval($calculation) <= floatval($thresholds[$index]) ){
 				//append type to the alerts array
 				array_push($alerts, $types[$index]);
 			}
