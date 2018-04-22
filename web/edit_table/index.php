@@ -83,10 +83,6 @@ $(document).ready(function() {
         ajax: {"url":'/edit_table/Editor-PHP-1.7.2/php/assets_config.php',
 				"type": "POST"},
         table: '#assets',
-		lengthMenu: [
-			[ 10, 25, 50, -1 ],
-			[ '10 rows', '25 rows', '50 rows', 'Show all' ]
-		],
         fields: [ {
                 label: "Name:",
                 name: "name_id"
@@ -170,6 +166,10 @@ $(document).ready(function() {
 			{ data:"date_surplused"},
 			{ data:"last_updated"}
         ],
+		lengthMenu: [
+			[ 10, 25, 50, -1 ],
+			[ '10 rows', '25 rows', '50 rows', 'Show all' ]
+		],
         select: true,
         buttons: [
 			{ extend: "create",   editor: editor },
