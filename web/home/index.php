@@ -61,7 +61,11 @@
 			$index++;
 		}
 	}
-
+	
+	echo "Type Total is: {$type_total}</br>";
+	echo "Available Total is: {$available_total}</br>";
+	echo "Caltulation is: {$calculation}</br>";
+	echo "Threshold is: {$thresholds[0]}</br>";
 ?>
 <html>
 
