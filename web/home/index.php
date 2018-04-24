@@ -52,7 +52,7 @@
 		
 			//calculate if threshold is reached
 			$calculation = 100 * floatval($available_total / $type_total);
-			
+
 			//if threshold reached
 			if(floatval($calculation) <= floatval($thresholds[$index]) ){
 				//append type to the alerts array
@@ -62,10 +62,6 @@
 		}
 	}
 	
-	echo "Type Total is: {$type_total}</br>";
-	echo "Available Total is: {$available_total}</br>";
-	echo "Caltulation is: {$calculation}</br>";
-	echo "Threshold is: {$thresholds[0]}</br>";
 ?>
 <html>
 
