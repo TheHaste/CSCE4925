@@ -66,57 +66,58 @@
 					}
 				}
 			]
-		});	
-	
-		$('#report').submit(function() {
-			if(document.getElementById('inventoryReport').checked){
-				
-				var assettype = document.getElementById('assettype').value
-				var serialnumber = document.getElementById('serialnumber').value
-				var brand = document.getElementById('brand').value
-				var model = document.getElementById('model').value
-				var assigneduser = document.getElementById('assigneduser').value
-				var location = document.getElementById('location').value
-				var cost = document.getElementById('cost').value
-				var datedeployed = document.getElementById('datedeployed').value
-				var datesurplused = document.getElementById('datesurplused').value
-				var lastupdated = document.getElementById('lastupdated').value
-				
-				$.post('/reports/scripts/run_report.php', {type: 'inventory',
-					assettype: assettype,
-					serialnumber: serialnumber,
-					brand: brand,
-					model: model,
-					assigneduser: assigneduser,
-					location: location,
-					cost: cost,
-					datedeployed: datedeployed,
-					datesurplused: datesurplused,
-					lastupdated: lastupdated}, function(){
-						window.location.replace("/reports/inventory_report/");
-				});
-				
-			}
-			else if(document.getElementById('logReport').checked){
-				var logusername = document.getElementById('logusername').value
-				var logaction = document.getElementById('logaction').value
-				var logdate1 = document.getElementById('logdate1').value
-				var logdate2 = document.getElementById('logdate2').value
-				
-				$.post('/reports/scripts/run_report.php', {type: 'logs',
-					logusername: logusername,
-					logaction: logaction,
-					logdate1: logdate1,
-					logdate2: logdate2}, function(){
-						window.location.replace("/reports/logs_report/");
-				});
-			}
-			else {
-				alert("You did not choose a report type! Please check the box next to the report you want to run.");
-			}
 		});
-	
 	});
+	
+	$('#report').submit(function() {
+		if(document.getElementById('inventoryReport').checked){
+				
+			var assettype = document.getElementById('assettype').value
+			var serialnumber = document.getElementById('serialnumber').value
+			var brand = document.getElementById('brand').value
+			var model = document.getElementById('model').value
+			var assigneduser = document.getElementById('assigneduser').value
+			var location = document.getElementById('location').value
+			var cost = document.getElementById('cost').value
+			var datedeployed = document.getElementById('datedeployed').value
+			var datesurplused = document.getElementById('datesurplused').value
+			var lastupdated = document.getElementById('lastupdated').value
+				
+			$.post('/reports/scripts/run_report.php', {type: 'inventory',
+				assettype: assettype,
+				serialnumber: serialnumber,
+				brand: brand,
+				model: model,
+				assigneduser: assigneduser,
+				location: location,
+				cost: cost,
+				datedeployed: datedeployed,
+				datesurplused: datesurplused,
+				lastupdated: lastupdated}, function(){
+					window.location.replace("/reports/inventory_report/");
+			});
+				
+		}
+		else if(document.getElementById('logReport').checked){
+			var logusername = document.getElementById('logusername').value
+			var logaction = document.getElementById('logaction').value
+			var logdate1 = document.getElementById('logdate1').value
+			var logdate2 = document.getElementById('logdate2').value
+				
+			$.post('/reports/scripts/run_report.php', {type: 'logs',
+				logusername: logusername,
+				logaction: logaction,
+				logdate1: logdate1,
+				logdate2: logdate2}, function(){
+					window.location.replace("/reports/logs_report/");
+			});
+		}
+		else {
+			alert("You did not choose a report type! Please check the box next to the report you want to run.");
+		}
+	});
+	
+	//});
 	
 
 </script>
