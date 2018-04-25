@@ -54,7 +54,7 @@
 	
 	<script type="text/javascript">
 	
-	$(document).ready(function() {
+//	$(document).ready(function() {
 		$('#settings-form').submit(function() {
 			var types = [];
 			
@@ -89,7 +89,7 @@
 			
 			
 		});
-	});
+//	});
 	
 	</script>
 	
