@@ -36,8 +36,8 @@
 
 	$_SESSION['settings'] = $settings; //save array of data to session
 	
-	echo "Type is: {$_SESSION['settings'][0][0]}</br>";
-	echo "Threshold is: {$_SESSION['settings'][1][0]}</br>";
+//	echo "Type is: {$_SESSION['settings'][0][0]}</br>";
+//	echo "Threshold is: {$_SESSION['settings'][1][0]}</br>";
 	
 	pg_close($conn);
 
@@ -90,6 +90,35 @@
 			});
 			
 			window.location.href = window.location.href;
+			<?php 	//populate settings SESSION
+				$_SESSION['settings'] = [];
+				$types = [];
+				$thresholds = [];
+				$monitoring_settings = [];
+					
+				//retrieve monitoring_settings
+				$query = "SELECT * FROM monitoring_settings;";
+				$item = array(); //array for assets
+				$rs = pg_query($conn, $query); //run query
+
+				while ($item = pg_fetch_assoc($rs)){ //fetch and fill array
+					array_push($monitoring_settings, $item['status']);
+				}
+							
+				//retrieve notification_settings
+				$query = "SELECT * FROM notification_settings;";
+				$item = array(); //array for assets
+				$rs = pg_query($conn, $query); //run query
+
+				while ($item = pg_fetch_assoc($rs)){ //fetch and fill array
+					array_push($types, $item['type']);
+					array_push($thresholds, $item['threshold']);
+				}
+							
+				$settings = array($types, $thresholds, $monitoring_settings[0], $monitoring_settings[1]);
+
+				$_SESSION['settings'] = $settings; //save array of data to session
+			?>
 		});
 	});
 	
