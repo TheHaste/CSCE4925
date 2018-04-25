@@ -83,7 +83,7 @@
 			}
 			
 			$.post('/settings/scripts/save_settings.php', {types: types, thresholds: thresholds, system_logging: system_logging, notifications: notifications}, function(){
-				window.location.reload(true);
+				window.location.assign("/settings/scripts/index.php");
 			});
 		});
 	});
