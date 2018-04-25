@@ -36,9 +36,6 @@
 
 	$_SESSION['settings'] = $settings; //save array of data to session
 	
-	echo "Type is: {$_SESSION['settings'][0][0]}</br>";
-	echo "Threshold is: {$_SESSION['settings'][1][0]}</br>";
-	
 	pg_close($conn);
 
 ?>
