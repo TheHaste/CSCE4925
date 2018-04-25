@@ -122,5 +122,5 @@
 	
 	pg_close($conn);
 	
-	header('Location: /settings/scripts/index.php');
+	header('Location: /settings/index.php');
 ?>
