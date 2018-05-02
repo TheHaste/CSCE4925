@@ -1,13 +1,5 @@
 <?php
-	/************************************
-				ADMIN
-		username: inventoryadmin
-		password: 3asUSWefup67deSA
-		
-				USER
-		username: inventoryuser 
-		password: qeMay8qef2KEp7Pe
-	**************************************/
+
 	date_default_timezone_set('America/Chicago'); //set timezone to CST
 	session_start(); //start user session to send data between pages
 	
